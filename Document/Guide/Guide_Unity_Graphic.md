@@ -1,6 +1,6 @@
 # Tabby 그래픽 가이드
 
-> Update date : 2020-04-25
+> Update : 2020-04-27
 
 ## 1. 개요
 
@@ -12,8 +12,13 @@
 
 - Sprite Atlas를 활용하여 Draw call을 줄이자
 
+- 가능한 사이즈는 2의 배수, 정사각형을 유지하라(128x128, 256x56)
+
 - 
 
 ## 2. 참고 링크
 
-- [UI 최적화 테크닉](https://unity3d.com/kr/how-to/unity-ui-optimization-tips)
+- [UI 최적화 테크닉(유니티 공식)](https://unity3d.com/kr/how-to/unity-ui-optimization-tips)
+- [유니티3D에서 2D 이미지 다루기](https://www.slideshare.net/jungsoopark104/3d-2d)
+- [유니티 최적화 : 아트 리소스 최적화 기법들](https://mentum.tistory.com/55)
+- [유니티 Sprite / UI OverDraw 최적화](https://mentum.tistory.com/293)
