@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +17,7 @@ public class Node
 }
 
 
-public class AStar : MonoBehaviour
+public class GameManager: MonoBehaviour
 {
     public Vector2Int bottomLeft, topRight, startPos, targetPos;
     public List<Node> FinalNodeList;
@@ -29,7 +28,10 @@ public class AStar : MonoBehaviour
     Node StartNode, TargetNode, CurNode;
     List<Node> OpenList, ClosedList;
 
-
+    private void Start()
+    {
+        PathFinding();
+    }
     public void PathFinding()
     {
         // NodeArray의 크기 정해주고, isWall, x, y 대입
@@ -135,8 +137,10 @@ public class AStar : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (FinalNodeList.Count != 0) for (int i = 0; i < FinalNodeList.Count - 1; i++)
+        if (FinalNodeList.Count != 0)
+        {
+            for (int i = 0; i < FinalNodeList.Count - 1; i++)
                 Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
-    }
+        }
+        }
 }
-
