@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
+
 [System.Serializable]
 public class Animal : MonoBehaviour
 {
@@ -12,6 +16,7 @@ public class Animal : MonoBehaviour
     public bool allowDiagonal, dontCrossCorner;
     public float speed=2f;
     private Animator animator;
+    private int i = 0;
 
     int sizeX, sizeY;
     Node[,] NodeArray;
@@ -23,59 +28,97 @@ public class Animal : MonoBehaviour
         animalrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         nodeSetting();
-        transform.position = new Vector3Int(Random.Range(bottomLeft.x, topRight.x), Random.Range(bottomLeft.y, topRight.y), 0);
+        transform.position = new Vector3Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y), 0);
         while (NodeArray[(int)transform.position.x - bottomLeft.x, (int)transform.position.y - bottomLeft.y].isWall == true)
-            transform.position = new Vector3Int(Random.Range(bottomLeft.x, topRight.x), Random.Range(bottomLeft.y, topRight.y), 0);
-        for (int i = 0; i < 5; i++)
+            transform.position = new Vector3Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y), 0);
+        randomSetting();
+        pathFinding();
+    }
+
+    private void Update()
+    {
+
+        transform.position = Vector2.MoveTowards(transform.position,new Vector2(FinalNodeList[i+1].x,FinalNodeList[i+1].y),speed*Time.deltaTime);
+        if ((FinalNodeList[i + 1].x - transform.position.x) == 0 && (FinalNodeList[i + 1].y - transform.position.y) < 0)
+            animator.SetInteger("rotate", 0);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) < 0 && (FinalNodeList[i + 1].y - transform.position.y) > 0)
+            animator.SetInteger("rotate", 1);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) < 0 && (FinalNodeList[i + 1].y - transform.position.y) == 0)
+            animator.SetInteger("rotate", 1);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) < 0 && (FinalNodeList[i + 1].y - transform.position.y) < 0)
+            animator.SetInteger("rotate", 1);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) == 0 && (FinalNodeList[i + 1].y - transform.position.y) > 0)
+            animator.SetInteger("rotate", 2);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) > 0 && (FinalNodeList[i + 1].y - transform.position.y) > 0)
+            animator.SetInteger("rotate", 3);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) > 0 && (FinalNodeList[i + 1].y - transform.position.y) == 0)
+            animator.SetInteger("rotate", 3);
+        else if ((FinalNodeList[i + 1].x - transform.position.x) > 0 && (FinalNodeList[i + 1].y - transform.position.y) < 0)
+            animator.SetInteger("rotate", 3);
+
+        if (transform.position.x ==FinalNodeList[i + 1].x && transform.position.y ==FinalNodeList[i + 1].y){
+            i++;
+        }
+
+        /*
+        if ((Mathf.Abs(FinalNodeList[i + 1].x) + cora > Mathf.Abs(transform.position.x) &&
+            Mathf.Abs(transform.position.x) > Mathf.Abs(FinalNodeList[i + 1].x) - cora &&
+            Mathf.Abs(FinalNodeList[i + 1].y) + cora > Mathf.Abs(transform.position.y) &&
+            Mathf.Abs(transform.position.y) > Mathf.Abs(FinalNodeList[i + 1].y) - cora))//됨
+        {
+            i++;
+            cora += 0.01f;
+        }
+        */
+
+        if (i == (FinalNodeList.Count - 1)) {
+            i = 0;
+            randomSetting();
+            pathFinding();
+            }
+        /*
+        if ((Mathf.Abs(targetPos.x)+0.01>Mathf.Abs(transform.position.x) && 
+            Mathf.Abs(transform.position.x) > Mathf.Abs(targetPos.x)-0.01 &&
+            Mathf.Abs(targetPos.y)+0.01>Mathf.Abs(transform.position.y)&& 
+            Mathf.Abs(transform.position.y)>Mathf.Abs(targetPos.y)-0.01)) //됨
         {
             randomSetting();
             pathFinding();
-            roitering();
+            i = 0;
+            //cora = 0.1f;
         }
+        */
+
     }
+        
 
     void randomSetting() 
     {
-        targetPos = new Vector2Int((int)Random.Range(bottomLeft.x, topRight.x), (int)Random.Range(bottomLeft.y, topRight.y));
+        targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
         while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true))
-            targetPos = new Vector2Int((int)Random.Range(bottomLeft.x, topRight.x), (int)Random.Range(bottomLeft.y, topRight.y));
+            targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
     }
 
     private void OnMouseDown()
     {
         //반응
         animator.SetBool("tapAnimal", true);
+        Time.timeScale = 0;
     }
 
     private void OnMouseUp()
     {
         //돌아옴
+        Time.timeScale = 1;
         animator.SetBool("tapAnimal", false);
     }
 
     private void OnMouseExit()
     {
+        Time.timeScale = 1;
         animator.SetBool("tapAnimal", false);
     }
 
-
-    private void roitering()
-    {
-            for (int i = 0; i < FinalNodeList.Count-1; i++)
-            {
-                animalrigidbody.velocity = new Vector2((FinalNodeList[i].x- FinalNodeList[i + 1].x) * speed, (FinalNodeList[i].y - FinalNodeList[i+1].y) * speed);
-            if ((transform.position.x == FinalNodeList[i + 1].x) && (transform.position.y == FinalNodeList[i + 1].y))
-                continue;
-            else if ((animalrigidbody.velocity.x == 0) && (animalrigidbody.velocity.y < 0))
-                animator.SetInteger("rotate", 0);
-            else if ((animalrigidbody.velocity.x < 0) && (animalrigidbody.velocity.y == 0))
-                animator.SetInteger("rotate", 1);
-            else if ((animalrigidbody.velocity.x == 0) && (animalrigidbody.velocity.y > 0))
-                animator.SetInteger("rotate", 2);
-            else if ((animalrigidbody.velocity.x > 0) && (animalrigidbody.velocity.y == 0))
-                animator.SetInteger("rotate", 3);
-            }
-    }
 public class Node
 {
     public Node(bool _isWall, int _x, int _y) { isWall = _isWall; x = _x; y = _y; }
@@ -109,8 +152,13 @@ public class Node
         }
     }
 
-    void pathFinding() { 
-        StartNode = NodeArray[(int)(transform.position.x) - bottomLeft.x, (int)(transform.position.y) - bottomLeft.y];
+    void pathFinding() {
+        StartNode = NodeArray[(int)(transform.position.x - bottomLeft.x), (int)(transform.position.y - bottomLeft.y)];
+        //while (Mathf.Abs(StartNode.x - transform.position.x) > 0.1 || Mathf.Abs(StartNode.y - transform.position.y) > 0.1)
+       // {
+        //    StartNode = NodeArray[(int)(transform.position.x - bottomLeft.x), (int)(transform.position.y - bottomLeft.y)];
+        //    nocount++;
+        //}
         TargetNode = NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y];
 
         OpenList = new List<Node>() { StartNode };
@@ -191,7 +239,7 @@ public class Node
         }
     }
 
-    /*
+    
     void OnDrawGizmos()
     {
         if (FinalNodeList.Count != 0)
@@ -200,7 +248,7 @@ public class Node
                 Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
         }
     }
-    */
+    
 }
 
 
