@@ -38,6 +38,7 @@ public class SceneControl : MonoBehaviour
             loadingPanel.SetActive(true);
         // 비동기 작업 지정
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
         // 씬이 로딩이 완료 될 때까지 비활성화
         operation.allowSceneActivation = false;
         float time = 0;

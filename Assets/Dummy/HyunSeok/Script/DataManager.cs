@@ -73,3 +73,8 @@ public class PlayerData
         this.gold = gold;
     }
 }
+
+public class AnimalData
+{
+    
+}
