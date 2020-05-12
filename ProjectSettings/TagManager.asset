@@ -49,3 +49,6 @@ TagManager:
   - name: Animal
     uniqueID: 1981180029
     locked: 0
+  - name: UI
+    uniqueID: 2809868319
+    locked: 0

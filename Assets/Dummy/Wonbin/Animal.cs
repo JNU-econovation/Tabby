@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -15,18 +16,28 @@ public class Animal : MonoBehaviour
     public List<Node> FinalNodeList;
     public bool allowDiagonal, dontCrossCorner;
     public float speed=2f;
-    private Animator animator;
     private int i = 0;
+    public int startTargetDistance = 8;
 
-    int sizeX, sizeY;
+    float distance = 10;
+
+    private Animator animator;
+    public Sprite CurrentSprite;
+    public Sprite growUp;
+    private SpriteRenderer spriteRenderer;
+
+    private int sizeX, sizeY;
     Node[,] NodeArray;
     Node StartNode, TargetNode, CurNode;
     List<Node> OpenList, ClosedList;
 
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         animalrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer.sprite = CurrentSprite;
+
         nodeSetting();
         transform.position = new Vector3Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y), 0);
         while (NodeArray[(int)transform.position.x - bottomLeft.x, (int)transform.position.y - bottomLeft.y].isWall == true)
@@ -60,54 +71,50 @@ public class Animal : MonoBehaviour
             i++;
         }
 
-        /*
-        if ((Mathf.Abs(FinalNodeList[i + 1].x) + cora > Mathf.Abs(transform.position.x) &&
-            Mathf.Abs(transform.position.x) > Mathf.Abs(FinalNodeList[i + 1].x) - cora &&
-            Mathf.Abs(FinalNodeList[i + 1].y) + cora > Mathf.Abs(transform.position.y) &&
-            Mathf.Abs(transform.position.y) > Mathf.Abs(FinalNodeList[i + 1].y) - cora))//됨
-        {
-            i++;
-            cora += 0.01f;
-        }
-        */
+
+        if (Input.GetKeyDown(KeyCode.R))
+            spriteRenderer.sprite = growUp;
 
         if (i == (FinalNodeList.Count - 1)) {
             i = 0;
             randomSetting();
             pathFinding();
             }
-        /*
-        if ((Mathf.Abs(targetPos.x)+0.01>Mathf.Abs(transform.position.x) && 
-            Mathf.Abs(transform.position.x) > Mathf.Abs(targetPos.x)-0.01 &&
-            Mathf.Abs(targetPos.y)+0.01>Mathf.Abs(transform.position.y)&& 
-            Mathf.Abs(transform.position.y)>Mathf.Abs(targetPos.y)-0.01)) //됨
-        {
-            randomSetting();
-            pathFinding();
-            i = 0;
-            //cora = 0.1f;
-        }
-        */
+
 
     }
+
+
         
 
     void randomSetting() 
     {
         targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
-        while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true))
+        while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true || Vector2Int.Distance(new Vector2Int((int)transform.position.x, (int)transform.position.y), targetPos)<startTargetDistance))
             targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
     }
+    void OnMouseDrag()
+    {
+        print("Drag!!");
+        //animator.SetBool("tapAnimal", true);
+        //Time.timeScale = 0;
 
+        Vector3 mousePosition = new Vector3(Input.mousePosition.x,
+        Input.mousePosition.y, distance);
+        Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        transform.position = objPosition;
+    }
     private void OnMouseDown()
     {
         //반응
         animator.SetBool("tapAnimal", true);
-        Time.timeScale = 0;
     }
 
     private void OnMouseUp()
     {
+        randomSetting();
+        pathFinding();
+        i = 0;
         //돌아옴
         Time.timeScale = 1;
         animator.SetBool("tapAnimal", false);
@@ -188,8 +195,6 @@ public class Node
                 }
                 FinalNodeList.Add(StartNode);
                 FinalNodeList.Reverse();
-
-                for (int ii = 0; ii < FinalNodeList.Count; ii++) print(ii + "번째는 " + FinalNodeList[ii].x + ", " + FinalNodeList[ii].y);
             }
 
 
@@ -240,14 +245,11 @@ public class Node
     }
 
     
-    void OnDrawGizmos()
-    {
-        if (FinalNodeList.Count != 0)
-        {
-            for (int i = 0; i < FinalNodeList.Count - 1; i++)
-                Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
-        }
-    }
+    //void OnDrawGizmos()
+    //{
+    //        for (int i = 0; i < FinalNodeList.Count - 1; i++)
+    //            Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
+    //}
     
 }
 

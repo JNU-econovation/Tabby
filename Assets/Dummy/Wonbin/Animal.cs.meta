@@ -3,7 +3,9 @@ guid: c6230966a3104524aa57721120c3eedd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CurrentSprite: {fileID: 21300000, guid: afd5fac31a9ba2c4dbf55f04f6c7a189, type: 3}
+  - growUp: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
