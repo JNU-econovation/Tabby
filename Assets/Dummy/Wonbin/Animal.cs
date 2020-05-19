@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -11,63 +10,73 @@ using UnityEngine.SocialPlatforms;
 public class Animal : MonoBehaviour
 {
     Rigidbody2D animalrigidbody;
-    public Vector2Int bottomLeft, topRight;
-    Vector2Int targetPos;
-    public List<Node> FinalNodeList;
-    public bool allowDiagonal, dontCrossCorner;
-    public float speed=2f;
-    private int i = 0;
-    public int startTargetDistance = 8;
-
-    float distance = 10;
-
     private Animator animator;
-    public Sprite CurrentSprite;
     public Sprite growUp;
     private SpriteRenderer spriteRenderer;
 
+    private float speed = 4f;
+    private int startTargetDistance=3;
+
+
+    private Vector2Int bottomLeft, topRight;
+    public List<Node> FinalNodeList;
+    Vector2Int targetPos;
+    public bool allowDiagonal, dontCrossCorner;
+    private int i = 0;
     private int sizeX, sizeY;
     Node[,] NodeArray;
     Node StartNode, TargetNode, CurNode;
     List<Node> OpenList, ClosedList;
 
+
+    float distance = 10;
+
+
     void Start()
     {
+        bottomLeft.x = -22;
+        bottomLeft.y = -11;
+        topRight.x = 22;
+        topRight.y = 10;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         animalrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer.sprite = CurrentSprite;
+        pathFindingStart();
+    }
 
+    public void pathFindingStart()
+    {
+        //FinalNodeList 0부터 시작
+        i = 0;
         nodeSetting();
-        transform.position = new Vector3Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y), 0);
-        while (NodeArray[(int)transform.position.x - bottomLeft.x, (int)transform.position.y - bottomLeft.y].isWall == true)
-            transform.position = new Vector3Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y), 0);
         randomSetting();
         pathFinding();
     }
 
     private void Update()
     {
-
-        transform.position = Vector2.MoveTowards(transform.position,new Vector2(FinalNodeList[i+1].x,FinalNodeList[i+1].y),speed*Time.deltaTime);
-        if ((FinalNodeList[i + 1].x - transform.position.x) == 0 && (FinalNodeList[i + 1].y - transform.position.y) < 0)
+        //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
+        animalrigidbody.position = Vector2.MoveTowards(animalrigidbody.position,new Vector2(FinalNodeList[i+1].x,FinalNodeList[i+1].y),speed*Time.deltaTime);
+        //이동방향에 따른 애니메이터
+        if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) == 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) < 0)
             animator.SetInteger("rotate", 0);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) < 0 && (FinalNodeList[i + 1].y - transform.position.y) > 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) < 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) > 0)
             animator.SetInteger("rotate", 1);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) < 0 && (FinalNodeList[i + 1].y - transform.position.y) == 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) < 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) == 0)
             animator.SetInteger("rotate", 1);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) < 0 && (FinalNodeList[i + 1].y - transform.position.y) < 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) < 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) < 0)
             animator.SetInteger("rotate", 1);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) == 0 && (FinalNodeList[i + 1].y - transform.position.y) > 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) == 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) > 0)
             animator.SetInteger("rotate", 2);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) > 0 && (FinalNodeList[i + 1].y - transform.position.y) > 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) > 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) > 0)
             animator.SetInteger("rotate", 3);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) > 0 && (FinalNodeList[i + 1].y - transform.position.y) == 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) > 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) == 0)
             animator.SetInteger("rotate", 3);
-        else if ((FinalNodeList[i + 1].x - transform.position.x) > 0 && (FinalNodeList[i + 1].y - transform.position.y) < 0)
+        else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) > 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) < 0)
             animator.SetInteger("rotate", 3);
 
-        if (transform.position.x ==FinalNodeList[i + 1].x && transform.position.y ==FinalNodeList[i + 1].y){
+        if (animalrigidbody.position.x ==FinalNodeList[i + 1].x && animalrigidbody.position.y ==FinalNodeList[i + 1].y){
+            print(i);
             i++;
         }
 
@@ -89,42 +98,35 @@ public class Animal : MonoBehaviour
 
     void randomSetting() 
     {
+        //현재위치에서 최소 startTargetDistance만큼 떨어져 있고 장애물이 없는 지점을 targetPos로 지정
         targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
-        while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true || Vector2Int.Distance(new Vector2Int((int)transform.position.x, (int)transform.position.y), targetPos)<startTargetDistance))
+        while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true || Vector2Int.Distance(new Vector2Int((int)animalrigidbody.position.x, (int)animalrigidbody.position.y), targetPos)<startTargetDistance))
             targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
     }
     void OnMouseDrag()
     {
-        print("Drag!!");
-        //animator.SetBool("tapAnimal", true);
-        //Time.timeScale = 0;
-
+        animator.SetBool("tapAnimal", true); //뜬 애니메이션
+        //드래그하면 들림. 커서를 따라 이동
+        animalrigidbody.position = new Vector2(animalrigidbody.position.x, animalrigidbody.position.y + 3);
         Vector3 mousePosition = new Vector3(Input.mousePosition.x,
         Input.mousePosition.y, distance);
         Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        transform.position = objPosition;
-    }
-    private void OnMouseDown()
-    {
-        //반응
+        animalrigidbody.position = objPosition;
         animator.SetBool("tapAnimal", true);
     }
 
+
     private void OnMouseUp()
     {
+        //다시 랜덤지정으로 길찾기 시작
         randomSetting();
         pathFinding();
         i = 0;
-        //돌아옴
-        Time.timeScale = 1;
+        //애니메이션 돌아옴
         animator.SetBool("tapAnimal", false);
     }
 
-    private void OnMouseExit()
-    {
-        Time.timeScale = 1;
-        animator.SetBool("tapAnimal", false);
-    }
+
 
 public class Node
 {
@@ -141,7 +143,7 @@ public class Node
 
     public void nodeSetting()
     {
-        // NodeArray의 크기 정해주고, isWall, x, y 대입
+        // NodeArray의 크기 정해주고, x, y 대입 Layer가 Wall로 지정된 장애물 Collider가 있는 Node는 iswall=true
         sizeX = topRight.x - bottomLeft.x + 1;
         sizeY = topRight.y - bottomLeft.y + 1;
         NodeArray = new Node[sizeX, sizeY];
@@ -160,14 +162,11 @@ public class Node
     }
 
     void pathFinding() {
-        StartNode = NodeArray[(int)(transform.position.x - bottomLeft.x), (int)(transform.position.y - bottomLeft.y)];
-        //while (Mathf.Abs(StartNode.x - transform.position.x) > 0.1 || Mathf.Abs(StartNode.y - transform.position.y) > 0.1)
-       // {
-        //    StartNode = NodeArray[(int)(transform.position.x - bottomLeft.x), (int)(transform.position.y - bottomLeft.y)];
-        //    nocount++;
-        //}
+        //시작노드(현재위치), 타깃노드(targitPos) 설정
+        StartNode = NodeArray[(int)(animalrigidbody.position.x - bottomLeft.x), (int)(animalrigidbody.position.y - bottomLeft.y)];
         TargetNode = NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y];
 
+        //길찾기 노드목록 생성
         OpenList = new List<Node>() { StartNode };
         ClosedList = new List<Node>();
         FinalNodeList = new List<Node>();
@@ -198,7 +197,7 @@ public class Node
             }
 
 
-            // ↗↖↙↘
+            // 대각선이동
             if (allowDiagonal)
             {
                 OpenListAdd(CurNode.x + 1, CurNode.y + 1);
@@ -207,7 +206,7 @@ public class Node
                 OpenListAdd(CurNode.x + 1, CurNode.y - 1);
             }
 
-            // ↑ → ↓ ←
+            // 수평수직이동
             OpenListAdd(CurNode.x, CurNode.y + 1);
             OpenListAdd(CurNode.x + 1, CurNode.y);
             OpenListAdd(CurNode.x, CurNode.y - 1);
@@ -245,11 +244,11 @@ public class Node
     }
 
     
-    //void OnDrawGizmos()
-    //{
-    //        for (int i = 0; i < FinalNodeList.Count - 1; i++)
-    //            Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
-    //}
+    void OnDrawGizmos()
+    {
+            for (int i = 0; i < FinalNodeList.Count - 1; i++)
+                Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
+    }
     
 }
 

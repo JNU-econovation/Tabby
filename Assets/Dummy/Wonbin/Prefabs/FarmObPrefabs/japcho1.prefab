@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2391375636036303738}
   - component: {fileID: 2391375636036303623}
   - component: {fileID: 2391375636036303736}
+  - component: {fileID: -2030592625908651922}
   m_Layer: 8
   m_Name: japcho1
   m_TagString: farmObject
@@ -98,7 +99,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.8
+  m_Radius: 2.5
 --- !u!50 &2391375636036303736
 Rigidbody2D:
   serializedVersion: 4
@@ -120,3 +121,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-2030592625908651922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391375636036303739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b97ccd178f880469099abdaa08d4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

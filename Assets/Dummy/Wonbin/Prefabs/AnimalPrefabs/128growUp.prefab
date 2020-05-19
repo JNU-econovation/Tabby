@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 4998070706919597437}
   - component: {fileID: 4998070706919597436}
   m_Layer: 0
-  m_Name: 128test (2)
-  m_TagString: Untagged
+  m_Name: 128growUp
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,14 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6230966a3104524aa57721120c3eedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomLeft: {x: -7, y: -9}
-  topRight: {x: 7, y: 5}
+  growUp: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
   allowDiagonal: 1
   dontCrossCorner: 1
-  speed: 2
-  startTargetDistance: 10
-  CurrentSprite: {fileID: 21300000, guid: ffd3c96afa2a82a4ab26eb693e4f41b6, type: 3}
-  growUp: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
 --- !u!95 &4998070706919597436
 Animator:
   serializedVersion: 3
@@ -150,7 +145,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4998070706919597410}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 51622ef6ec53ba344a90fbb434affbb7, type: 2}
   m_CullingMode: 0

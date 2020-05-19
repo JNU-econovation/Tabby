@@ -6,6 +6,7 @@ TagManager:
   tags:
   - farmObject
   - wallObject
+  - Animal
   layers:
   - Default
   - TransparentFX
