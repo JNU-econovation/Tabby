@@ -157,9 +157,13 @@ namespace GameData
     public class MonsterData
     {
         public string name;
+        public int locX;
         public MonsterData (string name)
         {
             this.name = name;
+            this.locX = 2;
         }
     }
 }
+
+
