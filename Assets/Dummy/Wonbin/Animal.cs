@@ -12,11 +12,20 @@ public class Animal : MonoBehaviour
     Rigidbody2D animalrigidbody;
     private Animator animator;
     public Sprite growUp;
+
+
     private SpriteRenderer spriteRenderer;
 
     private float speed = 4f;
-    private int startTargetDistance=3;
+    private int startTargetDistance=6;
 
+    private float heartRateMin = 5f; //최소 생성주기
+    private float heartRateMax = 7f; //최대 생성주기
+    private float heartRate;
+    public GameObject heartPrefabs;
+    private float timeAfterHeart;
+
+    GameObject heart;
 
     private Vector2Int bottomLeft, topRight;
     public List<Node> FinalNodeList;
@@ -42,6 +51,9 @@ public class Animal : MonoBehaviour
         animalrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         pathFindingStart();
+        heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
+
+        
     }
 
     public void pathFindingStart()
@@ -55,9 +67,48 @@ public class Animal : MonoBehaviour
 
     private void Update()
     {
+        if (timeAfterHeart <= heartRate)
+            timeAfterHeart += Time.deltaTime;
+        if (timeAfterHeart >= heartRate)
+            makeHeart();
+
         //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
         animalrigidbody.position = Vector2.MoveTowards(animalrigidbody.position,new Vector2(FinalNodeList[i+1].x,FinalNodeList[i+1].y),speed*Time.deltaTime);
-        //이동방향에 따른 애니메이터
+        animalanimation();
+
+        if (animalrigidbody.position.x ==FinalNodeList[i + 1].x && animalrigidbody.position.y ==FinalNodeList[i + 1].y){
+            i++;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.R))
+            spriteRenderer.sprite = growUp;
+
+        reFinding();
+
+
+    }
+
+    void reFinding()
+    {
+        if (i == (FinalNodeList.Count - 1))
+        {
+            i = 0;
+            randomSetting();
+            pathFinding();
+        }
+    }
+
+    void makeHeart()
+    {
+            if (transform.childCount == 0)
+                heart = (GameObject)Instantiate(heartPrefabs, gameObject.transform.position, gameObject.transform.rotation);
+            heart.transform.parent = gameObject.transform;
+            timeAfterHeart = 0f;
+    }
+
+    void animalanimation()//이동방향에 따른 스크립트 변경
+    {
         if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) == 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) < 0)
             animator.SetInteger("rotate", 0);
         else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) < 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) > 0)
@@ -74,23 +125,6 @@ public class Animal : MonoBehaviour
             animator.SetInteger("rotate", 3);
         else if ((FinalNodeList[i + 1].x - animalrigidbody.position.x) > 0 && (FinalNodeList[i + 1].y - animalrigidbody.position.y) < 0)
             animator.SetInteger("rotate", 3);
-
-        if (animalrigidbody.position.x ==FinalNodeList[i + 1].x && animalrigidbody.position.y ==FinalNodeList[i + 1].y){
-            print(i);
-            i++;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.R))
-            spriteRenderer.sprite = growUp;
-
-        if (i == (FinalNodeList.Count - 1)) {
-            i = 0;
-            randomSetting();
-            pathFinding();
-            }
-
-
     }
 
 
@@ -104,6 +138,12 @@ public class Animal : MonoBehaviour
             targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
     }
     void OnMouseDrag()
+    {
+        if (timeAfterHeart>=1)
+            animalDrag();
+    }
+
+    void animalDrag()
     {
         animator.SetBool("tapAnimal", true); //뜬 애니메이션
         //드래그하면 들림. 커서를 따라 이동
@@ -126,9 +166,18 @@ public class Animal : MonoBehaviour
         animator.SetBool("tapAnimal", false);
     }
 
+    private void OnMouseDown()
+    {
+        if (transform.childCount != 0)
+        {
+            MoneyManager.heart += 1;
+            PlayerPrefs.SetInt("Heart", MoneyManager.heart);
+            Destroy(heart);
+            heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
+        }
+    }
 
-
-public class Node
+    public class Node
 {
     public Node(bool _isWall, int _x, int _y) { isWall = _isWall; x = _x; y = _y; }
 

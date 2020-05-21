@@ -8,6 +8,8 @@ public class shopButtonManager: MonoBehaviour
     
     float distance = 10;
 
+    public int shopCost;
+
     //Drag PIDrag;
 
     private GameObject productImage;
@@ -27,6 +29,8 @@ public class shopButtonManager: MonoBehaviour
     public GameObject farmObShopButton;
     public GameObject text;
 
+    public GameObject tapZone;
+
     public GameObject OKButton;
     public GameObject cancelButton;
 
@@ -40,7 +44,9 @@ public class shopButtonManager: MonoBehaviour
 
     public void openShop()
     {
+        MoneyManager.money -= 1;
         shop.gameObject.SetActive(true);
+        tapZone.gameObject.SetActive(false);
         farmObshop.gameObject.SetActive(false);
         animalshop.gameObject.SetActive(true);
         shopButton.gameObject.SetActive(false);
@@ -72,6 +78,7 @@ public class shopButtonManager: MonoBehaviour
         shopCloseButton.gameObject.SetActive(false);
         animalShopButton.gameObject.SetActive(false);
         farmObShopButton.gameObject.SetActive(false);
+        tapZone.gameObject.SetActive(true);
     }
 
 
@@ -84,6 +91,7 @@ public class shopButtonManager: MonoBehaviour
         //productImage.GetComponent<Image>().sprite = Resources.Load(PSN, typeof(Sprite)) as Sprite;
         shopButtonManager productSBM = productImage.GetComponent<shopButtonManager>();
         productSBM.product = product;
+        productSBM.shopCost = shopCost;
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformMid();
         OKButton.gameObject.SetActive(true);
@@ -119,6 +127,7 @@ public class shopButtonManager: MonoBehaviour
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
         productImage.gameObject.tag = "Untagged";
+        MoneyManager.money -= productSBM.shopCost;
     }
 
 

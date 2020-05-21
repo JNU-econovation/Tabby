@@ -16,13 +16,13 @@ TagManager:
   - UI
   - 
   - 
+  - 
+  - 
   - Wall
-  - Animal
   - 
+  - animal
   - 
-  - 
-  - 
-  - 
+  - TapZone
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Wall
     uniqueID: 51016915
+    locked: 0
+  - name: TapZone
+    uniqueID: 3298466341
     locked: 0
   - name: Animal
     uniqueID: 1981180029

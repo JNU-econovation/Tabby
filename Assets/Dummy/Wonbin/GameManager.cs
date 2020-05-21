@@ -15,3 +15,5 @@ public class GameManager: MonoBehaviour
             BroadcastMessage("pathFindingStart");
     }
 }
+
+//TapZone 아니면 money+1 되도록 inputManager
