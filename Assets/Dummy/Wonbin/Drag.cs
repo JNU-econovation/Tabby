@@ -9,6 +9,8 @@ public class Drag : MonoBehaviour
     float distance = 10;
     Rigidbody2D PIrigidbody;
 
+    GameObject heartImage;
+
     void OnMouseDrag()
     {
         Vector3 mousePosition = new Vector3(Input.mousePosition.x,
@@ -25,6 +27,11 @@ public class Drag : MonoBehaviour
     public void PItransformBack()
     {
         transform.position = new Vector3(-30f, 0f, 0f);
+    }
+
+    public void heartDrag(Vector2 animal)
+    {
+        Instantiate(heartImage, animal, Quaternion.identity);
     }
 }
 
