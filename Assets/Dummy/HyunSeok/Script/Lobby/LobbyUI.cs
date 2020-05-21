@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class LobbyUI : MonoBehaviour
 {
     #region private field
-    private enum EPanelState { LOGO, SELECT, DATA }
-
+    private enum EPanelState { LOGO, SELECT, DATA };
+    public enum AnimalState { Idle, Walk, Attack };
+    public AnimalState animalState;
     [SerializeField]
     private EPanelState panelState;
     private Coroutine panelMoveCrtn;
@@ -75,7 +76,7 @@ public class LobbyUI : MonoBehaviour
     private IEnumerator OnPanel (EPanelState state)
     {
         Vector2 startPos = panelTransform.anchoredPosition;
-        Vector2 endPos = new Vector2 ((int) state * -720, 0);
+        Vector2 endPos = new Vector2 ((int) state * -1280, 0);
         float process = 0f;
         while (process < 1f)
         {

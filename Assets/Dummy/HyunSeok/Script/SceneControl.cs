@@ -26,7 +26,7 @@ public class SceneControl : MonoBehaviour
     void Update ()
     {
         // 임시 로딩
-        if (Input.GetKeyDown (KeyCode.A))
+        if (Input.GetKeyDown (KeyCode.F1))
         {
             loadingCrtn = StartCoroutine (loadScene ("HS_Main"));
         }
