@@ -12,10 +12,20 @@ namespace Battle
         public delegate void Event ();
         public event Event EvTargetAnimalNull;
         public event Event EvTargetAnimalChange;
+        #region Reference
         // Battle 씬 카메라
         [SerializeField]
         private CameraControl cameraControl;
         public CameraControl CameraControl { get => cameraControl; set => cameraControl = value; }
+        // Command
+        [SerializeField]
+        private Command command;
+        public Command Command { get => command; set => command = value; }
+        // Input Manager
+        [SerializeField]
+        private InputManager inputManager;
+        public InputManager InputManager { get => inputManager; set => inputManager = value; }
+        #endregion
         // Battle State
         private EManageState manageState;
         public EManageState ManageState
@@ -66,6 +76,11 @@ namespace Battle
             }*/
         }
 
+        void Start()
+        {
+            TargetAnimal = Animals[0];    
+        }
+
         void Update ()
         {
             if (Input.GetKeyDown (KeyCode.F1))
@@ -77,8 +92,5 @@ namespace Battle
                 TargetAnimal = Animals[0];
             }
         }
-
-        void Init () { }
-
     }
 }

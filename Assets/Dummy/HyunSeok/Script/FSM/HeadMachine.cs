@@ -7,9 +7,9 @@ namespace FSM
     public class HeadMachine<T>
     {
         // 이전 상태
-        private IState prevState;
+        public IState prevState;
         // 현재 상태
-        private IState currentState;
+        public IState currentState;
         // 생성자 초기화
         public HeadMachine (IState initState)
         {
@@ -50,7 +50,6 @@ namespace FSM
          */
         public void Stop ()
         {
-
             currentState.OnExit ();
             currentState = null;
             prevState = null;
@@ -63,6 +62,7 @@ namespace FSM
         {
             if (currentState == nextState)
                 return;
+            prevState = currentState;
             if (currentState != null)
             {
                 currentState.OnExit ();

@@ -7,16 +7,17 @@ namespace Battle
 {
     public class RedTurtle : Animal
     {
+        #region Command state
+        MoveState moveState;
+        #endregion
         void Awake ()
         {
             InitFSM ();
+            // Init Command state
+            moveState = (MoveState)states[(int)EAnimalState.MOVE];
         }
         void Update ()
         {
-            if (Input.GetKeyDown (KeyCode.W))
-            {
-                stateControl.SetState (states[(int) EAnimalState.MOVE]);
-            }
             stateControl.Run ();
         }
         public override void InitStat (AnimalStatData data)
@@ -36,6 +37,12 @@ namespace Battle
             stateControl = new HeadMachine<Animal> (states[(int) AnimalState]);
         }
 
+        public override void CmdMove(Vector3 dir, float dist)
+        {
+            moveState.InitPos(dir, dist);
+            stateControl.SetState(states[(int) EAnimalState.MOVE]);
+        }
+
         class IdleState : IState
         {
             private RedTurtle owner;
@@ -47,6 +54,7 @@ namespace Battle
 
             public void OnExit ()
             {
+                owner.stateControl.prevState = owner.stateControl.currentState;
             }
 
             public void Run ()
@@ -55,28 +63,45 @@ namespace Battle
         }
         class MoveState : IState
         {
-            float time;
+            public Vector2 direction;
+            public float maxDist;
+            float currentDist;
+            Vector2 beginPos;
+
             private RedTurtle owner;
             public MoveState (RedTurtle owner) => this.owner = owner;
 
             public void OnEnter ()
             {
-                time = 0f;
                 owner.AnimalState = EAnimalState.MOVE;
             }
 
             public void OnExit ()
             {
+                owner.stateControl.prevState = owner.stateControl.currentState;
             }
 
             public void Run ()
             {
-                time += Time.deltaTime;
-                if (time > 2.0f)
+                currentDist += 10f * Time.deltaTime;
+                owner.transform.position = new Vector2 (beginPos.x + (currentDist * direction.x),
+                    beginPos.y + (currentDist * direction.y));
+                if (currentDist > maxDist)
                 {
-                    owner.stateControl.Revert ();
+                    if (owner.isLockOn)
+                        owner.stateControl.SetState(owner.states[(int)EAnimalState.DETECT_LOCKON]);
+                    else
+                        owner.stateControl.SetState(owner.states[(int)EAnimalState.DETECT_AUTO]);
                 }
 
+            }
+
+            public void InitPos(Vector3 dir, float dist)
+            {
+                direction = dir;
+                maxDist = dist;
+                currentDist = 0f;
+                beginPos = owner.transform.position;
             }
         }
         class DetectAutoState : IState
@@ -92,6 +117,7 @@ namespace Battle
             public void OnEnter ()
             {
                 owner.AnimalState = EAnimalState.DETECT_AUTO;
+                owner.isLockOn = false;
                 owner.target = BattleManager._instance.Enemies[Detect ()];
                 targetDistance = 999999f;
                 detectTime = 0f;
@@ -106,6 +132,7 @@ namespace Battle
             public void OnExit ()
             {
                 owner.target = BattleManager._instance.Enemies[Detect ()];
+                owner.stateControl.prevState = owner.stateControl.currentState;
             }
 
             public void Run ()
@@ -159,7 +186,7 @@ namespace Battle
 
             public void OnEnter ()
             {
-                owner.AnimalState = EAnimalState.DETECT_AUTO;
+                owner.AnimalState = EAnimalState.ATK;
                 time = 0f;
             }
 

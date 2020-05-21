@@ -18,21 +18,25 @@ namespace Battle
         // 카메라
         private Camera mainCam;
         public Camera MainCam { get => mainCam; set => mainCam = value; }
+
+        public float cameraWidth;
+        public float cameraHeight;
         // 카메라 추적 대상
         [SerializeField]
         private GameObject target;
-        public GameObject Target {
-            get => target; 
+        public GameObject Target
+        {
+            get => target;
             set
             {
                 if (value == null)
                 {
-                    stateControl.SetState(states[(int)ECameraState.IDLE]);
+                    stateControl.SetState (states[(int) ECameraState.IDLE]);
                 }
                 else
                 {
                     target = value;
-                    stateControl.SetState(states[(int)ECameraState.FOLLOW]);
+                    stateControl.SetState (states[(int) ECameraState.FOLLOW]);
                 }
 
             }
@@ -40,13 +44,17 @@ namespace Battle
 
         void Awake ()
         {
+            BattleManager._instance.CameraControl = this;
             mainCam = GetComponent<Camera> ();
+            cameraHeight = 2f * mainCam.orthographicSize;
+            cameraWidth = cameraHeight * mainCam.aspect;
             InitFSM ();
+            InitEvent ();
         }
 
-        void Start()
+        void Start ()
         {
-            InitEvent ();
+            //InitEvent ();
         }
 
         void LateUpdate ()
@@ -80,7 +88,10 @@ namespace Battle
                 owner.CameraState = ECameraState.IDLE;
             }
 
-            public void OnExit () { }
+            public void OnExit ()
+            {
+                owner.stateControl.prevState = owner.stateControl.currentState;
+            }
 
             public void Run () { }
         }
@@ -88,21 +99,33 @@ namespace Battle
         class FollowState : IState
         {
             private CameraControl owner;
+            private float beginY;
             public FollowState (CameraControl owner) => this.owner = owner;
             public void OnEnter ()
             {
+                beginY = owner.transform.position.y;
                 owner.CameraState = ECameraState.FOLLOW;
             }
 
             public void OnExit ()
             {
-
+                owner.stateControl.prevState = owner.stateControl.currentState;
             }
 
             public void Run ()
             {
-                owner.transform.position = Vector2.Lerp (owner.transform.position, owner.Target.transform.position, 2f * Time.deltaTime);
+                owner.transform.position = Vector2.Lerp (new Vector2 (owner.transform.position.x, beginY),
+                    new Vector2 (owner.Target.transform.position.x, beginY), 2f * Time.deltaTime);
                 owner.transform.position = new Vector3 (owner.transform.position.x, owner.transform.position.y, -10f);
+                if (owner.transform.position.x < -2f)
+                {
+                    owner.transform.position = new Vector3 (-2f, beginY, -10f);
+                }
+                else if (owner.transform.position.x > 2f)
+                {
+                    owner.transform.position = new Vector3 (2f, beginY, -10f);
+                }
+
             }
         }
     }

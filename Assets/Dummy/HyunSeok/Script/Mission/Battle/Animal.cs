@@ -19,6 +19,8 @@ namespace Battle
         public EAnimalState AnimalState { get => animalState; set => animalState = value; }
         // 타겟팅 대상
         protected Enemy target;
+        // 락 온 여부
+        public bool isLockOn;
         /**
          *   Animal 스탯 초기화
          */
@@ -27,6 +29,8 @@ namespace Battle
          *   Animal FSM 초기화
          */
         protected abstract void InitFSM ();
+
+        public abstract void CmdMove(Vector3 dir, float dist);
     }
 
     public class AnimalBattleData
