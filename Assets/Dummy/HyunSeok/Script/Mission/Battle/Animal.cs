@@ -9,6 +9,14 @@ namespace Battle
     {
         // Animal 능력치
         public AnimalBattleData stat;
+        // 타겟팅 대상
+        protected Enemy target;
+        // 락 온 여부
+        public bool isLockOn;
+        // 시각효과
+        protected BattleVisual battleVisual;
+        public BattleVisual BattleVisual { get => battleVisual; set => battleVisual = value; }
+        #region FSM
         // FSM을 구동할 HeadMachine
         protected HeadMachine<Animal> stateControl;
         // 상태 보유 리스트
@@ -17,10 +25,7 @@ namespace Battle
         [SerializeField]
         protected EAnimalState animalState;
         public EAnimalState AnimalState { get => animalState; set => animalState = value; }
-        // 타겟팅 대상
-        protected Enemy target;
-        // 락 온 여부
-        public bool isLockOn;
+        #endregion
         /**
          *   Animal 스탯 초기화
          */
@@ -30,7 +35,7 @@ namespace Battle
          */
         protected abstract void InitFSM ();
 
-        public abstract void CmdMove(Vector3 dir, float dist);
+        public abstract void CmdMove (Vector3 dir, float dist);
     }
 
     public class AnimalBattleData

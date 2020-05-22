@@ -29,6 +29,7 @@ namespace Battle
         void Init ()
         {
             BattleManager._instance.InputManager.EvAnimalDragEnd += new InputManager.EventAnimal(CmdMove);
+            BattleManager._instance.InputManager.EvAnimalDragEnd += new InputManager.EventAnimal(CmdMove);
         }
 
     }

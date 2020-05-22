@@ -75,8 +75,10 @@ namespace Battle
 
         void InitEvent ()
         {
-            BattleManager._instance.EvTargetAnimalChange += new BattleManager.Event (() => Target = BattleManager._instance.TargetAnimal.gameObject);
-            BattleManager._instance.EvTargetAnimalNull += new BattleManager.Event (() => Target = null);
+            BattleManager._instance.AnimalControl.EvTargetAnimalChange += 
+                new AnimalControl.Event (() => Target = BattleManager._instance.AnimalControl.TargetAnimal.gameObject);
+            BattleManager._instance.AnimalControl.EvTargetAnimalNull += 
+                new AnimalControl.Event (() => Target = null);
         }
 
         class IdleState : IState

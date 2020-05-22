@@ -12,9 +12,13 @@ namespace Battle
         #endregion
         void Awake ()
         {
+            // Init Reference
+            InitRef ();
+            // Init FSM setting
             InitFSM ();
             // Init Command state
-            moveState = (MoveState)states[(int)EAnimalState.MOVE];
+            moveState = (MoveState) states[(int) EAnimalState.MOVE];
+
         }
         void Update ()
         {
@@ -23,6 +27,10 @@ namespace Battle
         public override void InitStat (AnimalStatData data)
         {
             stat = new AnimalBattleData (data);
+        }
+        private void InitRef ()
+        {
+            battleVisual = GetComponentInChildren<BattleVisual> ();
         }
         protected override void InitFSM ()
         {
@@ -37,10 +45,10 @@ namespace Battle
             stateControl = new HeadMachine<Animal> (states[(int) AnimalState]);
         }
 
-        public override void CmdMove(Vector3 dir, float dist)
+        public override void CmdMove (Vector3 dir, float dist)
         {
-            moveState.InitPos(dir, dist);
-            stateControl.SetState(states[(int) EAnimalState.MOVE]);
+            moveState.InitPos (dir, dist);
+            stateControl.SetState (states[(int) EAnimalState.MOVE]);
         }
 
         class IdleState : IState
@@ -58,8 +66,7 @@ namespace Battle
             }
 
             public void Run ()
-            {
-            }
+            { }
         }
         class MoveState : IState
         {
@@ -78,7 +85,7 @@ namespace Battle
 
             public void OnExit ()
             {
-                owner.stateControl.prevState = owner.stateControl.currentState;
+
             }
 
             public void Run ()
@@ -89,14 +96,14 @@ namespace Battle
                 if (currentDist > maxDist)
                 {
                     if (owner.isLockOn)
-                        owner.stateControl.SetState(owner.states[(int)EAnimalState.DETECT_LOCKON]);
+                        owner.stateControl.SetState (owner.states[(int) EAnimalState.DETECT_LOCKON]);
                     else
-                        owner.stateControl.SetState(owner.states[(int)EAnimalState.DETECT_AUTO]);
+                        owner.stateControl.SetState (owner.states[(int) EAnimalState.DETECT_AUTO]);
                 }
 
             }
 
-            public void InitPos(Vector3 dir, float dist)
+            public void InitPos (Vector3 dir, float dist)
             {
                 direction = dir;
                 maxDist = dist;
@@ -131,8 +138,8 @@ namespace Battle
 
             public void OnExit ()
             {
-                owner.target = BattleManager._instance.Enemies[Detect ()];
-                owner.stateControl.prevState = owner.stateControl.currentState;
+                /*owner.target = BattleManager._instance.Enemies[Detect ()];
+                owner.stateControl.prevState = owner.stateControl.currentState;*/
             }
 
             public void Run ()
@@ -191,8 +198,7 @@ namespace Battle
             }
 
             public void OnExit ()
-            {
-            }
+            { }
 
             public void Run ()
             {

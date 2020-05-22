@@ -8,7 +8,9 @@ namespace Battle
     public class InputManager : MonoBehaviour
     {
         public delegate void EventAnimal (Animal animal);
+        public event EventAnimal EvAnimalDragBegin;
         public event EventAnimal EvAnimalDragEnd;
+        public event EventAnimal EvAnimalDragging;
         public Vector3 beginPoint;
         public Vector3 endPoint;
         // FSM을 구동할 HeadMachine
@@ -53,13 +55,12 @@ namespace Battle
                 {
                     if (hit.transform.gameObject.CompareTag ("Animal"))
                     {
-                        BattleManager._instance.TargetAnimal = hit.transform.GetComponent<Animal> ();
+                        BattleManager._instance.AnimalControl.TargetAnimal = hit.transform.GetComponent<Animal> ();
                     }
                 }
                 else
                     stateControl.SetState (states[(int) EInputState.DRAG]);
             }
-
             if (Input.GetMouseButtonUp (0))
             {
                 stateControl.SetState (states[(int) EInputState.IDLE]);
@@ -87,17 +88,21 @@ namespace Battle
             {
                 owner.InputState = EInputState.DRAG;
                 owner.beginPoint = BattleManager._instance.CameraControl.MainCam.ScreenToWorldPoint (Input.mousePosition);
+                owner.EvAnimalDragBegin (BattleManager._instance.AnimalControl.TargetAnimal);
             }
 
             public void OnExit ()
             {
                 owner.endPoint = BattleManager._instance.CameraControl.MainCam.ScreenToWorldPoint (Input.mousePosition);
-                owner.EvAnimalDragEnd (BattleManager._instance.TargetAnimal);
+                owner.EvAnimalDragEnd (BattleManager._instance.AnimalControl.TargetAnimal);
             }
 
-            public void Run () { }
+            public void Run ()
+            {
+                owner.endPoint = BattleManager._instance.CameraControl.MainCam.ScreenToWorldPoint (Input.mousePosition);
+                owner.EvAnimalDragging (BattleManager._instance.AnimalControl.TargetAnimal);
+            }
         }
-
     }
 
 }
