@@ -7,12 +7,24 @@ namespace Battle
 {
     public class InputManager : MonoBehaviour
     {
+        #region Event
+        public delegate void Event ();
+        public delegate void EventEnemy (Enemy enemy);
         public delegate void EventAnimal (Animal animal);
-        public event EventAnimal EvAnimalDragBegin;
-        public event EventAnimal EvAnimalDragEnd;
-        public event EventAnimal EvAnimalDragging;
-        public Vector3 beginPoint;
-        public Vector3 endPoint;
+        // Drag event
+        public event Event EvDragBegin;
+        public event Event EvDragEnd;
+        public event Event EvDragging;
+        // Click event
+        public event EventAnimal EvClickAnimal;
+        public event EventEnemy EvClickEnemy;
+        
+        #endregion
+        private Vector3 beginPoint;
+        public Vector3 BeginPoint { get => beginPoint; set => beginPoint = value; }
+        private Vector3 endPoint;
+        public Vector3 EndPoint { get => endPoint; set => beginPoint = endPoint; }
+        #region FSM
         // FSM을 구동할 HeadMachine
         protected HeadMachine<InputManager> stateControl;
         // 상태 보유 리스트
@@ -21,9 +33,7 @@ namespace Battle
         [SerializeField]
         private EInputState inputState;
         public EInputState InputState { get => inputState; set => inputState = value; }
-
-        private string targetName = null;
-
+        #endregion
         void Awake ()
         {
             InitFSM ();
@@ -55,7 +65,11 @@ namespace Battle
                 {
                     if (hit.transform.gameObject.CompareTag ("Animal"))
                     {
-                        BattleManager._instance.AnimalControl.TargetAnimal = hit.transform.GetComponent<Animal> ();
+                        EvClickAnimal (hit.transform.gameObject.GetComponent<Animal>());
+                    }
+                    else if (hit.transform.gameObject.CompareTag ("Enemy"))
+                    {
+                        EvClickEnemy (hit.transform.gameObject.GetComponent<Enemy>());
                     }
                 }
                 else
@@ -88,19 +102,19 @@ namespace Battle
             {
                 owner.InputState = EInputState.DRAG;
                 owner.beginPoint = BattleManager._instance.CameraControl.MainCam.ScreenToWorldPoint (Input.mousePosition);
-                owner.EvAnimalDragBegin (BattleManager._instance.AnimalControl.TargetAnimal);
+                owner.EvDragBegin ();
             }
 
             public void OnExit ()
             {
                 owner.endPoint = BattleManager._instance.CameraControl.MainCam.ScreenToWorldPoint (Input.mousePosition);
-                owner.EvAnimalDragEnd (BattleManager._instance.AnimalControl.TargetAnimal);
+                owner.EvDragEnd ();
             }
 
             public void Run ()
             {
                 owner.endPoint = BattleManager._instance.CameraControl.MainCam.ScreenToWorldPoint (Input.mousePosition);
-                owner.EvAnimalDragging (BattleManager._instance.AnimalControl.TargetAnimal);
+                owner.EvDragging ();
             }
         }
     }

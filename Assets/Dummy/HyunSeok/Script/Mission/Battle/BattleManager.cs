@@ -11,7 +11,6 @@ namespace Battle
 
         #region Reference
         // Battle 씬 카메라
-        [SerializeField]
         private CameraControl cameraControl;
         public CameraControl CameraControl { get => cameraControl; set => cameraControl = value; }
         // Command
@@ -23,6 +22,9 @@ namespace Battle
         // Animal Contorl
         private AnimalControl animalControl;
         public AnimalControl AnimalControl { get => animalControl; set => animalControl = value; }
+        // Enemy Contorl
+        private EnemyControl enemyControl;
+        public EnemyControl EnemyControl { get => enemyControl; set => enemyControl = value; }
         // Bviual Control
         private BVisualControl bVisualControl;
         public BVisualControl BVisualControl { get => bVisualControl; set => bVisualControl = value; }
@@ -36,20 +38,13 @@ namespace Battle
             set => manageState = value;
         }
 
-        // 적들
-        [SerializeField]
-        private List<Enemy> enemies;
-        public List<Enemy> Enemies { get => enemies; set => enemies = value; }
-        private List<AnimalStatData> animalStats;
-
         void Awake ()
         {
             if (_instance == null)
                 _instance = this;
         }
 
-        void Start ()
-        { }
+        void Start () { }
 
         void Update ()
         {

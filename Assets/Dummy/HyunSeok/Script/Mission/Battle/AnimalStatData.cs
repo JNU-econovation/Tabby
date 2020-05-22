@@ -13,10 +13,14 @@ namespace Battle
 
         [SerializeField]
         private float atk;
-        public float Atk { get => atk; set => hp = atk; }
+        public float Atk { get => atk; set => atk = value; }
 
         [SerializeField]
         private float atkSpd;
-        public float AtkSpd { get => atkSpd; set => hp = atkSpd; }
+        public float AtkSpd { get => atkSpd; set => atkSpd = value; }
+
+        [SerializeField]
+        private float atkRange;
+        public float AtkRange { get => atkRange; set => atkRange = value; }
     }
 }

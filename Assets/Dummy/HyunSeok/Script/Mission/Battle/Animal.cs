@@ -36,6 +36,7 @@ namespace Battle
         protected abstract void InitFSM ();
 
         public abstract void CmdMove (Vector3 dir, float dist);
+        public abstract void CmdLockOn (Enemy enemy);
     }
 
     public class AnimalBattleData
@@ -51,11 +52,15 @@ namespace Battle
 
         [SerializeField]
         private float atk;
-        public float Atk { get => atk; set => hp = atk; }
+        public float Atk { get => atk; set => atk = value; }
 
         [SerializeField]
         private float atkSpd;
-        public float AtkSpd { get => atkSpd; set => hp = atkSpd; }
+        public float AtkSpd { get => atkSpd; set => atkSpd = value; }
+
+        [SerializeField]
+        private float atkRange;
+        public float AtkRange { get => atkRange; set => atkRange = value; }
         #endregion
         public AnimalBattleData (AnimalStatData animalStatData)
         {
@@ -63,6 +68,7 @@ namespace Battle
             HP = animalStatData.HP;
             Atk = animalStatData.Atk;
             AtkSpd = animalStatData.AtkSpd;
+            AtkRange = animalStatData.AtkRange;
         }
     }
 }

@@ -6,16 +6,14 @@ namespace Battle
 {
     public class EnemyControl : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start ()
+        // 적들
+        [SerializeField]
+        private List<Enemy> enemies;
+        public List<Enemy> Enemies { get => enemies; set => enemies = value; }
+
+        private void Awake ()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update ()
-        {
-
+            BattleManager._instance.EnemyControl = this;
         }
     }
 }

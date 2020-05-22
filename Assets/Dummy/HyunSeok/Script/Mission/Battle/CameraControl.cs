@@ -75,8 +75,8 @@ namespace Battle
 
         void InitEvent ()
         {
-            BattleManager._instance.AnimalControl.EvTargetAnimalChange += 
-                new AnimalControl.Event (() => Target = BattleManager._instance.AnimalControl.TargetAnimal.gameObject);
+            BattleManager._instance.AnimalControl.EvAfterTargetAnimalChange += 
+                new AnimalControl.EventAnimal ((x) => Target = x.gameObject);
             BattleManager._instance.AnimalControl.EvTargetAnimalNull += 
                 new AnimalControl.Event (() => Target = null);
         }

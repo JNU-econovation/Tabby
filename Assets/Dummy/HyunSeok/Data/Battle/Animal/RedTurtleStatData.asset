@@ -15,3 +15,4 @@ MonoBehaviour:
   hp: 120
   atk: 5
   atkSpd: 1
+  atkRange: 3.5

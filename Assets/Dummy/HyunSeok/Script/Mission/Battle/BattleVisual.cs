@@ -10,6 +10,8 @@ namespace Battle
         private Transform arrowBodyTransform;
         [SerializeField]
         private Transform arrowEdgeTransform;
+        [SerializeField]
+        private GameObject selectMark;
 
         void Awake () { }
 
@@ -35,6 +37,14 @@ namespace Battle
         public void OffMoveArrow ()
         {
             arrowBodyTransform.parent.gameObject.SetActive (false);
+        }
+        public void OnSelectMark()
+        {
+            selectMark.SetActive(true);
+        }
+        public void OffSelectMark()
+        {
+            selectMark.SetActive(false);
         }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - farmObject
   - wallObject
   - Animal
+  - Enemy
   layers:
   - Default
   - TransparentFX
