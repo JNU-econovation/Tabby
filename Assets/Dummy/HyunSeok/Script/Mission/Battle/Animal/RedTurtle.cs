@@ -123,7 +123,7 @@ namespace Battle
                     beginPos.y + (currentDist * direction.y));
                 if (currentDist > maxDist)
                 {
-                    if (owner.isLockOn)
+                    if (BattleManager._instance.AnimalControl.LockOnEnemy != null)
                         owner.stateControl.SetState (owner.states[(int) EAnimalState.DETECT_LOCKON]);
                     else
                         owner.stateControl.SetState (owner.states[(int) EAnimalState.DETECT_AUTO]);

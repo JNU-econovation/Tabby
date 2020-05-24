@@ -11,8 +11,6 @@ namespace Battle
         public AnimalBattleData stat;
         // 타겟팅 대상
         protected Enemy target;
-        // 락 온 여부
-        public bool isLockOn;
         // 시각효과
         protected BattleVisual battleVisual;
         public BattleVisual BattleVisual { get => battleVisual; set => battleVisual = value; }
