@@ -8,9 +8,11 @@ namespace Battle
     public class RedTurtle : Animal
     {
         #region Command state
-        MoveState moveState;
-        DetectLockOnState detectLockOnState;
+        private MoveState moveState;
+        private DetectLockOnState detectLockOnState;
         #endregion
+        [SerializeField]
+        private AtkColPoolControl atkColPoolControl;
         void Awake ()
         {
             // Init Reference
@@ -66,6 +68,24 @@ namespace Battle
         public override void CmdLockOn (Enemy enemy)
         {
             stateControl.SetState (states[(int) EAnimalState.IDLE]);
+        }
+
+        enum UnitState { Idle, Walk, Attack }
+
+        void SetState (UnitState state)
+        {
+            switch (state)
+            {
+                case UnitState.Idle:
+                    // 대기 상태 시 행동
+                    break;
+                case UnitState.Walk:
+                    // 걷기 상태 시 행동
+                    break;
+                case UnitState.Attack:
+                    // 공격 상태 시 행동
+                    break;
+            }
         }
 
         class IdleState : IState

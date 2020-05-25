@@ -18,9 +18,10 @@ namespace Battle
     public enum EAtkColPoolSize { SMALL = 1, BIG = 5 }
     /**
     *   오브젝트 충돌 시 유형
+    *   TARGET : 타겟한테 반드시 적중한다
     *   SOFT : 즉시 사라진다   
     *   SOLID : 끝까지 갈 길 간다
     */
-    public enum EAtkColDestroyType { SOFT, SOLID }
+    public enum EAtkColDestroyType { TARGET, SOFT, SOLID }
     #endregion
 }

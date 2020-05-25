@@ -8,24 +8,32 @@ namespace Battle
     {
         private int poolSize;
         public int PoolSize { get; set; }
-        private List<AtkColPool> atkPools;
-
+        // pool 프리팹들 손으로 ㅋㅋㅋ 채워줘야 함
         [SerializeField]
-        private AtkColPool pool;
-
-        public void InitPool (List<AttackCollision> atkCols)
+        private List<AtkColPool> atkColPools;
+        private void Awake ()
         {
-            for (int i = 0; i < atkCols.Count; i++)
+            InitPool ();
+        }
+        public void InitPool ()
+        {
+            /*foreach (AtkColPool pool in atkColPools)
             {
-                AtkColPool newPool = Instantiate (pool) as AtkColPool;
-                newPool.CreatePool (atkCols[i]);
-                atkPools.Add (newPool);
-            }
+                AtkColPool newPool = Instantiate(pool) as AtkColPool;
+                newPool.transform.parent = this.transform;
+            }*/
         }
 
-        /*public void Shot(int idx)
+        void Update()
         {
-            
-        }*/
+            if (Input.GetKeyDown (KeyCode.F1))
+            {
+                atkColPools[0].GetAtkCol ();
+            }
+            if (Input.GetKeyDown (KeyCode.F2))
+            {
+
+            }
+        }
     }
 }
