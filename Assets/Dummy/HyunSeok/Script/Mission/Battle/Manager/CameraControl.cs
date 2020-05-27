@@ -92,7 +92,7 @@ namespace Battle
 
             public void OnExit ()
             {
-                owner.stateControl.prevState = owner.stateControl.currentState;
+
             }
 
             public void Run () { }

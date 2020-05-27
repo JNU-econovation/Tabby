@@ -22,6 +22,8 @@ namespace FSM
          */
         public void Begin (IState initState)
         {
+            currentState = initState;
+            prevState = initState;
             if (currentState != null)
             {
                 currentState.OnEnter ();

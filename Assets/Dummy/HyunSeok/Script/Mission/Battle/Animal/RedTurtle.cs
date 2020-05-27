@@ -11,8 +11,7 @@ namespace Battle
         private MoveState moveState;
         private DetectLockOnState detectLockOnState;
         #endregion
-        [SerializeField]
-        private AtkColPoolControl atkColPoolControl;
+
         void Awake ()
         {
             // Init Reference
@@ -20,8 +19,7 @@ namespace Battle
             // Init FSM setting
             InitFSM ();
             // Init Command state
-            moveState = states[(int) EAnimalState.MOVE] as MoveState;
-            detectLockOnState = states[(int) EAnimalState.DETECT_LOCKON] as DetectLockOnState;
+
         }
         void Start ()
         {
@@ -39,6 +37,7 @@ namespace Battle
         private void InitRef ()
         {
             battleVisual = GetComponentInChildren<BattleVisual> ();
+            atkColPoolControl = GetComponentInChildren<AtkColPoolControl> ();
         }
         private void InitEvent ()
         {
@@ -57,10 +56,14 @@ namespace Battle
             states[(int) EAnimalState.ATK] = new AtkState (this);
             // HeadMachine 생성
             stateControl = new HeadMachine<Animal> (states[(int) AnimalState]);
+            // 상태 초기화
+            moveState = states[(int) EAnimalState.MOVE] as MoveState;
+            detectLockOnState = states[(int) EAnimalState.DETECT_LOCKON] as DetectLockOnState;
         }
 
         public override void CmdMove (Vector3 dir, float dist)
         {
+            // moveState 에 전달
             moveState.InitPos (dir, dist);
             stateControl.SetState (states[(int) EAnimalState.MOVE]);
         }
@@ -297,6 +300,7 @@ namespace Battle
 
             public void OnEnter ()
             {
+                owner.atkColPoolControl.Shot (0, owner.target);
                 owner.AnimalState = EAnimalState.ATK;
                 time = 0f;
             }

@@ -24,11 +24,16 @@ namespace Battle
             }*/
         }
 
+        public void Shot(int index, Enemy target)
+        {
+            atkColPools[index].GetAtkCol ().Shot(target);
+        }
+
         void Update()
         {
             if (Input.GetKeyDown (KeyCode.F1))
             {
-                atkColPools[0].GetAtkCol ();
+                atkColPools[0].GetAtkCol ().Shot(BattleManager._instance.EnemyControl.Enemies[0]);
             }
             if (Input.GetKeyDown (KeyCode.F2))
             {

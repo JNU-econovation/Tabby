@@ -13,6 +13,8 @@ namespace Battle
         protected Enemy target;
         // 시각효과
         protected BattleVisual battleVisual;
+        // atkColPoolControl
+        protected AtkColPoolControl atkColPoolControl;
         public BattleVisual BattleVisual { get => battleVisual; set => battleVisual = value; }
         #region FSM
         // FSM을 구동할 HeadMachine

@@ -11,6 +11,7 @@ namespace Battle
     public enum EAnimalState { IDLE, MOVE, DETECT_AUTO, DETECT_LOCKON, ATK, CC, DIE, END }
     public enum ECameraState { IDLE, FOLLOW, END }
     public enum EInputState { IDLE, DRAG, END }
+    public enum EAtkColState { IDLE, ACT, DIE, END}
     #endregion
     // 투사체 타입 모음
     #region AtkCol
@@ -23,5 +24,6 @@ namespace Battle
     *   SOLID : 끝까지 갈 길 간다
     */
     public enum EAtkColDestroyType { TARGET, SOFT, SOLID }
+    public enum EAtkColSprType { FIX, DIR }
     #endregion
 }
