@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8f7e3336cf13bd5459aa01afebd03c23
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - babyAnimalSprite: {fileID: 21300000, guid: 7c952b5187087144394a774785e9ff0a, type: 3}
+  - growUpSprite: {instanceID: 0}
+  - heartPrefabs: {instanceID: 0}
+  - babyAnimalSprite: {instanceID: 0}
+  - growUpSprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

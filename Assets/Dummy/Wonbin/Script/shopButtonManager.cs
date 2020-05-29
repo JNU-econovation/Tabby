@@ -12,6 +12,8 @@ public class shopButtonManager: MonoBehaviour
 
     //Drag PIDrag;
 
+    public GameObject Animals;
+
     private GameObject productImage;
     public GameObject product;
     private GameObject producted;
