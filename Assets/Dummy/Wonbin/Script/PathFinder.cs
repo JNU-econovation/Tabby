@@ -176,4 +176,24 @@ public class PathFinder : MonoBehaviour
             Gizmos.DrawLine(new Vector2(FinalNodeList[i].x, FinalNodeList[i].y), new Vector2(FinalNodeList[i + 1].x, FinalNodeList[i + 1].y));
     }
 
+    void AnimalAnimation(Node[] FinalNodeList, Rigidbody2D rigidbody2D, Animator animator, int FinalListNodeNumber)//이동방향에 따른 스크립트 변경
+    {
+        if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) == 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) < 0)
+            animator.SetInteger("rotate", 0);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) < 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) > 0)
+            animator.SetInteger("rotate", 1);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) < 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) == 0)
+            animator.SetInteger("rotate", 1);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) < 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) < 0)
+            animator.SetInteger("rotate", 1);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) == 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) > 0)
+            animator.SetInteger("rotate", 2);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) > 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) > 0)
+            animator.SetInteger("rotate", 3);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) > 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) == 0)
+            animator.SetInteger("rotate", 3);
+        else if ((FinalNodeList[FinalListNodeNumber + 1].x - rigidbody2D.position.x) > 0 && (FinalNodeList[FinalListNodeNumber + 1].y - rigidbody2D.position.y) < 0)
+            animator.SetInteger("rotate", 3);
+    }
+
 }
