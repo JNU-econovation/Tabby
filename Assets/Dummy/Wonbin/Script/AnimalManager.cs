@@ -75,7 +75,6 @@ public class AnimalManager : MonoBehaviour
     }
 
     public static void AddNewAnimal(Animal animal) {
-        print(animal + "rr");
         int newAnimalNumber = animal.animalNumber;
         if (animals != null && animals.Exists(i => i.animalNumber == newAnimalNumber))
         {
@@ -89,6 +88,8 @@ public class AnimalManager : MonoBehaviour
             AnimalCountUP(animals[forCount]);
         }
     }
+
+
 
     public static void AnimalCountUP(Animal animal)
     {

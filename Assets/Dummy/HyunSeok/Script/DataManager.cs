@@ -15,15 +15,16 @@ namespace GameData
         #endregion
         #region public field
         // 싱글톤
-        public static DataManager dataManager;
-        public List<PlayerData> playerDatas;
+        public static DataManager _instance;
+        private List<PlayerData> playerDatas;
+        public List<PlayerData> PlayerDatas { get => playerDatas; set => playerDatas = value; }
         #endregion
         #region unity method
         void Awake ()
         {
             // 싱글톤
-            if (dataManager == null)
-                dataManager = this;
+            if (_instance == null)
+                _instance = this;
 
             // 없을 경우 data 폴더 만들어주기
             string dataPath = null;
@@ -49,14 +50,26 @@ namespace GameData
         /**
          *   DataManager Awake 초기화
          */
-        public void Init ()
+        private void Init ()
         {
-            playerDatas = new List<PlayerData> (3);
+            /*playerDatas = new List<PlayerData> (3);
             for (int i = 0; i < 3; i++)
             {
                 playerDatas.Add (new PlayerData (LoadData ("/PlayerData/" + i.ToString () + ".json")));
-            }
+            }*/
+            PlayerDatas.Add(new PlayerData(LoadData("/PlayerData/test1.json")));
         }
+
+        public void SaveAnimals(List<Animal> animals)
+        {
+
+            PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Clear();
+            foreach (Animal animal in animals)
+            { 
+                PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Add(new AnimalData(animal.animalNumber, animal.level));
+            }
+            SaveData<PlayerData>(PlayerDatas[GameManager._instance.PlayerIdx], "/PlayerData/test1.json");
+        }     
         /**
          *   json 데이터 저장
          *   @param index        몇번 째 세이브 파일인지
@@ -125,44 +138,95 @@ namespace GameData
     /**
      *   Player의 정보가 담긴 클래스
      */
+     [System.Serializable]
+    public class AnimalData
+    {
+        public int idx;
+        public int level;
+
+        public AnimalData(int idx, int level)
+        {
+            this.idx = idx;
+            this.level = level;
+        }
+    }
     public class PlayerData
     {
         public string name;
-        public List<MonsterData> monsters;
+        public int reputation;
+        public int leaderIdx;
+        public int money;
+        public int heart;
+        public DateTime playTime;
+        public List<ItemLocationData> itemLocationDatas;
+        public List<int> inventoryDatas;
+        public List<AnimalData> animalDatas;
+        
+        public PlayerData()
+        {
+            name = "test";
+            reputation = 0;
+            leaderIdx = 0;
+            money = 0;
+            heart = 0;
+            playTime = new DateTime();
+            itemLocationDatas = new List<ItemLocationData>();
+            inventoryDatas = new List<int>();
+            animalDatas = new List<AnimalData>();
+        }
+        public PlayerData(JsonData data)
+        {
+            Debug.Log(data["animalDatas"].ToString());
+            AnimalData[] saveData = JsonHelper.FromJson<AnimalData>(data["animalDatas"].ToString());
+            foreach (AnimalData animalData in saveData)
+            {
+                this.animalDatas.Add(animalData);
+                JsonUtility.
+            }
 
-        public DateTime a;
-        public bool isNull;
-        public PlayerData (string name)
-        {
-            a = new DateTime ();
-            monsters = new List<MonsterData> ();
-            monsters.Add (new MonsterData ("Tabby"));
-            monsters.Add (new MonsterData ("Cat"));
-            this.name = name;
         }
-        public PlayerData (JsonData data)
-        {
-            if (data != null)
-            {
-                name = data["name"].ToString ();
-            }
-            else
-            {
-                isNull = true;
-            }
-        }
+
+
+        //public List<AnimalData> monsters;
+
+
+
+    }
+    [System.Serializable]
+    public class ItemLocationData
+    {
+        public int index;
+        public int x;
+        public int y;
+        public bool isOut;
     }
 
-    
-    [System.Serializable]
-    public class MonsterData
+    public static class JsonHelper
     {
-        public string name;
-        public int locX;
-        public MonsterData (string name)
+        public static T[] FromJson<T>(string json)
         {
-            this.name = name;
-            this.locX = 2;
+            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+            return wrapper.Items;
+        }
+
+        public static string ToJson<T>(T[] array)
+        {
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Items = array;
+            return JsonUtility.ToJson(wrapper);
+        }
+
+        public static string ToJson<T>(T[] array, bool prettyPrint)
+        {
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Items = array;
+            return JsonUtility.ToJson(wrapper, prettyPrint);
+        }
+
+        [Serializable]
+        private class Wrapper<T>
+        {
+            public T[] Items;
         }
     }
 }

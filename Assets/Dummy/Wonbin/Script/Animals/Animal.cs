@@ -14,7 +14,9 @@ public class Animal : MonoBehaviour
     protected int animalHP ;
     public int animalCost;
 
-    public int animalCount;
+    public int level;
+
+    public int animalCount;//옮기자
 
     public Sprite babyAnimalSprite;
     public Sprite middleAnimalSprite;

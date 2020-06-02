@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GameData;
 
 public class ShopButtonManager: MonoBehaviour
 {
@@ -127,7 +128,7 @@ public class ShopButtonManager: MonoBehaviour
         cancelButton.gameObject.SetActive(false);
     }
 
-    public void OK()
+    public void PressOK()
     {
     
         text.gameObject.SetActive(false);
@@ -142,14 +143,19 @@ public class ShopButtonManager: MonoBehaviour
         PIDrag.PItransformBack();
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
-        productImage.gameObject.tag = "Untagged";
+        //productImage.gameObject.tag = "Untagged";
         MoneyManager.money -= productAnimal.animalCost;
-        print(product + "www");
-        print(shopAnimal + "dddd");
+
+        DataManager._instance.SaveAnimals(AnimalManager.animals);
 
         AnimalManager.AddNewAnimal(shopAnimal);
         //if (animalshop.activeSelf == true)
         //    AnimalManager.AnimalListAdd(producted, AnimalforList, AnimalforList.gameObject.name);
+
+    }
+
+    public static void CreatFarmAnimal(int idx)
+    {
 
     }
 

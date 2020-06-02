@@ -69,7 +69,7 @@ public class LobbyUI : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            playerDatas[i].Init (DataManager.dataManager.playerDatas[i]);
+            //playerDatas[i].Init (DataManager._instance.playerDatas[i]);
         }
     }
 
@@ -96,7 +96,7 @@ public class LobbyUI : MonoBehaviour
     public void OnClickData (int index)
     {
         // 만약 해당 데이터가 존재하지 않을 경우
-        if (playerDatas[index].data.isNull)
+        /*if (playerDatas[index].data.isNull)
         {
             // 새로운 플레이어 창 띄우기
             overlayPanel.SetActive (true);
@@ -107,12 +107,12 @@ public class LobbyUI : MonoBehaviour
         else
         {
             // 게임 룸으로 이동하기
-        }
+        }*/
     }
 
     public void OnClickCreateBtn ()
     {
-        if (createPlayerPanel.nameField.text != null)
+/*        if (createPlayerPanel.nameField.text != null)
         {
             PlayerData newData = new PlayerData (createPlayerPanel.nameField.text);
             string dataPath = "/PlayerData/" + createPlayerPanel.index + ".json";
@@ -120,7 +120,7 @@ public class LobbyUI : MonoBehaviour
             OffOverlayPanel ();
             GameData.DataManager.dataManager.Init ();
             Init ();
-        }
+        }*/
     }
 
     public void OnClickDeleteBtn (int index)
@@ -128,7 +128,7 @@ public class LobbyUI : MonoBehaviour
         string dataPath = "/PlayerData/" + index + ".json";
         if (GameData.DataManager.DeleteData (dataPath))
         {
-            GameData.DataManager.dataManager.Init ();
+            //GameData.DataManager._instance.Init ();
             Init ();
         }
     }
@@ -149,14 +149,14 @@ public class LobbyPlayerData
     public void Init (PlayerData data)
     {
         this.data = data;
-        if (data.isNull)
+        /*if (data.isNull)
         {
             name.text = "데이터가 존재하지 않습니다";
         }
         else
         {
             name.text = data.name;
-        }
+        }*/
 
     }
 }
