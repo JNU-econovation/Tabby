@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class GameManager: MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     private GameObject farmObjectShop;
 

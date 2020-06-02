@@ -205,9 +205,9 @@ GameObject:
   - component: {fileID: 9125558249500544397}
   - component: {fileID: 9125558249500544399}
   - component: {fileID: 9125558249500544398}
-  - component: {fileID: 9125558249500544384}
+  - component: {fileID: 1587451564295400367}
   m_Layer: 5
-  m_Name: GrowupList
+  m_Name: YellowList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,32 +271,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &9125558249500544384
-BoxCollider2D:
+--- !u!114 &1587451564295400367
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9125558249500544396}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 60}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3221ea5e1fcad974598e4120e518ddf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalNumber: 2
+  animalCount: 0
+  animalCost: 100
+  babyAnimalSprite: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
+  middleAnimalSprite: {fileID: 0}
+  growUpSprite: {fileID: 0}
+  animalCost: 0
+  babyAnimalSprite: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
+  middleAnimalSprite: {fileID: 0}
+  growUpSprite: {fileID: 0}
 --- !u!1 &9125558249570774851
 GameObject:
   m_ObjectHideFlags: 0

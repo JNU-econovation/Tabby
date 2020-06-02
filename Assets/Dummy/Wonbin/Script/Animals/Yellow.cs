@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class Yellow : Animal
 {
-    public Sprite babyAnimalSprite;
-    public Sprite growUpSprite;
 
 
+    public Yellow()
+    {
+        animalNumber = 2;
+
+        animalHP = 100;
+        animalCost = 100;
+
+    }
 }
+
+
+

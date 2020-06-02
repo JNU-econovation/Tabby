@@ -6,7 +6,7 @@ using UnityEngine;
 public class Drag : MonoBehaviour
     {
 
-    float distance = 10;
+    static float distance = 10;
     Rigidbody2D PIrigidbody;
 
     GameObject heartImage;

@@ -6,20 +6,23 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
-[System.Serializable]
+//[System.Serializable]
 public class Animal : MonoBehaviour
 {
+    public int animalNumber;
 
-    protected int animalNumber;
-    private int animalCount;
-    protected Sprite babyAnimalSprite;
-    protected Sprite growUpSprite;
+    protected int animalHP ;
+    public int animalCost;
+
+    public int animalCount;
+
+    public Sprite babyAnimalSprite;
+    public Sprite middleAnimalSprite;
+    public Sprite growUpSprite;
 
     public Sprite GetGrowUpSprite() {
         return growUpSprite;
     }
-    //동물 들어 옮기기
-
     
 }
 //유니티는 왠만하면 스크립트엔 클래스 하나만 하자

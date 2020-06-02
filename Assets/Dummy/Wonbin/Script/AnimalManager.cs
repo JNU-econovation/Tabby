@@ -1,4 +1,5 @@
 ﻿using Battle;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class AnimalManager : MonoBehaviour
     Rigidbody2D animalrigidbody;
     private Animator animator;
 
+    [Range(1,10)]
     private float speed = 4f;
     [SerializeField]
     private float heartRateMin = 5f; //최소 생성주기
@@ -28,16 +30,13 @@ public class AnimalManager : MonoBehaviour
     private float timeAfterHeart;
 
     [SerializeField]
-    GameObject heart;
-
-    [SerializeField]
     float distance = 10;
 
 
     SpriteRenderer spriteRenderer;
 
 
-    public List<Animal> animals;
+    public static List<Animal> animals=new List<Animal>();
 
    
     private void Start()
@@ -56,15 +55,15 @@ public class AnimalManager : MonoBehaviour
             timeAfterHeart += Time.deltaTime;
 
         //랜덤시간 이상이 됐을때 하트 생성
-        if (timeAfterHeart >= heartRate && transform.childCount == 0)
+        else if (timeAfterHeart >= heartRate && transform.childCount == 0)
         {
-            spawner.MakeChild(this.gameObject, heartPrefabs);
+            //spawner.MakeChild(this.gameObject, heartPrefabs);
+            //하트 오류나니까 일단 없애둠
         }
-        else
 
 
-            //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
-            pathfinder.FollwingPath(animalrigidbody, 4);
+        //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
+        pathfinder.FollwingPath(animalrigidbody, 4);
 
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -74,6 +73,42 @@ public class AnimalManager : MonoBehaviour
 
 
     }
+
+    public static void AddNewAnimal(Animal animal) {
+        print(animal + "rr");
+        int newAnimalNumber = animal.animalNumber;
+        if (animals != null && animals.Exists(i => i.animalNumber == newAnimalNumber))
+        {
+            Animal inListAnimal = animals.Find(i => i.animalNumber == newAnimalNumber);
+            AnimalCountUP(inListAnimal);
+        }
+        else
+        {
+            animals.Add(animal);
+            int forCount = animals.IndexOf(animal);
+            AnimalCountUP(animals[forCount]);
+        }
+    }
+
+    public static void AnimalCountUP(Animal animal)
+    {
+
+        int animalListNumber = animals.IndexOf(animal);
+        animals[animalListNumber].animalCount += 1;
+    }
+
+    public static void AnimalCountDown(Animal animal)
+    {
+
+        int animalListNumber = animals.IndexOf(animal);
+        animals[animalListNumber].animalCount -= 1;
+    }
+
+    public static void SetAnimalCount(Animal animal, int newAnimalCount)
+    {
+        //animal.animalCount=newAnimalCount;
+    }
+
 
 
     void OnMouseDrag()
@@ -103,7 +138,7 @@ public class AnimalManager : MonoBehaviour
         {
             MoneyManager.heart += 1;
             PlayerPrefs.SetInt("Heart", MoneyManager.heart);
-            Destroy(heart);
+            Destroy(gameObject.transform.GetChild(0));
             heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
             timeAfterHeart = 0f;
         }

@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class shopButtonManager: MonoBehaviour
+public class ShopButtonManager: MonoBehaviour
 {
+
+    public static Animal shopAnimal;
     
-    float distance = 10;
-
-    public int shopCost;
-
     //Drag PIDrag;
 
-    public GameObject Animals;
+    public GameObject farmAnimal;
 
-    private GameObject productImage;
     public GameObject product;
     private GameObject producted;
-    public Sprite productSprite;
-    private SpriteRenderer spriteRenderer;
+    public GameObject productImage;
+
+    private Image image;
     public GameObject AnimalforList;
 
 
@@ -33,6 +31,8 @@ public class shopButtonManager: MonoBehaviour
     public GameObject farmObShopButton;
     public GameObject text;
 
+    public GameObject mapButton;
+
     public GameObject tapZone;
 
     public GameObject OKButton;
@@ -41,15 +41,18 @@ public class shopButtonManager: MonoBehaviour
     public GameObject shop;
     public GameObject animalshop;
     public GameObject farmObshop;
+
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
     }
 
-    void openShop()
+    public void openShop()
     {
         MoneyManager.money -= 1;
         shop.gameObject.SetActive(true);
+        mapButton.gameObject.SetActive(false);
         tapZone.gameObject.SetActive(false);
         farmObshop.gameObject.SetActive(false);
         animalshop.gameObject.SetActive(true);
@@ -59,7 +62,7 @@ public class shopButtonManager: MonoBehaviour
         farmObShopButton.gameObject.SetActive(true);
     }
 
-    void openAnimalShop()
+    public void openAnimalShop()
     {
         if (farmObshop.activeSelf == true)
             cancel();
@@ -68,47 +71,53 @@ public class shopButtonManager: MonoBehaviour
         farmObshop.gameObject.SetActive(false);
     }
 
-    void openFarmObjectShop()
+    public void openFarmObjectShop()
     {
         shop.gameObject.SetActive(true);
         animalshop.gameObject.SetActive(false);
         farmObshop.gameObject.SetActive(true);
     }
 
-    void closeShop()
+    public void closeShop()
     {
         shop.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(true);
         shopCloseButton.gameObject.SetActive(false);
         animalShopButton.gameObject.SetActive(false);
         farmObShopButton.gameObject.SetActive(false);
+        mapButton.gameObject.SetActive(true);
         //tapZone.gameObject.SetActive(true);
     }
 
 
-    void buy()
+    public void buy()
     {
+        product = gameObject.GetComponent<ShopButtonManager>().product;
+        print(product);
+        ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
+        productImgSBM.product = product;
         text.gameObject.SetActive(true);
         productImage = GameObject.Find("arrangeImage");
-        spriteRenderer = productImage.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = productSprite;
-        //productImage.GetComponent<Image>().sprite = Resources.Load(PSN, typeof(Sprite)) as Sprite;
-        shopButtonManager productSBM = productImage.GetComponent<shopButtonManager>();
-        productSBM.product = product;
-        productSBM.shopCost = shopCost;
+        image = productImage.GetComponent<Image>();
+        shopAnimal = gameObject.GetComponent<Animal>();
+        image.sprite = shopAnimal.babyAnimalSprite;
+        Animal productAnimal = productImage.GetComponent<Animal>();
+        productAnimal.animalNumber = shopAnimal.animalNumber;
+        productAnimal.animalCost = shopAnimal.animalCost;
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformMid();
         OKButton.gameObject.SetActive(true);
         cancelButton.gameObject.SetActive(true);
+        print(shopAnimal);
     }
 
-    void FOTagging()
+    public void FOTagging()
     {
         productImage = GameObject.Find("arrangeImage");
         productImage.gameObject.tag = "farmObject";
     }
 
-    void cancel()
+    public void cancel()
     {
         text.gameObject.SetActive(false);
         productImage = GameObject.Find("arrangeImage");
@@ -118,21 +127,27 @@ public class shopButtonManager: MonoBehaviour
         cancelButton.gameObject.SetActive(false);
     }
 
-    void OK()
+    public void OK()
     {
+    
         text.gameObject.SetActive(false);
         productImage = GameObject.Find("arrangeImage");
-        shopButtonManager productSBM = productImage.GetComponent<shopButtonManager>();
-        //this.product = productSBM.product;
-        producted = Instantiate(productSBM.product, new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
-        producted.transform.parent = gameManager.transform;
+        ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
+        product = productSBM.product;
+        Animal productAnimal = productImage.GetComponent<Animal>();
+        
+        producted = Instantiate(product, new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
+        producted.transform.parent = farmAnimal.transform;
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformBack();
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
         productImage.gameObject.tag = "Untagged";
-        MoneyManager.money -= productSBM.shopCost;
+        MoneyManager.money -= productAnimal.animalCost;
+        print(product + "www");
+        print(shopAnimal + "dddd");
 
+        AnimalManager.AddNewAnimal(shopAnimal);
         //if (animalshop.activeSelf == true)
         //    AnimalManager.AnimalListAdd(producted, AnimalforList, AnimalforList.gameObject.name);
 

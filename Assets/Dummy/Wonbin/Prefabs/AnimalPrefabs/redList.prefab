@@ -201,9 +201,9 @@ GameObject:
   - component: {fileID: 7278754825894522592}
   - component: {fileID: 7278754825894522594}
   - component: {fileID: 7278754825894522593}
-  - component: {fileID: 7278754825894522524}
+  - component: {fileID: -9162252017972352828}
   m_Layer: 5
-  m_Name: redList
+  m_Name: RedList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7278754825894522524
+--- !u!114 &-9162252017972352828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,26 +276,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7278754825894522599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
+  m_Script: {fileID: 11500000, guid: f68adbf42d4968040bd9d9d3ed029b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopCost: 0
-  Animals: {fileID: 0}
-  product: {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  productSprite: {fileID: 0}
-  AnimalforList: {fileID: 0}
-  PSN: 
-  shopButton: {fileID: 0}
-  shopCloseButton: {fileID: 0}
-  animalShopButton: {fileID: 0}
-  farmObShopButton: {fileID: 0}
-  text: {fileID: 0}
-  tapZone: {fileID: 0}
-  OKButton: {fileID: 0}
-  cancelButton: {fileID: 0}
-  shop: {fileID: 0}
-  animalshop: {fileID: 0}
-  farmObshop: {fileID: 0}
+  animalNumber: 3
+  animalCount: 0
+  animalCost: 200
+  babyAnimalSprite: {fileID: 21300000, guid: 2164a77105a38074895173dac2595dc2, type: 3}
+  middleAnimalSprite: {fileID: 0}
+  growUpSprite: {fileID: 0}
+  animalCost: 200
+  babyAnimalSprite: {fileID: 21300000, guid: 2164a77105a38074895173dac2595dc2, type: 3}
+  middleAnimalSprite: {fileID: 0}
+  growUpSprite: {fileID: 0}
 --- !u!1 &7278754826914248528
 GameObject:
   m_ObjectHideFlags: 0
