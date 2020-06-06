@@ -15,6 +15,23 @@ public class PathFinder : MonoBehaviour
     List<Node> OpenList, ClosedList;
 
     private int FinalListNodeNumber;
+
+    public int GetBottomLeftX()
+    {
+        return bottomLeft.x;
+    }
+    public int GetBottomLeftY()
+    {
+        return bottomLeft.y;
+    }
+    public int GetTopRightX()
+    {
+        return topRight.x;
+    }
+    public int GetTopRightY()
+    {
+        return topRight.y;
+    }
     public void PathFindingStart(Rigidbody2D rigidbody2D, int startTargetDistance)
     {
         //FinalNodeList 0부터 시작
@@ -53,6 +70,17 @@ public class PathFinder : MonoBehaviour
         targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
         while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true || Vector2Int.Distance(new Vector2Int((int)rigidbody2D.position.x, (int)rigidbody2D.position.y), targetPos) < startTargetDistance))
             targetPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
+        
+    }
+
+    public Vector2 RandomSpawnSetting()
+    {
+        //현재위치에서 최소 startTargetDistance만큼 떨어져 있고 장애물이 없는 지점을 targetPos로 지정
+        Vector2 spawnPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
+        while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true))
+            spawnPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
+        return spawnPos;
+
     }
 
     private class Node
@@ -67,7 +95,7 @@ public class PathFinder : MonoBehaviour
         public int F { get { return G + H; } }
     }
 
-    private void NodeSetting()
+    public void NodeSetting()
     {
         // NodeArray의 크기 정해주고, x, y 대입 Layer가 Wall로 지정된 장애물 Collider가 있는 Node는 iswall=true
         sizeX = topRight.x - bottomLeft.x + 1;

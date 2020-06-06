@@ -10,21 +10,55 @@ public class Spawner : MonoBehaviour
     GameObject child;
     [SerializeField]
     List<GameObject> animalPrefabs;
+    public static List<Animal> animals = new List<Animal>();
     private void Awake()
     {
         Init();
     }
     public void Init()
     {
-        foreach(AnimalData animalData in DataManager._instance.PlayerDatas[GameManager._instance.PlayerIdx].animalDatas)
+        PathFinder forInstantiate = new PathFinder();
+        foreach (AnimalData animalData in DataManager._instance.PlayerDatas[GameManager._instance.PlayerIdx].animalDatas)
         {
-            Animal temp = Instantiate(animalPrefabs[animalData.idx]).GetComponent<Animal>();
-            AnimalManager.AddNewAnimal(temp);
-            temp.transform.parent = farmAnimal.transform;
-            temp.transform.position = new Vector2(0,0);
+            GameObject newAnimal = Instantiate(animalPrefabs[animalData.idx]);
+            Animal temp = newAnimal.GetComponent<Animal>();
+            Spawner.AddNewAnimal(temp);
+            Rigidbody2D newAnimalRigidbody = newAnimal.GetComponent<Rigidbody2D>();
+            newAnimal.transform.parent = farmAnimal.transform;
+            forInstantiate.NodeSetting();
+            newAnimalRigidbody.position = forInstantiate.RandomSpawnSetting();
+
             //idx따라 Animal 생성
+            
         }
     }
+
+    public static void AddNewAnimal(Animal animal)
+    {
+        
+            animals.Add(animal);
+
+    }
+
+    public static void AnimalCountUP(Animal animal)
+    {
+
+        int animalListNumber = animals.IndexOf(animal);
+        animals[animalListNumber].animalCount += 1;
+    }
+
+    public static void AnimalCountDown(Animal animal)
+    {
+
+        int animalListNumber = animals.IndexOf(animal);
+        animals[animalListNumber].animalCount -= 1;
+    }
+
+    public static void SetAnimalCount(Animal animal, int newAnimalCount)
+    {
+        //animal.animalCount=newAnimalCount;
+    }
+
 
     //하트생성
     public void MakeChild(GameObject gameObject, GameObject gameObjectPrefabs)

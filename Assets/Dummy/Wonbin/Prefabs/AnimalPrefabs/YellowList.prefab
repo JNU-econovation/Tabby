@@ -283,16 +283,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3221ea5e1fcad974598e4120e518ddf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalNumber: 2
-  animalCount: 0
+  animalNumber: 1
   animalCost: 100
+  level: 0
+  exp: 0
+  animalCount: 0
   babyAnimalSprite: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
-  animalCost: 0
-  babyAnimalSprite: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
-  middleAnimalSprite: {fileID: 0}
-  growUpSprite: {fileID: 0}
+  s: {fileID: 0}
 --- !u!1 &9125558249570774851
 GameObject:
   m_ObjectHideFlags: 0

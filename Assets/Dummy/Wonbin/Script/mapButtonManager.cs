@@ -7,9 +7,9 @@ using UnityEditor;
 
 public class MapButtonManager : MonoBehaviour
 {
-    TabbyAnimator tabbyAnimaltor = new TabbyAnimator();
+    TabbyAnimator tabbyAnimaltor;
 
-    static List<Animal> listAnimals=AnimalManager.animals.ToList<Animal>();
+    static List<Animal> listAnimals= Spawner.animals.ToList<Animal>();
 
     public GameObject blue;
     public GameObject yellow;
@@ -73,23 +73,23 @@ public class MapButtonManager : MonoBehaviour
         }
         for(int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
-        List<Animal> listAnimals = AnimalManager.animals.ToList();
+        List<Animal> listAnimals = Spawner.animals.ToList();
     }
 
     public void Area1ReadyOpen()
     {
-        List<Animal> listAnimals = AnimalManager.animals.ToList();
+        List<Animal> listAnimals = Spawner.animals.ToList();
         for(int i = 0; i < listAnimals.Count; i++)
         {
             Animal a = listAnimals[i];
-            if (a.animalNumber == 1)
+            if (a.animalNumber == 0)
             {
                 listAnimal=Instantiate(blue, new Vector2(0,0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
                 listAnimal.transform.position = listAnimal.transform.parent.position;
                 listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
             }
-            else if (a.animalNumber == 2)
+            else if (a.animalNumber == 1)
             {
                 listAnimal = Instantiate(yellow, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
@@ -97,7 +97,7 @@ public class MapButtonManager : MonoBehaviour
                 listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
             }
 
-            else if (a.animalNumber == 3)
+            else if (a.animalNumber == 2)
             {
                 listAnimal = Instantiate(red, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
@@ -125,18 +125,18 @@ public class MapButtonManager : MonoBehaviour
     }
     public void Area2ReadyOpen()
     {
-        List<Animal> listAnimals = AnimalManager.animals.ToList();
+        List<Animal> listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
         {
             Animal a = listAnimals[i];
-            if (a.animalNumber == 1)
+            if (a.animalNumber == 0)
             {
                 listAnimal = Instantiate(blue, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
                 listAnimal.transform.position = listAnimal.transform.parent.position;
                 listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
             }
-            else if (a.animalNumber == 2)
+            else if (a.animalNumber == 1)
             {
                 listAnimal = Instantiate(yellow, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
@@ -144,7 +144,7 @@ public class MapButtonManager : MonoBehaviour
                 listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
             }
 
-            else if (a.animalNumber == 3)
+            else if (a.animalNumber == 2)
             {
                 listAnimal = Instantiate(red, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
@@ -173,18 +173,18 @@ public class MapButtonManager : MonoBehaviour
     }
     public void Area3ReadyOpen()
     {
-        List<Animal> listAnimals = AnimalManager.animals.ToList();
+        List<Animal> listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
         {
             Animal a = listAnimals[i];
-            if (a.animalNumber == 1)
+            if (a.animalNumber == 0)
             {
                 listAnimal = Instantiate(blue, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
                 listAnimal.transform.position = listAnimal.transform.parent.position;
                 listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
             }
-            else if (a.animalNumber == 2)
+            else if (a.animalNumber == 1)
             {
                 listAnimal = Instantiate(yellow, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
@@ -192,7 +192,7 @@ public class MapButtonManager : MonoBehaviour
                 listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
             }
 
-            else if (a.animalNumber == 3)
+            else if (a.animalNumber == 2)
             {
                 listAnimal = Instantiate(red, new Vector2(0, 0), Quaternion.identity);
                 listAnimal.transform.parent = readyAnimalList.transform;
@@ -224,7 +224,7 @@ public class MapButtonManager : MonoBehaviour
 
     public void tapListAnimal()
     {
-        listAnimals = AnimalManager.animals.ToList<Animal>();
+        listAnimals = Spawner.animals.ToList<Animal>();
         Animal thisAnimal = gameObject.GetComponent<Animal>();
         Animal animalReadyList = listAnimals.Find(i => i.animalNumber==thisAnimal.animalNumber);
 
@@ -374,6 +374,12 @@ public class MapButtonManager : MonoBehaviour
         {
 
         }
+    }
+
+    public static int[] GetGOGOAnimal()
+    {
+
+        return null;
     }
 
 }

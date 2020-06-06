@@ -7,12 +7,5 @@ public class Red : Animal
 
 
 
-    public Red()
-    {
-        animalNumber = 3;
-
-        animalHP = 200;
-        animalCost = 200;
-    }
-
+   
 }

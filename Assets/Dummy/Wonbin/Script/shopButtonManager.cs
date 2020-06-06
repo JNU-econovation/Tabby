@@ -146,9 +146,9 @@ public class ShopButtonManager: MonoBehaviour
         //productImage.gameObject.tag = "Untagged";
         MoneyManager.money -= productAnimal.animalCost;
 
-        DataManager._instance.SaveAnimals(AnimalManager.animals);
+        Spawner.AddNewAnimal(shopAnimal);
+        DataManager._instance.SaveAnimals(Spawner.animals);
 
-        AnimalManager.AddNewAnimal(shopAnimal);
         //if (animalshop.activeSelf == true)
         //    AnimalManager.AnimalListAdd(producted, AnimalforList, AnimalforList.gameObject.name);
 

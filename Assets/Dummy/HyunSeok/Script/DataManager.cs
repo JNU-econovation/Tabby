@@ -16,7 +16,8 @@ namespace GameData
         #region public field
         // 싱글톤
         public static DataManager _instance;
-        private List<PlayerData> playerDatas = new List<PlayerData> ();
+        [SerializeField]
+        public List<PlayerData> playerDatas = new List<PlayerData> ();
         public List<PlayerData> PlayerDatas { get => playerDatas; set => playerDatas = value; }
         #endregion
         #region unity method
@@ -57,8 +58,7 @@ namespace GameData
             {
                 playerDatas.Add (new PlayerData (LoadData ("/PlayerData/" + i.ToString () + ".json")));
             }*/
-            SaveData<PlayerData> (new PlayerData (), "/PlayerData/test1.json");
-            PlayerDatas.Add (new PlayerData (LoadData ("/PlayerData/test1.json")));
+            PlayerDatas.Add (new PlayerData (LoadData ("/PlayerData/0.json")));
         }
 
         public void SaveAnimals (List<Animal> animals)
@@ -67,9 +67,10 @@ namespace GameData
             PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Clear ();
             foreach (Animal animal in animals)
             {
-                PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Add (new AnimalData (animal.animalNumber, animal.level));
+                Debug.Log("dddd : " + animal.animalNumber);
+                PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Add (new AnimalData (animal.animalNumber, animal.level, animal.exp));
             }
-            SaveData<PlayerData> (PlayerDatas[GameManager._instance.PlayerIdx], "/PlayerData/test1.json");
+            SaveData<PlayerData> (PlayerDatas[GameManager._instance.PlayerIdx], "/PlayerData/0.json");
         }
         /**
          *   json 데이터 저장
@@ -144,13 +145,16 @@ namespace GameData
     {
         public int idx;
         public int level;
+        public int exp;
 
-        public AnimalData (int idx, int level)
+        public AnimalData (int idx, int level, int exp)
         {
             this.idx = idx;
             this.level = level;
+            this.exp = exp;
         }
     }
+    [System.Serializable]
     public class PlayerData
     {
         public string name;
@@ -174,7 +178,6 @@ namespace GameData
             itemLocationDatas = new List<ItemLocationData> ();
             inventoryDatas = new List<int> ();
             animalDatas = new List<AnimalData> ();
-            animalDatas.Add (new AnimalData (99, 88));
         }
         public PlayerData (JsonData data)
         {
@@ -187,7 +190,6 @@ namespace GameData
             itemLocationDatas = new List<ItemLocationData> ();
             inventoryDatas = new List<int> ();
             animalDatas = new List<AnimalData> ();
-            animalDatas.Add (new AnimalData (99, 88));
             //Debug.Log(data["animalDatas"][0].ToString());
             //AnimalData[] saveData = JsonHelper.FromJson<AnimalData> (data["animalDatas"][0].ToString());
             //Debug.Log(data["animalDatas"]);
@@ -195,8 +197,8 @@ namespace GameData
             {
                 int idx = int.Parse (animalData["idx"].ToString ());
                 int level = int.Parse (animalData["level"].ToString ());
-                animalDatas.Add (new AnimalData (idx, level));
-                Debug.Log (idx + " " + level);
+                int exp = int.Parse(animalData["exp"].ToString());
+                animalDatas.Add (new AnimalData (idx, level, exp));
             }
         }
 

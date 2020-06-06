@@ -7,14 +7,7 @@ public class Yellow : Animal
 {
     public AnimalStatData s;
 
-    public Yellow()
-    {
-        animalNumber = 2;
 
-        animalHP = 100;
-        animalCost = 100;
-
-    }
 }
 
 

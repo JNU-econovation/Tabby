@@ -6,12 +6,6 @@ public class Indigo : Animal
 {
 
 
-    public Indigo()
-    {
-        animalNumber = 4;
 
-        animalHP = 600;
-        animalCost = 600;
-    }
 
 }

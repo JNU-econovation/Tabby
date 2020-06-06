@@ -171,8 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7e3336cf13bd5459aa01afebd03c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalNumber: 4
+  animalNumber: 3
   animalCost: 600
+  level: 0
+  exp: 0
   animalCount: 0
   babyAnimalSprite: {fileID: 21300000, guid: 7c952b5187087144394a774785e9ff0a, type: 3}
   middleAnimalSprite: {fileID: 0}

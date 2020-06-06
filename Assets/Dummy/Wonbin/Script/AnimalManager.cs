@@ -36,7 +36,7 @@ public class AnimalManager : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
 
-    public static List<Animal> animals=new List<Animal>();
+    
 
    
     private void Start()
@@ -63,7 +63,7 @@ public class AnimalManager : MonoBehaviour
 
 
         //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
-        pathfinder.FollwingPath(animalrigidbody, 4);
+        pathfinder.FollwingPath(animalrigidbody, 4f);
 
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -74,42 +74,11 @@ public class AnimalManager : MonoBehaviour
 
     }
 
-    public static void AddNewAnimal(Animal animal) {
-        int newAnimalNumber = animal.animalNumber;
-        if (animals != null && animals.Exists(i => i.animalNumber == newAnimalNumber))
-        {
-            Animal inListAnimal = animals.Find(i => i.animalNumber == newAnimalNumber);
-            AnimalCountUP(inListAnimal);
-        }
-        else
-        {
-            animals.Add(animal);
-            int forCount = animals.IndexOf(animal);
-            AnimalCountUP(animals[forCount]);
-        }
-    }
 
 
 
-    public static void AnimalCountUP(Animal animal)
-    {
 
-        int animalListNumber = animals.IndexOf(animal);
-        animals[animalListNumber].animalCount += 1;
-    }
-
-    public static void AnimalCountDown(Animal animal)
-    {
-
-        int animalListNumber = animals.IndexOf(animal);
-        animals[animalListNumber].animalCount -= 1;
-    }
-
-    public static void SetAnimalCount(Animal animal, int newAnimalCount)
-    {
-        //animal.animalCount=newAnimalCount;
-    }
-
+    
 
 
     void OnMouseDrag()

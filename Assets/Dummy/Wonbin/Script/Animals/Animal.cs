@@ -15,6 +15,7 @@ public class Animal : MonoBehaviour
     public int animalCost;
 
     public int level;
+    public int exp;
 
     public int animalCount;//옮기자
 
