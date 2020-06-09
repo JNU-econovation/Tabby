@@ -4,30 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEditor;
+using System;
 
 public class MapButtonManager : MonoBehaviour
 {
     TabbyAnimator tabbyAnimaltor;
 
-    static List<Animal> listAnimals= Spawner.animals.ToList<Animal>();
+    static List<Animal> listAnimals;
+    static List<bool> listAnimalAvailability;
 
-    public GameObject blue;
-    public GameObject yellow;
-    public GameObject red;
-    public GameObject indigo;
+    public GameObject[] animals;
 
     public GameObject map;
     public GameObject mapButton;
     public GameObject mapCloseButton;
-    public GameObject mapArea1;
-    public GameObject mapArea2;
-    public GameObject mapArea3;
+    public GameObject[] mapArea;
     public GameObject ReadyExplore;
 
     public GameObject readyAnimalList;
-    public GameObject animalSlot1;
-    public GameObject animalSlot2;
-    public GameObject animalSlot3;
+    public GameObject[] animalSlot;
 
     public GameObject ListAnimal;
 
@@ -36,17 +31,14 @@ public class MapButtonManager : MonoBehaviour
     Animal slotImgAnimal;
     public Sprite slotAnimalImg;
 
-    private GameObject slotImg1;
-    private GameObject slotImg2;
-    private GameObject slotImg3;
+    private GameObject[] slotImage;
 
+    public static int[] gogoAnimalArray;
 
     public Text animalListCountText;
 
     public GameObject mapPrevealImage;
-    public Sprite area1PrevealSprite;
-    public Sprite area2PrevealSprite;
-    public Sprite area3PrevealSprite;
+    public Sprite[] areaPrevealSprite;
     private Image prevearChanger;
 
     private GameObject listAnimal;
@@ -78,145 +70,52 @@ public class MapButtonManager : MonoBehaviour
 
     public void Area1ReadyOpen()
     {
-        List<Animal> listAnimals = Spawner.animals.ToList();
+        listAnimals = Spawner.animals.ToList();
+        for (int i = 0; i < listAnimals.Count; i++)
+            listAnimalAvailability.Add(true);
         for(int i = 0; i < listAnimals.Count; i++)
         {
-            Animal a = listAnimals[i];
-            if (a.animalNumber == 0)
-            {
-                listAnimal=Instantiate(blue, new Vector2(0,0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-            else if (a.animalNumber == 1)
-            {
-                listAnimal = Instantiate(yellow, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-
-            else if (a.animalNumber == 2)
-            {
-                listAnimal = Instantiate(red, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-
-            else
-            {
-                listAnimal = Instantiate(indigo, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-            //animal추가시 수정해야함
-
-
-            Text listCount = listAnimal.transform.GetChild(2).gameObject.GetComponent<Text>();
-            listCount.text = ""+listAnimals[i].animalCount;
-
+            listAnimal=Instantiate(animals[i], new Vector2(0,0), Quaternion.identity);
+            listAnimal.transform.parent = readyAnimalList.transform;
+            listAnimal.transform.position = listAnimal.transform.parent.position;
+            listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
         }
         ReadyExplore.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
-        prevearChanger.sprite = area1PrevealSprite;
+        prevearChanger.sprite = areaPrevealSprite[0];
     }
     public void Area2ReadyOpen()
     {
-        List<Animal> listAnimals = Spawner.animals.ToList();
+        listAnimals = Spawner.animals.ToList();
+        for (int i = 0; i < listAnimals.Count; i++)
+            listAnimalAvailability.Add(true);
         for (int i = 0; i < listAnimals.Count; i++)
         {
-            Animal a = listAnimals[i];
-            if (a.animalNumber == 0)
-            {
-                listAnimal = Instantiate(blue, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-            else if (a.animalNumber == 1)
-            {
-                listAnimal = Instantiate(yellow, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-
-            else if (a.animalNumber == 2)
-            {
-                listAnimal = Instantiate(red, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-
-            else
-            {
-                listAnimal = Instantiate(indigo, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-            //animal추가시 수정해야함
-
-
-            Text listCount = listAnimal.transform.GetChild(2).gameObject.GetComponent<Text>();
-            listCount.text = "" + listAnimals[i].animalCount;
-
+            listAnimal = Instantiate(animals[i], new Vector2(0, 0), Quaternion.identity);
+            listAnimal.transform.parent = readyAnimalList.transform;
+            listAnimal.transform.position = listAnimal.transform.parent.position;
+            listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
         }
         ReadyExplore.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
-        prevearChanger.sprite = area2PrevealSprite;
+        prevearChanger.sprite = areaPrevealSprite[1];
 
     }
     public void Area3ReadyOpen()
     {
-        List<Animal> listAnimals = Spawner.animals.ToList();
+        listAnimals = Spawner.animals.ToList();
+        for (int i = 0; i < listAnimals.Count; i++)
+            listAnimalAvailability.Add(true);
         for (int i = 0; i < listAnimals.Count; i++)
         {
-            Animal a = listAnimals[i];
-            if (a.animalNumber == 0)
-            {
-                listAnimal = Instantiate(blue, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-            else if (a.animalNumber == 1)
-            {
-                listAnimal = Instantiate(yellow, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-
-            else if (a.animalNumber == 2)
-            {
-                listAnimal = Instantiate(red, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-
-            else
-            {
-                listAnimal = Instantiate(indigo, new Vector2(0, 0), Quaternion.identity);
-                listAnimal.transform.parent = readyAnimalList.transform;
-                listAnimal.transform.position = listAnimal.transform.parent.position;
-                listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
-            }
-            //animal추가시 수정해야함
-
-
-            Text listCount = listAnimal.transform.GetChild(2).gameObject.GetComponent<Text>();
-            listCount.text = "" + listAnimals[i].animalCount;
-
+            listAnimal = Instantiate(animals[i], new Vector2(0, 0), Quaternion.identity);
+            listAnimal.transform.parent = readyAnimalList.transform;
+            listAnimal.transform.position = listAnimal.transform.parent.position;
+            listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
         }
         ReadyExplore.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
-        prevearChanger.sprite = area3PrevealSprite;
+        prevearChanger.sprite = areaPrevealSprite[2];
 
     }
 
@@ -226,103 +125,97 @@ public class MapButtonManager : MonoBehaviour
     {
         listAnimals = Spawner.animals.ToList<Animal>();
         Animal thisAnimal = gameObject.GetComponent<Animal>();
-        Animal animalReadyList = listAnimals.Find(i => i.animalNumber==thisAnimal.animalNumber);
+        int animalListIdx = transform.GetSiblingIndex();
+        SpriteRenderer tapAnimalSprite= gameObject.GetComponent<SpriteRenderer>();
 
-        imgBackupList = GameObject.Find("AnimalImgBackup");
-
-        if (imgBackupList.transform.childCount != 0 && animalReadyList.animalCount != 0)
+        if (imgBackupList.transform.childCount != 0 && listAnimalAvailability[animalListIdx] != false)
         {
-            //상황에 맞도록 animalListCount변수 수정해야함
-            animalReadyList.animalCount -= 1;
-            animalListCountText.text = "" + animalReadyList.animalCount;
-            
-            slotImg1 = imgBackupList.transform.GetChild(0).gameObject;
-            //print(slotImg1.gameObject.name);
-            image = slotImg1.GetComponent<Image>();
-            image.sprite = animalReadyList.babyAnimalSprite;
-            slotImgAnimal = slotImg1.GetComponent<Animal>();
 
-            slotImgAnimal.animalNumber = animalReadyList.animalNumber;
-            //slotImgAnimal.animalCount = listAnimals[animalReadyListNumber].animalCount;
+            slotImage[0] = imgBackupList.transform.GetChild(0).gameObject;
+            image = slotImage[0].GetComponent<Image>();
+            image.sprite = tapAnimalSprite.sprite;
+            slotImgAnimal = slotImage[0].GetComponent<Animal>();
+
+            slotImgAnimal.animalIdx = thisAnimal.animalIdx;
 
             MapButtonManager mapButtonManager = transform.parent.GetComponent<MapButtonManager>();
-            animalSlot1 = mapButtonManager.animalSlot1;
-            animalSlot2 = mapButtonManager.animalSlot2;
-            animalSlot3 = mapButtonManager.animalSlot3;
+            animalSlot[0] = mapButtonManager.animalSlot[0];
+            animalSlot[1] = mapButtonManager.animalSlot[1];
+            animalSlot[2] = mapButtonManager.animalSlot[2];
 
 
-            if (animalSlot2.transform.childCount != 0)
+            if (animalSlot[1].transform.childCount != 0)
             {
-                slotImg1.transform.parent = animalSlot3.transform;
-                slotImg1.transform.position = slotImg1.transform.parent.position;
+                slotImage[0].transform.parent = animalSlot[2].transform;
+                slotImage[0].transform.position = slotImage[0].transform.parent.position;
+                gogoAnimalArray[2] = animalListIdx;
             }
-            if (animalSlot1.transform.childCount != 0 && animalSlot2.transform.childCount == 0)
+            if (animalSlot[0].transform.childCount != 0 && animalSlot[1].transform.childCount == 0)
             {
-                slotImg1.transform.parent = animalSlot2.transform;
-                slotImg1.transform.position = slotImg1.transform.parent.position;
+                slotImage[0].transform.parent = animalSlot[1].transform;
+                slotImage[0].transform.position = slotImage[0].transform.parent.position;
+                gogoAnimalArray[1] = animalListIdx;
+                gogoAnimalArray[2] = -1;
             }
-            if (animalSlot1.transform.childCount == 0)
+            if (animalSlot[0].transform.childCount == 0)
             {
-                slotImg1.transform.parent = animalSlot1.transform;
-                slotImg1.transform.position = slotImg1.transform.parent.position;
+                slotImage[0].transform.parent = animalSlot[0].transform;
+                slotImage[0].transform.position = slotImage[0].transform.parent.position;
+                gogoAnimalArray[0] = animalListIdx;
+                gogoAnimalArray[1] = -1;
+                gogoAnimalArray[2] = -1;
             }
         }
     }
 
-
-    //public void listCountSetting(int animalReadyListNumber)
-    //{
-    //    animalListCountText.text = "" + listAnimals[animalReadyListNumber].animalCount;
-    //}
-
-    public int GetAnimalNumber()
-    {
-        Animal aanimal = gameObject.GetComponent<Animal>();
-        return aanimal.animalNumber;
-    }
-
     public void slotTap()
     {
-        if (transform.parent == animalSlot3.transform)
+        if (transform.parent == animalSlot[2].transform)
             animalSlot3Tap();
-        else if (transform.parent == animalSlot2.transform)
+        else if (transform.parent == animalSlot[1].transform)
             animalSlot2Tap();
-        else if (transform.parent == animalSlot1.transform)
+        else if (transform.parent == animalSlot[0].transform)
             animalSlot1Tap();
     }
 
     void animalSlot1Tap()
     {
         
-        slotImg1 = animalSlot1.transform.GetChild(0).gameObject;
-        slotImg1.transform.parent = imgBackupList.transform;
-        slotImg1.transform.position = slotImg1.transform.parent.position;
-        Animal slot1Animal = slotImg1.GetComponent<Animal>();
-        Animal slotImg1Animal = listAnimals.Find(i => i.animalNumber == slot1Animal.animalNumber);
-        slotImg1Animal.animalCount += 1;
+        slotImage[0] = animalSlot[1].transform.GetChild(0).gameObject;
+        slotImage[0].transform.parent = imgBackupList.transform;
+        slotImage[0].transform.position = slotImage[0].transform.parent.position;
+        Animal slot1Animal = slotImage[0].GetComponent<Animal>();
+        Animal slotImg1Animal = listAnimals[slot1Animal.animalIdx];
+        listAnimalAvailability[slotImg1Animal.animalIdx] = true;
 
-        Animal animalReadyList = listAnimals.Find(i => i.animalNumber == slot1Animal.animalNumber);
-        Transform[] readyAnimalListObject = readyAnimalList.gameObject.GetComponentsInChildren<Transform>();
-        Animal[] readyAnimalListlist = readyAnimalList.gameObject.GetComponentsInChildren<Animal>();
-        int forCount = ArrayUtility.FindIndex(readyAnimalListlist, i => i.animalNumber == slot1Animal.animalNumber);
-        readyAnimalListlist[forCount].animalCount -= 1;
-        Text mane = readyAnimalListlist[forCount].transform.GetChild(2).gameObject.GetComponent<Text>();
-        mane.text = "" + slotImg1Animal.animalCount;
+        
+        
 
-        if (animalSlot2.transform.childCount != 0 && animalSlot3.transform.childCount == 0)
+        if (animalSlot[1].transform.childCount != 0 && animalSlot[2].transform.childCount == 0)
         {
-            slotImg2 = animalSlot2.transform.GetChild(0).gameObject;
-            slotImg2.transform.parent = animalSlot1.transform;
-            slotImg2.transform.position = slotImg2.transform.parent.position;
+            slotImage[1] = animalSlot[1].transform.GetChild(0).gameObject;
+            slotImage[1].transform.parent = animalSlot[0].transform;
+            slotImage[1].transform.position = slotImage[1].transform.parent.position;
+            gogoAnimalArray[0] = gogoAnimalArray[1];
+            gogoAnimalArray[1] = -1;
         }
-        if (animalSlot3.transform.childCount != 0 && animalSlot2.transform.childCount != 0)
+        if (animalSlot[2].transform.childCount != 0 && animalSlot[1].transform.childCount != 0)
         {
-            slotImg2 = animalSlot2.transform.GetChild(0).gameObject;
-            slotImg2.transform.parent = animalSlot1.transform;
-            slotImg2.transform.position = slotImg2.transform.parent.position;
-            slotImg3 = animalSlot3.transform.GetChild(0).gameObject;
-            slotImg3.transform.parent = animalSlot2.transform;
-            slotImg3.transform.position = slotImg3.transform.parent.position;
+            slotImage[1] = animalSlot[1].transform.GetChild(0).gameObject;
+            slotImage[1].transform.parent = animalSlot[0].transform;
+            slotImage[1].transform.position = slotImage[1].transform.parent.position;
+            slotImage[2] = animalSlot[2].transform.GetChild(0).gameObject;
+            slotImage[2].transform.parent = animalSlot[1].transform;
+            slotImage[2].transform.position = slotImage[2].transform.parent.position;
+
+            gogoAnimalArray[1] = gogoAnimalArray[2];
+            gogoAnimalArray[0] = gogoAnimalArray[1];
+            gogoAnimalArray[2] = -1;
+        }
+
+        else
+        {
+            gogoAnimalArray[0] = -1;
         }
 
         
@@ -330,56 +223,49 @@ public class MapButtonManager : MonoBehaviour
     }
     void animalSlot2Tap()
     {
-        slotImg2 = animalSlot2.transform.GetChild(0).gameObject;
-        slotImg2.transform.parent = imgBackupList.transform;
-        slotImg2.transform.position = slotImg2.transform.parent.position;
-        Animal slot2Animal = slotImg2.GetComponent<Animal>();
-        Animal slotImg2Animal = listAnimals.Find(i => i.animalNumber == slot2Animal.animalNumber);
-        slotImg2Animal.animalCount += 1;
+        slotImage[1] = animalSlot[1].transform.GetChild(0).gameObject;
+        slotImage[1].transform.parent = imgBackupList.transform;
+        slotImage[1].transform.position = slotImage[1].transform.parent.position;
+        Animal slot2Animal = slotImage[1].GetComponent<Animal>();
+        listAnimalAvailability[slot2Animal.animalIdx] = true;
 
-        Animal animalReadyList = listAnimals.Find(i => i.animalNumber == slot2Animal.animalNumber);
-        Transform[] readyAnimalListObject = readyAnimalList.gameObject.GetComponentsInChildren<Transform>();
-        Animal[] readyAnimalListlist = readyAnimalList.gameObject.GetComponentsInChildren<Animal>();
-        int forCount = ArrayUtility.FindIndex(readyAnimalListlist, i => i.animalNumber == slot2Animal.animalNumber);
-        readyAnimalListlist[forCount].animalCount -= 1;
-        Text mane = readyAnimalListlist[forCount].transform.GetChild(2).gameObject.GetComponent<Text>();
-        mane.text = "" + slotImg2Animal.animalCount;
+        
 
 
-        if (animalSlot3.transform.childCount != 0)
+        if (animalSlot[2].transform.childCount != 0)
         {
-            slotImg3 = animalSlot3.transform.GetChild(0).gameObject;
-            slotImg3.transform.parent = animalSlot2.transform;
-            slotImg3.transform.position = slotImg3.transform.parent.position;
+            slotImage[2] = animalSlot[2].transform.GetChild(0).gameObject;
+            slotImage[2].transform.parent = animalSlot[1].transform;
+            slotImage[2].transform.position = slotImage[2].transform.parent.position;
+            gogoAnimalArray[1] = gogoAnimalArray[2];
+            gogoAnimalArray[2] = -1;
+        }
+        else
+        {
+            gogoAnimalArray[1] = -1;
         }
     }
     void animalSlot3Tap()
     {
-        slotImg3 = animalSlot3.transform.GetChild(0).gameObject;
-        slotImg3.transform.parent = imgBackupList.transform;
-        slotImg3.transform.position = slotImg3.transform.parent.position;
-        Animal slot3Animal = slotImg3.GetComponent<Animal>();
-        Animal slotImg3Animal = listAnimals.Find(i => i.animalNumber == slot3Animal.animalNumber);
-        slotImg3Animal.animalCount += 1;
+        slotImage[2] = animalSlot[2].transform.GetChild(0).gameObject;
+        slotImage[2].transform.parent = imgBackupList.transform;
+        slotImage[2].transform.position = slotImage[2].transform.parent.position;
+        Animal slot3Animal = slotImage[2].GetComponent<Animal>();
+        listAnimalAvailability[slot3Animal.animalIdx] = true;
 
-        Animal animalReadyList = listAnimals.Find(i => i.animalNumber == slot3Animal.animalNumber);
-        Transform[] readyAnimalListObject = readyAnimalList.gameObject.GetComponentsInChildren<Transform>();
-        Animal[] readyAnimalListlist = readyAnimalList.gameObject.GetComponentsInChildren<Animal>();
-        int forCount = ArrayUtility.FindIndex(readyAnimalListlist, i => i.animalNumber == slot3Animal.animalNumber);
-        readyAnimalListlist[forCount].animalCount -= 1;
-        Text mane = readyAnimalListlist[forCount].transform.GetChild(2).gameObject.GetComponent<Text>();
-        mane.text = "" + slotImg3Animal.animalCount;
+        gogoAnimalArray[2] = -1;
 
-        if (animalSlot3.transform.childCount != 0)
-        {
+    }
 
-        }
+    public void TapGogoButton()
+    {
+
     }
 
     public static int[] GetGOGOAnimal()
     {
 
-        return null;
+        return gogoAnimalArray;
     }
 
 }

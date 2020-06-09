@@ -2017,29 +2017,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 3741044815398749951, guid: 74089783f57d7904cb6635bc1d4874b5, type: 3}
-  yellow: {fileID: 9125558249500544396, guid: cb1a37bd5f7362b4ca1d5dcce7ec70fa, type: 3}
-  red: {fileID: 7278754825894522599, guid: 9add9e0f97e6c414d80ac7a4414151c1, type: 3}
-  indigo: {fileID: 2385146930343102860, guid: 71c3520976a2f49409f1cdb830f78541, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
-  ReadyExplore: {fileID: 0}
-  readyAnimalList: {fileID: 0}
-  animalSlot1: {fileID: 286363024}
-  animalSlot2: {fileID: 1418689411}
-  animalSlot3: {fileID: 1484999065}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
+  ReadyExplore: {fileID: 1360205659}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
   ListAnimal: {fileID: 0}
-  imgBackupList: {fileID: 0}
+  imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &165191244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,10 +3849,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 1
+  animalIdx: 0
   animalCost: 20
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 21300000, guid: ffd3c96afa2a82a4ab26eb693e4f41b6, type: 3}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -4316,29 +4320,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
-  yellow: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
-  red: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
-  indigo: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
   ReadyExplore: {fileID: 1360205659}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 0}
-  animalSlot2: {fileID: 0}
-  animalSlot3: {fileID: 0}
-  ListAnimal: {fileID: 154661252}
-  imgBackupList: {fileID: 0}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
+  ListAnimal: {fileID: 0}
+  imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
-  mapPrevealImage: {fileID: 1024573171}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
-  area3PrevealSprite: {fileID: 0}
+  mapPrevealImage: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &541690170
 GameObject:
   m_ObjectHideFlags: 0
@@ -4757,10 +4765,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 2
+  animalIdx: 0
   animalCost: 100
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -5118,29 +5126,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
-  yellow: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
-  red: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
-  indigo: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
   ReadyExplore: {fileID: 1360205659}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 0}
-  animalSlot2: {fileID: 0}
-  animalSlot3: {fileID: 0}
-  ListAnimal: {fileID: 154661252}
-  imgBackupList: {fileID: 0}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
+  ListAnimal: {fileID: 0}
+  imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
-  mapPrevealImage: {fileID: 1024573171}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
+  mapPrevealImage: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &692067504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,10 +5567,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
+  animalIdx: 0
   animalCost: 0
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 0}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -6269,10 +6281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
+  animalIdx: 0
   animalCost: 0
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 0}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -6399,29 +6411,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 3741044815398749951, guid: 74089783f57d7904cb6635bc1d4874b5, type: 3}
-  yellow: {fileID: 9125558249500544396, guid: cb1a37bd5f7362b4ca1d5dcce7ec70fa, type: 3}
-  red: {fileID: 7278754825894522599, guid: 9add9e0f97e6c414d80ac7a4414151c1, type: 3}
-  indigo: {fileID: 2385146930343102860, guid: 71c3520976a2f49409f1cdb830f78541, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
-  ReadyExplore: {fileID: 0}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 286363024}
-  animalSlot2: {fileID: 1418689411}
-  animalSlot3: {fileID: 1484999065}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
+  ReadyExplore: {fileID: 1360205659}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
   ListAnimal: {fileID: 0}
   imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &904441733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6887,10 +6903,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 3
+  animalIdx: 0
   animalCost: 200
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 21300000, guid: 2164a77105a38074895173dac2595dc2, type: 3}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -7040,10 +7056,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 4
+  animalIdx: 0
   animalCost: 600
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 21300000, guid: 7c952b5187087144394a774785e9ff0a, type: 3}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -10321,29 +10337,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 0}
-  yellow: {fileID: 0}
-  red: {fileID: 0}
-  indigo: {fileID: 0}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
   map: {fileID: 1040252422}
   mapButton: {fileID: 1576517920}
   mapCloseButton: {fileID: 1556848900}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
   ReadyExplore: {fileID: 1360205659}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 0}
-  animalSlot2: {fileID: 0}
-  animalSlot3: {fileID: 0}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
   ListAnimal: {fileID: 0}
-  imgBackupList: {fileID: 0}
+  imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!114 &1556848903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10740,29 +10760,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 3741044815398749951, guid: 74089783f57d7904cb6635bc1d4874b5, type: 3}
-  yellow: {fileID: 9125558249500544396, guid: cb1a37bd5f7362b4ca1d5dcce7ec70fa, type: 3}
-  red: {fileID: 7278754825894522599, guid: 9add9e0f97e6c414d80ac7a4414151c1, type: 3}
-  indigo: {fileID: 2385146930343102860, guid: 71c3520976a2f49409f1cdb830f78541, type: 3}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
   map: {fileID: 1040252422}
   mapButton: {fileID: 1576517920}
   mapCloseButton: {fileID: 1556848900}
-  mapArea1: {fileID: 1617176017}
-  mapArea2: {fileID: 515544994}
-  mapArea3: {fileID: 679232098}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
   ReadyExplore: {fileID: 1360205659}
-  readyAnimalList: {fileID: 0}
-  animalSlot1: {fileID: 0}
-  animalSlot2: {fileID: 0}
-  animalSlot3: {fileID: 0}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
   ListAnimal: {fileID: 0}
-  imgBackupList: {fileID: 0}
+  imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!114 &1576517922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11087,10 +11111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
+  animalIdx: 0
   animalCost: 0
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 0}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -11217,29 +11241,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 3741044815398749951, guid: 74089783f57d7904cb6635bc1d4874b5, type: 3}
-  yellow: {fileID: 9125558249500544396, guid: cb1a37bd5f7362b4ca1d5dcce7ec70fa, type: 3}
-  red: {fileID: 7278754825894522599, guid: 9add9e0f97e6c414d80ac7a4414151c1, type: 3}
-  indigo: {fileID: 2385146930343102860, guid: 71c3520976a2f49409f1cdb830f78541, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
-  ReadyExplore: {fileID: 0}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 286363024}
-  animalSlot2: {fileID: 1418689411}
-  animalSlot3: {fileID: 1484999065}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
+  ReadyExplore: {fileID: 1360205659}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
   ListAnimal: {fileID: 0}
   imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &1617176017
 GameObject:
   m_ObjectHideFlags: 0
@@ -11384,29 +11412,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
-  yellow: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
-  red: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
-  indigo: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
   ReadyExplore: {fileID: 1360205659}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 0}
-  animalSlot2: {fileID: 0}
-  animalSlot3: {fileID: 0}
-  ListAnimal: {fileID: 154661252}
-  imgBackupList: {fileID: 0}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
+  ListAnimal: {fileID: 0}
+  imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
-  mapPrevealImage: {fileID: 1024573171}
-  area1PrevealSprite: {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  mapPrevealImage: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &1629036160
 GameObject:
   m_ObjectHideFlags: 0
@@ -11919,10 +11951,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
+  animalIdx: 0
   animalCost: 0
   level: 0
   exp: 0
-  animalCount: 0
   babyAnimalSprite: {fileID: 0}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
@@ -12049,29 +12081,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 3741044815398749951, guid: 74089783f57d7904cb6635bc1d4874b5, type: 3}
-  yellow: {fileID: 9125558249500544396, guid: cb1a37bd5f7362b4ca1d5dcce7ec70fa, type: 3}
-  red: {fileID: 7278754825894522599, guid: 9add9e0f97e6c414d80ac7a4414151c1, type: 3}
-  indigo: {fileID: 2385146930343102860, guid: 71c3520976a2f49409f1cdb830f78541, type: 3}
-  map: {fileID: 0}
-  mapButton: {fileID: 0}
-  mapCloseButton: {fileID: 0}
-  mapArea1: {fileID: 0}
-  mapArea2: {fileID: 0}
-  mapArea3: {fileID: 0}
-  ReadyExplore: {fileID: 0}
-  readyAnimalList: {fileID: 154661252}
-  animalSlot1: {fileID: 286363024}
-  animalSlot2: {fileID: 1418689411}
-  animalSlot3: {fileID: 1484999065}
+  animals:
+  - {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb, type: 3}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
+  map: {fileID: 1040252422}
+  mapButton: {fileID: 1576517920}
+  mapCloseButton: {fileID: 1556848900}
+  mapArea:
+  - {fileID: 1617176017}
+  - {fileID: 515544994}
+  - {fileID: 679232098}
+  ReadyExplore: {fileID: 1360205659}
+  readyAnimalList: {fileID: 616591435}
+  animalSlot:
+  - {fileID: 286363024}
+  - {fileID: 1418689411}
+  - {fileID: 1484999065}
   ListAnimal: {fileID: 0}
   imgBackupList: {fileID: 223336018}
   slotAnimalImg: {fileID: 0}
   animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  area1PrevealSprite: {fileID: 0}
-  area2PrevealSprite: {fileID: 0}
-  area3PrevealSprite: {fileID: 0}
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &1794637572
 GameObject:
   m_ObjectHideFlags: 0
@@ -12686,7 +12722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animals: []
-  gogoAnimalIndexes: 
+  gogoAnimalIndexes: 000000000000000000000000
 --- !u!1 &1911899917
 GameObject:
   m_ObjectHideFlags: 0
@@ -14524,6 +14560,133 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1629036161}
     m_Modifications:
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animals.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: mapArea.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animalSlot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animals.Array.data[0]
+      value: 
+      objectReference: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animals.Array.data[1]
+      value: 
+      objectReference: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animals.Array.data[2]
+      value: 
+      objectReference: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animals.Array.data[3]
+      value: 
+      objectReference: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1040252422}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: mapButton
+      value: 
+      objectReference: {fileID: 1576517920}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: mapCloseButton
+      value: 
+      objectReference: {fileID: 1556848900}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: mapArea.Array.data[0]
+      value: 
+      objectReference: {fileID: 1617176017}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: mapArea.Array.data[1]
+      value: 
+      objectReference: {fileID: 515544994}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: mapArea.Array.data[2]
+      value: 
+      objectReference: {fileID: 679232098}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: ReadyExplore
+      value: 
+      objectReference: {fileID: 1360205659}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: readyAnimalList
+      value: 
+      objectReference: {fileID: 616591435}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animalSlot.Array.data[0]
+      value: 
+      objectReference: {fileID: 286363024}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animalSlot.Array.data[1]
+      value: 
+      objectReference: {fileID: 1418689411}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animalSlot.Array.data[2]
+      value: 
+      objectReference: {fileID: 1484999065}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: imgBackupList
+      value: 
+      objectReference: {fileID: 223336018}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: animalListCountText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3,
+        type: 3}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611,
+        type: 3}
+    - target: {fileID: 171541004763886723, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d,
+        type: 3}
     - target: {fileID: 6446162933764294379, guid: 44ef756bbf9a6cd42bb02d91071c193d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14648,6 +14811,133 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1629036161}
     m_Modifications:
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animals.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: mapArea.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animalSlot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animals.Array.data[0]
+      value: 
+      objectReference: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animals.Array.data[1]
+      value: 
+      objectReference: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animals.Array.data[2]
+      value: 
+      objectReference: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animals.Array.data[3]
+      value: 
+      objectReference: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1040252422}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: mapButton
+      value: 
+      objectReference: {fileID: 1576517920}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: mapCloseButton
+      value: 
+      objectReference: {fileID: 1556848900}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: mapArea.Array.data[0]
+      value: 
+      objectReference: {fileID: 1617176017}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: mapArea.Array.data[1]
+      value: 
+      objectReference: {fileID: 515544994}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: mapArea.Array.data[2]
+      value: 
+      objectReference: {fileID: 679232098}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: ReadyExplore
+      value: 
+      objectReference: {fileID: 1360205659}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: readyAnimalList
+      value: 
+      objectReference: {fileID: 616591435}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animalSlot.Array.data[0]
+      value: 
+      objectReference: {fileID: 286363024}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animalSlot.Array.data[1]
+      value: 
+      objectReference: {fileID: 1418689411}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animalSlot.Array.data[2]
+      value: 
+      objectReference: {fileID: 1484999065}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: imgBackupList
+      value: 
+      objectReference: {fileID: 223336018}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: animalListCountText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3,
+        type: 3}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611,
+        type: 3}
+    - target: {fileID: -8388810629863394773, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d,
+        type: 3}
     - target: {fileID: 7410171516202515401, guid: 181d3aa7e27a73c4ca090e6506814ecb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14777,6 +15067,133 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animals.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: mapArea.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animalSlot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animals.Array.data[0]
+      value: 
+      objectReference: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animals.Array.data[1]
+      value: 
+      objectReference: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animals.Array.data[2]
+      value: 
+      objectReference: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animals.Array.data[3]
+      value: 
+      objectReference: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1040252422}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: mapButton
+      value: 
+      objectReference: {fileID: 1576517920}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: mapCloseButton
+      value: 
+      objectReference: {fileID: 1556848900}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: mapArea.Array.data[0]
+      value: 
+      objectReference: {fileID: 1617176017}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: mapArea.Array.data[1]
+      value: 
+      objectReference: {fileID: 515544994}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: mapArea.Array.data[2]
+      value: 
+      objectReference: {fileID: 679232098}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: ReadyExplore
+      value: 
+      objectReference: {fileID: 1360205659}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: readyAnimalList
+      value: 
+      objectReference: {fileID: 616591435}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animalSlot.Array.data[0]
+      value: 
+      objectReference: {fileID: 286363024}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animalSlot.Array.data[1]
+      value: 
+      objectReference: {fileID: 1418689411}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animalSlot.Array.data[2]
+      value: 
+      objectReference: {fileID: 1484999065}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: imgBackupList
+      value: 
+      objectReference: {fileID: 223336018}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: animalListCountText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3,
+        type: 3}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611,
+        type: 3}
+    - target: {fileID: 6534052998184232236, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d,
+        type: 3}
     - target: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506,
         type: 3}
       propertyPath: m_Name
@@ -14901,6 +15318,133 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animals.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: mapArea.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animalSlot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animals.Array.data[0]
+      value: 
+      objectReference: {fileID: 7410171516202515406, guid: 181d3aa7e27a73c4ca090e6506814ecb,
+        type: 3}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animals.Array.data[1]
+      value: 
+      objectReference: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animals.Array.data[2]
+      value: 
+      objectReference: {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d,
+        type: 3}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animals.Array.data[3]
+      value: 
+      objectReference: {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506,
+        type: 3}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1040252422}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: mapButton
+      value: 
+      objectReference: {fileID: 1576517920}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: mapCloseButton
+      value: 
+      objectReference: {fileID: 1556848900}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: mapArea.Array.data[0]
+      value: 
+      objectReference: {fileID: 1617176017}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: mapArea.Array.data[1]
+      value: 
+      objectReference: {fileID: 515544994}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: mapArea.Array.data[2]
+      value: 
+      objectReference: {fileID: 679232098}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: ReadyExplore
+      value: 
+      objectReference: {fileID: 1360205659}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: readyAnimalList
+      value: 
+      objectReference: {fileID: 616591435}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animalSlot.Array.data[0]
+      value: 
+      objectReference: {fileID: 286363024}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animalSlot.Array.data[1]
+      value: 
+      objectReference: {fileID: 1418689411}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animalSlot.Array.data[2]
+      value: 
+      objectReference: {fileID: 1484999065}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: imgBackupList
+      value: 
+      objectReference: {fileID: 223336018}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: animalListCountText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3,
+        type: 3}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611,
+        type: 3}
+    - target: {fileID: -1468536609999534138, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
+        type: 3}
+      propertyPath: areaPrevealSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d,
+        type: 3}
     - target: {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72,
         type: 3}
       propertyPath: m_Name

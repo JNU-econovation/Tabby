@@ -11,13 +11,14 @@ public class Animal : MonoBehaviour
 {
     public int animalNumber;
 
+    public int animalIdx;
+
     protected int animalHP ;
     public int animalCost;
 
     public int level;
     public int exp;
 
-    public int animalCount;//옮기자
 
     public Sprite babyAnimalSprite;
     public Sprite middleAnimalSprite;

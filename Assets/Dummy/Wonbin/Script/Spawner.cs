@@ -35,29 +35,13 @@ public class Spawner : MonoBehaviour
 
     public static void AddNewAnimal(Animal animal)
     {
-        
-            animals.Add(animal);
+
+        animal.animalIdx = animals.Count;
+        animals.Add(animal);
 
     }
 
-    public static void AnimalCountUP(Animal animal)
-    {
 
-        int animalListNumber = animals.IndexOf(animal);
-        animals[animalListNumber].animalCount += 1;
-    }
-
-    public static void AnimalCountDown(Animal animal)
-    {
-
-        int animalListNumber = animals.IndexOf(animal);
-        animals[animalListNumber].animalCount -= 1;
-    }
-
-    public static void SetAnimalCount(Animal animal, int newAnimalCount)
-    {
-        //animal.animalCount=newAnimalCount;
-    }
 
 
     //하트생성

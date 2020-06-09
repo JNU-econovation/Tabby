@@ -20,12 +20,16 @@ public class Linker : MonoBehaviour
 
     public void GOGObattle()
     {
-        //MapbuttonManager에서 gogoAnimalIndexes가져오기
+        gogoAnimalIndexes = MapButtonManager.gogoAnimalArray;
         foreach (int i in gogoAnimalIndexes)
         {
-            if(i!=-1)
+            if (i != -1)
                 animals.Add(Spawner.animals[i]);
         }
-        SceneManager.LoadScene("HS_Mission");
+        if (gogoAnimalIndexes[0] != -1)
+            //SceneManager.LoadScene("HS_Mission");
+    
+    Debug.Log(gogoAnimalIndexes[0] + " " + gogoAnimalIndexes[1] + " " + gogoAnimalIndexes[2]);
+        
     }
 }
