@@ -12,6 +12,12 @@ namespace Battle
         private DetectLockOnState detectLockOnState;
         #endregion
 
+        [SerializeField]
+        AnimalStatData data;
+        // Shape transform
+        [SerializeField]
+        Transform spriteTransform;
+
         void Awake ()
         {
             // Init Reference
@@ -19,7 +25,7 @@ namespace Battle
             // Init FSM setting
             InitFSM ();
             // Init Command state
-
+            InitStat (data);
         }
         void Start ()
         {
@@ -38,6 +44,7 @@ namespace Battle
         {
             battleVisual = GetComponentInChildren<BattleVisual> ();
             atkColPoolControl = GetComponentInChildren<AtkColPoolControl> ();
+            animator = GetComponentInChildren<Animator> ();
         }
         private void InitEvent ()
         {
@@ -73,6 +80,11 @@ namespace Battle
             stateControl.SetState (states[(int) EAnimalState.IDLE]);
         }
 
+        public void Shot ()
+        {
+            atkColPoolControl.Shot (0, target);
+        }
+
         enum UnitState { Idle, Walk, Attack }
 
         void SetState (UnitState state)
@@ -97,6 +109,7 @@ namespace Battle
             public IdleState (RedTurtle owner) => this.owner = owner;
             public void OnEnter ()
             {
+                owner.animator.SetTrigger ("TrgIdle");
                 owner.AnimalState = EAnimalState.IDLE;
             }
 
@@ -132,6 +145,7 @@ namespace Battle
             public void OnEnter ()
             {
                 owner.AnimalState = EAnimalState.MOVE;
+                owner.animator.SetTrigger ("TrgCmdWalk");
             }
 
             public void OnExit ()
@@ -142,6 +156,8 @@ namespace Battle
             public void Run ()
             {
                 currentDist += 10f * Time.deltaTime;
+                // 적 바라보는 방향으로 돌리기
+                ChangeSpriteX ();
                 owner.transform.position = new Vector2 (beginPos.x + (currentDist * direction.x),
                     beginPos.y + (currentDist * direction.y));
                 if (currentDist > maxDist)
@@ -152,6 +168,14 @@ namespace Battle
                         owner.stateControl.SetState (owner.states[(int) EAnimalState.DETECT_AUTO]);
                 }
 
+            }
+            // 방향에 따른 스프라이트 전환
+            void ChangeSpriteX ()
+            {
+                if (owner.target.transform.position.x < owner.transform.position.x)
+                    owner.spriteTransform.localScale = new Vector3 (-1, 1, 1);
+                else
+                    owner.spriteTransform.localScale = new Vector3 (1, 1, 1);
             }
             public void InitPos (Vector3 dir, float dist)
             {
@@ -173,6 +197,7 @@ namespace Battle
 
             public void OnEnter ()
             {
+                owner.animator.SetTrigger ("TrgWalk");
                 // 적이 없을 경우 대기 상태
                 if (BattleManager._instance.EnemyControl.Enemies.Count < 1)
                     owner.stateControl.SetState (owner.states[(int) EAnimalState.IDLE]);
@@ -195,6 +220,8 @@ namespace Battle
                 // 적이 없을 경우 대기 상태
                 if (BattleManager._instance.EnemyControl.Enemies.Count < 1)
                     owner.stateControl.SetState (owner.states[(int) EAnimalState.IDLE]);
+                // 적 바라보는 방향으로 돌리기
+                ChangeSpriteX ();
                 detectTime += Time.deltaTime;
                 if (detectTime > detectDelay)
                 {
@@ -209,6 +236,14 @@ namespace Battle
                 }
                 // 항상 적 추적
                 Chase ();
+            }
+            // 방향에 따른 스프라이트 전환            
+            void ChangeSpriteX ()
+            {
+                if (owner.target.transform.position.x < owner.transform.position.x)
+                    owner.spriteTransform.localScale = new Vector3 (-1, 1, 1);
+                else
+                    owner.spriteTransform.localScale = new Vector3 (1, 1, 1);
             }
             // Enemy 모두 탐색하여 거리 측정 후 가장 가까운 적 도출
             int Detect ()
@@ -247,6 +282,7 @@ namespace Battle
 
             public void OnEnter ()
             {
+                owner.animator.SetTrigger ("TrgWalk");
                 // 적이 없을 경우 대기 상태
                 if (BattleManager._instance.AnimalControl.LockOnEnemy == null)
                     owner.stateControl.SetState (owner.states[(int) EAnimalState.IDLE]);
@@ -267,6 +303,8 @@ namespace Battle
             {
                 if (BattleManager._instance.AnimalControl.LockOnEnemy == null)
                     owner.stateControl.SetState (owner.states[(int) EAnimalState.IDLE]);
+                // 적 바라보는 방향으로 돌리기
+                ChangeSpriteX ();
                 detectTime += Time.deltaTime;
                 if (detectTime > detectDelay)
                 {
@@ -279,6 +317,14 @@ namespace Battle
                 }
                 // 항상 적 추적
                 Chase ();
+            }
+            // 방향에 따른 스프라이트 전환
+            void ChangeSpriteX ()
+            {
+                if (owner.target.transform.position.x < owner.transform.position.x)
+                    owner.spriteTransform.localScale = new Vector3 (-1, 1, 1);
+                else
+                    owner.spriteTransform.localScale = new Vector3 (1, 1, 1);
             }
             // 적 추적
             void Chase ()
@@ -300,7 +346,9 @@ namespace Battle
 
             public void OnEnter ()
             {
-                owner.atkColPoolControl.Shot (0, owner.target);
+                // 적 바라보는 방향으로 돌리기
+                ChangeSpriteX ();
+                owner.animator.SetTrigger ("TrgAtk");
                 owner.AnimalState = EAnimalState.ATK;
                 time = 0f;
             }
@@ -314,6 +362,15 @@ namespace Battle
                 {
                     owner.stateControl.SetState (owner.states[(int) EAnimalState.IDLE]);
                 }
+            }
+
+            // 방향에 따른 스프라이트 전환
+            void ChangeSpriteX ()
+            {
+                if (owner.target.transform.position.x < owner.transform.position.x)
+                    owner.spriteTransform.localScale = new Vector3 (-1, 1, 1);
+                else
+                    owner.spriteTransform.localScale = new Vector3 (1, 1, 1);
             }
         }
     }
