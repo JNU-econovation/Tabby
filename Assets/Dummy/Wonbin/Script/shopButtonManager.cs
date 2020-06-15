@@ -20,8 +20,8 @@ public class ShopButtonManager: MonoBehaviour
     private Image image;
     public GameObject AnimalforList;
 
-
-    private GameObject gameManager;
+    public GameObject Animals;
+    private static List<Animal> shopAnimalList;
 
 
     public string PSN;//productSourceName
@@ -31,6 +31,8 @@ public class ShopButtonManager: MonoBehaviour
     public GameObject animalShopButton;
     public GameObject farmObShopButton;
     public GameObject text;
+
+    public GameObject[] shopAnimals;
 
     public GameObject mapButton;
 
@@ -46,7 +48,7 @@ public class ShopButtonManager: MonoBehaviour
 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
+        
     }
 
     public void openShop()

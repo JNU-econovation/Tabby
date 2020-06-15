@@ -11,7 +11,7 @@ public class MapButtonManager : MonoBehaviour
     TabbyAnimator tabbyAnimaltor;
 
     static List<Animal> listAnimals;
-    static List<bool> listAnimalAvailability;
+    static List<bool> listAnimalAvailability=new List<bool>();
 
     public GameObject[] animals;
 
@@ -70,12 +70,16 @@ public class MapButtonManager : MonoBehaviour
 
     public void Area1ReadyOpen()
     {
+
         listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
             listAnimalAvailability.Add(true);
-        for(int i = 0; i < listAnimals.Count; i++)
+        for (int i = 0; i < listAnimals.Count; i++)
+            Debug.Log(listAnimals[i].animalNumber);
+        for (int i = 0; i < listAnimals.Count; i++)
         {
-            listAnimal=Instantiate(animals[i], new Vector2(0,0), Quaternion.identity);
+            int animalNumber = listAnimals[i].animalNumber;
+            listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
             listAnimal.transform.parent = readyAnimalList.transform;
             listAnimal.transform.position = listAnimal.transform.parent.position;
             listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
@@ -91,7 +95,8 @@ public class MapButtonManager : MonoBehaviour
             listAnimalAvailability.Add(true);
         for (int i = 0; i < listAnimals.Count; i++)
         {
-            listAnimal = Instantiate(animals[i], new Vector2(0, 0), Quaternion.identity);
+            int animalNumber = listAnimals[i].animalNumber;
+            listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
             listAnimal.transform.parent = readyAnimalList.transform;
             listAnimal.transform.position = listAnimal.transform.parent.position;
             listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
@@ -108,7 +113,8 @@ public class MapButtonManager : MonoBehaviour
             listAnimalAvailability.Add(true);
         for (int i = 0; i < listAnimals.Count; i++)
         {
-            listAnimal = Instantiate(animals[i], new Vector2(0, 0), Quaternion.identity);
+            int animalNumber = listAnimals[i].animalNumber;
+            listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
             listAnimal.transform.parent = readyAnimalList.transform;
             listAnimal.transform.position = listAnimal.transform.parent.position;
             listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);

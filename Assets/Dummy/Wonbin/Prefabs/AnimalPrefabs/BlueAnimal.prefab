@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2448804857108897039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.76, y: 0.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1981180029
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: ffd3c96afa2a82a4ab26eb693e4f41b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3dbc5f474871e8d4eb36e52f633ef476, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2448804857108897039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 51622ef6ec53ba344a90fbb434affbb7, type: 2}
   m_CullingMode: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   heartPrefabs: {fileID: 2782221430322883522, guid: 96043e2ccdb41ab46a2534d48b03a1d2,
     type: 3}
   distance: 10
+  farmObjectShop: {fileID: 0}
 --- !u!114 &4267588671330530242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,10 +173,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
+  animalIdx: 0
   animalCost: 20
   level: 0
   exp: 0
-  animalCount: 0
-  babyAnimalSprite: {fileID: 21300000, guid: ffd3c96afa2a82a4ab26eb693e4f41b6, type: 3}
+  babyAnimalSprite: {fileID: 21300000, guid: 3dbc5f474871e8d4eb36e52f633ef476, type: 3}
   middleAnimalSprite: {fileID: 0}
   growUpSprite: {fileID: 0}
+  s: {fileID: 0}

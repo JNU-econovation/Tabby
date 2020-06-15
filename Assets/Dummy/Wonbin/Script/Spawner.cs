@@ -10,23 +10,24 @@ public class Spawner : MonoBehaviour
     GameObject child;
     [SerializeField]
     List<GameObject> animalPrefabs;
-    public static List<Animal> animals = new List<Animal>();
+    List<GameObject> farmObjectPrefabs;
+    public static List<Animal> animals=new List<Animal>();
+    public static List<FarmObject> farmObjects=new List<FarmObject>();
     private void Awake()
     {
         Init();
     }
     public void Init()
     {
+        InputManager.oneTapMoney = 1;
         PathFinder forInstantiate = new PathFinder();
         foreach (AnimalData animalData in DataManager._instance.PlayerDatas[GameManager._instance.PlayerIdx].animalDatas)
         {
-            GameObject newAnimal = Instantiate(animalPrefabs[animalData.idx]);
+            forInstantiate.NodeSetting();
+            GameObject newAnimal = Instantiate(animalPrefabs[animalData.idx], forInstantiate.RandomSpawnSetting(),Quaternion.identity);
             Animal temp = newAnimal.GetComponent<Animal>();
             Spawner.AddNewAnimal(temp);
-            Rigidbody2D newAnimalRigidbody = newAnimal.GetComponent<Rigidbody2D>();
             newAnimal.transform.parent = farmAnimal.transform;
-            forInstantiate.NodeSetting();
-            newAnimalRigidbody.position = forInstantiate.RandomSpawnSetting();
 
             //idx따라 Animal 생성
             

@@ -23,11 +23,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    /*public void pathStart()
-    {
-        farmObjectShop = GameObject.Find("farmObShop");
-        if (farmObjectShop != null)
-            BroadcastMessage("pathFindingStart");
-    }*///뜯어서 Animals에 붙이기
+    
 }
 

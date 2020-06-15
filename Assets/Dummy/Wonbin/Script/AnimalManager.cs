@@ -35,10 +35,11 @@ public class AnimalManager : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    public GameObject farmObjectShop;
 
-    
 
-   
+
+
     private void Start()
     {
         animal = gameObject.GetComponent<Animal>();
@@ -75,10 +76,15 @@ public class AnimalManager : MonoBehaviour
     }
 
 
+    public void pathStart()
+    {
+        farmObjectShop = GameObject.Find("farmObShop");
+        if (farmObjectShop != null)
+            BroadcastMessage("pathFindingStart");
+    }//뜯어서 Animals에 붙이기
 
 
 
-    
 
 
     void OnMouseDrag()
