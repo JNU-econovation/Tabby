@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 120
   atk: 5
-  atkSpd: 1
+  atkSpd: 1.5
   atkRange: 3.5
