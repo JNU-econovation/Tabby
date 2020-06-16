@@ -5,7 +5,7 @@ using UnityEngine;
 public class PathFinder : MonoBehaviour
 {
     [SerializeField]
-    private Vector2Int bottomLeft =new Vector2Int(-22, -11), topRight=new Vector2Int(22, 10);
+    private Vector2Int bottomLeft =new Vector2Int(-22, -11), topRight=new Vector2Int(22, 8);
     private List<Node> FinalNodeList;
     Vector2Int targetPos;
     public bool allowDiagonal, dontCrossCorner;
@@ -49,6 +49,13 @@ public class PathFinder : MonoBehaviour
             RandomSetting(rigidbody2D, startTargetDistance);
             PathFinding(rigidbody2D);
         }
+    }
+
+    public void DropAnimal(Rigidbody2D rigidbody2D, int startTargetDistance)
+    {
+        FinalListNodeNumber = 0;
+        RandomSetting(rigidbody2D, startTargetDistance);
+        PathFinding(rigidbody2D);
     }
 
     public void FollwingPath(Rigidbody2D rigidbody2D, float speed)
@@ -107,7 +114,7 @@ public class PathFinder : MonoBehaviour
             for (int j = 0; j < sizeY; j++)
             {
                 bool isWall = false;
-                foreach (Collider2D col in Physics2D.OverlapCircleAll(new Vector2(i + bottomLeft.x, j + bottomLeft.y), 0.4f))
+                foreach (Collider2D col in Physics2D.OverlapCircleAll(new Vector2(i + bottomLeft.x, j + bottomLeft.y), 1f))
                     if (col.gameObject.layer == LayerMask.NameToLayer("Wall")) isWall = true;
 
                 NodeArray[i, j] = new Node(isWall, i + bottomLeft.x, j + bottomLeft.y);

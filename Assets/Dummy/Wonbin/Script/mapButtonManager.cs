@@ -43,6 +43,11 @@ public class MapButtonManager : MonoBehaviour
 
     private GameObject listAnimal;
 
+    public void Awake()
+    {
+        slotImage = new GameObject[3];
+        gogoAnimalArray = new int[3];
+    }
     public void openMap()
     {
         map.gameObject.SetActive(true);
@@ -73,16 +78,20 @@ public class MapButtonManager : MonoBehaviour
 
         listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
+        {
+            listAnimalAvailability = new List<bool>();
             listAnimalAvailability.Add(true);
+        }
         for (int i = 0; i < listAnimals.Count; i++)
             Debug.Log(listAnimals[i].animalNumber);
+        
         for (int i = 0; i < listAnimals.Count; i++)
         {
             int animalNumber = listAnimals[i].animalNumber;
             listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
             listAnimal.transform.parent = readyAnimalList.transform;
+            listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
-            listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
         }
         ReadyExplore.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
@@ -92,14 +101,17 @@ public class MapButtonManager : MonoBehaviour
     {
         listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
+        {
+            listAnimalAvailability = new List<bool>();
             listAnimalAvailability.Add(true);
+        }
         for (int i = 0; i < listAnimals.Count; i++)
         {
             int animalNumber = listAnimals[i].animalNumber;
             listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
             listAnimal.transform.parent = readyAnimalList.transform;
+            listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
-            listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
         }
         ReadyExplore.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
@@ -110,14 +122,17 @@ public class MapButtonManager : MonoBehaviour
     {
         listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
+        {
+            listAnimalAvailability = new List<bool>();
             listAnimalAvailability.Add(true);
+        }
         for (int i = 0; i < listAnimals.Count; i++)
         {
             int animalNumber = listAnimals[i].animalNumber;
             listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
             listAnimal.transform.parent = readyAnimalList.transform;
+            listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
-            listAnimal.transform.localScale = new Vector2(3.4f, 1.8f);
         }
         ReadyExplore.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
@@ -132,14 +147,18 @@ public class MapButtonManager : MonoBehaviour
         listAnimals = Spawner.animals.ToList<Animal>();
         Animal thisAnimal = gameObject.GetComponent<Animal>();
         int animalListIdx = transform.GetSiblingIndex();
-        SpriteRenderer tapAnimalSprite= gameObject.GetComponent<SpriteRenderer>();
+        Sprite tapAnimalSprite= gameObject.GetComponent<Animal>().animalSprite;
+
+        print(animalListIdx);
+        print(listAnimalAvailability[animalListIdx]);
+        print(imgBackupList.transform.childCount);
 
         if (imgBackupList.transform.childCount != 0 && listAnimalAvailability[animalListIdx] != false)
         {
-
+            print(imgBackupList.transform.childCount+"마리");
             slotImage[0] = imgBackupList.transform.GetChild(0).gameObject;
             image = slotImage[0].GetComponent<Image>();
-            image.sprite = tapAnimalSprite.sprite;
+            image.sprite = tapAnimalSprite;
             slotImgAnimal = slotImage[0].GetComponent<Animal>();
 
             slotImgAnimal.animalIdx = thisAnimal.animalIdx;
@@ -187,7 +206,7 @@ public class MapButtonManager : MonoBehaviour
     void animalSlot1Tap()
     {
         
-        slotImage[0] = animalSlot[1].transform.GetChild(0).gameObject;
+        slotImage[0] = animalSlot[0].transform.GetChild(0).gameObject;
         slotImage[0].transform.parent = imgBackupList.transform;
         slotImage[0].transform.position = slotImage[0].transform.parent.position;
         Animal slot1Animal = slotImage[0].GetComponent<Animal>();

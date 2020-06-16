@@ -11,10 +11,14 @@ namespace Battle
         public AnimalBattleData stat;
         // 타겟팅 대상
         protected Enemy target;
+        #region Reference
         // 시각효과
         protected BattleVisual battleVisual;
         // atkColPoolControl
         protected AtkColPoolControl atkColPoolControl;
+        // Animator
+        protected Animator animator;
+        #endregion
         public BattleVisual BattleVisual { get => battleVisual; set => battleVisual = value; }
         #region FSM
         // FSM을 구동할 HeadMachine

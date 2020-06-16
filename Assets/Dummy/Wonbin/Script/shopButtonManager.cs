@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameData;
 
-public class ShopButtonManager: MonoBehaviour
+public class ShopButtonManager : MonoBehaviour
 {
 
-    public static Animal shopAnimal;
-    
+    public Animal shopAnimal;
+    public FarmObject shopFarmObject;
+
     //Drag PIDrag;
 
     public GameObject farmAnimal;
+    public GameObject farmFarmObject;
 
     public GameObject product;
     private GameObject producted;
@@ -21,7 +23,9 @@ public class ShopButtonManager: MonoBehaviour
     public GameObject AnimalforList;
 
     public GameObject Animals;
-    private static List<Animal> shopAnimalList;
+    
+    public GameObject[] shopAnimalProducts;
+    public GameObject[] shopFarmObjectProducts;
 
 
     public string PSN;//productSourceName
@@ -32,7 +36,6 @@ public class ShopButtonManager: MonoBehaviour
     public GameObject farmObShopButton;
     public GameObject text;
 
-    public GameObject[] shopAnimals;
 
     public GameObject mapButton;
 
@@ -48,7 +51,7 @@ public class ShopButtonManager: MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     public void openShop()
@@ -95,15 +98,22 @@ public class ShopButtonManager: MonoBehaviour
 
     public void buy()
     {
+        if (animalshop.activeSelf == true)
+            AnimalBuy();
+        else
+            FarmObjectBuy();
+    }
+
+    void AnimalBuy()
+    {
         product = gameObject.GetComponent<ShopButtonManager>().product;
-        print(product);
         ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
         productImgSBM.product = product;
         text.gameObject.SetActive(true);
         productImage = GameObject.Find("arrangeImage");
         image = productImage.GetComponent<Image>();
         shopAnimal = gameObject.GetComponent<Animal>();
-        image.sprite = shopAnimal.babyAnimalSprite;
+        image.sprite = shopAnimal.animalSprite;
         Animal productAnimal = productImage.GetComponent<Animal>();
         productAnimal.animalNumber = shopAnimal.animalNumber;
         productAnimal.animalCost = shopAnimal.animalCost;
@@ -111,14 +121,28 @@ public class ShopButtonManager: MonoBehaviour
         PIDrag.PItransformMid();
         OKButton.gameObject.SetActive(true);
         cancelButton.gameObject.SetActive(true);
-        print(shopAnimal);
+
     }
 
-    public void FOTagging()
+    void FarmObjectBuy()
     {
+        product = gameObject.GetComponent<ShopButtonManager>().product;
+        ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
+        productImgSBM.product = product;
         productImage = GameObject.Find("arrangeImage");
-        productImage.gameObject.tag = "farmObject";
+        image = productImage.GetComponent<Image>();
+        shopFarmObject = gameObject.GetComponent<FarmObject>();
+        image.sprite = shopFarmObject.farmObjectSprite;
+        FarmObject productFarmObject = productImage.GetComponent<FarmObject>();
+        productFarmObject.farmObjectNumber = shopFarmObject.farmObjectNumber;
+        productFarmObject.shopCost = shopFarmObject.shopCost;
+        Drag PIDrag = productImage.GetComponent<Drag>();
+        PIDrag.PItransformMid();
+        OKButton.gameObject.SetActive(true);
+        cancelButton.gameObject.SetActive(true);
     }
+
+
 
     public void cancel()
     {
@@ -132,28 +156,58 @@ public class ShopButtonManager: MonoBehaviour
 
     public void PressOK()
     {
-    
+
+        if (animalshop.activeSelf == true)
+            AnimalOK();
+        else
+            FarmObjectOK();
+
+    }
+
+    void AnimalOK()
+    {
         text.gameObject.SetActive(false);
         productImage = GameObject.Find("arrangeImage");
         ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
         product = productSBM.product;
-        Animal productAnimal = productImage.GetComponent<Animal>();
-        
-        producted = Instantiate(product, new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
+        Animal productAnimal = product.GetComponent<Animal>();
+
+        producted = Instantiate(shopAnimalProducts[productAnimal.animalNumber], new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
         producted.transform.parent = farmAnimal.transform;
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformBack();
+
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
-        //productImage.gameObject.tag = "Untagged";
         MoneyManager.money -= productAnimal.animalCost;
 
-        Spawner.AddNewAnimal(shopAnimal);
+        Spawner.AddNewAnimal(producted);
         DataManager._instance.SaveAnimals(Spawner.animals);
 
-        //if (animalshop.activeSelf == true)
-        //    AnimalManager.AnimalListAdd(producted, AnimalforList, AnimalforList.gameObject.name);
+    }
 
+    void FarmObjectOK()
+    {
+        text.gameObject.SetActive(false);
+        productImage = GameObject.Find("arrangeImage");
+        ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
+        product = productSBM.product;
+        FarmObject productFarmObject = product.GetComponent<FarmObject>();
+
+        producted = Instantiate(shopFarmObjectProducts[productFarmObject.farmObjectNumber], new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
+        producted.transform.parent = farmFarmObject.transform;
+        Drag PIDrag = productImage.GetComponent<Drag>();
+        PIDrag.PItransformBack();
+
+        OKButton.gameObject.SetActive(false);
+        cancelButton.gameObject.SetActive(false);
+        MoneyManager.money -= productFarmObject.shopCost;
+
+        Spawner.AddNewFarmObject(productFarmObject);
+        DataManager._instance.SaveAnimals(Spawner.animals);
+
+        AnimalManager animalManager = farmAnimal.GetComponent<AnimalManager>();
+        animalManager.pathStart();
     }
 
     public static void CreatFarmAnimal(int idx)

@@ -21,7 +21,7 @@ public class Drag : MonoBehaviour
 
     public void PItransformMid()
     {
-        transform.position = new Vector3(0f, -1.5f, 0f);
+        transform.position = new Vector3(0f, -1.5f, -5f);
     }
 
     public void PItransformBack()

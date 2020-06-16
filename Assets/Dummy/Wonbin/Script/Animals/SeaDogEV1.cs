@@ -4,13 +4,13 @@ using UnityEngine;
 using Battle;
 using UnityEditor;
 
-public class Indigo : Animal
+public class SeaDogEV1 : Animal
 {
 
-    public AnimalStatData s;
-
-    private void Awake()
+    public void Awake()
     {
         animalNumber = 3;
+        animalHP = 10000;
+        animalCost = 600;
     }
 }

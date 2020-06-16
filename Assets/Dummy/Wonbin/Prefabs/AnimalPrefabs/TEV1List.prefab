@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 9}
+  m_AnchoredPosition: {x: -1.1, y: -0.0000052452}
   m_SizeDelta: {x: 15, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7410171516123791849
@@ -242,7 +242,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -183.35117, y: -225.36255}
-  m_SizeDelta: {x: 35, y: 100}
+  m_SizeDelta: {x: 35, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7410171516202515403
 CanvasRenderer:
@@ -334,20 +334,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals: []
+  animals:
+  - {fileID: 7410171516202515406}
+  - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
+  - {fileID: 6446162933764294380, guid: 44ef756bbf9a6cd42bb02d91071c193d, type: 3}
+  - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
   map: {fileID: 0}
   mapButton: {fileID: 0}
   mapCloseButton: {fileID: 0}
-  mapArea: []
+  mapArea:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ReadyExplore: {fileID: 0}
   readyAnimalList: {fileID: 0}
-  animalSlot: []
+  animalSlot:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ListAnimal: {fileID: 0}
   imgBackupList: {fileID: 0}
   slotAnimalImg: {fileID: 0}
-  animalListCountText: {fileID: 7410171517311361659}
+  animalListCountText: {fileID: 0}
   mapPrevealImage: {fileID: 0}
-  areaPrevealSprite: []
+  areaPrevealSprite:
+  - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
+  - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
+  - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
 --- !u!1 &7410171517311361657
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,4 +437,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 

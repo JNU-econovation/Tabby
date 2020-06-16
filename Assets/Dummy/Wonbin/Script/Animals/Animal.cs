@@ -20,13 +20,9 @@ public class Animal : MonoBehaviour
     public int exp;
 
 
-    public Sprite babyAnimalSprite;
-    public Sprite middleAnimalSprite;
-    public Sprite growUpSprite;
+    public Sprite animalSprite;
 
-    public Sprite GetGrowUpSprite() {
-        return growUpSprite;
-    }
-    
+
+
 }
 //유니티는 왠만하면 스크립트엔 클래스 하나만 하자
