@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gardenia : FarmObject
+public class IndStrawberry : FarmObject
 {
     private void Awake()
     {
-        farmObjectNumber = 0;
-        producePeriod=60f;
+        farmObjectNumber = 1;
+        producePeriod = 60f;
         moneyOutput = 20;
 
-}
-
-
+    }
 }

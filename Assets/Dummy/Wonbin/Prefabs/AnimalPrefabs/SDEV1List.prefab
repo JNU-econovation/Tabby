@@ -191,7 +191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 65b315e8bdc883e499503a4035450ed6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e3ea144f0976cf4e9f73f92bc323323, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -212,11 +212,11 @@ GameObject:
   - component: {fileID: 9179618818986591158}
   - component: {fileID: 9179618818986591156}
   - component: {fileID: 9179618818986591159}
-  - component: {fileID: 7294692278591057193}
   - component: {fileID: -1781744994014722579}
   - component: {fileID: 6534052998184232236}
+  - component: {fileID: -3217022538323563051}
   m_Layer: 5
-  m_Name: indigoList 1
+  m_Name: SDEV1List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,27 +280,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7294692278591057193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9179618818986591153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7e3336cf13bd5459aa01afebd03c23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animalNumber: 3
-  animalIdx: 0
-  animalCost: 600
-  level: 0
-  exp: 0
-  babyAnimalSprite: {fileID: 21300000, guid: 7c952b5187087144394a774785e9ff0a, type: 3}
-  middleAnimalSprite: {fileID: 0}
-  growUpSprite: {fileID: 0}
-  s: {fileID: 0}
 --- !u!50 &-1781744994014722579
 Rigidbody2D:
   serializedVersion: 4
@@ -342,11 +321,14 @@ MonoBehaviour:
   map: {fileID: 0}
   mapButton: {fileID: 0}
   mapCloseButton: {fileID: 0}
+  recruitButton: {fileID: 0}
+  battleReadyButton: {fileID: 0}
   mapArea:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  ReadyExplore: {fileID: 0}
+  battleReadyWindow: {fileID: 0}
+  recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 0}
   animalSlot:
   - {fileID: 0}
@@ -361,6 +343,24 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
   - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
   - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
+--- !u!114 &-3217022538323563051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179618818986591153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68adbf42d4968040bd9d9d3ed029b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalNumber: 0
+  animalIdx: 0
+  animalCost: 0
+  level: 0
+  exp: 0
+  animalSprite: {fileID: 0}
 --- !u!1 &9179618819987446278
 GameObject:
   m_ObjectHideFlags: 0

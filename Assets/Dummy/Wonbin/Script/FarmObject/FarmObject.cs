@@ -10,6 +10,9 @@ public class FarmObject : MonoBehaviour
     public float atackBuff;
     public float HPBuff;
 
+    public float posX;
+    public float posY;
+
     public int farmObjectIdx;
 
     //public bool harvestable;

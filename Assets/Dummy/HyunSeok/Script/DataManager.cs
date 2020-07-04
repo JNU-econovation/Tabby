@@ -67,7 +67,7 @@ namespace GameData
             PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Clear ();
             foreach (Animal animal in animals)
             {
-                Debug.Log("dddd : " + animal.animalNumber);
+                //Debug.Log("dddd : " + animal.animalNumber);
                 PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Add (new AnimalData (animal.animalNumber, animal.level, animal.exp));
             }
             SaveData<PlayerData> (PlayerDatas[GameManager._instance.PlayerIdx], "/PlayerData/0.json");

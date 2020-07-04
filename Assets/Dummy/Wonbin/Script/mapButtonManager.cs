@@ -18,8 +18,14 @@ public class MapButtonManager : MonoBehaviour
     public GameObject map;
     public GameObject mapButton;
     public GameObject mapCloseButton;
+    public GameObject recruitButton;
+    public GameObject battleReadyButton;
     public GameObject[] mapArea;
-    public GameObject ReadyExplore;
+
+    public static int AreaNumber;
+
+    public GameObject battleReadyWindow;
+    public GameObject recruitWindow;
 
     public GameObject readyAnimalList;
     public GameObject[] animalSlot;
@@ -58,22 +64,48 @@ public class MapButtonManager : MonoBehaviour
 
     public void closeMap()
     {
-        if (ReadyExplore.activeSelf == false)
+        if (battleReadyWindow.activeSelf == false&&recruitWindow.activeSelf==false)
         {
             map.gameObject.SetActive(false);
             mapButton.gameObject.SetActive(true);
             mapCloseButton.gameObject.SetActive(false);
         }
-        if (ReadyExplore.activeSelf == true)
+        if (recruitButton.activeSelf == true)
         {
-            ReadyExplore.gameObject.SetActive(false);
+            recruitButton.gameObject.SetActive(false);
+            recruitWindow.gameObject.SetActive(false);
+            battleReadyButton.gameObject.SetActive(false);
+            battleReadyWindow.gameObject.SetActive(false);
         }
         for(int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
         List<Animal> listAnimals = Spawner.animals.ToList();
     }
 
-    public void Area1ReadyOpen()
+    public void Area1Tap()
+    {
+        AreaNumber = 0;
+        recruitButton.gameObject.SetActive(true);
+        battleReadyButton.gameObject.SetActive(true);
+    }
+    public void Area2Tap()
+    {
+        AreaNumber = 1;
+        recruitButton.gameObject.SetActive(true);
+        battleReadyButton.gameObject.SetActive(true);
+    }
+    public void Area3Tap()
+    {
+        AreaNumber = 2;
+        recruitButton.gameObject.SetActive(true);
+        battleReadyButton.gameObject.SetActive(true);
+    }
+
+    public void RecruitWindowOpen()
+    {
+        recruitWindow.gameObject.SetActive(true);
+    }
+    public void BattleReadyWindowOpen()
     {
 
         listAnimals = Spawner.animals.ToList();
@@ -93,52 +125,11 @@ public class MapButtonManager : MonoBehaviour
             listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
         }
-        ReadyExplore.gameObject.SetActive(true);
+        battleReadyWindow.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
-        prevearChanger.sprite = areaPrevealSprite[0];
+        prevearChanger.sprite = areaPrevealSprite[AreaNumber];
     }
-    public void Area2ReadyOpen()
-    {
-        listAnimals = Spawner.animals.ToList();
-        for (int i = 0; i < listAnimals.Count; i++)
-        {
-            listAnimalAvailability = new List<bool>();
-            listAnimalAvailability.Add(true);
-        }
-        for (int i = 0; i < listAnimals.Count; i++)
-        {
-            int animalNumber = listAnimals[i].animalNumber;
-            listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
-            listAnimal.transform.parent = readyAnimalList.transform;
-            listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
-            listAnimal.transform.position = listAnimal.transform.parent.position;
-        }
-        ReadyExplore.gameObject.SetActive(true);
-        prevearChanger = mapPrevealImage.GetComponent<Image>();
-        prevearChanger.sprite = areaPrevealSprite[1];
-
-    }
-    public void Area3ReadyOpen()
-    {
-        listAnimals = Spawner.animals.ToList();
-        for (int i = 0; i < listAnimals.Count; i++)
-        {
-            listAnimalAvailability = new List<bool>();
-            listAnimalAvailability.Add(true);
-        }
-        for (int i = 0; i < listAnimals.Count; i++)
-        {
-            int animalNumber = listAnimals[i].animalNumber;
-            listAnimal = Instantiate(animals[animalNumber], new Vector2(0, 0), Quaternion.identity);
-            listAnimal.transform.parent = readyAnimalList.transform;
-            listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
-            listAnimal.transform.position = listAnimal.transform.parent.position;
-        }
-        ReadyExplore.gameObject.SetActive(true);
-        prevearChanger = mapPrevealImage.GetComponent<Image>();
-        prevearChanger.sprite = areaPrevealSprite[2];
-
-    }
+    
 
 
 
@@ -149,9 +140,6 @@ public class MapButtonManager : MonoBehaviour
         int animalListIdx = transform.GetSiblingIndex();
         Sprite tapAnimalSprite= gameObject.GetComponent<Animal>().animalSprite;
 
-        print(animalListIdx);
-        print(listAnimalAvailability[animalListIdx]);
-        print(imgBackupList.transform.childCount);
 
         if (imgBackupList.transform.childCount != 0 && listAnimalAvailability[animalListIdx] != false)
         {

@@ -106,11 +106,11 @@ public class ShopButtonManager : MonoBehaviour
 
     void AnimalBuy()
     {
+        productImage = GameObject.Find("arrangeImage");
         product = gameObject.GetComponent<ShopButtonManager>().product;
         ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
         productImgSBM.product = product;
         text.gameObject.SetActive(true);
-        productImage = GameObject.Find("arrangeImage");
         image = productImage.GetComponent<Image>();
         shopAnimal = gameObject.GetComponent<Animal>();
         image.sprite = shopAnimal.animalSprite;
@@ -125,11 +125,12 @@ public class ShopButtonManager : MonoBehaviour
     }
 
     void FarmObjectBuy()
+
     {
+        productImage = GameObject.Find("arrangeImage");
         product = gameObject.GetComponent<ShopButtonManager>().product;
         ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
         productImgSBM.product = product;
-        productImage = GameObject.Find("arrangeImage");
         image = productImage.GetComponent<Image>();
         shopFarmObject = gameObject.GetComponent<FarmObject>();
         image.sprite = shopFarmObject.farmObjectSprite;
@@ -199,15 +200,19 @@ public class ShopButtonManager : MonoBehaviour
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformBack();
 
+        
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
         MoneyManager.money -= productFarmObject.shopCost;
 
-        Spawner.AddNewFarmObject(productFarmObject);
-        DataManager._instance.SaveAnimals(Spawner.animals);
+        Spawner.AddNewFarmObject(producted);
+        DataManager._instance.SaveAnimals(Spawner.animals);//
 
-        AnimalManager animalManager = farmAnimal.GetComponent<AnimalManager>();
-        animalManager.pathStart();
+        for (int i = 0; i < farmAnimal.transform.childCount; i++)
+        {
+            AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
+            animalController.pathStart();
+        }
     }
 
     public static void CreatFarmAnimal(int idx)

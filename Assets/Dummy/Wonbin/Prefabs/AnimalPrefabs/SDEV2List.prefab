@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 7800412331379792968}
   - component: {fileID: 8386220787538582034}
   - component: {fileID: 5298961689047153363}
-  - component: {fileID: 1936510910634412232}
+  - component: {fileID: 6385454672737486710}
   m_Layer: 5
   m_Name: SDEV2List
   m_TagString: Untagged
@@ -325,11 +325,14 @@ MonoBehaviour:
   map: {fileID: 0}
   mapButton: {fileID: 0}
   mapCloseButton: {fileID: 0}
+  recruitButton: {fileID: 0}
+  battleReadyButton: {fileID: 0}
   mapArea:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  ReadyExplore: {fileID: 0}
+  battleReadyWindow: {fileID: 0}
+  recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 0}
   animalSlot:
   - {fileID: 0}
@@ -344,7 +347,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
   - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
   - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
---- !u!114 &1936510910634412232
+--- !u!114 &6385454672737486710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,7 +356,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7800412331379792974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220230058112fd54eb29b8e0617a3d08, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f7e3336cf13bd5459aa01afebd03c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
@@ -425,7 +428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c5d52647e73a8042b49bc364ba5c1bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a617372245564ae4c93db43d66c61d8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
