@@ -60,10 +60,15 @@ public class Spawner : MonoBehaviour
         
     }
 
-    public static void AddNewFarmObject(FarmObject farmObject)
+    public static void AddNewFarmObject(GameObject farmObject)
     {
-        farmObject.farmObjectIdx = animals.Count;
-        farmObjects.Add(farmObject);
+        FarmObject farmObjectOb = farmObject.GetComponent<FarmObject>();
+        Rigidbody2D farmObjectRB = farmObject.GetComponent<Rigidbody2D>();
+        farmObjectOb.posX = farmObjectRB.position.x;
+        farmObjectOb.posY = farmObjectRB.position.y;
+        farmObjectOb.farmObjectIdx = farmObject.transform.GetSiblingIndex();
+        farmObjects.Add(farmObjectOb);
+        print(farmObjects[farmObjects.Count-1].posX);
     }
 
     public void Evolution(GameObject animal, Spawner spawner)
