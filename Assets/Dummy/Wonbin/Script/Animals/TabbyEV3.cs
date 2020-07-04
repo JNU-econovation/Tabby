@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Battle;
+using BattleDummy;
 
 public class TabbyEV3: Animal
 {

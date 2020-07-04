@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using GlobalDefine;
 using UnityEngine;
 
-namespace Battle
+namespace BattleDummy
 {
     #region State
     public enum EManageState { IDLE, PROGRESS, PAUSE, GAMEOVER, END }

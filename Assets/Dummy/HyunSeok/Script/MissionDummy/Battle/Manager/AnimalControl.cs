@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Battle
+namespace BattleDummy
 {
     public class AnimalControl : MonoBehaviour
     {

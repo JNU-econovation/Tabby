@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-namespace Battle
+namespace BattleDummy
 {
     public class BattleManager : MonoBehaviour
     {
+        
         // 싱글톤
         public static BattleManager _instance;
 
+
+        
         #region Reference
         // Battle 씬 카메라
         private CameraControl cameraControl;

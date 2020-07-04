@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Battle
+namespace GameData
 {
-    [CreateAssetMenu (fileName = "Stat Data", menuName = "Data/Battle Data/Animal Data/Stat Data")]
-    public class AnimalStatData : ScriptableObject
+    [CreateAssetMenu (fileName = "AnimalGameData", menuName = "Data/Animal GameData")]
+    public class AnimalGameData : ScriptableObject
     {
         [SerializeField]
         private float hp;
@@ -20,7 +20,7 @@ namespace Battle
         public float AtkSpd { get => atkSpd; set => atkSpd = value; }
 
         [SerializeField]
-        private float atkRange;
-        public float AtkRange { get => atkRange; set => atkRange = value; }
+        private float tough;
+        public float Tough { get => tough; set => tough = value; }
     }
 }

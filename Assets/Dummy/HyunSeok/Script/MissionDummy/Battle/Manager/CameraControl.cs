@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FSM;
 using UnityEngine;
 
-namespace Battle
+namespace BattleDummy
 {
     public class CameraControl : MonoBehaviour
     {
