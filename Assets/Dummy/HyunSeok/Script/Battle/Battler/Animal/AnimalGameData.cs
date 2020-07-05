@@ -8,6 +8,18 @@ namespace GameData
     public class AnimalGameData : ScriptableObject
     {
         [SerializeField]
+        private int index;
+        public int Index { get => index; set => index = value; }
+
+        [SerializeField]
+        private string animalName;
+        public string AnimalName { get => animalName; set => animalName = value; }
+
+        [SerializeField]
+        private int exp;
+        public int Exp { get => exp; set => exp = value; }
+
+        [SerializeField]
         private float hp;
         public float HP { get => hp; set => hp = value; }
 
@@ -22,5 +34,13 @@ namespace GameData
         [SerializeField]
         private float tough;
         public float Tough { get => tough; set => tough = value; }
+
+        [SerializeField]
+        private float focus;
+        public float Focus { get => focus; set => focus = value; }
+
+        [SerializeField]
+        private float critical;
+        public float Critical { get => critical; set => critical = value; }
     }
 }

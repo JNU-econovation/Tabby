@@ -72,7 +72,6 @@ namespace BattleDummy
             HP = animalStatData.HP;
             Atk = animalStatData.Atk;
             AtkSpd = animalStatData.AtkSpd;
-            AtkRange = animalStatData.AtkRange;
         }
     }
 }
