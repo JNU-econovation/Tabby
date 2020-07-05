@@ -7,10 +7,9 @@ public class Gardenia : FarmObject
     private void Awake()
     {
         farmObjectNumber = 0;
-        producePeriod=60f;
+        producePeriod=15f;
         moneyOutput = 20;
-
-}
+    }
 
 
 }

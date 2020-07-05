@@ -6,57 +6,39 @@ using UnityEngine.UI;
 public class FarmObjectController : MonoBehaviour
 {
     FarmObject farmObject;
-    float producePeriod;
     float elapsedTime;
+    public enum State {producing, harvestable};
     SpriteRenderer spriteRenderer;
     public Sprite producingSprite;
     public Sprite harvestableSprite;
-    public bool timePause;
-    public GameObject producing;
-    public GameObject harvestable;
-
-    void Start()
+    State state;
+    private void Start()
     {
-        //producing = gameObject.transform.GetChild(0).gameObject;
-        //harvestable = gameObject.transform.GetChild(1).gameObject;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         farmObject = gameObject.GetComponent<FarmObject>();
-        producePeriod = farmObject.producePeriod;
-        timePause = false;
         elapsedTime = 0f;
-        //producing.gameObject.SetActive(true);
-        //harvestable.gameObject.SetActive(false);
-        
+        state = State.producing;//시간 읽어와서 정해지도록 바꿔야함
     }
 
 
-    void Update()
+     private void Update()
     {
-        if (timePause != true)
+        if (state == State.producing)
         {
-            if (elapsedTime < producePeriod)
-                elapsedTime += Time.deltaTime;
-            else
-            {
-                //producing.gameObject.SetActive(false);
-                timePause = true;
-                //harvestable.gameObject.SetActive(true);
-                
-                spriteRenderer.sprite = harvestableSprite;
-            }
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime < farmObject.producePeriod)
+                state = State.harvestable;
+            spriteRenderer.sprite = harvestableSprite;
         }
-    
-
     }
 
-    private void OnMouseDown()
+     private void OnMouseDown()
     {
-        if (timePause == true)
+        if (state==State.harvestable)
         {
             spriteRenderer.sprite = producingSprite;
             MoneyManager.MoneyUP(farmObject.moneyOutput);
-            elapsedTime = 0f;
-            timePause = false;
+            state = State.producing;
         }
     }
 

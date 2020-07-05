@@ -149,10 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   producingSprite: {fileID: 21300000, guid: cd54a35076c726a4bbc00a195022d20b, type: 3}
-  harvestableSprite: {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
+  harvestableSprite: {fileID: 21300000, guid: a57f21bda50fac84fb1d2450cb6c990e, type: 3}
   timePause: 0
-  producing: {fileID: 0}
-  harvestable: {fileID: 0}
 --- !u!114 &3286711609227474072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,10 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
+  posX: 0
+  posY: 0
+  isField: 0
   producePeriod: 0
   moneyOutput: 0
-  atackBuff: 0
-  HPBuff: 0
   farmObjectIdx: 0
   shopCost: 0
   farmObjectSprite: {fileID: 21300000, guid: cd54a35076c726a4bbc00a195022d20b, type: 3}
