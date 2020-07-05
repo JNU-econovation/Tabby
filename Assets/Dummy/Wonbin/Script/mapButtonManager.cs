@@ -14,6 +14,10 @@ public class MapButtonManager : MonoBehaviour
     static List<Animal> listAnimals;
     static List<bool> listAnimalAvailability=new List<bool>();
 
+    public static int slot1AnimalIndex;
+    public static int slot2AnimalIndex;
+    public static int slot3AnimalIndex;
+
     public GameObject[] animals;
 
     public GameObject map;
@@ -52,6 +56,9 @@ public class MapButtonManager : MonoBehaviour
 
     public void Awake()
     {
+        slot1AnimalIndex = -1;
+        slot2AnimalIndex = -1;
+        slot3AnimalIndex = -1;
         slotImage = new GameObject[3];
         gogoAnimalArray = new int[3];
     }
@@ -112,7 +119,6 @@ public class MapButtonManager : MonoBehaviour
         listAnimals = Spawner.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
         {
-            listAnimalAvailability = new List<bool>();
             listAnimalAvailability.Add(true);
         }
         for (int i = 0; i < listAnimals.Count; i++)
@@ -131,51 +137,48 @@ public class MapButtonManager : MonoBehaviour
         prevearChanger.sprite = areaPrevealSprite[AreaNumber];
     }
     
-
-
-
-    public void tapListAnimal()
+    public void TapReadyList()
     {
+        MapButtonManager mapButtonManager = gameObject.transform.parent.GetComponent<MapButtonManager>();
+        mapButtonManager.tapListAnimal(transform.GetSiblingIndex());
+    }
+    public void tapListAnimal(int index)
+    {
+        //imgBackupList = GameObject.Find("AnimalImgBackup");
         listAnimals = Spawner.animals.ToList<Animal>();
-        Animal thisAnimal = gameObject.GetComponent<Animal>();
-        int animalListIdx = transform.GetSiblingIndex();
-        Sprite tapAnimalSprite= gameObject.GetComponent<Animal>().animalSprite;
-
-
-        if (imgBackupList.transform.childCount != 0 && listAnimalAvailability[animalListIdx] != false)
+        Animal thisAnimal = gameObject.transform.GetChild(index).GetComponent<Animal>();
+        Sprite tapAnimalSprite= gameObject.transform.GetChild(index).GetComponent<Animal>().animalSprite;
+        if (imgBackupList.transform.childCount != 0 && listAnimalAvailability[index] != false)
         {
-            print(imgBackupList.transform.childCount+"마리");
             slotImage[0] = imgBackupList.transform.GetChild(0).gameObject;
             image = slotImage[0].GetComponent<Image>();
             image.sprite = tapAnimalSprite;
             slotImgAnimal = slotImage[0].GetComponent<Animal>();
 
             slotImgAnimal.animalIndex = thisAnimal.animalIndex;
-
-            MapButtonManager mapButtonManager = transform.parent.GetComponent<MapButtonManager>();
-            animalSlot[0] = mapButtonManager.animalSlot[0];
-            animalSlot[1] = mapButtonManager.animalSlot[1];
-            animalSlot[2] = mapButtonManager.animalSlot[2];
-
+            listAnimalAvailability[index] = false;
 
             if (animalSlot[1].transform.childCount != 0)
             {
                 slotImage[0].transform.parent = animalSlot[2].transform;
+                slot3AnimalIndex = index;
                 slotImage[0].transform.position = slotImage[0].transform.parent.position;
-                gogoAnimalArray[2] = animalListIdx;
+                gogoAnimalArray[2] = index;
             }
             if (animalSlot[0].transform.childCount != 0 && animalSlot[1].transform.childCount == 0)
             {
                 slotImage[0].transform.parent = animalSlot[1].transform;
+                slot2AnimalIndex = index;
                 slotImage[0].transform.position = slotImage[0].transform.parent.position;
-                gogoAnimalArray[1] = animalListIdx;
+                gogoAnimalArray[1] = index;
                 gogoAnimalArray[2] = -1;
             }
             if (animalSlot[0].transform.childCount == 0)
             {
                 slotImage[0].transform.parent = animalSlot[0].transform;
+                slot1AnimalIndex = index;
                 slotImage[0].transform.position = slotImage[0].transform.parent.position;
-                gogoAnimalArray[0] = animalListIdx;
+                gogoAnimalArray[0] = index;
                 gogoAnimalArray[1] = -1;
                 gogoAnimalArray[2] = -1;
             }
@@ -196,6 +199,7 @@ public class MapButtonManager : MonoBehaviour
     {
         
         slotImage[0] = animalSlot[0].transform.GetChild(0).gameObject;
+        listAnimalAvailability[slot1AnimalIndex] = true;
         slotImage[0].transform.parent = imgBackupList.transform;
         slotImage[0].transform.position = slotImage[0].transform.parent.position;
         Animal slot1Animal = slotImage[0].GetComponent<Animal>();
@@ -208,6 +212,7 @@ public class MapButtonManager : MonoBehaviour
         if (animalSlot[1].transform.childCount != 0 && animalSlot[2].transform.childCount == 0)
         {
             slotImage[1] = animalSlot[1].transform.GetChild(0).gameObject;
+            slot1AnimalIndex = slot2AnimalIndex;
             slotImage[1].transform.parent = animalSlot[0].transform;
             slotImage[1].transform.position = slotImage[1].transform.parent.position;
             gogoAnimalArray[0] = gogoAnimalArray[1];
@@ -216,9 +221,11 @@ public class MapButtonManager : MonoBehaviour
         if (animalSlot[2].transform.childCount != 0 && animalSlot[1].transform.childCount != 0)
         {
             slotImage[1] = animalSlot[1].transform.GetChild(0).gameObject;
+            slot1AnimalIndex = slot2AnimalIndex;
             slotImage[1].transform.parent = animalSlot[0].transform;
             slotImage[1].transform.position = slotImage[1].transform.parent.position;
             slotImage[2] = animalSlot[2].transform.GetChild(0).gameObject;
+            slot2AnimalIndex = slot3AnimalIndex;
             slotImage[2].transform.parent = animalSlot[1].transform;
             slotImage[2].transform.position = slotImage[2].transform.parent.position;
 
@@ -238,6 +245,7 @@ public class MapButtonManager : MonoBehaviour
     void animalSlot2Tap()
     {
         slotImage[1] = animalSlot[1].transform.GetChild(0).gameObject;
+        listAnimalAvailability[slot2AnimalIndex] = true;
         slotImage[1].transform.parent = imgBackupList.transform;
         slotImage[1].transform.position = slotImage[1].transform.parent.position;
         Animal slot2Animal = slotImage[1].GetComponent<Animal>();
@@ -250,6 +258,7 @@ public class MapButtonManager : MonoBehaviour
         {
             slotImage[2] = animalSlot[2].transform.GetChild(0).gameObject;
             slotImage[2].transform.parent = animalSlot[1].transform;
+            slot2AnimalIndex = slot3AnimalIndex;
             slotImage[2].transform.position = slotImage[2].transform.parent.position;
             gogoAnimalArray[1] = gogoAnimalArray[2];
             gogoAnimalArray[2] = -1;
@@ -262,6 +271,7 @@ public class MapButtonManager : MonoBehaviour
     void animalSlot3Tap()
     {
         slotImage[2] = animalSlot[2].transform.GetChild(0).gameObject;
+        listAnimalAvailability[slot3AnimalIndex] = true;
         slotImage[2].transform.parent = imgBackupList.transform;
         slotImage[2].transform.position = slotImage[2].transform.parent.position;
         Animal slot3Animal = slotImage[2].GetComponent<Animal>();
@@ -273,13 +283,15 @@ public class MapButtonManager : MonoBehaviour
 
     public void TapGogoButton()
     {
-        DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
+        gogoAnimalArray[0] = slot1AnimalIndex;
+        gogoAnimalArray[1] = slot2AnimalIndex;
+        gogoAnimalArray[2] = slot3AnimalIndex;
+        Debug.Log("디버그로그");
+        Debug.Log(listAnimalAvailability[1]);
+        Debug.Log(gogoAnimalArray[2]);
+        //DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
     }
 
-    public static int[] GetGOGOAnimal()
-    {
-
-        return gogoAnimalArray;
-    }
+   
 
 }

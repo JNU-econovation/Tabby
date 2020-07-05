@@ -1243,14 +1243,14 @@ MonoBehaviour:
   map: {fileID: 1040252422}
   mapButton: {fileID: 1576517920}
   mapCloseButton: {fileID: 1556848900}
-  recruitButton: {fileID: 0}
-  battleReadyButton: {fileID: 0}
+  recruitButton: {fileID: 1597394079}
+  battleReadyButton: {fileID: 1228563526}
   mapArea:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
-  battleReadyWindow: {fileID: 0}
-  recruitWindow: {fileID: 0}
+  battleReadyWindow: {fileID: 1360205659}
+  recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
   animalSlot:
   - {fileID: 286363024}
@@ -1422,6 +1422,7 @@ MonoBehaviour:
     heart: 0
     animalDatas: []
     farmObjectDatas: []
+  rigionIndex: 0
   gogoAnimalIndexes: 
 --- !u!1 &201728251
 GameObject:
@@ -2123,8 +2124,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1897925579}
-        m_MethodName: GOGObattle
+      - m_Target: {fileID: 154661258}
+        m_MethodName: TapGogoButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2610,6 +2611,7 @@ GameObject:
   - component: {fileID: 470462692}
   - component: {fileID: 470462691}
   - component: {fileID: 470462690}
+  - component: {fileID: 470462694}
   m_Layer: 5
   m_Name: farmAnimal
   m_TagString: Untagged
@@ -2716,6 +2718,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470462688}
   m_CullTransparentMesh: 0
+--- !u!114 &470462694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470462688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd1e37095c03364f9e1ad44b4281f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animals: []
+  map: {fileID: 0}
+  mapButton: {fileID: 0}
+  mapCloseButton: {fileID: 0}
+  recruitButton: {fileID: 0}
+  battleReadyButton: {fileID: 0}
+  mapArea: []
+  battleReadyWindow: {fileID: 0}
+  recruitWindow: {fileID: 0}
+  readyAnimalList: {fileID: 0}
+  animalSlot: []
+  ListAnimal: {fileID: 0}
+  imgBackupList: {fileID: 0}
+  slotAnimalImg: {fileID: 0}
+  animalListCountText: {fileID: 0}
+  mapPrevealImage: {fileID: 0}
+  areaPrevealSprite: []
 --- !u!1 &494431467
 GameObject:
   m_ObjectHideFlags: 0
@@ -9800,9 +9831,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897925577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d30cd5f4bdbd444b8fb6483063a3d56, type: 3}
+  m_Script: {fileID: 11500000, guid: e028e140373209c459d15c9493cdf9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    index: 0
+    name: 
+    reputation: 0
+    leaderIndex: 0
+    money: 0
+    heart: 0
+    animalDatas: []
+    farmObjectDatas: []
+  rigionIndex: 0
+  gogoAnimalIndexes: 
 --- !u!1 &1911899917
 GameObject:
   m_ObjectHideFlags: 0

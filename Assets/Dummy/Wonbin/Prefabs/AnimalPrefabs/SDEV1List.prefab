@@ -118,7 +118,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6534052998184232236}
-        m_MethodName: tapListAnimal
+        m_MethodName: TapReadyList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -356,11 +356,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
-  animalSprite: {fileID: 0}
+  animalIndex: 0
+  animalCost: 0
+  animalSprite: {fileID: 21300000, guid: 9e3ea144f0976cf4e9f73f92bc323323, type: 3}
 --- !u!1 &9179618819987446278
 GameObject:
   m_ObjectHideFlags: 0

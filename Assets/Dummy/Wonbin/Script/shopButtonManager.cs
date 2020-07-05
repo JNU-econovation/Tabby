@@ -206,8 +206,8 @@ public class ShopButtonManager : MonoBehaviour
         cancelButton.gameObject.SetActive(false);
         MoneyManager.money -= productFarmObject.shopCost;
 
-        Spawner.AddNewFarmObject(producted);
-        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);//
+        Spawner.BuyNewFarmObject(producted);
+        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
 
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {
@@ -216,10 +216,6 @@ public class ShopButtonManager : MonoBehaviour
         }
     }
 
-    public static void CreatFarmAnimal(int idx)
-    {
-
-    }
 
 
 

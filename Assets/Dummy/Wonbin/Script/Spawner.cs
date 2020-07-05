@@ -87,7 +87,16 @@ public class Spawner : MonoBehaviour
         animals[animalObject.animalIndex] =animalObject;
         
     }
-
+    public static void BuyNewFarmObject(GameObject farmObject)
+    {
+        FarmObject farmObjectOb = farmObject.GetComponent<FarmObject>();
+        Rigidbody2D farmObjectRB = farmObject.GetComponent<Rigidbody2D>();
+        farmObjectOb.posX = farmObjectRB.position.x;
+        farmObjectOb.posY = farmObjectRB.position.y;
+        farmObjectOb.harvestTime = System.DateTime.Now;
+        farmObjects.Add(farmObjectOb);
+        print(farmObjects[farmObjects.Count - 1].posX);
+    }
     public static void AddNewFarmObject(GameObject farmObject)
     {
         FarmObject farmObjectOb = farmObject.GetComponent<FarmObject>();

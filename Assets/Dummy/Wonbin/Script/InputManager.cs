@@ -24,17 +24,16 @@ public class InputManager : MonoBehaviour
             mousePosition = Input.mousePosition;
             mousePosition = Camera.ScreenToWorldPoint(mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, transform.forward, maxDistance);
-            //Debug.Log(hit.collider.gameObject.name);
+            
 
             if (hit.collider == null)
                 { }
             else if(hit.collider.gameObject != tapzone)
             {
-                if (hit.collider.gameObject.transform.parent == farmObjects)
+                if (hit.collider.gameObject.transform.parent.name==farmObjects.name)
                 {
-                    //FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
-                    //FarmObject farmObject = hit.collider.gameObject.GetComponent<FarmObject>();
-                    //MoneyManager.MoneyUP(farmObject.moneyOutput);
+                    FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
+                    farmObjectController.Harvest();
                 }
             
             

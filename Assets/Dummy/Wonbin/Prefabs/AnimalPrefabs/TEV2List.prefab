@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: -1563824317555647999}
   - component: {fileID: -1468536609999534138}
   m_Layer: 5
-  m_Name: yellowList 1
+  m_Name: TEV2List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,14 +165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 1
-  animalIdx: 0
-  animalCost: 100
-  level: 0
+  animalName: 
   exp: 0
-  babyAnimalSprite: {fileID: 21300000, guid: b87afac473f4c5340a7f35a4b2a8c2ac, type: 3}
-  middleAnimalSprite: {fileID: 0}
-  growUpSprite: {fileID: 0}
-  s: {fileID: 0}
+  animalIndex: 0
+  animalCost: 100
+  animalSprite: {fileID: 21300000, guid: 395938f96788d5b41b95c34bbdf95847, type: 3}
 --- !u!50 &-1563824317555647999
 Rigidbody2D:
   serializedVersion: 4
@@ -210,8 +207,11 @@ MonoBehaviour:
   map: {fileID: 0}
   mapButton: {fileID: 0}
   mapCloseButton: {fileID: 0}
+  recruitButton: {fileID: 0}
+  battleReadyButton: {fileID: 0}
   mapArea: []
-  ReadyExplore: {fileID: 0}
+  battleReadyWindow: {fileID: 0}
+  recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 0}
   animalSlot: []
   ListAnimal: {fileID: 0}
@@ -415,7 +415,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1468536609999534138}
-        m_MethodName: tapListAnimal
+        m_MethodName: TapReadyList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
