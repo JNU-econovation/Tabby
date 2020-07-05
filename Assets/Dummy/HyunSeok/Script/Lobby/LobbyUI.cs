@@ -124,13 +124,14 @@ public class LobbyUI : MonoBehaviour
     }
 
     public void OnClickDeleteBtn (int index)
-    {
+    {/*
         string dataPath = "/PlayerData/" + index + ".json";
         if (GameData.DataManager.DeleteData (dataPath))
         {
             //GameData.DataManager._instance.Init ();
             Init ();
         }
+     */
     }
     #endregion
 }

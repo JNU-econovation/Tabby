@@ -84,7 +84,7 @@ public class PathFinder : MonoBehaviour
     {
         //현재위치에서 최소 startTargetDistance만큼 떨어져 있고 장애물이 없는 지점을 targetPos로 지정
         Vector2 spawnPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
-        while ((NodeArray[targetPos.x - bottomLeft.x, targetPos.y - bottomLeft.y].isWall == true))
+        while ((NodeArray[(int)spawnPos.x - bottomLeft.x, (int)spawnPos.y - bottomLeft.y].isWall == true))
             spawnPos = new Vector2Int(UnityEngine.Random.Range(bottomLeft.x, topRight.x), UnityEngine.Random.Range(bottomLeft.y, topRight.y));
         return spawnPos;
 

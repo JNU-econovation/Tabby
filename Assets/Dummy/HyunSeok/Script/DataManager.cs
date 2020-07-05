@@ -16,9 +16,13 @@ namespace GameData
         #region public field
         // 싱글톤
         public static DataManager _instance;
-        [SerializeField]
-        public List<PlayerData> playerDatas = new List<PlayerData> ();
-        public List<PlayerData> PlayerDatas { get => playerDatas; set => playerDatas = value; }
+
+        public PlayerData playerData;
+ 
+
+        public int[] gogoAnimalIndexes;
+
+
         #endregion
         #region unity method
         void Awake ()
@@ -26,6 +30,8 @@ namespace GameData
             // 싱글톤
             if (_instance == null)
                 _instance = this;
+            else
+                Destroy(this.gameObject);
 
             // 없을 경우 data 폴더 만들어주기
             string dataPath = null;
@@ -53,31 +59,43 @@ namespace GameData
          */
         private void Init ()
         {
-            /*playerDatas = new List<PlayerData> (3);
-            for (int i = 0; i < 3; i++)
-            {
-                playerDatas.Add (new PlayerData (LoadData ("/PlayerData/" + i.ToString () + ".json")));
-            }*/
-            PlayerDatas.Add (new PlayerData (LoadData ("/PlayerData/0.json")));
+            /*SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 0 + ".json");
+            SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 1 + ".json");
+            SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 2 + ".json");*/
+            playerData = new PlayerData(LoadData("/PlayerData/" + 0 + ".json"));
         }
-
-        public void SaveAnimals (List<Animal> animals)
+        public void ParseAnimalDate(List<Animal> animals)
         {
-
-            PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Clear ();
+            List<AnimalData> parseAnimalData = new List<AnimalData>();
             foreach (Animal animal in animals)
             {
-                //Debug.Log("dddd : " + animal.animalNumber);
-                PlayerDatas[GameManager._instance.PlayerIdx].animalDatas.Add (new AnimalData (animal.animalNumber, animal.level, animal.exp));
+                AnimalData temp = new AnimalData(animal.animalNumber, animal.animalName, animal.exp);
+                parseAnimalData.Add(temp);
+
             }
-            SaveData<PlayerData> (PlayerDatas[GameManager._instance.PlayerIdx], "/PlayerData/0.json");
+            playerData.animalDatas = parseAnimalData;
+            SaveData<PlayerData>(playerData, "/PlayerData/"+playerData.index+".json");
         }
+
+        public void ParseFarmObjectData(List<FarmObject> farmObjects)
+        {
+            List<FarmObjectData> parseFarmObjectData = new List<FarmObjectData>();
+            foreach (FarmObject farmObject in farmObjects)
+            {
+                FarmObjectData temp = new FarmObjectData(farmObject.farmObjectNumber, farmObject.posX, farmObject.posY, farmObject.harvestTime, farmObject.isField);
+                parseFarmObjectData.Add(temp);
+
+            }
+            playerData.farmObjectDatas = parseFarmObjectData;
+            SaveData<PlayerData>(playerData, "/PlayerData/" + playerData.index + ".json");
+        }
+
         /**
          *   json 데이터 저장
          *   @param index        몇번 째 세이브 파일인지
          *   @param path         저장할 경로, ex) /PlayerData/FirstData/first.json
          */
-        public static void SaveData<T> (T data, string path)
+        public void SaveData<T> (T data, string path)
         {
             JsonData saveData = JsonMapper.ToJson (data);
             string dataPath = null;
@@ -93,7 +111,7 @@ namespace GameData
          *   @param index        몇번 째 세이브 파일인지
          *   @param path         불러올 경로
          */
-        public static JsonData LoadData (string path)
+        public JsonData LoadData (string path)
         {
             JsonData loadData = null;
             string dataPath = null;
@@ -116,7 +134,7 @@ namespace GameData
             }
         }
 
-        public static bool DeleteData (string path)
+        public bool DeleteData (string path)
         {
             string dataPath = null;
             if (Application.platform == RuntimePlatform.WindowsEditor)
@@ -140,81 +158,95 @@ namespace GameData
     /**
      *   Player의 정보가 담긴 클래스
      */
-    [System.Serializable]
-    public class AnimalData
-    {
-        public int idx;
-        public int level;
-        public int exp;
 
-        public AnimalData (int idx, int level, int exp)
-        {
-            this.idx = idx;
-            this.level = level;
-            this.exp = exp;
-        }
-    }
+
     [System.Serializable]
     public class PlayerData
     {
+        public int index;
         public string name;
         public int reputation;
-        public int leaderIdx;
+        public int leaderIndex;
         public int money;
         public int heart;
-        public DateTime playTime;
-        public List<ItemLocationData> itemLocationDatas;
-        public List<int> inventoryDatas;
         public List<AnimalData> animalDatas;
+        public List<FarmObjectData> farmObjectDatas;
 
-        public PlayerData ()
+        public PlayerData()
         {
-            name = "test";
+            index = 0;
+            name = "";
             reputation = 0;
-            leaderIdx = 0;
+            leaderIndex = 0;
             money = 0;
             heart = 0;
-            playTime = new DateTime ();
-            itemLocationDatas = new List<ItemLocationData> ();
-            inventoryDatas = new List<int> ();
-            animalDatas = new List<AnimalData> ();
+            animalDatas = new List<AnimalData>();
+            farmObjectDatas = new List<FarmObjectData>();
         }
-        public PlayerData (JsonData data)
+        public PlayerData(JsonData data)
         {
-            name = "test";
+
             reputation = 0;
-            leaderIdx = 0;
+            leaderIndex = 0;
             money = 0;
             heart = 0;
-            playTime = new DateTime ();
-            itemLocationDatas = new List<ItemLocationData> ();
-            inventoryDatas = new List<int> ();
-            animalDatas = new List<AnimalData> ();
-            //Debug.Log(data["animalDatas"][0].ToString());
-            //AnimalData[] saveData = JsonHelper.FromJson<AnimalData> (data["animalDatas"][0].ToString());
-            //Debug.Log(data["animalDatas"]);
+
+            animalDatas = new List<AnimalData>();
+            farmObjectDatas = new List<FarmObjectData>();
             foreach (JsonData animalData in data["animalDatas"])
             {
-                int idx = int.Parse (animalData["idx"].ToString ());
-                int level = int.Parse (animalData["level"].ToString ());
+                int index = int.Parse(animalData["index"].ToString());
+                string name = (animalData["name"].ToString());
                 int exp = int.Parse(animalData["exp"].ToString());
-                animalDatas.Add (new AnimalData (idx, level, exp));
+                animalDatas.Add(new AnimalData(index, name, exp));
             }
+            foreach (JsonData farmObjectData in data["farmObjectDatas"])
+            {
+                int index = int.Parse(farmObjectData["index"].ToString());
+                double posX = double.Parse(farmObjectData["posX"].ToString());
+                double posY = double.Parse(farmObjectData["posY"].ToString());
+                DateTime harvestTime = Convert.ToDateTime(farmObjectData["harvestTime"].ToString());
+                bool isField = bool.Parse(farmObjectData["isField"].ToString());
+                farmObjectDatas.Add(new FarmObjectData(index, posX, posY, harvestTime, isField));
+            }
+
+
         }
 
-        //public List<AnimalData> monsters;
-
+        
     }
-
     [System.Serializable]
-    public class ItemLocationData
+    public class AnimalData
     {
         public int index;
-        public int x;
-        public int y;
-        public bool isOut;
-    }
+        public string name;
+        public int exp;
 
+        public AnimalData(int argIndex, string argName, int argExp)
+        {
+            index = argIndex;
+            name = argName;
+            exp = argExp;
+        }
+    }
+    [System.Serializable]
+    public class FarmObjectData
+    {
+        public int index;
+        public double posX;
+        public double posY;
+        public DateTime harvestTime;
+        public bool isField;
+
+        public FarmObjectData(int argIndex, double argPosX, double argPosY, DateTime argHarvestTime, bool argIsField)
+        {
+            index = argIndex;
+            posX = argPosX;
+            posY = argPosY;
+            harvestTime = argHarvestTime;
+            isField = argIsField;
+        }
+    }
     public static class JsonHelper
     {
         public static T[] FromJson<T> (string json)

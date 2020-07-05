@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEditor;
 using System;
+using GameData;
 
 public class MapButtonManager : MonoBehaviour
 {
@@ -149,7 +150,7 @@ public class MapButtonManager : MonoBehaviour
             image.sprite = tapAnimalSprite;
             slotImgAnimal = slotImage[0].GetComponent<Animal>();
 
-            slotImgAnimal.animalIdx = thisAnimal.animalIdx;
+            slotImgAnimal.animalIndex = thisAnimal.animalIndex;
 
             MapButtonManager mapButtonManager = transform.parent.GetComponent<MapButtonManager>();
             animalSlot[0] = mapButtonManager.animalSlot[0];
@@ -198,8 +199,8 @@ public class MapButtonManager : MonoBehaviour
         slotImage[0].transform.parent = imgBackupList.transform;
         slotImage[0].transform.position = slotImage[0].transform.parent.position;
         Animal slot1Animal = slotImage[0].GetComponent<Animal>();
-        Animal slotImg1Animal = listAnimals[slot1Animal.animalIdx];
-        listAnimalAvailability[slotImg1Animal.animalIdx] = true;
+        Animal slotImg1Animal = listAnimals[slot1Animal.animalIndex];
+        listAnimalAvailability[slotImg1Animal.animalIndex] = true;
 
         
         
@@ -240,7 +241,7 @@ public class MapButtonManager : MonoBehaviour
         slotImage[1].transform.parent = imgBackupList.transform;
         slotImage[1].transform.position = slotImage[1].transform.parent.position;
         Animal slot2Animal = slotImage[1].GetComponent<Animal>();
-        listAnimalAvailability[slot2Animal.animalIdx] = true;
+        listAnimalAvailability[slot2Animal.animalIndex] = true;
 
         
 
@@ -264,15 +265,15 @@ public class MapButtonManager : MonoBehaviour
         slotImage[2].transform.parent = imgBackupList.transform;
         slotImage[2].transform.position = slotImage[2].transform.parent.position;
         Animal slot3Animal = slotImage[2].GetComponent<Animal>();
-        listAnimalAvailability[slot3Animal.animalIdx] = true;
+        listAnimalAvailability[slot3Animal.animalIndex] = true;
 
         gogoAnimalArray[2] = -1;
-
+        
     }
 
     public void TapGogoButton()
     {
-
+        DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
     }
 
     public static int[] GetGOGOAnimal()

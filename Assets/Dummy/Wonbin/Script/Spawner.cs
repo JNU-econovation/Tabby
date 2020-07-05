@@ -5,10 +5,13 @@ using System.Dynamic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
     GameObject farmAnimal;
+    [SerializeField]
+    GameObject farmFarmObject;
     [SerializeField]
     GameObject child;
     [SerializeField]
@@ -17,6 +20,7 @@ public class Spawner : MonoBehaviour
     List<GameObject> farmObjectPrefabs;
 
     public FarmObject[] farmObjectDictionary;
+
     public static List<Animal> animals=new List<Animal>();
     public static List<FarmObject> farmObjects=new List<FarmObject>();
     private void Awake()
@@ -28,25 +32,49 @@ public class Spawner : MonoBehaviour
         
         InputManager.oneTapMoney = 1;
         PathFinder forInstantiate = new PathFinder();
-        foreach (AnimalData animalData in DataManager._instance.PlayerDatas[GameManager._instance.PlayerIdx].animalDatas)
+        
+        foreach (FarmObjectData farmObjectData in DataManager._instance.playerData.farmObjectDatas)
         {
-            forInstantiate.NodeSetting();
-            GameObject newAnimal = Instantiate(animalPrefabs[animalData.idx], forInstantiate.RandomSpawnSetting(),Quaternion.identity);
-            Animal temp = newAnimal.GetComponent<Animal>();
+            
+            GameObject newFarmObject = Instantiate(farmObjectPrefabs[farmObjectData.index], new Vector2((float)farmObjectData.posX, (float)farmObjectData.posY), Quaternion.identity);
+            FarmObject farmObject = newFarmObject.GetComponent<FarmObject>();
+            farmObject.posX = (float)farmObjectData.posX;
+            farmObject.posY = (float)farmObjectData.posY;
+            farmObject.harvestTime = farmObjectData.harvestTime;
+            farmObject.isField = farmObjectData.isField;
+
             //print(temp.animalIdx);
-       
+
+            newFarmObject.transform.parent = farmFarmObject.transform;
+            AddNewFarmObject(newFarmObject);
+
+            //idx따라 Animal 생성
+
+        }
+        
+        forInstantiate.NodeSetting();
+        foreach (AnimalData animalData in DataManager._instance.playerData.animalDatas)
+        {
+            
+            GameObject newAnimal = Instantiate(animalPrefabs[animalData.index], forInstantiate.RandomSpawnSetting(), Quaternion.identity);
+            Animal newanimal = newAnimal.GetComponent<Animal>();
+            newanimal.exp = animalData.exp;
+            newanimal.name = animalData.name;
+
+            //print(temp.animalIdx);
+
             newAnimal.transform.parent = farmAnimal.transform;
             AddNewAnimal(newAnimal);
 
             //idx따라 Animal 생성
 
         }
+        
     }
 
     public static void AddNewAnimal(GameObject animal)
     {
         Animal animalObject = animal.GetComponent<Animal>();
-        animalObject.animalIdx = animal.transform.GetSiblingIndex();
         animals.Add(animalObject);
         
     }
@@ -55,8 +83,8 @@ public class Spawner : MonoBehaviour
     {
         Animal animalObject = animal.GetComponent<Animal>();
         animal.transform.SetSiblingIndex(animalsIdx);
-        animalObject.animalIdx = animalsIdx;
-        animals[animalObject.animalIdx]=animalObject;
+        animalObject.animalIndex = animalsIdx;
+        animals[animalObject.animalIndex] =animalObject;
         
     }
 
@@ -66,7 +94,6 @@ public class Spawner : MonoBehaviour
         Rigidbody2D farmObjectRB = farmObject.GetComponent<Rigidbody2D>();
         farmObjectOb.posX = farmObjectRB.position.x;
         farmObjectOb.posY = farmObjectRB.position.y;
-        farmObjectOb.farmObjectIdx = farmObject.transform.GetSiblingIndex();
         farmObjects.Add(farmObjectOb);
         print(farmObjects[farmObjects.Count-1].posX);
     }
@@ -83,10 +110,11 @@ public class Spawner : MonoBehaviour
             
             evolAnimal=Instantiate(spawner.animalPrefabs[animalNumber + 1], animal.transform.position, Quaternion.identity);
             evolAnimal.transform.parent = farmAnimal.transform;
-            AddEvolutionAnimal(evolAnimal, animalscript.animalIdx);
+            AddEvolutionAnimal(evolAnimal, animalscript.animalIndex);
             Destroy(animal);
-            
-            DataManager._instance.SaveAnimals(Spawner.animals);
+
+
+            DataManager._instance.ParseAnimalDate(Spawner.animals);
         }
 
     }

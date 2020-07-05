@@ -1383,15 +1383,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.12465031, y: -2.0889277, z: -2.0864317}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2139220022}
-  - {fileID: 2044507197}
-  - {fileID: 907197640}
-  - {fileID: 1252491996}
-  - {fileID: 1794637575}
-  - {fileID: 1275984682}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &171584266
 MonoBehaviour:
@@ -1419,7 +1413,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e028e140373209c459d15c9493cdf9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDatas: []
+  playerData:
+    index: 0
+    name: 
+    reputation: 0
+    leaderIndex: 0
+    money: 0
+    heart: 0
+    animalDatas: []
+    farmObjectDatas: []
+  gogoAnimalIndexes: 
 --- !u!1 &201728251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,10 +2876,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 5
-  animalCost: 20
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 20
   animalSprite: {fileID: 21300000, guid: 3dbc5f474871e8d4eb36e52f633ef476, type: 3}
 --- !u!1 &508942985
 GameObject:
@@ -4149,10 +4152,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 0
   animalSprite: {fileID: 0}
 --- !u!58 &776535698
 CircleCollider2D:
@@ -4183,12 +4186,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
-  producePeriod: 0
-  moneyOutput: 0
-  atackBuff: 0
-  HPBuff: 0
   posX: 0
   posY: 0
+  isField: 0
+  producePeriod: 0
+  moneyOutput: 0
   farmObjectIdx: 0
   shopCost: 0
   farmObjectSprite: {fileID: 0}
@@ -4776,10 +4778,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 0
   animalSprite: {fileID: 0}
 --- !u!114 &894363454
 MonoBehaviour:
@@ -5170,8 +5172,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 171584265}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907197641
 MonoBehaviour:
@@ -5186,15 +5188,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmAnimal: {fileID: 907197639}
+  farmFarmObject: {fileID: 1252491995}
   child: {fileID: 0}
   animalPrefabs:
   - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
   - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 4676306424725609513, guid: 07802f4f75a519040b6962b0177cd230, type: 3}
   - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
   - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
-  - {fileID: 8221042580174428971, guid: b31d27ba99383e540b87806538d8cbcc, type: 3}
-  farmObjectPrefabs: []
+  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
+  farmObjectPrefabs:
+  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   farmObjectDictionary: []
 --- !u!1 &942541394
 GameObject:
@@ -5356,10 +5359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 0
   animalSprite: {fileID: 0}
 --- !u!1 &964489760
 GameObject:
@@ -6148,11 +6151,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252491995}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8181978, y: 0.92958, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 171584265}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1275984678
 GameObject:
@@ -6259,8 +6262,8 @@ RectTransform:
   - {fileID: 1911899918}
   - {fileID: 154083879}
   - {fileID: 429519514}
-  m_Father: {fileID: 171584265}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6655,12 +6658,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
-  producePeriod: 0
-  moneyOutput: 0
-  atackBuff: 0
-  HPBuff: 0
   posX: 0
   posY: 0
+  isField: 0
+  producePeriod: 0
+  moneyOutput: 0
   farmObjectIdx: 0
   shopCost: 0
   farmObjectSprite: {fileID: 21300000, guid: cd54a35076c726a4bbc00a195022d20b, type: 3}
@@ -7214,10 +7216,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 2
-  animalIdx: 0
-  animalCost: 200
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 200
   animalSprite: {fileID: 0}
 --- !u!114 &1385044770
 MonoBehaviour:
@@ -8626,10 +8628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 0
   animalSprite: {fileID: 0}
 --- !u!114 &1613694515
 MonoBehaviour:
@@ -9281,10 +9283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
+  animalIndex: 0
+  animalCost: 0
   animalSprite: {fileID: 0}
 --- !u!114 &1790830418
 MonoBehaviour:
@@ -9515,11 +9517,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794637572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12465031, y: -3, z: 2.0864317}
+  m_LocalPosition: {x: 0, y: -5.0889277, z: 0}
   m_LocalScale: {x: 5.1, y: 5, z: -20}
   m_Children: []
-  m_Father: {fileID: 171584265}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1794637579
 Rigidbody2D:
@@ -9801,8 +9803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d30cd5f4bdbd444b8fb6483063a3d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals: []
-  gogoAnimalIndexes: 000000000000000000000000
 --- !u!1 &1911899917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10772,12 +10772,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044507196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: 20}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.12465031, y: -0.2889278, z: 17.913568}
   m_LocalScale: {x: 30, y: 30, z: 0}
   m_Children: []
-  m_Father: {fileID: 171584265}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2044507198
 BoxCollider2D:
@@ -11068,7 +11068,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.548307
+  orthographic size: 14.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11092,11 +11092,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139220019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12465031, y: 2.0889277, z: -7.9135685}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 171584265}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2139220023
 MonoBehaviour:

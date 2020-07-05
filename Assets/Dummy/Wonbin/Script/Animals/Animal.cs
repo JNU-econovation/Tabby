@@ -1,24 +1,24 @@
-﻿using System;
+﻿
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using UnityEditor;
+
+
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
+
 
 //[System.Serializable]
 public class Animal : MonoBehaviour
 {
     public int animalNumber;
-
-    public int animalIdx;
+    public string animalName;
+    public int exp;
+    
+    public int animalIndex;
 
     protected int animalHP ;
     public int animalCost;
 
-    public int level;
-    public int exp;
-
+  
 
     public Sprite animalSprite;
 

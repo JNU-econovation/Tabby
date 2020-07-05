@@ -183,7 +183,8 @@ public class ShopButtonManager : MonoBehaviour
         MoneyManager.money -= productAnimal.animalCost;
 
         Spawner.AddNewAnimal(producted);
-        DataManager._instance.SaveAnimals(Spawner.animals);
+
+        DataManager._instance.ParseAnimalDate(Spawner.animals);
 
     }
 
@@ -206,7 +207,7 @@ public class ShopButtonManager : MonoBehaviour
         MoneyManager.money -= productFarmObject.shopCost;
 
         Spawner.AddNewFarmObject(producted);
-        DataManager._instance.SaveAnimals(Spawner.animals);//
+        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);//
 
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {
