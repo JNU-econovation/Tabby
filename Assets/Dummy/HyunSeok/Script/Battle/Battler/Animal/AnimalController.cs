@@ -5,6 +5,7 @@ using GameData;
 
 namespace Battle
 {
+    [RequireComponent(typeof(Animator))]
     public class AnimalController : MonoBehaviour, IBattlerAdapter
     {
         //------------------------------------------------------------ Data
@@ -15,29 +16,57 @@ namespace Battle
         private SkillData attackData;
         // 스킬 데이터
         [SerializeField]
-        protected SkillData skillData;
-        //------------------------------------------------------------ 
-        // 현재 발동 대기 중인 스킬들
+        protected List<SkillData> skillDatas;
+        //------------------------------------------------------------ Animator
         [SerializeField]
+        protected Animator animator;
+        //------------------------------------------------------------ Skill system
+        // 현재 발동 대기 중인 스킬들
         protected Queue<SkillData> activeSkillQueue;
         // 현재 발동중인 스킬
-        [SerializeField]
         protected SkillData currentSkillData;
         //------------------------------------------------------------ Data
         // 현재 동작하고 있는 상태
         public BattleDefine.EBattlerState state;
         // 현재 동작하고 있는 상태 클래스
-        public IState currentState;
+        protected IState currentState;
         // 상태 모음
         public List<IState> states;
         // 현재 걸린 CC 모음
         public List<Coroutine> CCs;
         // 현재 걸린 CC 상태 모음
-        public List<BattleDefine.ECCState> CCStates;
+        protected List<BattleDefine.ECCState> CCStates;
+        //------------------------------------------------------------ Animation state
+
+        private void Awake()
+        {
+            states = new List<IState>();
+            activeSkillQueue = new Queue<SkillData>();
+            CCStates = new List<BattleDefine.ECCState>();
+            animator = GetComponent<Animator>();
+            InitState();
+        }
+
+        void Update()
+        {
+            currentState.Run();
+
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                OnClickSkill();
+            }
+        }
 
         public void InitState()
         {
-
+            states.Add(new StateReady(this));
+            states.Add(new StateIdle(this));
+            states.Add(new StateSkill(this));
+            states.Add(new StateStun(this));
+            states.Add(new StateDamaged(this));
+            states.Add(new StateDown(this));
+            currentState = states[(int)state];
+            SetState(BattleDefine.EBattlerState.Idle);
         }
 
         public void Damaged(SkillData skillData)
@@ -49,21 +78,73 @@ namespace Battle
         {
             if (!currentState.IsDeny(state))
                 return;
-            currentState.OnExit();
+            if (currentState != null)
+                currentState.OnExit();
             currentState = states[(int)state];
             currentState.OnEnter();
+        }
+        public void SetForceState(BattleDefine.EBattlerState state)
+        {
+            if (currentState != null)
+                currentState.OnExit();
+            currentState = states[(int)state];
+            currentState.OnEnter();
+        }
+
+        public void OnClickSkill()
+        {
+            activeSkillQueue.Clear();
+            foreach(SkillData data in skillDatas)
+                activeSkillQueue.Enqueue(data);
+            SetState(BattleDefine.EBattlerState.Skill);
         }
         // 공격 모션 시전 시
         public void ActiveSkill()
         {
-
+            // Damage!
         }
         // 스킬 종료 시
         public void EndSkill()
         {
-            SetState(BattleDefine.EBattlerState.Idle);
+            if (activeSkillQueue.Count > 0)
+            {
+                SetState(BattleDefine.EBattlerState.Skill);
+            }
+            else
+            {
+                SetForceState(BattleDefine.EBattlerState.Idle);
+            }
         }
+        //----------------------------------------------------------------
+        class StateReady : IState
+        {
+            AnimalController owner;
 
+            public StateReady(AnimalController argOwner)
+            {
+                owner = argOwner;
+            }
+
+            public bool IsDeny(BattleDefine.EBattlerState state)
+            {
+                return true;
+            }
+
+            public void OnEnter()
+            {
+                owner.state = BattleDefine.EBattlerState.Ready;
+            }
+
+            public void OnExit()
+            {
+
+            }
+
+            public void Run()
+            {
+               
+            }
+        }
         class StateIdle : IState
         {
             AnimalController owner;
@@ -76,13 +157,14 @@ namespace Battle
 
             public bool IsDeny(BattleDefine.EBattlerState state)
             {
-                throw new System.NotImplementedException();
+                return true;
             }
 
             public void OnEnter()
             {
-                owner.state = BattleDefine.EBattlerState.Idle;
                 attackDelay = 0;
+                owner.state = BattleDefine.EBattlerState.Idle;
+                owner.animator.SetTrigger("TrgIdle");
             }
 
             public void OnExit()
@@ -92,16 +174,11 @@ namespace Battle
 
             public void Run()
             {
-                // 만약 남아있는 스킬이 있을 경우
-                if (owner.activeSkillQueue.Count != 0)
-                {
-                    owner.activeSkillQueue.Enqueue(owner.skillData);
-                    owner.SetState(BattleDefine.EBattlerState.Skill);
-                }
                 // 평타
                 attackDelay += Time.deltaTime;
                 if (attackDelay > owner.animalData.AtkSpd)
                 {
+                    owner.activeSkillQueue.Clear();
                     owner.activeSkillQueue.Enqueue(owner.attackData);
                     owner.SetState(BattleDefine.EBattlerState.Skill);
                 }
@@ -110,8 +187,7 @@ namespace Battle
         class StateSkill : IState
         {
             AnimalController owner;
-            float castingTime;
-            bool isCasting;
+            bool isEnd;
 
             public StateSkill(AnimalController argOwner)
             {
@@ -120,9 +196,8 @@ namespace Battle
 
             public bool IsDeny(BattleDefine.EBattlerState state)
             {
-                // 만약 현재 스킬이 캐스팅 중 취소될 수 있으며 현재 캐스팅 중이라면
-                if (owner.currentSkillData.CastingType == BattleDefine.ESkillCastingType.Cancled
-                    && isCasting)
+                // 만약 현재 스킬이 캐스팅 중 취소될 수 있으면 방해가능
+                if (owner.currentSkillData.CastingType == BattleDefine.ESkillCastingType.Cancled)
                 {
                     return true;
                 }
@@ -135,9 +210,12 @@ namespace Battle
             public void OnEnter()
             {
                 owner.state = BattleDefine.EBattlerState.Skill;
-                castingTime = 0;
-                isCasting = true;
                 owner.currentSkillData = owner.activeSkillQueue.Dequeue();
+
+                if (owner.currentSkillData.Type == BattleDefine.ESkillType.Attack)
+                    owner.animator.SetTrigger("TrgAtk");
+                else
+                    owner.animator.SetTrigger("TrgSkill" + owner.currentSkillData.Index);
             }
 
             public void OnExit()
@@ -147,15 +225,94 @@ namespace Battle
 
             public void Run()
             {
-                if (isCasting)
-                {
-                    castingTime += Time.deltaTime;
-                    if (castingTime > owner.currentSkillData.CastingTime)
-                    {
-                        // 애니메이션 변경
-                        isCasting = false;
-                    }
-                }
+
+            }
+        }
+        class StateDamaged : IState
+        {
+            AnimalController owner;
+
+            public StateDamaged(AnimalController argOwner)
+            {
+                owner = argOwner;
+            }
+
+            public bool IsDeny(BattleDefine.EBattlerState state)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnEnter()
+            {
+                owner.state = BattleDefine.EBattlerState.Damaged;
+            }
+
+            public void OnExit()
+            {
+
+            }
+
+            public void Run()
+            {
+                
+            }
+        }
+        class StateStun : IState
+        {
+            AnimalController owner;
+
+            public StateStun(AnimalController argOwner)
+            {
+                owner = argOwner;
+            }
+
+            public bool IsDeny(BattleDefine.EBattlerState state)
+            {
+                return false;
+            }
+
+            public void OnEnter()
+            {
+                owner.state = BattleDefine.EBattlerState.Stun;
+            }
+
+            public void OnExit()
+            {
+
+            }
+
+            public void Run()
+            {
+
+            }
+        }
+        class StateDown : IState
+        {
+            AnimalController owner;
+
+            public StateDown(AnimalController argOwner)
+            {
+                owner = argOwner;
+            }
+
+            public bool IsDeny(BattleDefine.EBattlerState state)
+            {
+                return false;
+            }
+
+            public void OnEnter()
+            {
+                owner.state = BattleDefine.EBattlerState.Down;
+            }
+
+            public void OnExit()
+            {
+
+            }
+
+            public void Run()
+            {
+
             }
         }
     }
