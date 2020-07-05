@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5a8324fc8f28a4097b022ec6d381a3, type: 3}
+  m_Name: Data_Skill_Tabby1_Skill_00
+  m_EditorClassIdentifier: 
+  index: 0
+  skillName: "\uB0E5\uB0E5 \uD074\uB85C"
+  icon: {fileID: 0}
+  coolTime: 5
+  skillPowerInt: 10
+  skillPowerPercent: 0.5
+  type: 1
+  target: 0
+  castingType: 0
+  ccType: 0
+  ccTime: 0
+  ccPower: 0
+  linkSkill: {fileID: 11400000, guid: 3ec9d83e921192349939bf72a5ad35d2, type: 2}

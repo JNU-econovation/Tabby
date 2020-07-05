@@ -12,6 +12,10 @@ namespace GameData
         public int Index { get => index; set => index = value; }
 
         [SerializeField]
+        private string code;
+        public string Code { get => code; set => code = value; }
+
+        [SerializeField]
         private string animalName;
         public string AnimalName { get => animalName; set => animalName = value; }
 

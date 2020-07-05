@@ -7,7 +7,7 @@ namespace Battle
     public class BattleDefine
     {
         public enum EBattleState { Ready, Playing, Pause, BattleOver, End }
-        public enum EBattlerState { Ready, Idle, Skill, Damaged, Down }
+        public enum EBattlerState { Ready, Idle, Skill, Stun, Damaged, Down }
         public enum ECCState { None, Stun, StatDown_Percent, StatDown_int, End }
 
         public enum ESkillType { Attack, Skill, Special, End }
