@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameData;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace Battle
 {
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(Animator))]
+    public class EnemyController : AnimalController, IBattlerAdapter
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+ 
     }
 }
+
+

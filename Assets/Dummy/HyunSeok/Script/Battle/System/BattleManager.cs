@@ -6,16 +6,10 @@ namespace Battle
 {
     public class BattleManager : MonoBehaviour 
     {
-        // Start is called before the first frame update
-        void Start ()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update ()
-        {
-
-        }
+        // 싱글톤
+        public static BattleManager _instance;
+        public BattleDefine.EBattleState battleState;
+        public AnimalManager animalManager;
+        public EnemyManager enemyManager;
     }
 }

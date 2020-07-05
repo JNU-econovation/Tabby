@@ -7,7 +7,7 @@ namespace Battle
 {
     public interface IBattlerAdapter
     {
-        void Damaged(SkillData skillData);
+        void Damaged(SkillData skillData, float damage);
     }
 }
 

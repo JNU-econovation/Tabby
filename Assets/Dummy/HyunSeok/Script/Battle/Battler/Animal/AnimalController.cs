@@ -13,7 +13,7 @@ namespace Battle
         public AnimalGameData animalData;
         // 평타 데이터
         [SerializeField]
-        private SkillData attackData;
+        protected SkillData attackData;
         // 스킬 데이터
         [SerializeField]
         protected List<SkillData> skillDatas;
@@ -33,21 +33,20 @@ namespace Battle
         // 상태 모음
         public List<IState> states;
         // 현재 걸린 CC 모음
-        public List<Coroutine> CCs;
+        public List<Coroutine> crowdControls;
         // 현재 걸린 CC 상태 모음
-        protected List<BattleDefine.ECCState> CCStates;
         //------------------------------------------------------------ Animation state
 
-        private void Awake()
+        protected virtual void Awake()
         {
             states = new List<IState>();
             activeSkillQueue = new Queue<SkillData>();
-            CCStates = new List<BattleDefine.ECCState>();
+            crowdControls = new List<Coroutine>();
             animator = GetComponent<Animator>();
             InitState();
         }
 
-        void Update()
+        protected virtual void Update()
         {
             currentState.Run();
 
@@ -57,7 +56,7 @@ namespace Battle
             }
         }
 
-        public void InitState()
+        protected virtual void InitState()
         {
             states.Add(new StateReady(this));
             states.Add(new StateIdle(this));
@@ -69,12 +68,20 @@ namespace Battle
             SetState(BattleDefine.EBattlerState.Idle);
         }
 
-        public void Damaged(SkillData skillData)
+        public virtual void Damaged(SkillData skillData, float damage)
         {
-            throw new System.NotImplementedException();
+            // 데미지 적용
+            animalData.HP -= damage;
+            // CC 적용
+            
         }
 
-        public void SetState(BattleDefine.EBattlerState state)
+        protected virtual void DeleteCC(CrowdControl cc)
+        {
+            //crowdControls.Remove(cc);
+        }
+
+        public virtual void SetState(BattleDefine.EBattlerState state)
         {
             if (!currentState.IsDeny(state))
                 return;
@@ -83,15 +90,15 @@ namespace Battle
             currentState = states[(int)state];
             currentState.OnEnter();
         }
-        public void SetForceState(BattleDefine.EBattlerState state)
+        public virtual void SetForceState(BattleDefine.EBattlerState state)
         {
             if (currentState != null)
                 currentState.OnExit();
             currentState = states[(int)state];
             currentState.OnEnter();
         }
-
-        public void OnClickSkill()
+        // 스킬 발동 시
+        public virtual void OnClickSkill()
         {
             activeSkillQueue.Clear();
             foreach(SkillData data in skillDatas)
@@ -115,7 +122,37 @@ namespace Battle
                 SetForceState(BattleDefine.EBattlerState.Idle);
             }
         }
-        //----------------------------------------------------------------
+        //---------------------------------------------------------------- CC Class
+        public class CrowdControl
+        {
+            AnimalController owner;
+            SkillData ccData;
+            float ccTime;
+            public CrowdControl(AnimalController animalControl, SkillData skillData)
+            {
+                owner = animalControl;
+                skillData = ccData;
+            }
+            void Start()
+            {
+
+            }
+            void Run()
+            {
+                // CC 끝나면 종료하기
+                ccTime += Time.deltaTime;
+                if (ccTime > ccData.ccTime)
+                {
+                    End();
+                }
+                // CC 적용하기
+            }
+            void End()
+            {
+                owner.DeleteCC(this);
+            }
+        }
+        //---------------------------------------------------------------- State Class
         class StateReady : IState
         {
             AnimalController owner;
@@ -149,10 +186,12 @@ namespace Battle
         {
             AnimalController owner;
             float attackDelay;
+            float maxAttackDelay;
 
             public StateIdle(AnimalController argOwner)
             {
                 owner = argOwner;
+
             }
 
             public bool IsDeny(BattleDefine.EBattlerState state)
@@ -163,6 +202,7 @@ namespace Battle
             public void OnEnter()
             {
                 attackDelay = 0;
+                maxAttackDelay = owner.animalData.AtkSpd + Random.Range(-0.2f, 0.2f);
                 owner.state = BattleDefine.EBattlerState.Idle;
                 owner.animator.SetTrigger("TrgIdle");
             }
@@ -176,7 +216,7 @@ namespace Battle
             {
                 // 평타
                 attackDelay += Time.deltaTime;
-                if (attackDelay > owner.animalData.AtkSpd)
+                if (attackDelay > maxAttackDelay)
                 {
                     owner.activeSkillQueue.Clear();
                     owner.activeSkillQueue.Enqueue(owner.attackData);
@@ -197,7 +237,7 @@ namespace Battle
             public bool IsDeny(BattleDefine.EBattlerState state)
             {
                 // 만약 현재 스킬이 캐스팅 중 취소될 수 있으면 방해가능
-                if (owner.currentSkillData.CastingType == BattleDefine.ESkillCastingType.Cancled)
+                if (owner.currentSkillData.castingType == BattleDefine.ESkillCastingType.Cancled)
                 {
                     return true;
                 }
@@ -212,10 +252,10 @@ namespace Battle
                 owner.state = BattleDefine.EBattlerState.Skill;
                 owner.currentSkillData = owner.activeSkillQueue.Dequeue();
 
-                if (owner.currentSkillData.Type == BattleDefine.ESkillType.Attack)
+                if (owner.currentSkillData.type == BattleDefine.ESkillType.Attack)
                     owner.animator.SetTrigger("TrgAtk");
                 else
-                    owner.animator.SetTrigger("TrgSkill" + owner.currentSkillData.Index);
+                    owner.animator.SetTrigger("TrgSkill" + owner.currentSkillData.index);
             }
 
             public void OnExit()

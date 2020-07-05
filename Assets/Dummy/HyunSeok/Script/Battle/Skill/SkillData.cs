@@ -9,63 +9,23 @@ namespace Battle
     public class SkillData : ScriptableObject
     {
         [Header("Asset index")]
-        [SerializeField]
-        private int index;
-        public int Index { get => index; }
-
-        [SerializeField]
-        private string skillName;
-
-        [SerializeField]
-        private Sprite icon;
+        public int index;
+        public string skillName;
+        public Sprite icon;
         [Header("Value")]
-        [SerializeField]
-        private float coolTime;
-
-        [SerializeField]
-        private int skillPowerInt;
-
-        [SerializeField]
-        private float skillPowerPercent;
+        public float coolTime;
+        public int skillPowerInt;
+        public float skillPowerPercent;
         [Header("Type")]
-        [SerializeField]
-        private BattleDefine.ESkillType type;
-
-        public BattleDefine.ESkillType Type { get => type; set => type = value; }
-
-        [SerializeField]
-        private BattleDefine.ESkillTarget target;
-
-        [SerializeField]
-        private BattleDefine.ESkillCastingType castingType;
-        public BattleDefine.ESkillCastingType CastingType
-        {
-            get { return castingType; }
-            set { castingType = value; }
-        }
+        public BattleDefine.ESkillType type;
+        public BattleDefine.ESkillTarget target;
+        public BattleDefine.ESkillCastingType castingType;
         [Header("CC Info")]
-        [SerializeField]
-        private BattleDefine.ESkillCCType ccType;
-
-        [SerializeField]
-        private float ccTime;
-
-        [SerializeField]
-        private float ccPower;
+        public BattleDefine.ESkillCCType ccType;
+        public float ccTime;
+        public float ccPower;
         [Header("Link skill")]
-
-        [SerializeField]
-        private SkillData linkSkill;
-
-        [SerializeField]
-        public SkillData LinkSkill
-        {
-            get=> linkSkill;
-            set
-            {
-                linkSkill = value;
-            }
-        }
+        public SkillData linkSkill;
     }
 }
 
