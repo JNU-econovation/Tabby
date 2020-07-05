@@ -23,9 +23,6 @@ public class InputManager : MonoBehaviour
         {
             mousePosition = Input.mousePosition;
             mousePosition = Camera.ScreenToWorldPoint(mousePosition);
-
-            
-
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, transform.forward, maxDistance);
             //Debug.Log(hit.collider.gameObject.name);
 
@@ -35,10 +32,9 @@ public class InputManager : MonoBehaviour
             {
                 if (hit.collider.gameObject.transform.parent == farmObjects)
                 {
-                    FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
-                    FarmObject farmObject = hit.collider.gameObject.GetComponent<FarmObject>();
-                    farmObjectController.timePause = false;
-                    MoneyManager.MoneyUP(farmObject.moneyOutput);
+                    //FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
+                    //FarmObject farmObject = hit.collider.gameObject.GetComponent<FarmObject>();
+                    //MoneyManager.MoneyUP(farmObject.moneyOutput);
                 }
             
             
