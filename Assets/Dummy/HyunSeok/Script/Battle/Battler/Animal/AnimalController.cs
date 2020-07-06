@@ -33,15 +33,17 @@ namespace Battle
         // 상태 모음
         public List<IState> states;
         // 현재 걸린 CC 모음
-        public List<Coroutine> crowdControls;
+        public float stunTime;
         // 현재 걸린 CC 상태 모음
         //------------------------------------------------------------ Animation state
+
+
+        public SkillData tempStun;
 
         protected virtual void Awake()
         {
             states = new List<IState>();
             activeSkillQueue = new Queue<SkillData>();
-            crowdControls = new List<Coroutine>();
             animator = GetComponent<Animator>();
             InitState();
         }
@@ -53,6 +55,13 @@ namespace Battle
             if (Input.GetKeyUp(KeyCode.A))
             {
                 OnClickSkill();
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                Coroutine ccCrtn = null;
+                tempStun = Instantiate(tempStun) as SkillData;
+                ccCrtn = StartCoroutine(CCStun(tempStun, ccCrtn));
+                SetState(BattleDefine.EBattlerState.Stun);
             }
         }
 
@@ -72,13 +81,32 @@ namespace Battle
         {
             // 데미지 적용
             animalData.HP -= damage;
+            Coroutine ccCrtn = null;
             // CC 적용
-            
+            switch (skillData.ccType)
+            {
+                case BattleDefine.ESkillCCType.Stun:
+                    ccCrtn = StartCoroutine(CCStun(skillData, ccCrtn));
+                    break;
+            }
         }
 
-        protected virtual void DeleteCC(CrowdControl cc)
+        private IEnumerator CCStun(SkillData data, Coroutine self)
         {
-            //crowdControls.Remove(cc);
+            stunTime += data.ccTime;
+            float time = 0f;
+            animator.SetTrigger("TrgStun");
+            while (time < data.ccTime)
+            {
+                time += Time.deltaTime;
+                stunTime -= Time.deltaTime;
+
+                yield return null;
+            }
+            if (stunTime < 0.05f)
+            {
+                SetForceState(BattleDefine.EBattlerState.Idle);
+            }
         }
 
         public virtual void SetState(BattleDefine.EBattlerState state)
@@ -106,12 +134,12 @@ namespace Battle
             SetState(BattleDefine.EBattlerState.Skill);
         }
         // 공격 모션 시전 시
-        public void ActiveSkill()
+        public virtual void ActiveSkill()
         {
             // Damage!
         }
         // 스킬 종료 시
-        public void EndSkill()
+        public virtual void EndSkill()
         {
             if (activeSkillQueue.Count > 0)
             {
@@ -122,36 +150,7 @@ namespace Battle
                 SetForceState(BattleDefine.EBattlerState.Idle);
             }
         }
-        //---------------------------------------------------------------- CC Class
-        public class CrowdControl
-        {
-            AnimalController owner;
-            SkillData ccData;
-            float ccTime;
-            public CrowdControl(AnimalController animalControl, SkillData skillData)
-            {
-                owner = animalControl;
-                skillData = ccData;
-            }
-            void Start()
-            {
 
-            }
-            void Run()
-            {
-                // CC 끝나면 종료하기
-                ccTime += Time.deltaTime;
-                if (ccTime > ccData.ccTime)
-                {
-                    End();
-                }
-                // CC 적용하기
-            }
-            void End()
-            {
-                owner.DeleteCC(this);
-            }
-        }
         //---------------------------------------------------------------- State Class
         class StateReady : IState
         {
