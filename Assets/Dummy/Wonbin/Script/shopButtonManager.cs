@@ -196,7 +196,7 @@ public class ShopButtonManager : MonoBehaviour
         product = productSBM.product;
         FarmObject productFarmObject = product.GetComponent<FarmObject>();
 
-        producted = Instantiate(shopFarmObjectProducts[productFarmObject.farmObjectNumber], new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
+        producted = Instantiate(productSBM.product, new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
         producted.transform.parent = farmFarmObject.transform;
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformBack();

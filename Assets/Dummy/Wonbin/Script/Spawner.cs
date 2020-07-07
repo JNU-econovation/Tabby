@@ -13,11 +13,15 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     GameObject farmFarmObject;
     [SerializeField]
+    GameObject inventory;
+    [SerializeField]
     GameObject child;
     [SerializeField]
     List<GameObject> animalPrefabs;
     [SerializeField]
     List<GameObject> farmObjectPrefabs;
+    [SerializeField]
+    List<GameObject> farmObjectInvenPrefabs;
 
     public FarmObject[] farmObjectDictionary;
 
@@ -35,20 +39,32 @@ public class Spawner : MonoBehaviour
         
         foreach (FarmObjectData farmObjectData in DataManager._instance.playerData.farmObjectDatas)
         {
+            if (farmObjectData.isField == true)
+            {
+                GameObject newFarmObject = Instantiate(farmObjectPrefabs[farmObjectData.index], new Vector2((float)farmObjectData.posX, (float)farmObjectData.posY), Quaternion.identity);
+                FarmObject farmObject = newFarmObject.GetComponent<FarmObject>();
+                farmObject.posX = (float)farmObjectData.posX;
+                farmObject.posY = (float)farmObjectData.posY;
+                farmObject.harvestTime = farmObjectData.harvestTime;
+                farmObject.isField = farmObjectData.isField;
+                newFarmObject.transform.parent = farmFarmObject.transform;
+                AddNewFarmObject(newFarmObject);
+            }
             
-            GameObject newFarmObject = Instantiate(farmObjectPrefabs[farmObjectData.index], new Vector2((float)farmObjectData.posX, (float)farmObjectData.posY), Quaternion.identity);
-            FarmObject farmObject = newFarmObject.GetComponent<FarmObject>();
-            farmObject.posX = (float)farmObjectData.posX;
-            farmObject.posY = (float)farmObjectData.posY;
-            farmObject.harvestTime = farmObjectData.harvestTime;
-            farmObject.isField = farmObjectData.isField;
-
-            //print(temp.animalIdx);
-
-            newFarmObject.transform.parent = farmFarmObject.transform;
-            AddNewFarmObject(newFarmObject);
-
-            //idx따라 Animal 생성
+            else if (farmObjectData.isField==false)
+            {
+                GameObject newFarmObject = Instantiate(farmObjectInvenPrefabs[farmObjectData.index]);
+                FarmObject farmObject = newFarmObject.GetComponent<FarmObject>();
+                farmObject.posX = (float)farmObjectData.posX;
+                farmObject.posY = (float)farmObjectData.posY;
+                farmObject.harvestTime = farmObjectData.harvestTime;
+                farmObject.isField = farmObjectData.isField;
+                newFarmObject.transform.SetParent(inventory.transform);
+                //newFarmObject.transform.parent = inventory.transform;
+                AddNewFarmObject(newFarmObject);
+            }
+            
+            
 
         }
         
