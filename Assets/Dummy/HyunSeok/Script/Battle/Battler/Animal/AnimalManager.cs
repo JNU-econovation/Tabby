@@ -7,11 +7,16 @@ namespace Battle
 {
     public class AnimalManager : MonoBehaviour
     {
+        public static AnimalManager _instance;
         public List<AnimalController> animals;
         public List<Transform> animalPos;
 
         private void Awake()
         {
+            if (_instance == null)
+                _instance = this;
+            else
+                Destroy(gameObject);
             animals = new List<AnimalController>(3);
             SpawnAnimalUseData();
         }
@@ -35,8 +40,8 @@ namespace Battle
                     animals.Add(null);
                     continue;
                 }
-                animals.Add(null);
                 animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
+                animals[i].animalData.BattleIndex = i;
                 animal.transform.position = animalPos[i].transform.position;
             }
         }

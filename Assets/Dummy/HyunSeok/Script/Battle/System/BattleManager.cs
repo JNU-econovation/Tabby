@@ -11,5 +11,13 @@ namespace Battle
         public BattleDefine.EBattleState battleState;
         public AnimalManager animalManager;
         public EnemyManager enemyManager;
+
+        private void Awake()
+        {
+            if (_instance == null)
+                _instance = this;
+            else
+                Destroy(gameObject);
+        }
     }
 }

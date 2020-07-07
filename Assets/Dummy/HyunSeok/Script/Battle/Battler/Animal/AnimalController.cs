@@ -42,6 +42,7 @@ namespace Battle
 
         protected virtual void Awake()
         {
+            animalData = Instantiate(animalData) as AnimalGameData;
             states = new List<IState>();
             activeSkillQueue = new Queue<SkillData>();
             animator = GetComponent<Animator>();
@@ -60,8 +61,8 @@ namespace Battle
             {
                 Coroutine ccCrtn = null;
                 tempStun = Instantiate(tempStun) as SkillData;
-                ccCrtn = StartCoroutine(CCStun(tempStun, ccCrtn));
                 SetState(BattleDefine.EBattlerState.Stun);
+                ccCrtn = StartCoroutine(CCStun(tempStun, ccCrtn));
             }
         }
 
@@ -79,6 +80,15 @@ namespace Battle
 
         public virtual void Damaged(SkillData skillData, float damage)
         {
+            if (skillData == null)
+                return;
+            // 만약 죽을 경우
+            if (animalData.HP - damage < 1)
+            {
+                animalData.HP = 0;
+                SetForceState(BattleDefine.EBattlerState.Down);
+                return;
+            }
             // 데미지 적용
             animalData.HP -= damage;
             Coroutine ccCrtn = null;
@@ -86,16 +96,16 @@ namespace Battle
             switch (skillData.ccType)
             {
                 case BattleDefine.ESkillCCType.Stun:
+                    SetForceState(BattleDefine.EBattlerState.Stun);
                     ccCrtn = StartCoroutine(CCStun(skillData, ccCrtn));
                     break;
             }
         }
 
-        private IEnumerator CCStun(SkillData data, Coroutine self)
+        protected virtual IEnumerator CCStun(SkillData data, Coroutine self)
         {
             stunTime += data.ccTime;
             float time = 0f;
-            animator.SetTrigger("TrgStun");
             while (time < data.ccTime)
             {
                 time += Time.deltaTime;
@@ -113,6 +123,8 @@ namespace Battle
         {
             if (!currentState.IsDeny(state))
                 return;
+            if (this.state == BattleDefine.EBattlerState.Down)
+                return;
             if (currentState != null)
                 currentState.OnExit();
             currentState = states[(int)state];
@@ -120,6 +132,8 @@ namespace Battle
         }
         public virtual void SetForceState(BattleDefine.EBattlerState state)
         {
+            if (this.state == BattleDefine.EBattlerState.Down)
+                return;
             if (currentState != null)
                 currentState.OnExit();
             currentState = states[(int)state];
@@ -133,14 +147,114 @@ namespace Battle
                 activeSkillQueue.Enqueue(data);
             SetState(BattleDefine.EBattlerState.Skill);
         }
+
+        // 스킬 파워 계산 식
+        public float CaculateDamage(SkillData data)
+        {
+            if (data == null)
+                return 0;
+            float dmg = (float)data.skillPowerInt + animalData.Atk * (1 + data.skillPowerPercent);
+            return Mathf.Round(dmg);
+        }
         // 공격 모션 시전 시
         public virtual void ActiveSkill()
         {
+            if (state == BattleDefine.EBattlerState.Down)
+                return;
+            List<AnimalController> atkTargets = new List<AnimalController>();
             // Damage!
+            switch (currentSkillData.target)
+            {
+                case BattleDefine.ESkillTarget.Enemy:
+                    atkTargets.Add(EnemyManager._instance.enemy);
+                    break;
+                case BattleDefine.ESkillTarget.Me:
+                    atkTargets.Add(this);
+                    break;
+                case BattleDefine.ESkillTarget.TeamAll:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.TeamExceptMe:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i == animalData.BattleIndex)
+                        {
+                            continue;
+                        }
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.TeamBackAll:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i <= animalData.BattleIndex)
+                        {
+                            continue;
+                        }
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.TeamBackOne:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i == animalData.BattleIndex + 1)
+                        {
+                            continue;
+                        }
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.TeamFrontAll:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i >= animalData.BattleIndex)
+                        {
+                            continue;
+                        }
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.TeamFrontOne:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i == animalData.BattleIndex - 1)
+                        {
+                            continue;
+                        }
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.One:
+                    atkTargets.Add(AnimalManager._instance.animals[0]);
+                    break;
+                case BattleDefine.ESkillTarget.Two:
+                    atkTargets.Add(AnimalManager._instance.animals[1]);
+                    break;
+                case BattleDefine.ESkillTarget.Three:
+                    atkTargets.Add(AnimalManager._instance.animals[2]);
+                    break;
+                case BattleDefine.ESkillTarget.All:
+                    atkTargets.Add(EnemyManager._instance.enemy);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                default:
+                    atkTargets.Add(EnemyManager._instance.enemy);
+                    break;
+            }
+            foreach(AnimalController animal in atkTargets)
+                animal.Damaged(currentSkillData, CaculateDamage(currentSkillData));
         }
         // 스킬 종료 시
         public virtual void EndSkill()
         {
+            if (state == BattleDefine.EBattlerState.Down)
+                return;
             if (activeSkillQueue.Count > 0)
             {
                 SetState(BattleDefine.EBattlerState.Skill);
@@ -313,6 +427,7 @@ namespace Battle
             public void OnEnter()
             {
                 owner.state = BattleDefine.EBattlerState.Stun;
+                owner.animator.SetTrigger("TrgStun");
             }
 
             public void OnExit()
@@ -342,6 +457,8 @@ namespace Battle
             public void OnEnter()
             {
                 owner.state = BattleDefine.EBattlerState.Down;
+                owner.animator.SetTrigger("TrgStun");
+                owner.currentSkillData = null;
             }
 
             public void OnExit()
