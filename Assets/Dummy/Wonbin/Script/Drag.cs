@@ -24,9 +24,18 @@ public class Drag : MonoBehaviour
         transform.position = new Vector3(0f, -1.5f, -5f);
     }
 
+    public void IItransformMid()
+    {
+        transform.position = new Vector3(0f, -1.5f, -5f);
+    }
+
     public void PItransformBack()
     {
         transform.position = new Vector3(-30f, 0f, 0f);
+    }
+    public void IItransformBack()
+    {
+        transform.position = new Vector3(-500f, 0f, 0f);
     }
 
     public void heartDrag(Vector2 animal)

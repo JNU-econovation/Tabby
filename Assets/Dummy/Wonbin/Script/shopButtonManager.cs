@@ -200,6 +200,9 @@ public class ShopButtonManager : MonoBehaviour
         producted.transform.parent = farmFarmObject.transform;
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformBack();
+        FarmObject productedObject = producted.GetComponent<FarmObject>();
+        productedObject.farmObjectIndex = Spawner.farmObjects.Count;
+        productedObject.isField = true;
 
         
         OKButton.gameObject.SetActive(false);

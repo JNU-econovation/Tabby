@@ -6,6 +6,12 @@ public class InputManager : MonoBehaviour
 {
     public GameObject tapzone;
     public GameObject farmObjects;
+    public GameObject tapObject;
+
+    public static int farmObjectIndex;
+    public static int farmObjectNumber;
+    public static int inventorySlotNumber;
+    public GameObject putInvenButton;
     public static int oneTapMoney;
 
     float maxDistance = 20f;
@@ -33,17 +39,33 @@ public class InputManager : MonoBehaviour
                 if (hit.collider.gameObject.transform.parent.name==farmObjects.name)
                 {
                     FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
+                    if (farmObjectController.state == FarmObjectController.State.producing)
+                    {
+                        tapObject = hit.collider.gameObject;
+                        putInvenButton.SetActive(true);
+                        farmObjectNumber= hit.collider.gameObject.GetComponent<FarmObject>().farmObjectNumber;
+                        farmObjectIndex = hit.collider.gameObject.GetComponent<FarmObject>().farmObjectIndex;
+                    }
+                    
                     farmObjectController.Harvest();
                 }
             
             
             }
-            
+
+            else if (hit.collider.gameObject.name == putInvenButton.name) { }
             else 
             {
+                putInvenButton.SetActive(false);
                 MoneyManager.MoneyUP(oneTapMoney);
             }
 
         }
+    }
+
+    public void PutInventory()
+    {
+        Spawner.farmObjects[farmObjectIndex].isField = false;
+        Destroy(tapObject);
     }
 }

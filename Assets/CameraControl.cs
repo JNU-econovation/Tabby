@@ -12,12 +12,12 @@ public class CameraControl : MonoBehaviour
 
     public void shopOpened()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 7f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y - 5f, transform.position.z);
     }
 
     public void shopClosed()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + 7f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
     }
 
     // Update is called once per frame

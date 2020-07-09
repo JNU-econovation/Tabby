@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
         
         foreach (FarmObjectData farmObjectData in DataManager._instance.playerData.farmObjectDatas)
         {
-            if (farmObjectData.isField == true)
+            if(farmObjectData.isField==true)
             {
                 GameObject newFarmObject = Instantiate(farmObjectPrefabs[farmObjectData.index], new Vector2((float)farmObjectData.posX, (float)farmObjectData.posY), Quaternion.identity);
                 FarmObject farmObject = newFarmObject.GetComponent<FarmObject>();
@@ -48,22 +48,23 @@ public class Spawner : MonoBehaviour
                 farmObject.harvestTime = farmObjectData.harvestTime;
                 farmObject.isField = farmObjectData.isField;
                 newFarmObject.transform.parent = farmFarmObject.transform;
+                farmObject.farmObjectIndex = Spawner.farmObjects.Count;
                 AddNewFarmObject(newFarmObject);
             }
-            
-            else if (farmObjectData.isField==false)
+            if (farmObjectData.isField != true)
             {
-                GameObject newFarmObject = Instantiate(farmObjectInvenPrefabs[farmObjectData.index]);
+                GameObject newFarmObject = Instantiate(farmObjectPrefabs[farmObjectData.index], new Vector2((float)farmObjectData.posX, (float)farmObjectData.posY), Quaternion.identity);
                 FarmObject farmObject = newFarmObject.GetComponent<FarmObject>();
                 farmObject.posX = (float)farmObjectData.posX;
                 farmObject.posY = (float)farmObjectData.posY;
                 farmObject.harvestTime = farmObjectData.harvestTime;
                 farmObject.isField = farmObjectData.isField;
-                newFarmObject.transform.SetParent(inventory.transform);
-                //newFarmObject.transform.parent = inventory.transform;
+                newFarmObject.transform.parent = farmFarmObject.transform;
+                farmObject.farmObjectIndex = Spawner.farmObjects.Count;
                 AddNewFarmObject(newFarmObject);
+                Destroy(newFarmObject);
             }
-            
+
             
 
         }

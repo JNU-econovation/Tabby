@@ -20,7 +20,7 @@ public class FarmObject : MonoBehaviour
 
 
 
-    public int farmObjectIdx;
+    public int farmObjectIndex;
 
     //public bool harvestable;
     public int shopCost;
