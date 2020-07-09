@@ -20,6 +20,7 @@ namespace Battle
         public BattleDefine.ESkillType type;
         public BattleDefine.ESkillTarget target;
         public BattleDefine.ESkillCastingType castingType;
+        public BattleDefine.ESkillStatType statType;
         [Header("CC Info")]
         public BattleDefine.ESkillCCType ccType;
         public float ccTime;

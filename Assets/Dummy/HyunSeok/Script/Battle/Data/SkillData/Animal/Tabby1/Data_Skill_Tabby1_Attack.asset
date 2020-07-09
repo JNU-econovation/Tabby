@@ -21,7 +21,7 @@ MonoBehaviour:
   type: 0
   target: 11
   castingType: 0
-  ccType: 0
+  ccType: 3
   ccTime: 0
   ccPower: 0
   linkSkill: {fileID: 0}

@@ -17,6 +17,9 @@ namespace Battle
         // 스킬 데이터
         [SerializeField]
         protected List<SkillData> skillDatas;
+        // 이펙트 데이터
+        [SerializeField]
+        protected GameObject effectObj;
         //------------------------------------------------------------ Animator
         [SerializeField]
         protected Animator animator;
@@ -62,7 +65,7 @@ namespace Battle
                 Coroutine ccCrtn = null;
                 tempStun = Instantiate(tempStun) as SkillData;
                 SetState(BattleDefine.EBattlerState.Stun);
-                ccCrtn = StartCoroutine(CCStun(tempStun, ccCrtn));
+                ccCrtn = StartCoroutine(CCStun(tempStun, 1.5f));
             }
         }
 
@@ -78,10 +81,18 @@ namespace Battle
             SetState(BattleDefine.EBattlerState.Idle);
         }
 
-        public virtual void Damaged(SkillData skillData, float damage)
+        public virtual void Damaged(SkillData skillData, float focus, float damage)
         {
             if (skillData == null)
                 return;
+            // 명중률
+            float enemyFocusRandom = Random.Range(0.0f, 1.0f);
+            // Miss!!!
+            if (enemyFocusRandom > focus)
+            {
+                // 회피 완료!
+                return;
+            }
             // 만약 죽을 경우
             if (animalData.HP - damage < 1)
             {
@@ -92,21 +103,30 @@ namespace Battle
             // 데미지 적용
             animalData.HP -= damage;
             Coroutine ccCrtn = null;
+            // cc Time 조정
+            float toughCCTime = skillData.ccTime * animalData.Tough;
             // CC 적용
             switch (skillData.ccType)
             {
                 case BattleDefine.ESkillCCType.Stun:
                     SetForceState(BattleDefine.EBattlerState.Stun);
-                    ccCrtn = StartCoroutine(CCStun(skillData, ccCrtn));
+                    ccCrtn = StartCoroutine(CCStun(skillData, toughCCTime));
                     break;
+                case BattleDefine.ESkillCCType.StatDown_int:
+                    ccCrtn = StartCoroutine(CCStatDownInt(skillData, toughCCTime));
+                    break;
+                case BattleDefine.ESkillCCType.StatDown_Percent:
+                    ccCrtn = StartCoroutine(CCStatDownPercent(skillData, toughCCTime));
+                    break;
+
             }
         }
 
-        protected virtual IEnumerator CCStun(SkillData data, Coroutine self)
+        protected virtual IEnumerator CCStun(SkillData data, float ccTime)
         {
-            stunTime += data.ccTime;
+            stunTime += ccTime;
             float time = 0f;
-            while (time < data.ccTime)
+            while (time < ccTime)
             {
                 time += Time.deltaTime;
                 stunTime -= Time.deltaTime;
@@ -116,6 +136,106 @@ namespace Battle
             if (stunTime < 0.05f)
             {
                 SetForceState(BattleDefine.EBattlerState.Idle);
+            }
+        }
+
+        protected virtual IEnumerator CCStatDownInt(SkillData data, float ccTime)
+        {
+            switch(data.statType)
+            {
+                case BattleDefine.ESkillStatType.Atk:
+                    animalData.Atk -= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.AtkSpd:
+                    animalData.AtkSpd -= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Critical:
+                    animalData.Critical -= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Focus:
+                    animalData.Focus -= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Tough:
+                    animalData.Tough -= data.ccPower;
+                    break;
+                default:
+                    break;
+            }
+            float time = 0f;
+            while (time < ccTime)
+            {
+                time += Time.deltaTime;
+                yield return null;
+            }
+            switch (data.statType)
+            {
+                case BattleDefine.ESkillStatType.Atk:
+                    animalData.Atk += data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.AtkSpd:
+                    animalData.AtkSpd += data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Critical:
+                    animalData.Critical += data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Focus:
+                    animalData.Focus += data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Tough:
+                    animalData.Tough += data.ccPower;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        protected virtual IEnumerator CCStatDownPercent(SkillData data, float ccTime)
+        {
+            switch (data.statType)
+            {
+                case BattleDefine.ESkillStatType.Atk:
+                    animalData.Atk *= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.AtkSpd:
+                    animalData.AtkSpd *= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Critical:
+                    animalData.Critical *= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Focus:
+                    animalData.Focus *= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Tough:
+                    animalData.Tough *= data.ccPower;
+                    break;
+                default:
+                    break;
+            }
+            float time = 0f;
+            while (time < ccTime)
+            {
+                time += Time.deltaTime;
+                yield return null;
+            }
+            switch (data.statType)
+            {
+                case BattleDefine.ESkillStatType.Atk:
+                    animalData.Atk /= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.AtkSpd:
+                    animalData.AtkSpd /= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Critical:
+                    animalData.Critical /= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Focus:
+                    animalData.Focus /= data.ccPower;
+                    break;
+                case BattleDefine.ESkillStatType.Tough:
+                    animalData.Tough /= data.ccPower;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -154,6 +274,12 @@ namespace Battle
             if (data == null)
                 return 0;
             float dmg = (float)data.skillPowerInt + animalData.Atk * (1 + data.skillPowerPercent);
+            float criticalRandom = Random.Range(0.0f, 1.0f);
+            // 크리 발동
+            if (criticalRandom < animalData.Critical)
+            {
+                dmg *= 2;
+            }
             return Mathf.Round(dmg);
         }
         // 공격 모션 시전 시
@@ -163,6 +289,8 @@ namespace Battle
                 return;
             List<AnimalController> atkTargets = new List<AnimalController>();
             // Damage!
+            if (currentSkillData == null)
+                return;
             switch (currentSkillData.target)
             {
                 case BattleDefine.ESkillTarget.Enemy:
@@ -202,9 +330,8 @@ namespace Battle
                     {
                         if (i == animalData.BattleIndex + 1)
                         {
-                            continue;
+                            atkTargets.Add(AnimalManager._instance.animals[i]);
                         }
-                        atkTargets.Add(AnimalManager._instance.animals[i]);
                     }
                     break;
                 case BattleDefine.ESkillTarget.TeamFrontAll:
@@ -221,6 +348,17 @@ namespace Battle
                     for (int i = 0; i < 3; i++)
                     {
                         if (i == animalData.BattleIndex - 1)
+                        {
+                            continue;
+                        }
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    break;
+                case BattleDefine.ESkillTarget.FrontAll:
+                    atkTargets.Add(EnemyManager._instance.enemy);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i >= animalData.BattleIndex)
                         {
                             continue;
                         }
@@ -248,7 +386,7 @@ namespace Battle
                     break;
             }
             foreach(AnimalController animal in atkTargets)
-                animal.Damaged(currentSkillData, CaculateDamage(currentSkillData));
+                animal.Damaged(currentSkillData, animalData.Focus, CaculateDamage(currentSkillData));
         }
         // 스킬 종료 시
         public virtual void EndSkill()
@@ -263,6 +401,12 @@ namespace Battle
             {
                 SetForceState(BattleDefine.EBattlerState.Idle);
             }
+        }
+        // 이펙트 발사
+        public virtual void OnEffect()
+        {
+            if (effectObj != null)
+                effectObj.SetActive(true);
         }
 
         //---------------------------------------------------------------- State Class
