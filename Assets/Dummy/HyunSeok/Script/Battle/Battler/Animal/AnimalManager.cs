@@ -27,7 +27,7 @@ namespace Battle
             for (int i = 0; i < 3; i++)
             {
                 //int animalIndex = DataManager._instance.gogoAnimalIndexes[i];
-                int animalIndex = 0;
+                int animalIndex = 4;
                 // 만약 -1 일 경우 소환 안함
                 if (animalIndex == -1)
                 {

@@ -40,9 +40,6 @@ namespace Battle
         // 현재 걸린 CC 상태 모음
         //------------------------------------------------------------ Animation state
 
-
-        public SkillData tempStun;
-
         protected virtual void Awake()
         {
             animalData = Instantiate(animalData) as AnimalGameData;
@@ -60,13 +57,7 @@ namespace Battle
             {
                 OnClickSkill();
             }
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                Coroutine ccCrtn = null;
-                tempStun = Instantiate(tempStun) as SkillData;
-                SetState(BattleDefine.EBattlerState.Stun);
-                ccCrtn = StartCoroutine(CCStun(tempStun, 1.5f));
-            }
+
         }
 
         protected virtual void InitState()
@@ -459,7 +450,7 @@ namespace Battle
             public void OnEnter()
             {
                 attackDelay = 0;
-                maxAttackDelay = owner.animalData.AtkSpd + Random.Range(-0.2f, 0.2f);
+                maxAttackDelay = 1 / (owner.animalData.AtkSpd + Random.Range(-0.1f, 0.1f));
                 owner.state = BattleDefine.EBattlerState.Idle;
                 owner.animator.SetTrigger("TrgIdle");
             }
