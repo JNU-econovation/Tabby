@@ -121,7 +121,6 @@ namespace Battle
             {
                 time += Time.deltaTime;
                 stunTime -= Time.deltaTime;
-
                 yield return null;
             }
             if (stunTime < 0.05f)
@@ -232,9 +231,11 @@ namespace Battle
 
         public virtual void SetState(BattleDefine.EBattlerState state)
         {
-            if (!currentState.IsDeny(state))
-                return;
+            /*if (!currentState.IsDeny(state))
+                return;*/
             if (this.state == BattleDefine.EBattlerState.Down)
+                return;
+            if (this.state == BattleDefine.EBattlerState.Stun)
                 return;
             if (currentState != null)
                 currentState.OnExit();
@@ -390,7 +391,7 @@ namespace Battle
             }
             else
             {
-                SetForceState(BattleDefine.EBattlerState.Idle);
+                SetState(BattleDefine.EBattlerState.Idle);
             }
         }
         // 이펙트 발사
@@ -452,7 +453,7 @@ namespace Battle
                 attackDelay = 0;
                 maxAttackDelay = 1 / (owner.animalData.AtkSpd + Random.Range(-0.1f, 0.1f));
                 owner.state = BattleDefine.EBattlerState.Idle;
-                owner.animator.SetTrigger("TrgIdle");
+                //owner.animator.SetTrigger("TrgIdle");
             }
 
             public void OnExit()

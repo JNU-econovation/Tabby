@@ -16,8 +16,8 @@ MonoBehaviour:
   code: pangolin1
   animalName: 
   exp: 0
-  maxHP: 5000
-  hp: 5000
+  maxHP: 4500
+  hp: 4500
   atk: 10
   atkSpd: 0.5
   tough: 0.1
