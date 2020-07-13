@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AnimCon_Tabby2
+  m_Controller: {fileID: 9100000, guid: 920a47fc618c90e4cb63fb3b5e16478a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d3307160733529a4a878136af149433a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b8111fde7fda1c84880ecce098d8fdca, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a0ce4b334bc4c464da21a2ea74ce7e63, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 014e78db74eb7bb478c8b332ce7a10c0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 26a6f0476c6883a45ab458d60c88271b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f1f9dd9f07206924892953f9b78d995b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6cf53660030b8764a8ab5af88dcb419b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a4e27ab1baf95b439e8dcb32d9b39b6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7916093b8c7f1c645a359ab91c0f82b2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5e6d38d7b34e9da46a88559dab298755, type: 2}

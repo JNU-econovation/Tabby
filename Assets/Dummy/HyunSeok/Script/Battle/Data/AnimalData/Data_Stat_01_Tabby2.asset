@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78a1df3e63f9a384da50a3d13e6aab26, type: 3}
-  m_Name: Data_Stat_00_Tabby1
+  m_Name: Data_Stat_01_Tabby2
   m_EditorClassIdentifier: 
-  index: 0
-  code: tabby1
+  index: 1
+  code: tabby2
   animalName: 
   exp: 0
-  maxHP: 3000
-  hp: 3000
-  atk: 20
-  atkSpd: 0.8
+  maxHP: 5000
+  hp: 5000
+  atk: 40
+  atkSpd: 1.2
   tough: 0
   focus: 1
-  critical: 0.3
+  critical: 0.5
   battleIndex: 0

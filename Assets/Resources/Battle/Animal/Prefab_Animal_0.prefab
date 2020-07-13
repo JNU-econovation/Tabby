@@ -412,7 +412,6 @@ MonoBehaviour:
   animator: {fileID: 0}
   state: 0
   stunTime: 0
-  tempStun: {fileID: 11400000, guid: 8e7b7d8ed66b2a54e8d6aad4a797df42, type: 2}
 --- !u!1 &2080136378450585805
 GameObject:
   m_ObjectHideFlags: 0
