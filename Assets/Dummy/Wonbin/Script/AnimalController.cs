@@ -61,8 +61,8 @@ public class AnimalController : MonoBehaviour
         //랜덤시간 이상이 됐을때 하트 생성
         else if (timeAfterHeart >= heartRate && transform.childCount == 0)
         {
-            spawner.MakeChild(this.gameObject, heartPrefabs);
-            //하트 오류나니까 일단 없애둠
+            //spawner.MakeChild(this.gameObject, heartPrefabs);
+            //하트 보기싫으니까 일단 없애둠
         }
 
 

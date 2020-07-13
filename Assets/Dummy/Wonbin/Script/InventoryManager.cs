@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject saleButton;
     public GameObject putButton;
     public GameObject cancelButton;
+    public GameObject putInvenButton;
 
     public GameObject inventoryContents;
     public GameObject farmObjects;
@@ -29,11 +30,19 @@ public class InventoryManager : MonoBehaviour
 
     public void Awake()
     {
-        
+        for(int i=0; i < 30; i++)
+        {
+            FarmObject invenSlotFarmOb = inventoryContents.transform.GetChild(i).gameObject.GetComponent<FarmObject>();
+            invenSlotFarmOb.farmObjectNumber = -1;
+            invenSlotFarmOb.farmObjectIndex = -1;
+            inventorySlotNum++;
+        }
+        inventorySlotNum = 0;
         foreach (FarmObject farmObject in Spawner.farmObjects)
         {
             if (farmObject.isField == false)
             {
+                
                 Image invenSlotImage = inventoryContents.transform.GetChild(inventorySlotNum).gameObject.GetComponent<Image>();
                 invenSlotImage.sprite = invenIcons[farmObject.farmObjectNumber];
                 FarmObject invenSlotFarmOb = inventoryContents.transform.GetChild(inventorySlotNum).gameObject.GetComponent<FarmObject>();
@@ -63,7 +72,7 @@ public class InventoryManager : MonoBehaviour
         shopButton.SetActive(false);
         mapButton.SetActive(false);
         inventory.SetActive(true);
-
+        putInvenButton.SetActive(false);
     }
 
 
@@ -78,8 +87,11 @@ public class InventoryManager : MonoBehaviour
 
     public void InvenFarmObTap()
     {
-        saleButton.SetActive(true);
-        arrangeButton.SetActive(true);
+        if (InputManager.farmObjectNumber != -1)
+        {
+            saleButton.SetActive(true);
+            arrangeButton.SetActive(true);
+        }
     }
 
     public void FarmObjectSale()
@@ -117,8 +129,34 @@ public class InventoryManager : MonoBehaviour
         Spawner.farmObjects[InputManager.farmObjectIndex].isField = true;
         Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
         arrangeImageDrag.PItransformMid();
-        SpriteRenderer spriteRenderer = arrangeImage.GetComponent<SpriteRenderer>();
+        Image spriteRenderer = arrangeImage.GetComponent<Image>();
         spriteRenderer.sprite = invenIcons[InputManager.farmObjectNumber];
+        
+    } 
+
+    public void ArrangeOk()
+    {
+        inventory.SetActive(true);
+        putButton.SetActive(false);
+        cancelButton.SetActive(false);
+        Spawner.farmObjects[InputManager.farmObjectIndex].harvestTime = System.DateTime.Now;
+        GameObject arranged = Instantiate(invenItems[InputManager.farmObjectNumber], new Vector2(arrangeImage.transform.position.x, arrangeImage.transform.position.y), Quaternion.identity);
+        FarmObjectController farmObjectController= arranged.GetComponent<FarmObjectController>();
+        FarmObject farmObject = arranged.GetComponent<FarmObject>();
+        farmObject.harvestTime = System.DateTime.Now;
+        farmObjectController.state = FarmObjectController.State.producing;
+        SpriteRenderer spriteRenderer = farmObjectController.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = farmObjectController.producingSprite;
+        Debug.Log("되고있나");
+        arranged.transform.parent = farmObjects.transform;
+        Spawner.farmObjects[InputManager.farmObjectIndex].posX = arrangeImage.transform.position.x;
+        Spawner.farmObjects[InputManager.farmObjectIndex].posY = arrangeImage.transform.position.y;
+        Spawner.farmObjects[InputManager.farmObjectIndex].isField = true;
+        
+        Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
+        arrangeImageDrag.PItransformBack();
+        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+        inventorySlotNum--;
         for (int i = InputManager.inventorySlotNumber; i <= inventorySlotNum; i++)
         {
 
@@ -131,18 +169,6 @@ public class InventoryManager : MonoBehaviour
             invenSlotFarmOb.farmObjectNumber = nextInvenSlotFarmOb.farmObjectNumber;
 
         }
-    } 
-
-    public void ArrangeOk()
-    {
-        inventory.SetActive(true);
-        putButton.SetActive(false);
-        cancelButton.SetActive(false);
-        GameObject arranged = Instantiate(invenItems[InputManager.farmObjectIndex], new Vector2(arrangeImage.transform.position.x, arrangeImage.transform.position.y), Quaternion.identity);
-        arranged.transform.parent = farmObjects.transform;
-        Spawner.farmObjects[InputManager.farmObjectIndex].isField = true;
-        Spawner.farmObjects[InputManager.farmObjectIndex].harvestTime = System.DateTime.Now;
-        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
     }
 
     public void ArrangeCencel()

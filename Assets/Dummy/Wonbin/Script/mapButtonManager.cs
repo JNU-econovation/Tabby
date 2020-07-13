@@ -27,6 +27,9 @@ public class MapButtonManager : MonoBehaviour
     public GameObject battleReadyButton;
     public GameObject[] mapArea;
 
+    public GameObject inventoryButton;
+    public GameObject putInvenButton;
+
     public static int AreaNumber;
 
     public GameObject battleReadyWindow;
@@ -67,6 +70,8 @@ public class MapButtonManager : MonoBehaviour
         map.gameObject.SetActive(true);
         mapButton.gameObject.SetActive(false);
         mapCloseButton.gameObject.SetActive(true);
+        inventoryButton.SetActive(false);
+        putInvenButton.SetActive(false);
 
     }
 

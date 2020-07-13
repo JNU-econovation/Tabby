@@ -34,6 +34,9 @@ public class ShopButtonManager : MonoBehaviour
     public GameObject shopCloseButton;
     public GameObject animalShopButton;
     public GameObject farmObShopButton;
+
+    public GameObject inventoryButton;
+    public GameObject putInvenButton;
     public GameObject text;
 
 
@@ -56,7 +59,7 @@ public class ShopButtonManager : MonoBehaviour
 
     public void openShop()
     {
-        MoneyManager.money -= 1;
+        
         shop.gameObject.SetActive(true);
         mapButton.gameObject.SetActive(false);
         tapZone.gameObject.SetActive(false);
@@ -66,6 +69,8 @@ public class ShopButtonManager : MonoBehaviour
         shopCloseButton.gameObject.SetActive(true);
         animalShopButton.gameObject.SetActive(true);
         farmObShopButton.gameObject.SetActive(true);
+        inventoryButton.SetActive(false);
+        putInvenButton.SetActive(false);
     }
 
     public void openAnimalShop()
@@ -92,6 +97,7 @@ public class ShopButtonManager : MonoBehaviour
         animalShopButton.gameObject.SetActive(false);
         farmObShopButton.gameObject.SetActive(false);
         mapButton.gameObject.SetActive(true);
+        inventoryButton.SetActive(true);
         //tapZone.gameObject.SetActive(true);
     }
 

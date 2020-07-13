@@ -730,7 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -787,6 +787,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 2059773180}
+  putInvenButton: {fileID: 496326392}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -2022,6 +2024,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -2261,6 +2265,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -2306,7 +2312,7 @@ RectTransform:
   m_GameObject: {fileID: 165548487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -27.557915}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.60923, y: 0.60923, z: 0.60923}
   m_Children:
   - {fileID: 1580419366}
   m_Father: {fileID: 1291503599}
@@ -2314,7 +2320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50.500008, y: -179.39996}
+  m_AnchoredPosition: {x: -67, y: -119}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165548489
@@ -2337,6 +2343,7 @@ MonoBehaviour:
   saleButton: {fileID: 0}
   putButton: {fileID: 0}
   cancelButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   inventoryContents: {fileID: 0}
   farmObjects: {fileID: 0}
   arrangeImage: {fileID: 0}
@@ -2553,7 +2560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &171584266
 MonoBehaviour:
@@ -3081,6 +3088,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -3406,8 +3415,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231264621}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -27.557915}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -52}
+  m_LocalScale: {x: 0.62274456, y: 0.62274456, z: 0.62274456}
   m_Children:
   - {fileID: 355133735}
   m_Father: {fileID: 1291503599}
@@ -3415,7 +3424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 304, y: 101.400024}
+  m_AnchoredPosition: {x: 185, y: 29}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231264623
@@ -3438,6 +3447,7 @@ MonoBehaviour:
   saleButton: {fileID: 0}
   putButton: {fileID: 0}
   cancelButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   inventoryContents: {fileID: 0}
   farmObjects: {fileID: 0}
   arrangeImage: {fileID: 0}
@@ -3721,6 +3731,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -3819,8 +3831,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234581309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -27.557915}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -52}
+  m_LocalScale: {x: 0.62274456, y: 0.62274456, z: 0.62274456}
   m_Children:
   - {fileID: 1872563468}
   m_Father: {fileID: 1291503599}
@@ -3828,7 +3840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 304, y: 37}
+  m_AnchoredPosition: {x: 185, y: -35.400024}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &234581311
@@ -3851,6 +3863,7 @@ MonoBehaviour:
   saleButton: {fileID: 0}
   putButton: {fileID: 0}
   cancelButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   inventoryContents: {fileID: 0}
   farmObjects: {fileID: 0}
   arrangeImage: {fileID: 0}
@@ -5200,6 +5213,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -5638,6 +5653,8 @@ MonoBehaviour:
   recruitButton: {fileID: 0}
   battleReadyButton: {fileID: 0}
   mapArea: []
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 0}
@@ -5672,8 +5689,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491545819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.447915}
-  m_LocalScale: {x: 0.5, y: 0.9, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.324405, y: 0.617085, z: 1}
   m_Children:
   - {fileID: 467466603}
   - {fileID: 1197984802}
@@ -5683,8 +5700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 375}
-  m_SizeDelta: {x: 100, y: 124.7}
+  m_AnchoredPosition: {x: -2, y: 234.2}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &494431467
 GameObject:
@@ -5763,6 +5780,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -5863,13 +5882,14 @@ GameObject:
   - component: {fileID: 496326396}
   - component: {fileID: 496326395}
   - component: {fileID: 496326394}
+  - component: {fileID: 496326397}
   m_Layer: 5
   m_Name: putInvenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &496326393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5879,7 +5899,7 @@ RectTransform:
   m_GameObject: {fileID: 496326392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -15.24}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68262, y: 0.72335523, z: 1}
   m_Children:
   - {fileID: 933101108}
   m_Father: {fileID: 1291503599}
@@ -5887,7 +5907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 154, y: -174}
+  m_AnchoredPosition: {x: 62.3, y: -107}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496326394
@@ -5991,6 +6011,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496326392}
   m_CullTransparentMesh: 0
+--- !u!61 &496326397
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496326392}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 150, y: 50}
+  m_EdgeRadius: 0
 --- !u!1 &502547010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,6 +6343,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -6313,131 +6361,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
   - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
   - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
---- !u!1 &532194152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 532194156}
-  - component: {fileID: 532194155}
-  - component: {fileID: 532194154}
-  - component: {fileID: 532194153}
-  - component: {fileID: 532194157}
-  m_Layer: 0
-  m_Name: InvenArrangeImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &532194153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532194152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe112d608fde34b84b6a786269c040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &532194154
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532194152}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!222 &532194155
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532194152}
-  m_CullTransparentMesh: 0
---- !u!224 &532194156
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532194152}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.8, y: -2.0889277}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!70 &532194157
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532194152}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.15999998, y: 0.16}
-  m_Direction: 0
 --- !u!1 &536435064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7360,6 +7283,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -7861,6 +7786,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -9309,6 +9236,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 154661252}
@@ -9921,6 +9850,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -10753,6 +10684,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -11899,6 +11832,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -12302,7 +12237,7 @@ RectTransform:
   - {fileID: 154083879}
   - {fileID: 429519514}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12360,7 +12295,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 500, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -12407,7 +12342,7 @@ RectTransform:
   - {fileID: 234581310}
   - {fileID: 496326393}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12790,6 +12725,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -13139,6 +13076,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 154661252}
@@ -13486,7 +13425,7 @@ RectTransform:
   m_GameObject: {fileID: 1501990747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -22.607916}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.60923, y: 0.60923, z: 0.60923}
   m_Children:
   - {fileID: 1574594645}
   m_Father: {fileID: 1291503599}
@@ -13494,7 +13433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228.50002, y: -181.20001}
+  m_AnchoredPosition: {x: 50, y: -118}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1501990749
@@ -13517,6 +13456,7 @@ MonoBehaviour:
   saleButton: {fileID: 0}
   putButton: {fileID: 0}
   cancelButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   inventoryContents: {fileID: 0}
   farmObjects: {fileID: 0}
   arrangeImage: {fileID: 0}
@@ -14011,6 +13951,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -14436,6 +14378,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 2059773180}
+  putInvenButton: {fileID: 496326392}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 154661252}
@@ -14821,6 +14765,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -15554,6 +15500,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 154661252}
@@ -15726,6 +15674,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 1360205659}
   recruitWindow: {fileID: 445552102}
   readyAnimalList: {fileID: 154661252}
@@ -16871,6 +16821,8 @@ MonoBehaviour:
   - {fileID: 1617176017}
   - {fileID: 515544994}
   - {fileID: 679232098}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
   readyAnimalList: {fileID: 154661252}
@@ -17731,6 +17683,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -17930,6 +17884,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -18646,6 +18602,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -19053,7 +19011,7 @@ RectTransform:
   m_GameObject: {fileID: 2059773180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.65643, y: 0.72132, z: 1}
   m_Children:
   - {fileID: 2110710251}
   m_Father: {fileID: 1291503599}
@@ -19061,7 +19019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159, y: -174}
+  m_AnchoredPosition: {x: -74, y: -109}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2059773182
@@ -19084,9 +19042,10 @@ MonoBehaviour:
   saleButton: {fileID: 165548487}
   putButton: {fileID: 231264621}
   cancelButton: {fileID: 234581309}
+  putInvenButton: {fileID: 496326392}
   inventoryContents: {fileID: 1611936305}
   farmObjects: {fileID: 1252491995}
-  arrangeImage: {fileID: 532194152}
+  arrangeImage: {fileID: 776535691}
   inventorySlotNum: 0
   invenIcons:
   - {fileID: 21300000, guid: cd54a35076c726a4bbc00a195022d20b, type: 3}
@@ -19099,7 +19058,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  invenItems: []
+  invenItems:
+  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
+  - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2059773183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19472,6 +19441,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -19619,6 +19590,8 @@ MonoBehaviour:
   shopCloseButton: {fileID: 231672135}
   animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
+  inventoryButton: {fileID: 0}
+  putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
   tapZone: {fileID: 2044507196}
@@ -20324,3 +20297,5 @@ MonoBehaviour:
   farmObjects: {fileID: 1252491995}
   tapObject: {fileID: 0}
   putInvenButton: {fileID: 496326392}
+  putInvenButtonCover: {fileID: 0}
+  inventory: {fileID: 491545819}

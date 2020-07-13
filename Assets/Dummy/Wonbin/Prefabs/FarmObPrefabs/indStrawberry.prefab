@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elapsedTime: 0
   producingSprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
-  harvestableSprite: {fileID: 21300000, guid: cd54a35076c726a4bbc00a195022d20b, type: 3}
+  harvestableSprite: {fileID: 21300000, guid: 7b47b8bb5d51bbb46bf09e0fd2c1bc2f, type: 3}
   state: 0
 --- !u!114 &3067855467562682675
 MonoBehaviour:
@@ -170,6 +170,6 @@ MonoBehaviour:
   isField: 0
   producePeriod: 0
   moneyOutput: 0
-  farmObjectIdx: 0
+  farmObjectIndex: 0
   shopCost: 0
   farmObjectSprite: {fileID: 0}
