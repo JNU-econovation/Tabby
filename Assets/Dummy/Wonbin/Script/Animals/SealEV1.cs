@@ -10,7 +10,8 @@ public class SealEV1: Animal
     {
         animalNumber = 2;
         animalHP = 1000;
-        animalCost = 300;
+        animalCost = 40;
+        animalHeartCost = 40;
     }
 
 

@@ -6,9 +6,8 @@ public class PlatypusEV1 : Animal {
     public void Awake()
     {
         animalNumber = 6;
-        //animalHP = 100;
-        //animalCost = 100;
-
-        //exp = 5;
+        animalHP = 100;
+        animalCost = 100;
+        animalHeartCost = 40;
     }
 }

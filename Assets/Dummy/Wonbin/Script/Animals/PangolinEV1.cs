@@ -8,6 +8,7 @@ public class PangolinEV1 : Animal
     {
         animalNumber = 4;
         animalHP = 10000;
-        animalCost = 600;
+        animalCost = 60;
+        animalHeartCost = 40;
     }
 }

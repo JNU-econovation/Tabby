@@ -75,14 +75,11 @@ public class AnimalController : MonoBehaviour
         pathfinder.ReFinding(animalrigidbody, 6);
 
         
-
-
-
     }
 
-    void EXPUP()
+    void EXPUP(int exp)
     {
-        totalEXP += 1;
+        totalEXP += exp;
         if (totalEXP >= animal.exp)
         {
             Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();
@@ -136,7 +133,7 @@ public class AnimalController : MonoBehaviour
             Destroy(gameObject.transform.GetChild(0).gameObject);
             heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
             timeAfterHeart = 0f;
-            EXPUP();
+            EXPUP(1);
         }
     }
 }

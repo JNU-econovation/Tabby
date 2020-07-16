@@ -79,6 +79,7 @@ public class MapButtonManager : MonoBehaviour
     {
         if (battleReadyWindow.activeSelf == false&&recruitWindow.activeSelf==false)
         {
+            inventoryButton.SetActive(true);
             map.gameObject.SetActive(false);
             mapButton.gameObject.SetActive(true);
             mapCloseButton.gameObject.SetActive(false);
@@ -90,7 +91,12 @@ public class MapButtonManager : MonoBehaviour
             battleReadyButton.gameObject.SetActive(false);
             battleReadyWindow.gameObject.SetActive(false);
         }
-        for(int t=0; t< readyAnimalList.transform.childCount; t++)
+        if (recruitWindow.activeSelf)
+        {
+            recruitWindow.SetActive(true);
+        }
+        
+        for (int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
         List<Animal> listAnimals = Spawner.animals.ToList();
     }
@@ -100,18 +106,29 @@ public class MapButtonManager : MonoBehaviour
         AreaNumber = 0;
         recruitButton.gameObject.SetActive(true);
         battleReadyButton.gameObject.SetActive(true);
+
+        RecruitManager.regionIndex = 1;
+        Debug.Log(RecruitManager.regionIndex);
     }
     public void Area2Tap()
     {
         AreaNumber = 1;
         recruitButton.gameObject.SetActive(true);
         battleReadyButton.gameObject.SetActive(true);
+
+        RecruitManager.regionIndex = 2;
+
+        Debug.Log(RecruitManager.regionIndex);
     }
     public void Area3Tap()
     {
         AreaNumber = 2;
         recruitButton.gameObject.SetActive(true);
         battleReadyButton.gameObject.SetActive(true);
+
+        RecruitManager.regionIndex = 3;
+
+        Debug.Log(RecruitManager.regionIndex);
     }
 
     public void RecruitWindowOpen()
@@ -292,9 +309,10 @@ public class MapButtonManager : MonoBehaviour
         gogoAnimalArray[1] = slot2AnimalIndex;
         gogoAnimalArray[2] = slot3AnimalIndex;
         Debug.Log("디버그로그");
-        Debug.Log(listAnimalAvailability[1]);
+        Debug.Log(gogoAnimalArray[0]);
+        Debug.Log(gogoAnimalArray[1]);
         Debug.Log(gogoAnimalArray[2]);
-        //DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
+        DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
     }
 
    

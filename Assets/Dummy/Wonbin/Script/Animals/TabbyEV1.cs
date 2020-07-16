@@ -9,6 +9,7 @@ public class TabbyEV1: Animal
         animalNumber = 0;
         animalHP = 10;
         animalCost = 20;
+        animalHeartCost = 20;
 
         exp = 3;
     }

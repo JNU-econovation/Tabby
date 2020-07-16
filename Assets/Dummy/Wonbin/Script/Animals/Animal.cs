@@ -17,6 +17,7 @@ public class Animal : MonoBehaviour
 
     protected int animalHP ;
     public int animalCost;
+    public int animalHeartCost;
 
   
 
