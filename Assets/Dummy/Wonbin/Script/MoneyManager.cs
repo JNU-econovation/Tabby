@@ -23,8 +23,20 @@ public class MoneyManager : MonoBehaviour
     public static void HeartUP()
     {
         heart += 1;
-        PlayerPrefs.SetInt("Money", heart);
+        PlayerPrefs.SetInt("Heart", heart);
         //Json저장으로 수정필요
+    }
+
+    public static void HeartDown(int used)
+    {
+        heart -= used;
+        PlayerPrefs.SetInt("Heart", heart);
+    }
+
+    public static void MoneyDown(int used)
+    {
+        money -= used;
+        PlayerPrefs.SetInt("Money", money);
     }
 
 

@@ -6,7 +6,7 @@ public class WeaselEV2 : Animal
 {
     public void Awake()
     {
-        animalNumber = 11;
+        animalNumber = 7;
         //animalHP = 100;
         //animalCost = 100;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatypusEV1 : Animal { 
     public void Awake()
     {
-        animalNumber = 6;
+        animalNumber = 8;
         animalHP = 100;
         animalCost = 100;
         animalHeartCost = 40;
