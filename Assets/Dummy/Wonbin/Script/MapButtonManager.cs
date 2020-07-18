@@ -12,8 +12,8 @@ public class MapButtonManager : MonoBehaviour
 {
     TabbyAnimator tabbyAnimaltor;
 
-    static List<Animal> listAnimals;
-    List<bool> listAnimalAvailability=new List<bool>();
+    List<Animal> listAnimals;
+    static List<bool> listAnimalAvailability=new List<bool>();
 
     public static int slot1AnimalIndex;
     public static int slot2AnimalIndex;
@@ -74,6 +74,7 @@ public class MapButtonManager : MonoBehaviour
         mapCloseButton.gameObject.SetActive(true);
         inventoryButton.SetActive(false);
         putInvenButton.SetActive(false);
+        
 
     }
 
@@ -139,7 +140,7 @@ public class MapButtonManager : MonoBehaviour
     }
     public void BattleReadyWindowOpen()
     {
-
+        listAnimalAvailability = new List<bool>();
         listAnimals = Spawner._instance.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
         {

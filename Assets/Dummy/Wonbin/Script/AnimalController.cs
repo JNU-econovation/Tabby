@@ -47,19 +47,32 @@ public class AnimalController : MonoBehaviour
         pathfinder = new PathFinder();
         spawner = Spawner._instance;
         animal = gameObject.GetComponent<Animal>();
+        totalEXP = animal.exp;
+        Debug.Log("현재경험치 " + totalEXP);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         animalrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         pathfinder.PathFindingStart(animalrigidbody, 6);
         heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
-        Spawner._instance.animals[gameObject.transform.GetSiblingIndex()].animalIndex=gameObject.transform.GetSiblingIndex();
+        //Spawner._instance.animals[gameObject.transform.GetSiblingIndex()-1].animalIndex=gameObject.transform.GetSiblingIndex()-1;
 
-
+        Debug.Log("진화경험치" + animal.evolExp);
         if (totalEXP >= animal.evolExp)
         {
             Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();
             spawner.Evolution(gameObject, spawner);
         }
+
+    }
+
+    public void Awake()
+    {
+        /*Debug.Log("진화경험치" + animal.evolExp);
+        if (totalEXP >= animal.evolExp)
+        {
+            Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();
+            spawner.Evolution(gameObject, spawner);
+        }*/
     }
     private void Update()
     {

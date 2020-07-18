@@ -91,6 +91,8 @@ public class InventoryManager : MonoBehaviour
         shopButton.SetActive(true);
         mapButton.SetActive(true);
         inventory.SetActive(false);
+        saleButton.SetActive(false);
+        arrangeButton.SetActive(false);
     }
 
     public void InvenFarmObTap()
