@@ -16,7 +16,7 @@ namespace Battle
         protected List<SkillData> attackDatas;
         // 스킬 데이터
         [SerializeField]
-        protected List<SkillData> skillDatas;
+        public List<SkillData> skillDatas;
         // 이펙트 데이터
         [SerializeField]
         protected GameObject effectObj;
