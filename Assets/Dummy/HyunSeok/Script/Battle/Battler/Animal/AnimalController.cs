@@ -379,7 +379,11 @@ namespace Battle
                     break;
             }
             foreach(AnimalController animal in atkTargets)
-                animal.Damaged(currentSkillData, animalData.Focus, CaculateDamage(currentSkillData));
+            {
+                if (animal != null)
+                    animal.Damaged(currentSkillData, animalData.Focus, CaculateDamage(currentSkillData));
+            }
+
         }
         // 스킬 종료 시
         public virtual void EndSkill()
