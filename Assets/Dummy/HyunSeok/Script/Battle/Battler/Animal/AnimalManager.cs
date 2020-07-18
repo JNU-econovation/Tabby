@@ -71,7 +71,7 @@ namespace Battle
         // 
         public void SpawnAnimalUseData()
         {
-            if (true)
+            if (false)
             {
                 for (int i = 0; i < 3; i++)
                 {
