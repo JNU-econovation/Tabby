@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Battle
 {
@@ -68,6 +69,11 @@ namespace Battle
                     panels[i].SetActive(true);
                 }
             }
+        }
+
+        public void OnClickHome()
+        {
+            SceneManager.LoadScene("AmaMain");
         }
     }
 }
