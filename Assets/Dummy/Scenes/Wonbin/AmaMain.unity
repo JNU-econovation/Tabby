@@ -382,7 +382,7 @@ RectTransform:
   m_Children:
   - {fileID: 541690171}
   m_Father: {fileID: 2109934243}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -796,19 +796,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -817,7 +808,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 2059773180}
   putInvenButton: {fileID: 496326392}
@@ -827,7 +817,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!58 &49066396
 CircleCollider2D:
@@ -1788,122 +1777,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113349447}
   m_CullTransparentMesh: 0
---- !u!1 &124864288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 124864289}
-  - component: {fileID: 124864291}
-  - component: {fileID: 124864290}
-  - component: {fileID: 124864293}
-  - component: {fileID: 124864292}
-  m_Layer: 5
-  m_Name: contents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &124864289
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124864288}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 494431468}
-  - {fileID: 942541395}
-  m_Father: {fileID: 2102789690}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00003439961, y: 0}
-  m_SizeDelta: {x: 530, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &124864290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124864288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &124864291
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124864288}
-  m_CullTransparentMesh: 0
---- !u!114 &124864292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124864288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 1
-  m_VerticalFit: 1
---- !u!114 &124864293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124864288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 120
-    m_Right: 120
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 220
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
 --- !u!1 &141717131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,19 +1906,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -2054,7 +1918,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -2064,7 +1927,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!114 &154083881
 MonoBehaviour:
@@ -2968,19 +2830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -2989,7 +2842,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -2999,7 +2851,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!1 &215005110
 GameObject:
@@ -3583,19 +3434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -3604,9 +3446,8 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
-  inventoryButton: {fileID: 1291503595}
+  inventoryButton: {fileID: 2059773180}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
   mapButton: {fileID: 1576517920}
@@ -3614,7 +3455,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!1 &234291733
 GameObject:
@@ -4861,135 +4701,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392722965}
   m_CullTransparentMesh: 0
---- !u!1 &400724229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 400724230}
-  - component: {fileID: 400724234}
-  - component: {fileID: 400724233}
-  - component: {fileID: 400724232}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &400724230
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400724229}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1673996138}
-  m_Father: {fileID: 494431468}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 25, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &400724232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400724229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 400724233}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 494431469}
-        m_MethodName: buy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &400724233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400724229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &400724234
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400724229}
-  m_CullTransparentMesh: 0
 --- !u!1 &429519513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,175 +5400,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: 234.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &494431467
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 494431468}
-  - component: {fileID: 494431472}
-  - component: {fileID: 494431471}
-  - component: {fileID: 494431470}
-  - component: {fileID: 494431469}
-  - component: {fileID: 494431473}
-  m_Layer: 5
-  m_Name: shopAnimal (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &494431468
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494431467}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6196733, y: 2.8471475, z: 0.95887446}
-  m_Children:
-  - {fileID: 2001525498}
-  - {fileID: 400724230}
-  m_Father: {fileID: 124864289}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 137.5, y: -50}
-  m_SizeDelta: {x: 35, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &494431469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494431467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
-  farmAnimal: {fileID: 907197639}
-  farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
-  shopFarmObjectProducts:
-  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PSN: 
-  shopButton: {fileID: 49066390}
-  shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
-  farmObShopButton: {fileID: 201728251}
-  inventoryButton: {fileID: 0}
-  putInvenButton: {fileID: 0}
-  text: {fileID: 1521330547}
-  mapButton: {fileID: 1576517920}
-  tapZone: {fileID: 2044507196}
-  OKButton: {fileID: 1911899917}
-  cancelButton: {fileID: 154083878}
-  shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
-  farmObshop: {fileID: 28993869}
---- !u!61 &494431470
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494431467}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 60}
-  m_EdgeRadius: 0
---- !u!114 &494431471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494431467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &494431472
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494431467}
-  m_CullTransparentMesh: 0
---- !u!114 &494431473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494431467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f8a1c900bf9b546981784ffc0f7ec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animalNumber: 0
-  animalName: 
-  exp: 0
-  evolExp: 0
-  animalIndex: 0
-  animalCost: 20
-  animalHeartCost: 0
-  animalSprite: {fileID: 21300000, guid: 3dbc5f474871e8d4eb36e52f633ef476, type: 3}
 --- !u!1 &496326392
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,7 +5419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &496326393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7443,135 +6985,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698166207}
   m_CullTransparentMesh: 0
---- !u!1 &700491693
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 700491694}
-  - component: {fileID: 700491698}
-  - component: {fileID: 700491697}
-  - component: {fileID: 700491696}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &700491694
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700491693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 871930963}
-  m_Father: {fileID: 942541395}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 25, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &700491696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700491693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 700491697}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 942541396}
-        m_MethodName: buy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &700491697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700491693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &700491698
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700491693}
-  m_CullTransparentMesh: 0
 --- !u!1 &771819026
 GameObject:
   m_ObjectHideFlags: 0
@@ -7751,19 +7164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -7772,7 +7176,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -7782,7 +7185,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!114 &776535697
 MonoBehaviour:
@@ -8435,83 +7837,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836946485}
-  m_CullTransparentMesh: 0
---- !u!1 &871930962
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 871930963}
-  - component: {fileID: 871930965}
-  - component: {fileID: 871930964}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &871930963
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871930962}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 700491694}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &871930964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871930962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 8
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 8
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 500
---- !u!222 &871930965
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871930962}
   m_CullTransparentMesh: 0
 --- !u!1 &884096692
 GameObject:
@@ -9762,175 +9087,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938251855}
   m_CullTransparentMesh: 0
---- !u!1 &942541394
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 942541395}
-  - component: {fileID: 942541399}
-  - component: {fileID: 942541398}
-  - component: {fileID: 942541397}
-  - component: {fileID: 942541396}
-  - component: {fileID: 942541400}
-  m_Layer: 5
-  m_Name: shopAnimal (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &942541395
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942541394}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6195316, y: 2.8471215, z: 0.9589901}
-  m_Children:
-  - {fileID: 1956112332}
-  - {fileID: 700491694}
-  m_Father: {fileID: 124864289}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 392.5, y: -50}
-  m_SizeDelta: {x: 35, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &942541396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942541394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
-  farmAnimal: {fileID: 907197639}
-  farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
-  shopFarmObjectProducts:
-  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PSN: 
-  shopButton: {fileID: 49066390}
-  shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
-  farmObShopButton: {fileID: 201728251}
-  inventoryButton: {fileID: 0}
-  putInvenButton: {fileID: 0}
-  text: {fileID: 1521330547}
-  mapButton: {fileID: 1576517920}
-  tapZone: {fileID: 2044507196}
-  OKButton: {fileID: 1911899917}
-  cancelButton: {fileID: 154083878}
-  shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
-  farmObshop: {fileID: 28993869}
---- !u!61 &942541397
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942541394}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 60}
-  m_EdgeRadius: 0
---- !u!114 &942541398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942541394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &942541399
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942541394}
-  m_CullTransparentMesh: 0
---- !u!114 &942541400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942541394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68adbf42d4968040bd9d9d3ed029b63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animalNumber: 0
-  animalName: 
-  exp: 0
-  evolExp: 0
-  animalIndex: 0
-  animalCost: 0
-  animalHeartCost: 0
-  animalSprite: {fileID: 0}
 --- !u!1 &964489760
 GameObject:
   m_ObjectHideFlags: 0
@@ -10652,19 +9808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -10673,7 +9820,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -10683,7 +9829,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!1 &1024573171
 GameObject:
@@ -15836,83 +14981,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651070901}
   m_CullTransparentMesh: 0
---- !u!1 &1673996137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1673996138}
-  - component: {fileID: 1673996140}
-  - component: {fileID: 1673996139}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1673996138
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673996137}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400724230}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1673996139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673996137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 8
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 8
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 10
---- !u!222 &1673996140
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673996137}
-  m_CullTransparentMesh: 0
 --- !u!1 &1680435382
 GameObject:
   m_ObjectHideFlags: 0
@@ -17762,20 +16830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 3286711609227474072, guid: 8ada564687092374ca3b488fed7818bc,
-    type: 3}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -17784,7 +16842,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -17794,7 +16851,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!61 &1883015854
 BoxCollider2D:
@@ -17965,19 +17021,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -17986,7 +17033,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -17996,7 +17042,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!114 &1911899920
 MonoBehaviour:
@@ -18099,79 +17144,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911899917}
   m_CullTransparentMesh: 0
---- !u!1 &1956112331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1956112332}
-  - component: {fileID: 1956112334}
-  - component: {fileID: 1956112333}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1956112332
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956112331}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 942541395}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 9}
-  m_SizeDelta: {x: 15, y: 25}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1956112333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956112331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9e3ea144f0976cf4e9f73f92bc323323, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1956112334
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956112331}
-  m_CullTransparentMesh: 0
 --- !u!1 &1958973245
 GameObject:
   m_ObjectHideFlags: 0
@@ -18248,79 +17220,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958973245}
-  m_CullTransparentMesh: 0
---- !u!1 &2001525497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2001525498}
-  - component: {fileID: 2001525500}
-  - component: {fileID: 2001525499}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2001525498
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001525497}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 494431468}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 9}
-  m_SizeDelta: {x: 15, y: 25}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2001525499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001525497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3dbc5f474871e8d4eb36e52f633ef476, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2001525500
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001525497}
   m_CullTransparentMesh: 0
 --- !u!1 &2004457237
 GameObject:
@@ -18683,19 +17582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -18704,7 +17594,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -18714,7 +17603,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!114 &2027771944
 MonoBehaviour:
@@ -19299,6 +18187,7 @@ MonoBehaviour:
   putButton: {fileID: 231264621}
   cancelButton: {fileID: 234581309}
   putInvenButton: {fileID: 496326392}
+  farmAnimal: {fileID: 907197639}
   inventoryContents: {fileID: 1611936305}
   farmObjects: {fileID: 1252491995}
   arrangeImage: {fileID: 776535691}
@@ -19673,20 +18562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 3286711609227474072, guid: 8ada564687092374ca3b488fed7818bc,
-    type: 3}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -19695,7 +18574,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -19705,7 +18583,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!61 &2085542554
 BoxCollider2D:
@@ -19823,19 +18700,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopAnimal: {fileID: 0}
-  shopFarmObject: {fileID: 0}
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
   productImage: {fileID: 1023418783}
-  AnimalforList: {fileID: 0}
-  Animals: {fileID: 0}
-  shopAnimalProducts:
-  - {fileID: 2448804857108897039, guid: 9a294e584703589409f83f6dd999e395, type: 3}
-  - {fileID: 4998070706919597410, guid: d247fb55c288b8248ad146ab3e1a790c, type: 3}
-  - {fileID: 7830524784935451414, guid: 846d6a7e62954334589cbb479becc367, type: 3}
-  - {fileID: 2638290717801764163, guid: 60589ad1c43acf941adff111ecb307bc, type: 3}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -19844,7 +18712,6 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  animalShopButton: {fileID: 1023418783}
   farmObShopButton: {fileID: 201728251}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
@@ -19854,7 +18721,6 @@ MonoBehaviour:
   OKButton: {fileID: 1911899917}
   cancelButton: {fileID: 154083878}
   shop: {fileID: 322068635}
-  animalshop: {fileID: 2102789689}
   farmObshop: {fileID: 28993869}
 --- !u!114 &2086234886
 MonoBehaviour:
@@ -19946,125 +18812,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086234883}
   m_CullTransparentMesh: 0
---- !u!1 &2102789689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2102789690}
-  - component: {fileID: 2102789692}
-  - component: {fileID: 2102789691}
-  - component: {fileID: 2102789693}
-  - component: {fileID: 2102789694}
-  m_Layer: 5
-  m_Name: animalShop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2102789690
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102789689}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 124864289}
-  m_Father: {fileID: 2109934243}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.99997}
-  m_SizeDelta: {x: -60, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2102789691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102789689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9aa6119827f290346b0c54e29cc32918, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2102789692
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102789689}
-  m_CullTransparentMesh: 0
---- !u!114 &2102789693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102789689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
---- !u!114 &2102789694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102789689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 124864289}
-  m_Horizontal: 1
-  m_Vertical: 0
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 0}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 0
-  m_HorizontalScrollbarSpacing: 0
-  m_VerticalScrollbarSpacing: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2109934242
 GameObject:
   m_ObjectHideFlags: 0
@@ -20094,7 +18841,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2102789690}
   - {fileID: 28993870}
   m_Father: {fileID: 322068636}
   m_RootOrder: 1

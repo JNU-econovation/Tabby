@@ -56,7 +56,8 @@ public class MapButtonManager : MonoBehaviour
     public Sprite[] areaPrevealSprite;
     private Image prevearChanger;
 
-    private GameObject listAnimal;
+
+    public GameObject listAnimal;
 
     public void Awake()
     {
@@ -99,7 +100,7 @@ public class MapButtonManager : MonoBehaviour
         
         for (int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
-        List<Animal> listAnimals = Spawner.animals.ToList();
+        listAnimals = Spawner.animals.ToList();
     }
 
     public void Area1Tap()

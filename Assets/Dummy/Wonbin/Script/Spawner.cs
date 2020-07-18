@@ -29,6 +29,7 @@ public class Spawner : MonoBehaviour
 
     public static List<Animal> animals=new List<Animal>();
     public static List<FarmObject> farmObjects=new List<FarmObject>();
+
     private void Awake()
     {
         if (_instance == null)

@@ -16,6 +16,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject cancelButton;
     public GameObject putInvenButton;
 
+    public GameObject farmAnimal;
+
     public GameObject inventoryContents;
     public GameObject farmObjects;
 
@@ -30,6 +32,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log("깨어났다!");
         for(int i=0; i < 30; i++)
         {
             FarmObject invenSlotFarmOb = inventoryContents.transform.GetChild(i).gameObject.GetComponent<FarmObject>();
@@ -63,6 +66,11 @@ public class InventoryManager : MonoBehaviour
         invenSlotFarmOb.farmObjectIndex = InputManager.farmObjectIndex;
         inventorySlotNum++;
         DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+        for (int i = 0; i < farmAnimal.transform.childCount; i++)
+        {
+            AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
+            animalController.pathStart();
+        }
     }
 
 
@@ -168,6 +176,11 @@ public class InventoryManager : MonoBehaviour
             invenSlotFarmOb.farmObjectIndex = nextInvenSlotFarmOb.farmObjectIndex;
             invenSlotFarmOb.farmObjectNumber = nextInvenSlotFarmOb.farmObjectNumber;
 
+        }
+        for (int i = 0; i < farmAnimal.transform.childCount; i++)
+        {
+            AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
+            animalController.pathStart();
         }
     }
 

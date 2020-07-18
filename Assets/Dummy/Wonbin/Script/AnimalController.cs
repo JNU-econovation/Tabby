@@ -138,7 +138,6 @@ public class AnimalController : MonoBehaviour
             Destroy(gameObject.transform.GetChild(0).gameObject);
             heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
             timeAfterHeart = 0f;
-            EXPUP(1);
         }
     }
 }
