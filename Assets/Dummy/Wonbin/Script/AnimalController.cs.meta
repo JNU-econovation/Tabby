@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - heartPrefabs: {fileID: 2782221430322883522, guid: 96043e2ccdb41ab46a2534d48b03a1d2,
       type: 3}
-  executionOrder: 0
+  executionOrder: 200
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
