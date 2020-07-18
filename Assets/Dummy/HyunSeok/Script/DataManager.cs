@@ -19,8 +19,11 @@ namespace GameData
 
         public PlayerData playerData;
  
-        public int rigionIndex;
+        public int regionIndex;
         public int[] gogoAnimalIndexes;
+
+        public Tuple<int, int>[] animalExp;
+        public int farmObjects;
 
 
         #endregion
@@ -50,7 +53,7 @@ namespace GameData
                 playerDataDi.Create ();
             }
 
-            Init ();
+            Init ();            
         }
         #endregion
         #region custom method

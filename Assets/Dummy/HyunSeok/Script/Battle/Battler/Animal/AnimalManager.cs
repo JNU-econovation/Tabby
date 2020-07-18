@@ -11,6 +11,28 @@ namespace Battle
         public List<AnimalController> animals;
         public List<Transform> animalPos;
 
+        private int endNumber;
+        public int EndNumber
+        {
+            get => endNumber;
+            set
+            {
+                if (value == 3 && BattleManager._instance.battleState == BattleDefine.EBattleState.Playing)
+                {
+                    // 전투 끝내기
+                    EndAnimals();
+                    EnemyManager._instance.EndAnimals();
+                    StartCoroutine(BattleManager._instance.BattleOverState());
+                }
+                else
+                {
+                    endNumber = value;
+                }
+            }
+        }
+
+        public List<int> tempRandomAnimalIndexes;
+
         private void Awake()
         {
             if (_instance == null)
@@ -21,32 +43,75 @@ namespace Battle
             SpawnAnimalUseData();
         }
 
+        public void StartAnimals()
+        {
+            foreach(AnimalController animal in animals)
+            {
+                if (animal != null)
+                {
+                    animal.SetForceState(BattleDefine.EBattlerState.Idle);
+                }
+            }
+        }
+
+        public void EndAnimals()
+        {
+            foreach (AnimalController animal in animals)
+            {
+                if (animal != null)
+                {
+                    if (animal.state != BattleDefine.EBattlerState.Down)
+                        animal.SetForceState(BattleDefine.EBattlerState.Ready);
+                }
+            }
+        }
+
+
         // 
         public void SpawnAnimalUseData()
         {
-            for (int i = 0; i < 3; i++)
+            if (true)
             {
-                //int animalIndex = DataManager._instance.gogoAnimalIndexes[i];
-                int animalIndex = 1;
-                if (i == 1)
-                    animalIndex = 5;
-                if (i == 2)
-                    animalIndex = 3;
-                // 만약 -1 일 경우 소환 안함
-                if (animalIndex == -1)
+                for (int i = 0; i < 3; i++)
                 {
-                    animals.Add(null);
-                    continue;
+                    if (tempRandomAnimalIndexes[i] == -1)
+                    {
+                        animals.Add(null);
+                        continue;
+                    }
+                    GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + tempRandomAnimalIndexes[i]) as GameObject);
+                    if (animal == null)
+                    {
+                        animals.Add(null);
+                        continue;
+                    }
+                    animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
+                    animals[i].animalData.BattleIndex = i;
+                    animal.transform.position = animalPos[i].transform.position;
                 }
-                GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + animalIndex) as GameObject);
-                if (animal == null)
+            }
+            else
+            { 
+                for (int i = 0; i < 3; i++)
                 {
-                    animals.Add(null);
-                    continue;
+                    int animalIndex = DataManager._instance.gogoAnimalIndexes[i];
+                    int realAnimalIndex = DataManager._instance.playerData.animalDatas[animalIndex].index;
+                    // 만약 -1 일 경우 소환 안함
+                    if (animalIndex == -1)
+                    {
+                        animals.Add(null);
+                        continue;
+                    }
+                    GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + realAnimalIndex) as GameObject);
+                    if (animal == null)
+                    {
+                        animals.Add(null);
+                        continue;
+                    }
+                    animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
+                    animals[i].animalData.BattleIndex = i;
+                    animal.transform.position = animalPos[i].transform.position;
                 }
-                animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
-                animals[i].animalData.BattleIndex = i;
-                animal.transform.position = animalPos[i].transform.position;
             }
         }
     }

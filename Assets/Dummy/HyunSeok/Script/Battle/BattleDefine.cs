@@ -16,7 +16,7 @@ namespace Battle
         public enum ESkillCCType { None, Stun, StatDown_Percent, StatDown_int, End }
         public enum ESkillStatType { None, Atk, AtkSpd, Tough, Focus, Critical }
 
-        public delegate void VoidEventInt(int value);
+        public delegate void VoidEvent();
     }
 }
 

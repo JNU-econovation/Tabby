@@ -69,7 +69,7 @@ namespace Battle
             states.Add(new StateDamaged(this));
             states.Add(new StateDown(this));
             currentState = states[(int)state];
-            SetState(BattleDefine.EBattlerState.Idle);
+            SetState(BattleDefine.EBattlerState.Ready);
         }
 
         public virtual void Damaged(SkillData skillData, float focus, float damage)
@@ -237,6 +237,8 @@ namespace Battle
                 return;
             if (this.state == BattleDefine.EBattlerState.Stun)
                 return;
+            if (this.state == BattleDefine.EBattlerState.Ready)
+                return;
             if (currentState != null)
                 currentState.OnExit();
             currentState = states[(int)state];
@@ -250,6 +252,7 @@ namespace Battle
                 currentState.OnExit();
             currentState = states[(int)state];
             currentState.OnEnter();
+            Debug.Log(currentState);
         }
         // 스킬 발동 시
         public virtual void OnClickSkill()
@@ -595,6 +598,7 @@ namespace Battle
                 owner.state = BattleDefine.EBattlerState.Down;
                 owner.animator.SetTrigger("TrgStun");
                 owner.currentSkillData = null;
+                AnimalManager._instance.EndNumber++;
             }
 
             public void OnExit()

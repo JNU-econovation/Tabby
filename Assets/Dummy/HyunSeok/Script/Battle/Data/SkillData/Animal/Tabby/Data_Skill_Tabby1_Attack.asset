@@ -17,9 +17,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f899893fefd189b44b227140a08bf8ea, type: 3}
   coolTime: 0
   skillPowerInt: 0
-  skillPowerPercent: 1
+  skillPowerPercent: 100
   type: 0
-  target: 11
+  target: 2
   castingType: 0
   statType: 0
   ccType: 0

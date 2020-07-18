@@ -27,18 +27,17 @@ namespace GameData
 
         [SerializeField]
         private float maxHP;
-        public float MapHP { get => maxHP; set => maxHP = value; }
+        public float MaxHP { get => maxHP; set => maxHP = value; }
 
-        public BattleDefine.VoidEventInt EvHP;
+        public BattleDefine.VoidEvent EvHP;
         [SerializeField]
         private float hp;
         public float HP { get => hp;
             set
             {
                 hp = value;
-                EvHP?.Invoke(battleIndex);
+                EvHP?.Invoke();
             }
-
         }
 
         [SerializeField]
