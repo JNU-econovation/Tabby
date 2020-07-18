@@ -2455,7 +2455,6 @@ GameObject:
   - component: {fileID: 171584265}
   - component: {fileID: 171584264}
   - component: {fileID: 171584266}
-  - component: {fileID: 171584267}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2503,29 +2502,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 1373364142}
   heartText: {fileID: 1295991728}
---- !u!114 &171584267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171584263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e028e140373209c459d15c9493cdf9ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    index: 0
-    name: 
-    reputation: 0
-    leaderIndex: 0
-    money: 0
-    heart: 0
-    animalDatas: []
-    farmObjectDatas: []
-  regionIndex: 0
-  gogoAnimalIndexes: 
 --- !u!1 &177105107
 GameObject:
   m_ObjectHideFlags: 0
@@ -17936,6 +17912,7 @@ MonoBehaviour:
     farmObjectDatas: []
   regionIndex: 0
   gogoAnimalIndexes: 
+  farmObjects: 0
 --- !u!1 &1911899917
 GameObject:
   m_ObjectHideFlags: 0
