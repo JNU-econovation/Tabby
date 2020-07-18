@@ -69,6 +69,7 @@ namespace Battle
             battleOverEvent?.Invoke();
             DataManager._instance.animalExp = new Tuple<int, int>[3];
             DataManager._instance.farmObjects = -1;
+
             if (isWin)
             {
                 // 경험치, 설정
@@ -81,14 +82,18 @@ namespace Battle
                     }
                     DataManager._instance.animalExp[i] =
                         new Tuple<int, int>(DataManager._instance.gogoAnimalIndexes[i], EnemyManager._instance.enemy.animalData.enemyExp);
+                    DataManager._instance.playerData.animalDatas[DataManager._instance.gogoAnimalIndexes[i]].exp += EnemyManager._instance.enemy.animalData.enemyExp;
+                    DataManager._instance.SaveData<PlayerData>(DataManager._instance.playerData, "/PlayerData/" + 0 + ".json");
                 }
                 // 아이템 설정
                 float rand = UnityEngine.Random.Range(0f, 1f);
                 if (rand < EnemyManager._instance.enemy.animalData.farmObjectPercent)
                 {
                     DataManager._instance.farmObjects = EnemyManager._instance.enemy.animalData.farmObjectIndex;
+                    DataManager._instance.playerData.farmObjectDatas.Add(new FarmObjectData(EnemyManager._instance.enemy.animalData.farmObjectIndex, 0, 0, new DateTime(), false));
+                    DataManager._instance.SaveData<PlayerData>(DataManager._instance.playerData, "/PlayerData/" + 0 + ".json");
                 }
-            }         
+            }
             yield return new WaitForSeconds(2.0f);
             StartCoroutine(EndState());
         }
