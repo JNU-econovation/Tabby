@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
             inventorySlotNum++;
         }
         inventorySlotNum = 0;
-        foreach (FarmObject farmObject in Spawner.farmObjects)
+        foreach (FarmObject farmObject in Spawner._instance.farmObjects)
         {
             if (farmObject.isField == false)
             {
@@ -65,7 +65,7 @@ public class InventoryManager : MonoBehaviour
         invenSlotFarmOb.farmObjectNumber = InputManager.farmObjectNumber;
         invenSlotFarmOb.farmObjectIndex = InputManager.farmObjectIndex;
         inventorySlotNum++;
-        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+        DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {
             AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
@@ -104,8 +104,8 @@ public class InventoryManager : MonoBehaviour
 
     public void FarmObjectSale()
     {
-        Spawner.farmObjects.RemoveAt(InputManager.farmObjectIndex);
-        foreach(FarmObject farmObject in Spawner.farmObjects)
+        Spawner._instance.farmObjects.RemoveAt(InputManager.farmObjectIndex);
+        foreach(FarmObject farmObject in Spawner._instance.farmObjects)
         {
             if (farmObject.farmObjectIndex >= InputManager.farmObjectIndex)
                 farmObject.farmObjectIndex--;
@@ -123,7 +123,7 @@ public class InventoryManager : MonoBehaviour
 
         }
         inventorySlotNum--;
-        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+        DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
         MoneyManager.MoneyUP(10);
     }
 
@@ -134,7 +134,7 @@ public class InventoryManager : MonoBehaviour
         arrangeButton.SetActive(false);
         putButton.SetActive(true);
         cancelButton.SetActive(true);
-        Spawner.farmObjects[InputManager.farmObjectIndex].isField = true;
+        Spawner._instance.farmObjects[InputManager.farmObjectIndex].isField = true;
         Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
         arrangeImageDrag.PItransformMid();
         Image spriteRenderer = arrangeImage.GetComponent<Image>();
@@ -147,7 +147,7 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(true);
         putButton.SetActive(false);
         cancelButton.SetActive(false);
-        Spawner.farmObjects[InputManager.farmObjectIndex].harvestTime = System.DateTime.Now;
+        Spawner._instance.farmObjects[InputManager.farmObjectIndex].harvestTime = System.DateTime.Now;
         GameObject arranged = Instantiate(invenItems[InputManager.farmObjectNumber], new Vector2(arrangeImage.transform.position.x, arrangeImage.transform.position.y), Quaternion.identity);
         FarmObjectController farmObjectController= arranged.GetComponent<FarmObjectController>();
         FarmObject farmObject = arranged.GetComponent<FarmObject>();
@@ -157,13 +157,13 @@ public class InventoryManager : MonoBehaviour
         spriteRenderer.sprite = farmObjectController.producingSprite;
         Debug.Log("되고있나");
         arranged.transform.parent = farmObjects.transform;
-        Spawner.farmObjects[InputManager.farmObjectIndex].posX = arrangeImage.transform.position.x;
-        Spawner.farmObjects[InputManager.farmObjectIndex].posY = arrangeImage.transform.position.y;
-        Spawner.farmObjects[InputManager.farmObjectIndex].isField = true;
+        Spawner._instance.farmObjects[InputManager.farmObjectIndex].posX = arrangeImage.transform.position.x;
+        Spawner._instance.farmObjects[InputManager.farmObjectIndex].posY = arrangeImage.transform.position.y;
+        Spawner._instance.farmObjects[InputManager.farmObjectIndex].isField = true;
         
         Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
         arrangeImageDrag.PItransformBack();
-        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+        DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
         inventorySlotNum--;
         for (int i = InputManager.inventorySlotNumber; i <= inventorySlotNum; i++)
         {

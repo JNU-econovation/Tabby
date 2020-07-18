@@ -27,8 +27,8 @@ public class Spawner : MonoBehaviour
 
     public FarmObject[] farmObjectDictionary;
 
-    public static List<Animal> animals=new List<Animal>();
-    public static List<FarmObject> farmObjects=new List<FarmObject>();
+    public List<Animal> animals=new List<Animal>();
+    public List<FarmObject> farmObjects=new List<FarmObject>();
 
     private void Awake()
     {
@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
                 farmObject.harvestTime = farmObjectData.harvestTime;
                 farmObject.isField = farmObjectData.isField;
                 newFarmObject.transform.parent = farmFarmObject.transform;
-                farmObject.farmObjectIndex = Spawner.farmObjects.Count;
+                farmObject.farmObjectIndex = farmObjects.Count;
                 AddNewFarmObject(newFarmObject);
             }
             if (farmObjectData.isField != true)
@@ -67,7 +67,7 @@ public class Spawner : MonoBehaviour
                 farmObject.harvestTime = farmObjectData.harvestTime;
                 farmObject.isField = farmObjectData.isField;
                 newFarmObject.transform.parent = farmFarmObject.transform;
-                farmObject.farmObjectIndex = Spawner.farmObjects.Count;
+                farmObject.farmObjectIndex = farmObjects.Count;
                 AddNewFarmObject(newFarmObject);
                 Destroy(newFarmObject);
             }
@@ -89,7 +89,6 @@ public class Spawner : MonoBehaviour
 
             newAnimal.transform.parent = farmAnimal.transform;
             AddNewAnimal(newAnimal);
-            Debug.Log(newanimal.exp);
 
             //idx따라 Animal 생성
 
@@ -97,14 +96,14 @@ public class Spawner : MonoBehaviour
         
     }
 
-    public static void AddNewAnimal(GameObject animal)
+    public void AddNewAnimal(GameObject animal)
     {
         Animal animalObject = animal.GetComponent<Animal>();
         animals.Add(animalObject);
         
     }
 
-    public static void AddEvolutionAnimal(GameObject animal, int animalsIdx)
+    public void AddEvolutionAnimal(GameObject animal, int animalsIdx)
     {
         Animal animalObject = animal.GetComponent<Animal>();
         animal.transform.SetSiblingIndex(animalsIdx);
@@ -112,7 +111,7 @@ public class Spawner : MonoBehaviour
         animals[animalObject.animalIndex] =animalObject;
         
     }
-    public static void BuyNewFarmObject(GameObject farmObject)
+    public void BuyNewFarmObject(GameObject farmObject)
     {
         FarmObject farmObjectOb = farmObject.GetComponent<FarmObject>();
         Rigidbody2D farmObjectRB = farmObject.GetComponent<Rigidbody2D>();
@@ -122,7 +121,7 @@ public class Spawner : MonoBehaviour
         farmObjects.Add(farmObjectOb);
         print(farmObjects[farmObjects.Count - 1].posX);
     }
-    public static void AddNewFarmObject(GameObject farmObject)
+    public void AddNewFarmObject(GameObject farmObject)
     {
         FarmObject farmObjectOb = farmObject.GetComponent<FarmObject>();
         Rigidbody2D farmObjectRB = farmObject.GetComponent<Rigidbody2D>();
@@ -148,7 +147,7 @@ public class Spawner : MonoBehaviour
             Destroy(animal);
 
 
-            DataManager._instance.ParseAnimalDate(Spawner.animals);
+            DataManager._instance.ParseAnimalDate(animals);
         }
 
     }

@@ -124,7 +124,7 @@ public class ShopButtonManager : MonoBehaviour
         Drag PIDrag = productImage.GetComponent<Drag>();
         PIDrag.PItransformBack();
         FarmObject productedObject = producted.GetComponent<FarmObject>();
-        productedObject.farmObjectIndex = Spawner.farmObjects.Count;
+        productedObject.farmObjectIndex = Spawner._instance.farmObjects.Count;
         productedObject.isField = true;
 
         
@@ -132,8 +132,8 @@ public class ShopButtonManager : MonoBehaviour
         cancelButton.gameObject.SetActive(false);
         MoneyManager.money -= productFarmObject.shopCost;
 
-        Spawner.BuyNewFarmObject(producted);
-        DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+        Spawner._instance.BuyNewFarmObject(producted);
+        DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
 
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {

@@ -66,7 +66,7 @@ public class InputManager : MonoBehaviour
     public void PutInventory()
     {
         Debug.Log("인벤에넣기");
-        Spawner.farmObjects[farmObjectIndex].isField = false;
+        Spawner._instance.farmObjects[farmObjectIndex].isField = false;
         Destroy(tapObject);
         putInvenButton.SetActive(false);
     }

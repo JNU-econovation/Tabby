@@ -58,7 +58,7 @@ public class FarmObjectController : MonoBehaviour
             state = State.producing;
             spriteRenderer.sprite = producingSprite;
             farmObject.harvestTime = System.DateTime.Now;
-            DataManager._instance.ParseFarmObjectData(Spawner.farmObjects);
+            DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
         }
     }
 

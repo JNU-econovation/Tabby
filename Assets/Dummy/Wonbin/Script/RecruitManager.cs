@@ -114,8 +114,8 @@ public class RecruitManager : MonoBehaviour
         GameObject newAnimal = Instantiate(animalPrefabs[animalSlot1.GetComponent<Animal>().animalNumber], forInstantiate.RandomSpawnSetting(), Quaternion.identity);
         Animal newanimal = newAnimal.GetComponent<Animal>();
         newAnimal.transform.parent = animalParent.transform;
-        Spawner.AddNewAnimal(newAnimal);
-        DataManager._instance.ParseAnimalDate(Spawner.animals);
+        Spawner._instance.AddNewAnimal(newAnimal);
+        DataManager._instance.ParseAnimalDate(Spawner._instance.animals);
         heartText.text = MoneyManager.heart.ToString();
         moneyText.text = MoneyManager.money.ToString();
     }
@@ -128,8 +128,8 @@ public class RecruitManager : MonoBehaviour
         GameObject newAnimal = Instantiate(animalPrefabs[animalSlot2.GetComponent<Animal>().animalNumber], forInstantiate.RandomSpawnSetting(), Quaternion.identity);
         Animal newanimal = newAnimal.GetComponent<Animal>();
         newAnimal.transform.parent = animalParent.transform;
-        Spawner.AddNewAnimal(newAnimal);
-        DataManager._instance.ParseAnimalDate(Spawner.animals);
+        Spawner._instance.AddNewAnimal(newAnimal);
+        DataManager._instance.ParseAnimalDate(Spawner._instance.animals);
         heartText.text = MoneyManager.heart.ToString();
         moneyText.text = MoneyManager.money.ToString();
     }

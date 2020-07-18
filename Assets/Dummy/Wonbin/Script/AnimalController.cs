@@ -52,8 +52,14 @@ public class AnimalController : MonoBehaviour
         animator = GetComponent<Animator>();
         pathfinder.PathFindingStart(animalrigidbody, 6);
         heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
-        
-        
+        Spawner._instance.animals[gameObject.transform.GetSiblingIndex()].animalIndex=gameObject.transform.GetSiblingIndex();
+
+
+        if (totalEXP >= animal.evolExp)
+        {
+            Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();
+            spawner.Evolution(gameObject, spawner);
+        }
     }
     private void Update()
     {
@@ -83,13 +89,9 @@ public class AnimalController : MonoBehaviour
     void EXPUP(int argexp)
     {
         totalEXP += argexp;
-        Spawner.animals[gameObject.transform.GetSiblingIndex()].exp += argexp;
-        DataManager._instance.ParseAnimalDate(Spawner.animals);
-        if (totalEXP >= animal.evolExp)
-        {
-            Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();
-            spawner.Evolution(gameObject, spawner);
-        }
+        Spawner._instance.animals[gameObject.transform.GetSiblingIndex()].exp += argexp;
+        DataManager._instance.ParseAnimalDate(Spawner._instance.animals);
+
     }
 
 

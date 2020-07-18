@@ -100,7 +100,7 @@ public class MapButtonManager : MonoBehaviour
         
         for (int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
-        listAnimals = Spawner.animals.ToList();
+        List<Animal> listAnimals = Spawner._instance.animals.ToList();
     }
 
     public void Area1Tap()
@@ -140,7 +140,7 @@ public class MapButtonManager : MonoBehaviour
     public void BattleReadyWindowOpen()
     {
 
-        listAnimals = Spawner.animals.ToList();
+        listAnimals = Spawner._instance.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
         {
             listAnimalAvailability.Add(true);
@@ -154,6 +154,7 @@ public class MapButtonManager : MonoBehaviour
             listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
             listAnimal.transform.GetChild(2).GetComponent<Text>().text = listAnimals[i].animalName;
+            Debug.Log("아우코바"+listAnimals.Count);
         }
         battleReadyWindow.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
@@ -168,7 +169,7 @@ public class MapButtonManager : MonoBehaviour
     public void tapListAnimal(int index)
     {
         //imgBackupList = GameObject.Find("AnimalImgBackup");
-        listAnimals = Spawner.animals.ToList<Animal>();
+        listAnimals = Spawner._instance.animals.ToList<Animal>();
         Animal thisAnimal = gameObject.transform.GetChild(index).GetComponent<Animal>();
         Sprite tapAnimalSprite= gameObject.transform.GetChild(index).GetComponent<Animal>().animalSprite;
         if (imgBackupList.transform.childCount != 0 && listAnimalAvailability[index] != false)
