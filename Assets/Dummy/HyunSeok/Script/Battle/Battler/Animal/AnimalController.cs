@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using GameData;
 
 namespace Battle
 {
     [RequireComponent(typeof(Animator))]
-    public class AnimalController : MonoBehaviour, IBattlerAdapter
+    public class AnimalController : MonoBehaviour
     {
         //------------------------------------------------------------ Data
         // 동물 데이터
@@ -73,27 +74,33 @@ namespace Battle
             SetState(BattleDefine.EBattlerState.Ready);
         }
 
-        public virtual void Damaged(SkillData skillData, float focus, float damage)
+        public virtual void Damaged(SkillData skillData, float focus, Tuple<float, bool> damage)
         {
             if (skillData == null)
                 return;
             // 명중률
-            float enemyFocusRandom = Random.Range(0.0f, 1.0f);
+            float enemyFocusRandom = UnityEngine.Random.Range(0.0f, 1.0f);
+            GameObject dmgObj = Instantiate(AnimalManager._instance.damagePrefab);
+            dmgObj.SetActive(true);
+            dmgObj.transform.position = transform.position + new Vector3(0f, 1f, 0f);
             // Miss!!!
             if (enemyFocusRandom > focus)
             {
+                dmgObj.GetComponent<UIDamage>().SetDmg(damage.Item1, damage.Item2, true);
+                Debug.Log("회피!");
                 // 회피 완료!
                 return;
             }
+            dmgObj.GetComponent<UIDamage>().SetDmg(damage.Item1, damage.Item2, false);
             // 만약 죽을 경우
-            if (animalData.HP - damage < 1)
+            if (animalData.HP - damage.Item1 < 1)
             {
                 animalData.HP = 0;
                 SetForceState(BattleDefine.EBattlerState.Down);
                 return;
             }
             // 데미지 적용
-            animalData.HP -= damage;
+            animalData.HP -= damage.Item1;
             Coroutine ccCrtn = null;
             // cc Time 조정
             float toughCCTime = skillData.ccTime * animalData.Tough;
@@ -264,18 +271,21 @@ namespace Battle
         }
 
         // 스킬 파워 계산 식
-        public float CaculateDamage(SkillData data)
+        public Tuple<float, bool> CaculateDamage(SkillData data)
         {
             if (data == null)
-                return 0;
+                return new Tuple<float, bool>(0f, false);
+            bool isCritical = false;
             float dmg = (float)data.skillPowerInt + animalData.Atk * (1 + data.skillPowerPercent);
-            float criticalRandom = Random.Range(0.0f, 1.0f);
+            dmg += UnityEngine.Random.Range(-5f, 5f);
+            float criticalRandom = UnityEngine.Random.Range(0.0f, 1.0f);
             // 크리 발동
             if (criticalRandom < animalData.Critical)
             {
                 dmg *= 2;
+                isCritical = true;
             }
-            return Mathf.Round(dmg);
+            return new Tuple<float, bool>(Mathf.Round(dmg), isCritical);
         }
         // 공격 모션 시전 시
         public virtual void ActiveSkill()
@@ -458,7 +468,7 @@ namespace Battle
             public void OnEnter()
             {
                 attackDelay = 0;
-                maxAttackDelay = 1 / (owner.animalData.AtkSpd + Random.Range(-0.1f, 0.1f));
+                maxAttackDelay = 1 / (owner.animalData.AtkSpd + UnityEngine.Random.Range(-0.1f, 0.1f));
                 owner.state = BattleDefine.EBattlerState.Idle;
                 //owner.animator.SetTrigger("TrgIdle");
             }
@@ -485,7 +495,7 @@ namespace Battle
                             }
                             else
                             {
-                                float rand = Random.Range(0f, 1f);
+                                float rand = UnityEngine.Random.Range(0f, 1f);
                                 if (rand < owner.attackDatas[i].patternPercent)
                                 {
                                     owner.activeSkillQueue.Enqueue(owner.attackDatas[i]);

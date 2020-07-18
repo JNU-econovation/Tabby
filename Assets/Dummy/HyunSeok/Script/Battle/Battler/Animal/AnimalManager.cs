@@ -11,6 +11,8 @@ namespace Battle
         public List<AnimalController> animals;
         public List<Transform> animalPos;
 
+        public GameObject damagePrefab;
+
         private int endNumber;
         private int maxEndNumber = 3;
         public int EndNumber
@@ -105,7 +107,10 @@ namespace Battle
                         animals.Add(null);
                         continue;
                     }
+                    Debug.Log("Animal index : " + animalIndex);
+                    Debug.Log("What " + DataManager._instance.playerData.animalDatas[animalIndex]);
                     int realAnimalIndex = DataManager._instance.playerData.animalDatas[animalIndex].index;
+                    Debug.Log("Real : " + realAnimalIndex);
                     GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + realAnimalIndex) as GameObject);
                     if (animal == null)
                     {
@@ -115,6 +120,10 @@ namespace Battle
                     animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
                     animals[i].animalData.BattleIndex = i;
                     animal.transform.position = animalPos[i].transform.position;
+                    if (realAnimalIndex == 0)
+                    {
+                        animal.transform.position = animalPos[i].transform.position + new Vector3(0, 1f, 0);
+                    }
                 }
             }
         }

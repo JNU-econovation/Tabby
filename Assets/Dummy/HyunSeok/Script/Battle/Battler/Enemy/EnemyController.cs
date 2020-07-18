@@ -6,7 +6,7 @@ using GameData;
 namespace Battle
 {
     [RequireComponent(typeof(Animator))]
-    public class EnemyController : AnimalController, IBattlerAdapter
+    public class EnemyController : AnimalController
     {
  
     }

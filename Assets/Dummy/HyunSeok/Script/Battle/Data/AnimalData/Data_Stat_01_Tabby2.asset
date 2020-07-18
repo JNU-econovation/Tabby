@@ -21,6 +21,9 @@ MonoBehaviour:
   atk: 40
   atkSpd: 1.2
   tough: 0
-  focus: 1
-  critical: 0.5
+  focus: 0.9
+  critical: 0.3
   battleIndex: 0
+  enemyExp: 0
+  farmObjectIndex: 0
+  farmObjectPercent: 0

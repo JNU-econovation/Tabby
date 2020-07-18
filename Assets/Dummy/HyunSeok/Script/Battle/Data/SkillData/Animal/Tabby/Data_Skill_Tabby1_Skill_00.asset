@@ -19,7 +19,7 @@ MonoBehaviour:
   skillPowerInt: 10
   skillPowerPercent: 0.8
   type: 1
-  target: 0
+  target: 2
   castingType: 0
   statType: 0
   ccType: 0
