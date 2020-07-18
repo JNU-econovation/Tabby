@@ -10,6 +10,7 @@ public class WeaselEV2 : Animal
         //animalHP = 100;
         //animalCost = 100;
 
+        evolExp = 1000000;
         //exp = 5;
     }
 }

@@ -12,6 +12,7 @@ public class Animal : MonoBehaviour
     public int animalNumber;
     public string animalName;
     public int exp;
+    public int evolExp;
     
     public int animalIndex;
 

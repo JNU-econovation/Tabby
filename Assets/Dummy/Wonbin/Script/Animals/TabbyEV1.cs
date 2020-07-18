@@ -11,7 +11,7 @@ public class TabbyEV1: Animal
         animalCost = 20;
         animalHeartCost = 20;
 
-        exp = 3;
+        evolExp = 10;
     }
 
 }

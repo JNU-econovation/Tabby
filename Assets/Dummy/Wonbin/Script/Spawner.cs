@@ -76,12 +76,13 @@ public class Spawner : MonoBehaviour
             GameObject newAnimal = Instantiate(animalPrefabs[animalData.index], forInstantiate.RandomSpawnSetting(), Quaternion.identity);
             Animal newanimal = newAnimal.GetComponent<Animal>();
             newanimal.exp = animalData.exp;
-            newanimal.name = animalData.name;
+            newanimal.animalName = animalData.animalName;
 
             //print(temp.animalIdx);
 
             newAnimal.transform.parent = farmAnimal.transform;
             AddNewAnimal(newAnimal);
+            Debug.Log(newanimal.animalName);
 
             //idx따라 Animal 생성
 
@@ -131,7 +132,7 @@ public class Spawner : MonoBehaviour
         int animalNumber = animalscript.animalNumber;
         GameObject evolAnimal;
 
-        if ((animalNumber+1)%3!=0)
+        if ((animalNumber)%2==0)
         {
             
             evolAnimal=Instantiate(spawner.animalPrefabs[animalNumber + 1], animal.transform.position, Quaternion.identity);

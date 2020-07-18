@@ -47,7 +47,7 @@ public class MapButtonManager : MonoBehaviour
 
     private GameObject[] slotImage;
 
-    public static int[] gogoAnimalArray;
+    public static int[] mapGogoAnimalArray;
 
     public Text animalListCountText;
 
@@ -63,7 +63,7 @@ public class MapButtonManager : MonoBehaviour
         slot2AnimalIndex = -1;
         slot3AnimalIndex = -1;
         slotImage = new GameObject[3];
-        gogoAnimalArray = new int[3];
+        mapGogoAnimalArray = new int[3];
     }
     public void openMap()
     {
@@ -153,6 +153,7 @@ public class MapButtonManager : MonoBehaviour
             listAnimal.transform.parent = readyAnimalList.transform;
             listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
+            listAnimal.transform.GetChild(2).GetComponent<Text>().text = listAnimals[i].name;
         }
         battleReadyWindow.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
@@ -185,24 +186,24 @@ public class MapButtonManager : MonoBehaviour
                 slotImage[0].transform.parent = animalSlot[2].transform;
                 slot3AnimalIndex = index;
                 slotImage[0].transform.position = slotImage[0].transform.parent.position;
-                gogoAnimalArray[2] = index;
+                mapGogoAnimalArray[2] = index;
             }
             if (animalSlot[0].transform.childCount != 0 && animalSlot[1].transform.childCount == 0)
             {
                 slotImage[0].transform.parent = animalSlot[1].transform;
                 slot2AnimalIndex = index;
                 slotImage[0].transform.position = slotImage[0].transform.parent.position;
-                gogoAnimalArray[1] = index;
-                gogoAnimalArray[2] = -1;
+                mapGogoAnimalArray[1] = index;
+                mapGogoAnimalArray[2] = -1;
             }
             if (animalSlot[0].transform.childCount == 0)
             {
                 slotImage[0].transform.parent = animalSlot[0].transform;
                 slot1AnimalIndex = index;
                 slotImage[0].transform.position = slotImage[0].transform.parent.position;
-                gogoAnimalArray[0] = index;
-                gogoAnimalArray[1] = -1;
-                gogoAnimalArray[2] = -1;
+                mapGogoAnimalArray[0] = index;
+                mapGogoAnimalArray[1] = -1;
+                mapGogoAnimalArray[2] = -1;
             }
         }
     }
@@ -237,8 +238,8 @@ public class MapButtonManager : MonoBehaviour
             slot1AnimalIndex = slot2AnimalIndex;
             slotImage[1].transform.parent = animalSlot[0].transform;
             slotImage[1].transform.position = slotImage[1].transform.parent.position;
-            gogoAnimalArray[0] = gogoAnimalArray[1];
-            gogoAnimalArray[1] = -1;
+            mapGogoAnimalArray[0] = mapGogoAnimalArray[1];
+            mapGogoAnimalArray[1] = -1;
         }
         if (animalSlot[2].transform.childCount != 0 && animalSlot[1].transform.childCount != 0)
         {
@@ -251,14 +252,14 @@ public class MapButtonManager : MonoBehaviour
             slotImage[2].transform.parent = animalSlot[1].transform;
             slotImage[2].transform.position = slotImage[2].transform.parent.position;
 
-            gogoAnimalArray[1] = gogoAnimalArray[2];
-            gogoAnimalArray[0] = gogoAnimalArray[1];
-            gogoAnimalArray[2] = -1;
+            mapGogoAnimalArray[1] = mapGogoAnimalArray[2];
+            mapGogoAnimalArray[0] = mapGogoAnimalArray[1];
+            mapGogoAnimalArray[2] = -1;
         }
 
         else
         {
-            gogoAnimalArray[0] = -1;
+            mapGogoAnimalArray[0] = -1;
         }
 
         
@@ -282,12 +283,12 @@ public class MapButtonManager : MonoBehaviour
             slotImage[2].transform.parent = animalSlot[1].transform;
             slot2AnimalIndex = slot3AnimalIndex;
             slotImage[2].transform.position = slotImage[2].transform.parent.position;
-            gogoAnimalArray[1] = gogoAnimalArray[2];
-            gogoAnimalArray[2] = -1;
+            mapGogoAnimalArray[1] = mapGogoAnimalArray[2];
+            mapGogoAnimalArray[2] = -1;
         }
         else
         {
-            gogoAnimalArray[1] = -1;
+            mapGogoAnimalArray[1] = -1;
         }
     }
     void animalSlot3Tap()
@@ -299,22 +300,21 @@ public class MapButtonManager : MonoBehaviour
         Animal slot3Animal = slotImage[2].GetComponent<Animal>();
         listAnimalAvailability[slot3Animal.animalIndex] = true;
 
-        gogoAnimalArray[2] = -1;
+        mapGogoAnimalArray[2] = -1;
         
     }
 
     public void TapGogoButton()
     {
-        
-        gogoAnimalArray = new int[3];
-        gogoAnimalArray[0] = slot1AnimalIndex;
-        gogoAnimalArray[1] = slot2AnimalIndex;
-        gogoAnimalArray[2] = slot3AnimalIndex;
+
+        mapGogoAnimalArray[0] = slot1AnimalIndex;
+        mapGogoAnimalArray[1] = slot2AnimalIndex;
+        mapGogoAnimalArray[2] = slot3AnimalIndex;
         Debug.Log("디버그로그");
-        Debug.Log(gogoAnimalArray[0]);
-        Debug.Log(gogoAnimalArray[1]);
-        Debug.Log(gogoAnimalArray[2]);
-        DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
+        Debug.Log(mapGogoAnimalArray[0]);
+        Debug.Log(mapGogoAnimalArray[1]);
+        Debug.Log(mapGogoAnimalArray[2]);
+        DataManager._instance.gogoAnimalIndexes = mapGogoAnimalArray;
         DataManager._instance.regionIndex = AreaNumber;
     }
 

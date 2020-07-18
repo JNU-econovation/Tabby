@@ -80,7 +80,8 @@ public class AnimalController : MonoBehaviour
     void EXPUP(int exp)
     {
         totalEXP += exp;
-        if (totalEXP >= animal.exp)
+
+        if (totalEXP >= animal.evolExp)
         {
             Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();
             spawner.Evolution(gameObject, spawner);

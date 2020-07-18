@@ -198,9 +198,9 @@ namespace GameData
             foreach (JsonData animalData in data["animalDatas"])
             {
                 int index = int.Parse(animalData["index"].ToString());
-                string name = (animalData["name"].ToString());
+                string animalName = (animalData["animalName"].ToString());
                 int exp = int.Parse(animalData["exp"].ToString());
-                animalDatas.Add(new AnimalData(index, name, exp));
+                animalDatas.Add(new AnimalData(index, animalName, exp));
             }
             foreach (JsonData farmObjectData in data["farmObjectDatas"])
             {
@@ -221,13 +221,13 @@ namespace GameData
     public class AnimalData
     {
         public int index;
-        public string name;
+        public string animalName;
         public int exp;
 
         public AnimalData(int argIndex, string argName, int argExp)
         {
             index = argIndex;
-            name = argName;
+            animalName = argName;
             exp = argExp;
         }
     }

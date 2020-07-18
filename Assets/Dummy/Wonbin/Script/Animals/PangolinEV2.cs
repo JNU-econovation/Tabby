@@ -9,5 +9,6 @@ public class PangolinEV2 : Animal
         animalNumber = 5;
         animalHP = 10000;
         animalCost = 600;
+        evolExp = 1000000;
     }
 }
