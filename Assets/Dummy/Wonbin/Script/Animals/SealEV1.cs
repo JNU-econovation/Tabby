@@ -12,6 +12,7 @@ public class SealEV1: Animal
         animalHP = 1000;
         animalCost = 40;
         animalHeartCost = 40;
+        evolExp = 30;
     }
 
 

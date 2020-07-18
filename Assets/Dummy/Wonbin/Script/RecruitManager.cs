@@ -13,6 +13,9 @@ public class RecruitManager : MonoBehaviour
     public Text heartCostText;
     public Text moneyText;
     public Text heartText;
+    public GameObject namingSlot;
+    public Text nameText;
+    public GameObject namingOk;
 
     public static int regionIndex;
     public List<GameObject> animalPrefabs;

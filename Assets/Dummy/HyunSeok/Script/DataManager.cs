@@ -229,13 +229,13 @@ namespace GameData
     public class AnimalData
     {
         public int index;
-        public string name;
+        public string animalName;
         public int exp;
 
         public AnimalData(int argIndex, string argName, int argExp)
         {
             index = argIndex;
-            name = argName;
+            animalName = argName;
             exp = argExp;
         }
     }
