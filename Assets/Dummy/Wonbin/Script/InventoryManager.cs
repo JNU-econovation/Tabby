@@ -148,43 +148,59 @@ public class InventoryManager : MonoBehaviour
 
     public void ArrangeOk()
     {
-        inventory.SetActive(true);
-        putButton.SetActive(false);
-        cancelButton.SetActive(false);
-        Spawner._instance.farmObjects[InputManager.farmObjectIndex].harvestTime = System.DateTime.Now;
-        GameObject arranged = Instantiate(invenItems[InputManager.farmObjectNumber], new Vector2(arrangeImage.transform.position.x, arrangeImage.transform.position.y), Quaternion.identity);
-        FarmObjectController farmObjectController= arranged.GetComponent<FarmObjectController>();
-        FarmObject farmObject = arranged.GetComponent<FarmObject>();
-        farmObject.harvestTime = System.DateTime.Now;
-        farmObjectController.state = FarmObjectController.State.producing;
-        SpriteRenderer spriteRenderer = farmObjectController.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = farmObjectController.producingSprite;
-        Debug.Log("되고있나");
-        arranged.transform.parent = farmObjects.transform;
-        Spawner._instance.farmObjects[InputManager.farmObjectIndex].posX = arrangeImage.transform.position.x;
-        Spawner._instance.farmObjects[InputManager.farmObjectIndex].posY = arrangeImage.transform.position.y;
-        Spawner._instance.farmObjects[InputManager.farmObjectIndex].isField = true;
-        
-        Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
-        arrangeImageDrag.PItransformBack();
-        DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
-        inventorySlotNum--;
-        for (int i = InputManager.inventorySlotNumber; i <= inventorySlotNum; i++)
+        int putable=0;
+        Debug.Log(farmAnimal.transform.childCount);
+        Debug.Log(farmObjects.transform.childCount);
+        for(int i=0; i < farmAnimal.transform.childCount; i++)
         {
-
-            Image invenSlotImage = inventoryContents.transform.GetChild(i).gameObject.GetComponent<Image>();
-            Image nextInvenSlotImage = inventoryContents.transform.GetChild(i + 1).gameObject.GetComponent<Image>();
-            invenSlotImage.sprite = nextInvenSlotImage.sprite;
-            FarmObject invenSlotFarmOb = inventoryContents.transform.GetChild(i).gameObject.GetComponent<FarmObject>();
-            FarmObject nextInvenSlotFarmOb = inventoryContents.transform.GetChild(i + 1).gameObject.GetComponent<FarmObject>();
-            invenSlotFarmOb.farmObjectIndex = nextInvenSlotFarmOb.farmObjectIndex;
-            invenSlotFarmOb.farmObjectNumber = nextInvenSlotFarmOb.farmObjectNumber;
-
+            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 1 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 1)
+                putable++;
         }
-        for (int i = 0; i < farmAnimal.transform.childCount; i++)
+        for(int i = 0; i < farmObjects.transform.childCount; i++)
         {
-            AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
-            animalController.pathStart();
+            if (Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 1 && Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 1)
+                putable++;
+        }
+        if (putable==farmAnimal.transform.childCount+farmObjects.transform.childCount)
+        {
+            inventory.SetActive(true);
+            putButton.SetActive(false);
+            cancelButton.SetActive(false);
+            Spawner._instance.farmObjects[InputManager.farmObjectIndex].harvestTime = System.DateTime.Now;
+            GameObject arranged = Instantiate(invenItems[InputManager.farmObjectNumber], new Vector2(arrangeImage.transform.position.x, arrangeImage.transform.position.y), Quaternion.identity);
+            FarmObjectController farmObjectController = arranged.GetComponent<FarmObjectController>();
+            FarmObject farmObject = arranged.GetComponent<FarmObject>();
+            farmObject.harvestTime = System.DateTime.Now;
+            farmObjectController.state = FarmObjectController.State.producing;
+            SpriteRenderer spriteRenderer = farmObjectController.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = farmObjectController.producingSprite;
+            Debug.Log("되고있나");
+            arranged.transform.parent = farmObjects.transform;
+            Spawner._instance.farmObjects[InputManager.farmObjectIndex].posX = arrangeImage.transform.position.x;
+            Spawner._instance.farmObjects[InputManager.farmObjectIndex].posY = arrangeImage.transform.position.y;
+            Spawner._instance.farmObjects[InputManager.farmObjectIndex].isField = true;
+
+            Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
+            arrangeImageDrag.PItransformBack();
+            DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
+            inventorySlotNum--;
+            for (int i = InputManager.inventorySlotNumber; i <= inventorySlotNum; i++)
+            {
+
+                Image invenSlotImage = inventoryContents.transform.GetChild(i).gameObject.GetComponent<Image>();
+                Image nextInvenSlotImage = inventoryContents.transform.GetChild(i + 1).gameObject.GetComponent<Image>();
+                invenSlotImage.sprite = nextInvenSlotImage.sprite;
+                FarmObject invenSlotFarmOb = inventoryContents.transform.GetChild(i).gameObject.GetComponent<FarmObject>();
+                FarmObject nextInvenSlotFarmOb = inventoryContents.transform.GetChild(i + 1).gameObject.GetComponent<FarmObject>();
+                invenSlotFarmOb.farmObjectIndex = nextInvenSlotFarmOb.farmObjectIndex;
+                invenSlotFarmOb.farmObjectNumber = nextInvenSlotFarmOb.farmObjectNumber;
+
+            }
+            for (int i = 0; i < farmAnimal.transform.childCount; i++)
+            {
+                AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
+                animalController.pathStart();
+            }
         }
     }
 
