@@ -9,6 +9,7 @@ namespace Battle
     public class UISkillPanel : MonoBehaviour
     {
         public List<Button> buttons;
+        public List<Image> banImages;
 
         private void Awake()
         {
@@ -39,6 +40,24 @@ namespace Battle
         public void OnClickSkill(int index)
         {
             AnimalManager._instance.animals[index].OnClickSkill();
+            banImages[index].gameObject.SetActive(true);
+            buttons[index].enabled = false;
+            StartCoroutine(CoolTimeCoroutine(index));
+        }
+
+        IEnumerator CoolTimeCoroutine(int index)
+        {
+            Image filledImage = banImages[index].transform.GetChild(0).GetComponent<Image>();
+            float maxCoolTime = AnimalManager._instance.animals[index].skillDatas[0].coolTime;
+            float time = maxCoolTime;
+            while (time > 0f)
+            {
+                time -= Time.deltaTime;
+                filledImage.fillAmount = time / maxCoolTime;
+                yield return null;
+            }
+            banImages[index].gameObject.SetActive(false);
+            buttons[index].enabled = true;
         }
     }
 
