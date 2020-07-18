@@ -13,7 +13,7 @@ public class MapButtonManager : MonoBehaviour
     TabbyAnimator tabbyAnimaltor;
 
     static List<Animal> listAnimals;
-    static List<bool> listAnimalAvailability=new List<bool>();
+    List<bool> listAnimalAvailability=new List<bool>();
 
     public static int slot1AnimalIndex;
     public static int slot2AnimalIndex;
