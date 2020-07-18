@@ -5,13 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Dummy/Scenes/HyunSeok/HS_Lobby_1.unity
-    guid: 03d54fb4e1aa4af499b331cc686d4255
-  - enabled: 0
-    path: Assets/Dummy/Scenes/HyunSeok/HS_Main.unity
-    guid: e269134b8ca773843b7bfd10ffd23331
   - enabled: 1
-    path: Assets/Dummy/Scenes/HyunSeok/HS_Mission.unity
-    guid: 899c1329ae1093440b8869c2b0f389b9
+    path: Assets/Dummy/Scenes/Wonbin/AmaMain.unity
+    guid: 0e7c1c2c58dd01f4081c749cc8d19a0d
+  - enabled: 1
+    path: Assets/Dummy/Scenes/HyunSeok/HS_Battle.unity
+    guid: 8b30df4436bd0174b91c4953c8030a10
   m_configObjects: {}

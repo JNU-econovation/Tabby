@@ -1,4 +1,5 @@
 ﻿using BattleDummy;
+using GameData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ public class AnimalController : MonoBehaviour
 
     Animal animal;
 
-    PathFinder pathfinder= new PathFinder();
-    Spawner spawner= new Spawner();
-    TabbyAnimator tabbyAnimator = new TabbyAnimator();
+    PathFinder pathfinder;
+    Spawner spawner;
+    TabbyAnimator tabbyAnimator;
 
     Rigidbody2D animalrigidbody;
     private Animator animator;
@@ -43,6 +44,8 @@ public class AnimalController : MonoBehaviour
 
     private void Start()
     {
+        pathfinder = new PathFinder();
+        spawner = Spawner._instance;
         animal = gameObject.GetComponent<Animal>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         animalrigidbody = GetComponent<Rigidbody2D>();
@@ -61,7 +64,7 @@ public class AnimalController : MonoBehaviour
         //랜덤시간 이상이 됐을때 하트 생성
         else if (timeAfterHeart >= heartRate && transform.childCount == 0)
         {
-            //spawner.MakeChild(this.gameObject, heartPrefabs);
+            spawner.MakeChild(this.gameObject, heartPrefabs);
             //하트 보기싫으니까 일단 없애둠
         }
 
@@ -77,10 +80,11 @@ public class AnimalController : MonoBehaviour
         
     }
 
-    void EXPUP(int exp)
+    void EXPUP(int argexp)
     {
-        totalEXP += exp;
-
+        totalEXP += argexp;
+        Spawner.animals[gameObject.transform.GetSiblingIndex()].exp += argexp;
+        DataManager._instance.ParseAnimalDate(Spawner.animals);
         if (totalEXP >= animal.evolExp)
         {
             Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();

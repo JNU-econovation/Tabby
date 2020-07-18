@@ -12,12 +12,13 @@ namespace Battle
         public List<Transform> animalPos;
 
         private int endNumber;
+        private int maxEndNumber = 3;
         public int EndNumber
         {
             get => endNumber;
             set
             {
-                if (value == 3 && BattleManager._instance.battleState == BattleDefine.EBattleState.Playing)
+                if (value == maxEndNumber && BattleManager._instance.battleState == BattleDefine.EBattleState.Playing)
                 {
                     // 전투 끝내기
                     EndAnimals();
@@ -97,13 +98,14 @@ namespace Battle
                 for (int i = 0; i < 3; i++)
                 {
                     int animalIndex = DataManager._instance.gogoAnimalIndexes[i];
-                    int realAnimalIndex = DataManager._instance.playerData.animalDatas[animalIndex].index;
                     // 만약 -1 일 경우 소환 안함
                     if (animalIndex == -1)
                     {
+                        maxEndNumber--;
                         animals.Add(null);
                         continue;
                     }
+                    int realAnimalIndex = DataManager._instance.playerData.animalDatas[animalIndex].index;
                     GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + realAnimalIndex) as GameObject);
                     if (animal == null)
                     {

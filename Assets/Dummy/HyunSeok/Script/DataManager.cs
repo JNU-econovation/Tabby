@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using LitJson;
 using UnityEngine;
 
@@ -53,6 +54,10 @@ namespace GameData
             if (!playerDataDi.Exists)
             {
                 playerDataDi.Create ();
+                PlayerData initData = new PlayerData();
+                initData.animalDatas.Add(new AnimalData(0, "한글이름", 0));
+                SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
+
             }
 
             Init ();            
@@ -67,6 +72,7 @@ namespace GameData
             /*SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 0 + ".json");
             SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 1 + ".json");
             SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 2 + ".json");*/
+            DontDestroyOnLoad(this.gameObject);
             playerData = new PlayerData(LoadData("/PlayerData/" + 0 + ".json"));
             gogoAnimalIndexes = new int[3];
             for (int i = 0; i < 3; i++)
@@ -114,7 +120,7 @@ namespace GameData
                 dataPath = Application.dataPath;
             else
                 dataPath = Application.persistentDataPath;
-            File.WriteAllText (dataPath + "/Data" + path, saveData.ToString ());
+            File.WriteAllText (dataPath + "/Data" + path, saveData.ToString (), Encoding.UTF8);
         }
         /**
          *   json 데이터 불러오기
@@ -140,7 +146,12 @@ namespace GameData
             else
             {
                 Debug.Log ("File " + path + " does not exist");
-                return (null);
+                PlayerData initData = new PlayerData();
+                initData.animalDatas.Add(new AnimalData(0, "한글이름", 0));
+                SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
+                string jsonStr = File.ReadAllText(filePath);
+                loadData = JsonMapper.ToObject(jsonStr);
+                return (loadData);
             }
         }
 
@@ -155,6 +166,9 @@ namespace GameData
             if (File.Exists (filePath))
             {
                 File.Delete (filePath);
+                PlayerData initData = new PlayerData();
+                initData.animalDatas.Add(new AnimalData(0, "한글이름", 0));
+                SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
                 return (true);
             }
             else

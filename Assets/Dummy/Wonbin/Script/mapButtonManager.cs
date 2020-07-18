@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEditor;
 using System;
 using GameData;
+using UnityEngine.SceneManagement;
 
 public class MapButtonManager : MonoBehaviour
 {
@@ -143,8 +144,6 @@ public class MapButtonManager : MonoBehaviour
         {
             listAnimalAvailability.Add(true);
         }
-        for (int i = 0; i < listAnimals.Count; i++)
-            Debug.Log(listAnimals[i].animalNumber);
         
         for (int i = 0; i < listAnimals.Count; i++)
         {
@@ -153,7 +152,7 @@ public class MapButtonManager : MonoBehaviour
             listAnimal.transform.parent = readyAnimalList.transform;
             listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
-            listAnimal.transform.GetChild(2).GetComponent<Text>().text = listAnimals[i].name;
+            listAnimal.transform.GetChild(2).GetComponent<Text>().text = listAnimals[i].animalName;
         }
         battleReadyWindow.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
@@ -316,6 +315,7 @@ public class MapButtonManager : MonoBehaviour
         Debug.Log(mapGogoAnimalArray[2]);
         DataManager._instance.gogoAnimalIndexes = mapGogoAnimalArray;
         DataManager._instance.regionIndex = AreaNumber;
+        SceneManager.LoadScene("HS_Battle");
     }
 
    

@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public static Spawner _instance;
+
     [SerializeField]
     GameObject farmAnimal;
     [SerializeField]
@@ -29,6 +31,10 @@ public class Spawner : MonoBehaviour
     public static List<FarmObject> farmObjects=new List<FarmObject>();
     private void Awake()
     {
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(this.gameObject);
         Init();
     }
     public void Init()
@@ -82,7 +88,7 @@ public class Spawner : MonoBehaviour
 
             newAnimal.transform.parent = farmAnimal.transform;
             AddNewAnimal(newAnimal);
-            Debug.Log(newanimal.animalName);
+            Debug.Log(newanimal.exp);
 
             //idx따라 Animal 생성
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathFinder : MonoBehaviour
+public class PathFinder 
 {
     [SerializeField]
     private Vector2Int bottomLeft =new Vector2Int(-22, -11), topRight=new Vector2Int(22, 8);
