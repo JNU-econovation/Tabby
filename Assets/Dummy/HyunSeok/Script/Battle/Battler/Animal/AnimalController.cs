@@ -38,6 +38,8 @@ namespace Battle
         public float stunTime;
         // 현재 걸린 CC 상태 모음
         //------------------------------------------------------------ Animation state
+        // 현재 적 상태
+        public bool isEnemy;
 
         protected virtual void Awake()
         {
@@ -622,7 +624,10 @@ namespace Battle
                 owner.state = BattleDefine.EBattlerState.Down;
                 owner.animator.SetTrigger("TrgStun");
                 owner.currentSkillData = null;
-                AnimalManager._instance.EndNumber++;
+                if (!owner.isEnemy)
+                    AnimalManager._instance.EndNumber++;
+                else
+                    EnemyManager._instance.EndNumber++;
             }
 
             public void OnExit()

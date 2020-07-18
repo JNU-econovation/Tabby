@@ -24,3 +24,6 @@ MonoBehaviour:
   focus: 1
   critical: 0.3
   battleIndex: 0
+  enemyExp: 20
+  farmObjectIndex: 0
+  farmObjectPercent: 1

@@ -46,7 +46,7 @@ namespace Battle
                     expText.text = expStr;
                 }
                 float rand = UnityEngine.Random.Range(0f, 1f);
-                if (rand < EnemyManager._instance.enemy.animalData.farmObjectPercent)
+                if (DataManager._instance.farmObjects != -1)
                 {
                     if (farmObjectSprites[EnemyManager._instance.enemy.animalData.farmObjectIndex] != null)
                         farmObjectImage.sprite = farmObjectSprites[EnemyManager._instance.enemy.animalData.farmObjectIndex];

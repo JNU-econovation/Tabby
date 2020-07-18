@@ -58,6 +58,7 @@ namespace Battle
             GameObject enemyObj = Instantiate(Resources.Load("Battle/Enemy/Prefab_Enemy_" + enemyIndex) as GameObject);
             enemyObj.transform.position = enemyPos.transform.position;
             enemy = enemyObj.transform.GetChild(0).GetComponent<AnimalController>();
+            enemy.isEnemy = true;
         }
     }
 }
