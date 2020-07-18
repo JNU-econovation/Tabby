@@ -12,7 +12,7 @@ public class MapButtonManager : MonoBehaviour
 {
     TabbyAnimator tabbyAnimaltor;
 
-    List<Animal> listAnimals;
+    static List<Animal> listAnimals;
     static List<bool> listAnimalAvailability=new List<bool>();
 
     public static int slot1AnimalIndex;
@@ -101,7 +101,6 @@ public class MapButtonManager : MonoBehaviour
         
         for (int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
-        List<Animal> listAnimals = Spawner._instance.animals.ToList();
     }
 
     public void Area1Tap()
@@ -141,6 +140,7 @@ public class MapButtonManager : MonoBehaviour
     public void BattleReadyWindowOpen()
     {
         listAnimalAvailability = new List<bool>();
+        listAnimals = new List<Animal>();
         listAnimals = Spawner._instance.animals.ToList();
         for (int i = 0; i < listAnimals.Count; i++)
         {

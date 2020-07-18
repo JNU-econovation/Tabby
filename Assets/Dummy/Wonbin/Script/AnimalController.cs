@@ -54,7 +54,7 @@ public class AnimalController : MonoBehaviour
         animator = GetComponent<Animator>();
         pathfinder.PathFindingStart(animalrigidbody, 6);
         heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
-        //Spawner._instance.animals[gameObject.transform.GetSiblingIndex()-1].animalIndex=gameObject.transform.GetSiblingIndex()-1;
+        //Spawner._instance.animals[gameObject.transform.GetSiblingIndex()].animalIndex=gameObject.transform.GetSiblingIndex();
 
         Debug.Log("진화경험치" + animal.evolExp);
         if (totalEXP >= animal.evolExp)

@@ -99,6 +99,7 @@ public class Spawner : MonoBehaviour
     public void AddNewAnimal(GameObject animal)
     {
         Animal animalObject = animal.GetComponent<Animal>();
+        animalObject.animalIndex = animals.Count;
         animals.Add(animalObject);
         
     }

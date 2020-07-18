@@ -127,6 +127,8 @@ public class InventoryManager : MonoBehaviour
         inventorySlotNum--;
         DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
         MoneyManager.MoneyUP(10);
+        saleButton.SetActive(false);
+        arrangeButton.SetActive(false);
     }
 
     public void FarmObjectArrange()
