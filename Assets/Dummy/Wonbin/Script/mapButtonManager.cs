@@ -305,6 +305,8 @@ public class MapButtonManager : MonoBehaviour
 
     public void TapGogoButton()
     {
+        
+        gogoAnimalArray = new int[3];
         gogoAnimalArray[0] = slot1AnimalIndex;
         gogoAnimalArray[1] = slot2AnimalIndex;
         gogoAnimalArray[2] = slot3AnimalIndex;
@@ -313,6 +315,7 @@ public class MapButtonManager : MonoBehaviour
         Debug.Log(gogoAnimalArray[1]);
         Debug.Log(gogoAnimalArray[2]);
         DataManager._instance.gogoAnimalIndexes = gogoAnimalArray;
+        DataManager._instance.regionIndex = AreaNumber;
     }
 
    

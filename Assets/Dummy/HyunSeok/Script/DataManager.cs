@@ -19,8 +19,10 @@ namespace GameData
 
         public PlayerData playerData;
  
-        public int rigionIndex;
+        public int regionIndex;
         public int[] gogoAnimalIndexes;
+
+
 
 
         #endregion

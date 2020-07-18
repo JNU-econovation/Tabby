@@ -22,7 +22,7 @@ namespace Battle
 
         public void SpawnEnemyUseData()
         {
-            int enemyIndex = DataManager._instance.rigionIndex;
+            int enemyIndex = DataManager._instance.regionIndex;
             GameObject enemyObj = Instantiate(Resources.Load("Battle/Enemy/Prefab_Enemy_" + enemyIndex) as GameObject);
             enemyObj.transform.position = enemyPos.transform.position;
             enemy = enemyObj.transform.GetChild(0).GetComponent<AnimalController>();
