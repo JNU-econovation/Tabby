@@ -1121,7 +1121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalData: {fileID: 11400000, guid: 6a59b5982120880459369b97efacbbc7, type: 2}
-  attackData: {fileID: 11400000, guid: beac9d890d131a24283d2861b248c616, type: 2}
+  attackDatas:
+  - {fileID: 11400000, guid: beac9d890d131a24283d2861b248c616, type: 2}
   skillDatas:
   - {fileID: 11400000, guid: be05ed0326c47c24784e8f27d2361220, type: 2}
   effectObj: {fileID: 626873788674174777}

@@ -63,5 +63,10 @@ namespace GameData
         [SerializeField]
         private int battleIndex;
         public int BattleIndex { get => battleIndex; set => battleIndex = value; }
+
+        [Header("For enemy")]
+        public int enemyExp;
+        public int farmObjectIndex;
+        public float farmObjectPercent;
     }
 }

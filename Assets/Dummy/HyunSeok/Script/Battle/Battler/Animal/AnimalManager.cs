@@ -22,6 +22,7 @@ namespace Battle
                     // 전투 끝내기
                     EndAnimals();
                     EnemyManager._instance.EndAnimals();
+                    BattleManager._instance.isWin = false;
                     StartCoroutine(BattleManager._instance.BattleOverState());
                 }
                 else
@@ -79,6 +80,7 @@ namespace Battle
                         animals.Add(null);
                         continue;
                     }
+                    DataManager._instance.gogoAnimalIndexes[i] = tempRandomAnimalIndexes[i];
                     GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + tempRandomAnimalIndexes[i]) as GameObject);
                     if (animal == null)
                     {

@@ -25,8 +25,8 @@ namespace Battle
         public BattleDefine.ESkillCCType ccType;
         public float ccTime;
         public float ccPower;
-        [Header("Link skill")]
-        public SkillData linkSkill;
+        [Header("For enemy")]
+        public float patternPercent;
     }
 }
 

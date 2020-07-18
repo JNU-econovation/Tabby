@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using GameData;
 
 namespace Battle
 {
@@ -21,6 +22,9 @@ namespace Battle
         public event StateEvent pauseEvent;
         public event StateEvent battleOverEvent;
         public event StateEvent endEvent;
+
+        // IsWin?
+        public bool isWin;
 
         private void Awake()
         {
@@ -63,7 +67,30 @@ namespace Battle
         {
             battleState = BattleDefine.EBattleState.BattleOver;
             battleOverEvent?.Invoke();
-            yield return null;
+            DataManager._instance.animalExp = new Tuple<int, int>[3];
+            DataManager._instance.farmObjects = -1;
+            if (isWin)
+            {
+                // 경험치, 설정
+                for (int i = 0; i < 3; i++)
+                {
+                    if (DataManager._instance.gogoAnimalIndexes[i] == -1)
+                    {
+                        DataManager._instance.animalExp[i] = new Tuple<int, int>(-1, -1);
+                        continue;
+                    }
+                    DataManager._instance.animalExp[i] =
+                        new Tuple<int, int>(DataManager._instance.gogoAnimalIndexes[i], EnemyManager._instance.enemy.animalData.enemyExp);
+                }
+                // 아이템 설정
+                float rand = UnityEngine.Random.Range(0f, 1f);
+                if (rand < EnemyManager._instance.enemy.animalData.farmObjectPercent)
+                {
+                    DataManager._instance.farmObjects = EnemyManager._instance.enemy.animalData.farmObjectIndex;
+                }
+            }         
+            yield return new WaitForSeconds(2.0f);
+            StartCoroutine(EndState());
         }
 
         public IEnumerator EndState()

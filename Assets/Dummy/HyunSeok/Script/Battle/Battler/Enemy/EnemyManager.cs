@@ -22,6 +22,7 @@ namespace Battle
                     // 전투 끝내기
                     EndAnimals();
                     AnimalManager._instance.EndAnimals();
+                    BattleManager._instance.isWin = true;
                     StartCoroutine(BattleManager._instance.BattleOverState());
                 }
                 else

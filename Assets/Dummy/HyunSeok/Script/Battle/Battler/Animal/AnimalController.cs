@@ -13,7 +13,7 @@ namespace Battle
         public AnimalGameData animalData;
         // 평타 데이터
         [SerializeField]
-        protected SkillData attackData;
+        protected List<SkillData> attackDatas;
         // 스킬 데이터
         [SerializeField]
         protected List<SkillData> skillDatas;
@@ -21,7 +21,6 @@ namespace Battle
         [SerializeField]
         protected GameObject effectObj;
         //------------------------------------------------------------ Animator
-        [SerializeField]
         protected Animator animator;
         //------------------------------------------------------------ Skill system
         // 현재 발동 대기 중인 스킬들
@@ -252,7 +251,6 @@ namespace Battle
                 currentState.OnExit();
             currentState = states[(int)state];
             currentState.OnEnter();
-            Debug.Log(currentState);
         }
         // 스킬 발동 시
         public virtual void OnClickSkill()
@@ -471,7 +469,29 @@ namespace Battle
                 if (attackDelay > maxAttackDelay)
                 {
                     owner.activeSkillQueue.Clear();
-                    owner.activeSkillQueue.Enqueue(owner.attackData);
+                    if (owner.attackDatas.Count > 1)
+                    {
+                        for (int i = 0; i < owner.attackDatas.Count; i++)
+                        {
+                            if (i == owner.attackDatas.Count - 1)
+                            {
+                                owner.activeSkillQueue.Enqueue(owner.attackDatas[i]);
+                            }
+                            else
+                            {
+                                float rand = Random.Range(0f, 1f);
+                                if (rand < owner.attackDatas[i].patternPercent)
+                                {
+                                    owner.activeSkillQueue.Enqueue(owner.attackDatas[i]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        owner.activeSkillQueue.Enqueue(owner.attackDatas[0]);
+                    }
                     owner.SetState(BattleDefine.EBattlerState.Skill);
                 }
             }

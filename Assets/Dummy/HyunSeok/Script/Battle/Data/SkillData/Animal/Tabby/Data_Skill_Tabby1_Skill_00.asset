@@ -25,4 +25,4 @@ MonoBehaviour:
   ccType: 0
   ccTime: 0
   ccPower: 0
-  linkSkill: {fileID: 0}
+  patternPercent: 0.5

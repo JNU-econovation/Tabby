@@ -68,6 +68,11 @@ namespace GameData
             SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 1 + ".json");
             SaveData<PlayerData>(new PlayerData(), "/PlayerData/" + 2 + ".json");*/
             playerData = new PlayerData(LoadData("/PlayerData/" + 0 + ".json"));
+            gogoAnimalIndexes = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                gogoAnimalIndexes[i] = -1;
+            }
         }
         public void ParseAnimalDate(List<Animal> animals)
         {
@@ -201,9 +206,9 @@ namespace GameData
             foreach (JsonData animalData in data["animalDatas"])
             {
                 int index = int.Parse(animalData["index"].ToString());
-                string name = (animalData["name"].ToString());
+                string animalName = (animalData["animalName"].ToString());
                 int exp = int.Parse(animalData["exp"].ToString());
-                animalDatas.Add(new AnimalData(index, name, exp));
+                animalDatas.Add(new AnimalData(index, animalName, exp));
             }
             foreach (JsonData farmObjectData in data["farmObjectDatas"])
             {
