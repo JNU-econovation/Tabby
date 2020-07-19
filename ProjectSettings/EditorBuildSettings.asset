@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Dummy/Scenes/HyunSeok/HS_Lobby_0719.unity
+    guid: 30a28007ca345fe448e2378fa328bed1
+  - enabled: 1
     path: Assets/Dummy/Scenes/Wonbin/AmaMain.unity
     guid: 0e7c1c2c58dd01f4081c749cc8d19a0d
   - enabled: 1

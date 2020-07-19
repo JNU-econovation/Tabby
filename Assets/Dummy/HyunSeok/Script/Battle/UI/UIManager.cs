@@ -9,6 +9,9 @@ namespace Battle
     public class UIManager : MonoBehaviour
     {
         public List<GameObject> panels;
+
+        public GameObject exitPanel;
+
         public static UIManager _instance;
 
         private void Awake()
@@ -73,7 +76,12 @@ namespace Battle
 
         public void OnClickHome()
         {
-            SceneManager.LoadScene("AmaMain");
+            SceneControl._instance.LoadTargetScene("AmaMain");
+        }
+
+        public void OnOffExitPanel(bool isOn)
+        {
+            exitPanel.SetActive(isOn);
         }
     }
 }

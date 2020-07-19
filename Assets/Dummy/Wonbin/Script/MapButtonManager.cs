@@ -317,7 +317,8 @@ public class MapButtonManager : MonoBehaviour
         Debug.Log(mapGogoAnimalArray[2]);
         DataManager._instance.gogoAnimalIndexes = mapGogoAnimalArray;
         DataManager._instance.regionIndex = AreaNumber;
-        SceneManager.LoadScene("HS_Battle");
+        SceneControl._instance.LoadTargetScene("HS_Battle");
+        //SceneManager.LoadScene("HS_Battle");
     }
 
    
