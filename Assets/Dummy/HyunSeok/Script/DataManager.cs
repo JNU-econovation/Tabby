@@ -136,7 +136,6 @@ namespace GameData
             else
                 dataPath = Application.persistentDataPath;
             string filePath = dataPath + "/Data" + path;
-            Debug.Log (filePath);
             if (File.Exists (filePath))
             {
                 string jsonStr = File.ReadAllText (filePath);

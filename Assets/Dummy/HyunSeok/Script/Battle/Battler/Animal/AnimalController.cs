@@ -386,6 +386,10 @@ namespace Battle
                         atkTargets.Add(AnimalManager._instance.animals[i]);
                     }
                     break;
+                case BattleDefine.ESkillTarget.TeamRandom:
+                    int rand = UnityEngine.Random.Range(0, 3);
+                    atkTargets.Add(AnimalManager._instance.animals[rand]);
+                    break;
                 default:
                     atkTargets.Add(EnemyManager._instance.enemy);
                     break;
