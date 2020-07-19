@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Data_Skill_Tabby2_Skill_00
   m_EditorClassIdentifier: 
   index: 0
-  skillName: "\uD560\uD034\uAE30"
+  skillName: "\uB0E5\uD380\uCE58"
   icon: {fileID: 0}
   coolTime: 2
   skillPowerInt: 30

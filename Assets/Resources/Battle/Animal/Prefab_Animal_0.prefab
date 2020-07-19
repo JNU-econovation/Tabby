@@ -100,8 +100,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
   m_SortingOrder: 6
   m_Sprite: {fileID: -6913125599118650747, guid: 8232b65467b8deb41936a26628eaf5d0,
     type: 3}
@@ -300,9 +300,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4579668819951866409, guid: 8232b65467b8deb41936a26628eaf5d0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 5087348416056236587}
   - component: {fileID: 6844550279843818556}
   - component: {fileID: 6844550279843818554}
+  - component: {fileID: 5349993878188127440}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -409,10 +410,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 903186157b4371e46a0d2e98632ac6c3, type: 2}
   skillDatas:
   - {fileID: 11400000, guid: 0c4b0d12a68f2be47b608ccd1215c28b, type: 2}
-  effectObj: {fileID: 3960874182667397355}
+  effectObj: {fileID: 1206162725918942781}
   state: 0
   stunTime: 0
   isEnemy: 0
+--- !u!210 &5349993878188127440
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866801517026036361}
+  m_Enabled: 1
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 1
 --- !u!1 &2080136378450585805
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,8 +606,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1053600456599346304, guid: 8232b65467b8deb41936a26628eaf5d0,
     type: 3}
@@ -698,9 +710,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4539769345529723541, guid: 8232b65467b8deb41936a26628eaf5d0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -862,9 +874,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1631840366299122115, guid: 8232b65467b8deb41936a26628eaf5d0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1060,7 +1072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5087348416056236587}
-  - {fileID: 2302733264600552728}
+  - {fileID: 1206162725918942577}
   - {fileID: 6175664815111586149}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1311,9 +1323,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -417826276945463724, guid: 8232b65467b8deb41936a26628eaf5d0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1455,15 +1467,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0462ca3ea5299724bae26b587bee34c9, type: 3}
---- !u!1 &3960874182667397355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2759295411525046135, guid: 0462ca3ea5299724bae26b587bee34c9,
+--- !u!4 &1206162725918942577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1101645985924969092, guid: 0462ca3ea5299724bae26b587bee34c9,
     type: 3}
   m_PrefabInstance: {fileID: 1206162725918943132}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2302733264600552728 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1101645985924969092, guid: 0462ca3ea5299724bae26b587bee34c9,
+--- !u!1 &1206162725918942781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2759295411525046135, guid: 0462ca3ea5299724bae26b587bee34c9,
     type: 3}
   m_PrefabInstance: {fileID: 1206162725918943132}
   m_PrefabAsset: {fileID: 0}

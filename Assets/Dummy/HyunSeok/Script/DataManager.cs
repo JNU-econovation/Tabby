@@ -25,7 +25,7 @@ namespace GameData
 
         public Tuple<int, int>[] animalExp;
         public int farmObjects;
-
+        public bool isWin;
 
 
 

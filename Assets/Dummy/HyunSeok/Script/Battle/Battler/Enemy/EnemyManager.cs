@@ -23,6 +23,7 @@ namespace Battle
                     EndAnimals();
                     AnimalManager._instance.EndAnimals();
                     BattleManager._instance.isWin = true;
+                    DataManager._instance.isWin = false;
                     StartCoroutine(BattleManager._instance.BattleOverState());
                 }
                 else
