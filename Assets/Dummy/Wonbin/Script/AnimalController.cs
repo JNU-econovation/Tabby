@@ -14,7 +14,6 @@ public class AnimalController : MonoBehaviour
 
     PathFinder pathfinder;
     Spawner spawner;
-    TabbyAnimator tabbyAnimator;
 
     Rigidbody2D animalrigidbody;
     private Animator animator;

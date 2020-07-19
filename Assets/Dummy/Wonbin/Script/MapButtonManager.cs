@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 
 public class MapButtonManager : MonoBehaviour
 {
-    TabbyAnimator tabbyAnimaltor;
 
     static List<Animal> listAnimals;
     static List<bool> listAnimalAvailability=new List<bool>();
