@@ -6,16 +6,16 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: animCon_littlekomodo
+  m_Name: AnimCon_Seal1
   m_Controller: {fileID: 9100000, guid: 920a47fc618c90e4cb63fb3b5e16478a, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: d3307160733529a4a878136af149433a, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 0cff0bc5eeb2360499feae4aebc6e07f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0cba5bc17c352a442a4eb1e91ad89613, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: a0ce4b334bc4c464da21a2ea74ce7e63, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 930d3dd5ee4912a49b6745ad159398e6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7f3c237e32c74a44e929436040398822, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 26a6f0476c6883a45ab458d60c88271b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 44c4fa5e94150a4488bda266ccb9497b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ee230c7b9b247be4187de9e1dd802dd4, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6cf53660030b8764a8ab5af88dcb419b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: a0332f0d95f5a1745a7507dd9943e3fd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f534e3ea19ee1e346b571dc7a62a9923, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 7916093b8c7f1c645a359ab91c0f82b2, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 973d2e0f747760b41bfa95364b70718a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d633ac7b418f3814493e780cb0818734, type: 2}

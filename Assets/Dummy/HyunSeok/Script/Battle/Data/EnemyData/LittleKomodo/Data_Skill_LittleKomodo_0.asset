@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Data_Skill_LittleKomodo_0
   m_EditorClassIdentifier: 
   index: 0
-  skillName: 
+  skillName: "\uB3C4\uB9C8\uBC40 \uC9C0\uC9C4"
   icon: {fileID: 0}
   coolTime: 0
   skillPowerInt: 0
-  skillPowerPercent: 0
-  type: 0
-  target: 0
-  castingType: 0
+  skillPowerPercent: 1.5
+  type: 1
+  target: 2
+  castingType: 1
   statType: 0
-  ccType: 0
-  ccTime: 0
-  ccPower: 0
-  patternPercent: 0
+  ccType: 1
+  ccTime: 1
+  ccPower: 1
+  patternPercent: 0.35

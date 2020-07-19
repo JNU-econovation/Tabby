@@ -19,10 +19,10 @@ MonoBehaviour:
   skillPowerInt: 10
   skillPowerPercent: 0.8
   type: 1
-  target: 2
+  target: 0
   castingType: 0
   statType: 0
   ccType: 0
   ccTime: 0
   ccPower: 0
-  patternPercent: 0.5
+  patternPercent: 0

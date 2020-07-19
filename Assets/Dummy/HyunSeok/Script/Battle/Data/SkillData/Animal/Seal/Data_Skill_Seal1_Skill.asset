@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb5a8324fc8f28a4097b022ec6d381a3, type: 3}
-  m_Name: Data_Skill_Seal2_Skill
+  m_Name: Data_Skill_Seal1_Skill
   m_EditorClassIdentifier: 
   index: 0
-  skillName: "\uBB3C\uAC1C\uD310"
+  skillName: "\uB00D\uB00D"
   icon: {fileID: 0}
-  coolTime: 8
-  skillPowerInt: 20
-  skillPowerPercent: 0.3
+  coolTime: 6
+  skillPowerInt: 10
+  skillPowerPercent: 0.2
   type: 1
   target: 8
-  castingType: 1
+  castingType: 0
   statType: 0
   ccType: 1
-  ccTime: 1.25
-  ccPower: 0
+  ccTime: 0.75
+  ccPower: 1
   patternPercent: 0

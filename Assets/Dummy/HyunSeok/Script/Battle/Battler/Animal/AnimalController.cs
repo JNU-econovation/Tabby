@@ -103,7 +103,7 @@ namespace Battle
             animalData.HP -= damage.Item1;
             Coroutine ccCrtn = null;
             // cc Time 조정
-            float toughCCTime = skillData.ccTime * animalData.Tough;
+            float toughCCTime = skillData.ccTime * (1 - animalData.Tough);
             // CC 적용
             switch (skillData.ccType)
             {
@@ -387,8 +387,14 @@ namespace Battle
                     }
                     break;
                 case BattleDefine.ESkillTarget.TeamRandom:
-                    int rand = UnityEngine.Random.Range(0, 3);
-                    atkTargets.Add(AnimalManager._instance.animals[rand]);
+                    List<int> posAnimalIndex = new List<int>();
+                    for (int i = 0; i< 3; i++)
+                    {
+                        if (AnimalManager._instance.animals[i] != null)
+                            posAnimalIndex.Add(i);
+                    }
+                    int rand = UnityEngine.Random.Range(0, posAnimalIndex.Count);
+                    atkTargets.Add(AnimalManager._instance.animals[posAnimalIndex[rand]]);
                     break;
                 default:
                     atkTargets.Add(EnemyManager._instance.enemy);
@@ -420,6 +426,12 @@ namespace Battle
         {
             if (effectObj != null)
                 effectObj.SetActive(true);
+        }
+
+        // 카메라 진동
+        public virtual void ShakeCamera()
+        {
+            StartCoroutine(CameraShake._instance.ShakeCamera(0.65f, 0.5f, 1f));
         }
 
         //---------------------------------------------------------------- State Class

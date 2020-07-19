@@ -20,7 +20,7 @@ MonoBehaviour:
   hp: 5000
   atk: 40
   atkSpd: 1.2
-  tough: 0
+  tough: 0.1
   focus: 0.9
   critical: 0.3
   battleIndex: 0
