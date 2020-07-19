@@ -8,7 +8,8 @@ public class WeaselEV1: Animal
     {
         animalNumber = 6;
         //animalHP = 100;
-        //animalCost = 100;
+        animalCost = 70;
+        animalHeartCost = 20;
         evolExp = 70;
     }
 }
