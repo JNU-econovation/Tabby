@@ -34,6 +34,7 @@ public class MapButtonManager : MonoBehaviour
 
     public GameObject battleReadyWindow;
     public GameObject recruitWindow;
+    public GameObject namingWindow;
 
     public GameObject readyAnimalList;
     public GameObject[] animalSlot;
@@ -97,6 +98,7 @@ public class MapButtonManager : MonoBehaviour
         {
             recruitWindow.SetActive(true);
         }
+        namingWindow.SetActive(false);
         
         for (int t=0; t< readyAnimalList.transform.childCount; t++)
             Destroy(readyAnimalList.transform.GetChild(t).gameObject);
@@ -109,27 +111,54 @@ public class MapButtonManager : MonoBehaviour
         battleReadyButton.gameObject.SetActive(true);
 
         RecruitManager.regionIndex = 1;
-        Debug.Log(RecruitManager.regionIndex);
     }
     public void Area2Tap()
     {
-        AreaNumber = 1;
-        recruitButton.gameObject.SetActive(true);
-        battleReadyButton.gameObject.SetActive(true);
+        bool area1Animal2=false;
+        foreach(Animal animal in Spawner._instance.animals)
+        {
+            if (animal.animalNumber == 2 || animal.animalNumber == 3)
+                area1Animal2 = true;
+        }
+        if (area1Animal2)
+        {
+            AreaNumber = 1;
+            recruitButton.gameObject.SetActive(true);
+            battleReadyButton.gameObject.SetActive(true);
 
-        RecruitManager.regionIndex = 2;
+            RecruitManager.regionIndex = 2;
+        }
+        else
+        {
+            recruitButton.gameObject.SetActive(false);
+            battleReadyButton.gameObject.SetActive(false);
 
-        Debug.Log(RecruitManager.regionIndex);
+        }
     }
     public void Area3Tap()
     {
+        bool area2Animal1=false;
+        bool area2Animal2 = false;
+        foreach (Animal animal in Spawner._instance.animals)
+        {
+            if (animal.animalNumber == 4 || animal.animalNumber == 5)
+                area2Animal1 = true;
+            if (animal.animalNumber == 6 || animal.animalNumber == 7)
+                area2Animal2 = true;
+        }
+        if (area2Animal1&&area2Animal2) { 
         AreaNumber = 2;
         recruitButton.gameObject.SetActive(true);
         battleReadyButton.gameObject.SetActive(true);
 
         RecruitManager.regionIndex = 3;
+    }
+        else
+        {
+            recruitButton.gameObject.SetActive(false);
+            battleReadyButton.gameObject.SetActive(false);
 
-        Debug.Log(RecruitManager.regionIndex);
+        }
     }
 
     public void RecruitWindowOpen()
@@ -138,6 +167,14 @@ public class MapButtonManager : MonoBehaviour
     }
     public void BattleReadyWindowOpen()
     {
+        for(int slotnum = 0; slotnum < slotImage.Length; slotnum++)
+        {
+            if(animalSlot[slotnum].transform.childCount == 1)
+            {
+                animalSlot[slotnum].transform.GetChild(0).transform.parent = imgBackupList.transform;
+            }
+
+        }
         listAnimalAvailability = new List<bool>();
         listAnimals = new List<Animal>();
         listAnimals = Spawner._instance.animals.ToList();
@@ -154,13 +191,13 @@ public class MapButtonManager : MonoBehaviour
             listAnimal.transform.localScale = new Vector3(5f, 3f, 0f);
             listAnimal.transform.position = listAnimal.transform.parent.position;
             listAnimal.transform.GetChild(2).GetComponent<Text>().text = listAnimals[i].animalName;
-            Debug.Log("아우코바"+listAnimals.Count);
         }
         battleReadyWindow.gameObject.SetActive(true);
         prevearChanger = mapPrevealImage.GetComponent<Image>();
         prevearChanger.sprite = areaPrevealSprite[AreaNumber];
     }
-    
+
+
     public void TapReadyList()
     {
         MapButtonManager mapButtonManager = gameObject.transform.parent.GetComponent<MapButtonManager>();

@@ -47,7 +47,6 @@ public class AnimalController : MonoBehaviour
         spawner = Spawner._instance;
         animal = gameObject.GetComponent<Animal>();
         totalEXP = animal.exp;
-        Debug.Log("현재경험치 " + totalEXP);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         animalrigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -55,7 +54,6 @@ public class AnimalController : MonoBehaviour
         heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
         //Spawner._instance.animals[gameObject.transform.GetSiblingIndex()].animalIndex=gameObject.transform.GetSiblingIndex();
 
-        Debug.Log("진화경험치" + animal.evolExp);
         if (totalEXP >= animal.evolExp)
         {
             Spawner spawner = gameObject.transform.parent.GetComponent<Spawner>();

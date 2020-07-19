@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8773057852864807406}
   - component: {fileID: 8773057852864807411}
   - component: {fileID: 3786362530176506844}
-  - component: {fileID: 9016451448924954689}
+  - component: {fileID: 8825825169742512492}
   m_Layer: 12
   m_Name: weaselEV1
   m_TagString: Animal
@@ -158,7 +158,7 @@ MonoBehaviour:
     type: 3}
   distance: 10
   farmObjectShop: {fileID: 0}
---- !u!114 &9016451448924954689
+--- !u!114 &8825825169742512492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8773057852864807405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf46b9174b50b1d4a8b55e6b9b3e8ada, type: 3}
+  m_Script: {fileID: 11500000, guid: 99270d0e6364a3e4e9be602f72ead242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
