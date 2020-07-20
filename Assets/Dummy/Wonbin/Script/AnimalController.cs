@@ -20,10 +20,13 @@ public class AnimalController : MonoBehaviour
 
     private int totalEXP;
 
+    float animalPosX;
+    float animalPosY;
+   
     
     private float speed = 1.5f;
-    private float heartRateMin = 1f; //최소 생성주기
-    private float heartRateMax = 2f; //최대 생성주기
+    private float heartRateMin = 3f; //최소 생성주기
+    private float heartRateMax = 15f; //최대 생성주기
     private float heartRate;
 
     [SerializeField]
@@ -37,6 +40,7 @@ public class AnimalController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public GameObject farmObjectShop;
+    public GameObject farmFarmObject;
 
 
 
@@ -126,14 +130,27 @@ public class AnimalController : MonoBehaviour
     //동물을 내려 놓았을 때
     private void OnMouseUp()
     {
-        
-        //다시 랜덤지정으로 길찾기 시작
-        if (timeAfterHeart <= heartRate && timeAfterHeart >= 1.3)
+        farmFarmObject = GameObject.Find("FarmInstallation");
+        int putable = 0;
+        for (int i = 0; i < farmFarmObject.transform.childCount; i++)
         {
-            pathfinder.DropAnimal(animalrigidbody, 6);
-            //pathfinder.ReFinding(animalrigidbody, 6);
-            //애니메이션 돌아옴
-            //animator.SetBool("tapAnimal", false);
+            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - gameObject.transform.position.x) > 1 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - gameObject.transform.position.y) > 1)
+                putable++;
+        }
+        if (putable == farmFarmObject.transform.childCount)
+        {
+            //다시 랜덤지정으로 길찾기 시작
+            if (timeAfterHeart <= heartRate && timeAfterHeart >= 1.3)
+            {
+                pathfinder.DropAnimal(animalrigidbody, 6);
+                //pathfinder.ReFinding(animalrigidbody, 6);
+                //애니메이션 돌아옴
+                //animator.SetBool("tapAnimal", false);
+            }
+        }
+        else
+        {
+            gameObject.transform.position = new Vector2(animalPosX, animalPosY);
         }
     }
 
@@ -142,7 +159,8 @@ public class AnimalController : MonoBehaviour
     //동물에 하트가 있다면 하트획득
     private void OnMouseDown()
     {
-        
+        animalPosX = gameObject.transform.position.x;
+        animalPosY = gameObject.transform.position.y;
         if (transform.childCount != 0)
         {
             MoneyManager.heart += 1;

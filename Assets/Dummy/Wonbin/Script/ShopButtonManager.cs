@@ -113,33 +113,49 @@ public class ShopButtonManager : MonoBehaviour
 
     void FarmObjectOK()
     {
-        text.gameObject.SetActive(false);
+
         productImage = GameObject.Find("arrangeImage");
-        ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
-        product = productSBM.product;
-        FarmObject productFarmObject = product.GetComponent<FarmObject>();
-
-        producted = Instantiate(productSBM.product, new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
-        producted.transform.parent = farmFarmObject.transform;
-        Drag PIDrag = productImage.GetComponent<Drag>();
-        PIDrag.PItransformBack();
-        FarmObject productedObject = producted.GetComponent<FarmObject>();
-        productedObject.farmObjectIndex = Spawner._instance.farmObjects.Count;
-        productedObject.isField = true;
-
-        
-        OKButton.gameObject.SetActive(false);
-        cancelButton.gameObject.SetActive(false);
-        MoneyManager.money -= productFarmObject.shopCost;
-
-        Spawner._instance.BuyNewFarmObject(producted);
-        DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
-
+        int putable = 0;
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {
-            AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
-            animalController.pathStart();
+            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 1 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 1)
+                putable++;
         }
+        for (int i = 0; i < farmFarmObject.transform.childCount; i++)
+        {
+            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 1 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 1)
+                putable++;
+        }
+        if (putable == farmAnimal.transform.childCount + farmFarmObject.transform.childCount)
+        {
+            text.gameObject.SetActive(false);
+            ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
+            product = productSBM.product;
+            FarmObject productFarmObject = product.GetComponent<FarmObject>();
+
+            producted = Instantiate(productSBM.product, new Vector2(productImage.transform.position.x, productImage.transform.position.y), Quaternion.identity);
+            producted.transform.parent = farmFarmObject.transform;
+            Drag PIDrag = productImage.GetComponent<Drag>();
+            PIDrag.PItransformBack();
+            FarmObject productedObject = producted.GetComponent<FarmObject>();
+            productedObject.farmObjectIndex = Spawner._instance.farmObjects.Count;
+            productedObject.isField = true;
+
+
+            OKButton.gameObject.SetActive(false);
+            cancelButton.gameObject.SetActive(false);
+            MoneyManager.money -= productFarmObject.shopCost;
+
+            Spawner._instance.BuyNewFarmObject(producted);
+            DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
+
+            for (int i = 0; i < farmAnimal.transform.childCount; i++)
+            {
+                AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
+                animalController.pathStart();
+            }
+        }
+        
     }
 
 

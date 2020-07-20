@@ -28,11 +28,12 @@ public class InventoryManager : MonoBehaviour
     public int inventorySlotNum;
 
     public List<Sprite> invenIcons;
+    public List<Sprite> invenArrangeIcons;
     public List<GameObject> invenItems;
 
     public void Awake()
     {
-        Debug.Log("깨어났다!");
+        //Debug.Log("깨어났다!");
         for(int i=0; i < 30; i++)
         {
             FarmObject invenSlotFarmOb = inventoryContents.transform.GetChild(i).gameObject.GetComponent<FarmObject>();
@@ -142,15 +143,13 @@ public class InventoryManager : MonoBehaviour
         Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
         arrangeImageDrag.PItransformMid();
         Image spriteRenderer = arrangeImage.GetComponent<Image>();
-        spriteRenderer.sprite = invenIcons[InputManager.farmObjectNumber];
+        spriteRenderer.sprite = invenArrangeIcons[InputManager.farmObjectNumber];
         
     } 
 
     public void ArrangeOk()
     {
         int putable=0;
-        Debug.Log(farmAnimal.transform.childCount);
-        Debug.Log(farmObjects.transform.childCount);
         for(int i=0; i < farmAnimal.transform.childCount; i++)
         {
             if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 1 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 1)

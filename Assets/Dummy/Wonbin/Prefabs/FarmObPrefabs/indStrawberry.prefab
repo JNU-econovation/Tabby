@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 51016915
   m_SortingLayer: 1
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba51c5b1ab6479244a0b6e84e7c82aeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elapsedTime: 0
-  producingSprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
-  harvestableSprite: {fileID: 21300000, guid: 7b47b8bb5d51bbb46bf09e0fd2c1bc2f, type: 3}
+  producingSprite: {fileID: 21300000, guid: ba51c5b1ab6479244a0b6e84e7c82aeb, type: 3}
+  harvestableSprite: {fileID: 21300000, guid: c2d9d3ef0106700499a977415a9352eb, type: 3}
   state: 0
 --- !u!114 &3067855467562682675
 MonoBehaviour:
