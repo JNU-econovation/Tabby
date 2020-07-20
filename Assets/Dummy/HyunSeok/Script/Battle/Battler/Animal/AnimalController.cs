@@ -54,12 +54,6 @@ namespace Battle
         protected virtual void Update()
         {
             currentState.Run();
-
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                OnClickSkill();
-            }
-
         }
 
         protected virtual void InitState()
@@ -80,18 +74,19 @@ namespace Battle
                 return;
             // 명중률
             float enemyFocusRandom = UnityEngine.Random.Range(0.0f, 1.0f);
-            GameObject dmgObj = Instantiate(AnimalManager._instance.damagePrefab);
-            dmgObj.SetActive(true);
-            dmgObj.transform.position = transform.position + new Vector3(0f, 1f, 0f);
-            // Miss!!!
-            if (enemyFocusRandom > focus)
+            if (damage.Item1 > 2)
             {
-                dmgObj.GetComponent<UIDamage>().SetDmg(damage.Item1, damage.Item2, true);
-                Debug.Log("회피!");
-                // 회피 완료!
-                return;
+                GameObject dmgObj = Instantiate(AnimalManager._instance.damagePrefab);
+                dmgObj.SetActive(true);
+                dmgObj.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                // Miss!!!
+                if (enemyFocusRandom > focus)
+                {
+                    dmgObj.GetComponent<UIDamage>().SetDmg(damage.Item1, damage.Item2, true);
+                    return;
+                }
+                dmgObj.GetComponent<UIDamage>().SetDmg(damage.Item1, damage.Item2, false);
             }
-            dmgObj.GetComponent<UIDamage>().SetDmg(damage.Item1, damage.Item2, false);
             // 만약 죽을 경우
             if (animalData.HP - damage.Item1 < 1)
             {
@@ -262,12 +257,20 @@ namespace Battle
             currentState.OnEnter();
         }
         // 스킬 발동 시
-        public virtual void OnClickSkill()
+        public virtual bool OnClickSkill()
         {
-            activeSkillQueue.Clear();
-            foreach(SkillData data in skillDatas)
-                activeSkillQueue.Enqueue(data);
-            SetState(BattleDefine.EBattlerState.Skill);
+            if (stunTime < 0.08f)
+            {
+                activeSkillQueue.Clear();
+                foreach (SkillData data in skillDatas)
+                    activeSkillQueue.Enqueue(data);
+                SetState(BattleDefine.EBattlerState.Skill);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // 스킬 파워 계산 식
