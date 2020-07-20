@@ -39,10 +39,12 @@ namespace Battle
 
         public void OnClickSkill(int index)
         {
-            AnimalManager._instance.animals[index].OnClickSkill();
-            banImages[index].gameObject.SetActive(true);
-            buttons[index].enabled = false;
-            StartCoroutine(CoolTimeCoroutine(index));
+            if (AnimalManager._instance.animals[index].OnClickSkill())
+            {
+                banImages[index].gameObject.SetActive(true);
+                buttons[index].enabled = false;
+                StartCoroutine(CoolTimeCoroutine(index));
+            }
         }
 
         IEnumerator CoolTimeCoroutine(int index)
