@@ -335,6 +335,7 @@ MonoBehaviour:
   putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
+  namingWindow: {fileID: 0}
   readyAnimalList: {fileID: 0}
   animalSlot:
   - {fileID: 0}
@@ -349,6 +350,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
   - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
   - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
+  listAnimal: {fileID: 0}
 --- !u!114 &1663473489870753130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +370,7 @@ MonoBehaviour:
   animalIndex: 0
   animalCost: 0
   animalHeartCost: 0
-  animalSprite: {fileID: 0}
+  animalSprite: {fileID: 21300000, guid: 686663a1672a76141a17564ede8d2059, type: 3}
 --- !u!1 &4332130703633798613
 GameObject:
   m_ObjectHideFlags: 0

@@ -2250,6 +2250,12 @@ MonoBehaviour:
   - {fileID: 2301734535657406312, guid: c3ec84a0fb00dcd45913fac5e2b61f72, type: 3}
   - {fileID: 9179618818986591153, guid: ec10f18211a8fe24e86fc2f9daeac506, type: 3}
   - {fileID: 7800412331379792974, guid: 8640746dff1fa3440a5e996e33b1519b, type: 3}
+  - {fileID: 7551032606793882295, guid: c8968dc7637c59543b00b79a3abd10e7, type: 3}
+  - {fileID: 4332130703154540535, guid: 2c283c2abb50728418bee52f06eb78b2, type: 3}
+  - {fileID: 2071627550863182850, guid: 6123e57f89908af43a0af5e485ea280a, type: 3}
+  - {fileID: 3450572963406897424, guid: b05af4b8585fcfc49ad87140f2e85527, type: 3}
+  - {fileID: 6522253824151133474, guid: 49800e3132c44234781da82f7d5f05fd, type: 3}
+  - {fileID: 4390639071887296116, guid: 1f6667aaa5806c54fb55d98c1e4cf36d, type: 3}
   map: {fileID: 1040252422}
   mapButton: {fileID: 1576517920}
   mapCloseButton: {fileID: 1556848900}
@@ -19841,16 +19847,16 @@ MonoBehaviour:
   invenIcons:
   - {fileID: 21300000, guid: 3768d526ebcc4e44cb75dcfc7948c04e, type: 3}
   - {fileID: 21300000, guid: c2d9d3ef0106700499a977415a9352eb, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5fc04a00c365c8e46bceeaa352c65e0d, type: 3}
+  - {fileID: 21300000, guid: ff242aeafd87fca41977c22a2789ffee, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   invenArrangeIcons:
   - {fileID: 21300000, guid: adc2fb03c6268d547a7c17a2e5a0472a, type: 3}
   - {fileID: 21300000, guid: ba51c5b1ab6479244a0b6e84e7c82aeb, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 8064df054c8449a45991757acbe74b1d, type: 3}
+  - {fileID: 21300000, guid: 378666f1b6d0914438bf2a6a973431c7, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

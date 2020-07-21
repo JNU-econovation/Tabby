@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 2071627550863182852}
   - component: {fileID: 332862543433239134}
   - component: {fileID: 4140767882125240991}
+  - component: {fileID: 2152253310922292421}
   m_Layer: 5
   m_Name: weaseEV1List
   m_TagString: Untagged
@@ -279,6 +280,7 @@ MonoBehaviour:
   putInvenButton: {fileID: 0}
   battleReadyWindow: {fileID: 0}
   recruitWindow: {fileID: 0}
+  namingWindow: {fileID: 0}
   readyAnimalList: {fileID: 0}
   animalSlot:
   - {fileID: 0}
@@ -293,6 +295,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e39e1b3a4835fe438ab0a9aee2e46b3, type: 3}
   - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
   - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
+  listAnimal: {fileID: 3450572963406897424, guid: b05af4b8585fcfc49ad87140f2e85527,
+    type: 3}
+--- !u!114 &2152253310922292421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071627550863182850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99270d0e6364a3e4e9be602f72ead242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalNumber: 0
+  animalName: 
+  exp: 0
+  evolExp: 0
+  animalIndex: 0
+  animalCost: 0
+  animalHeartCost: 0
+  animalSprite: {fileID: 21300000, guid: d43df98264671f447af145b79478bccb, type: 3}
 --- !u!1 &2631881278219557467
 GameObject:
   m_ObjectHideFlags: 0
