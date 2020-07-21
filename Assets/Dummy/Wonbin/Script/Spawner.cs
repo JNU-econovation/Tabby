@@ -129,7 +129,6 @@ public class Spawner : MonoBehaviour
         farmObjectOb.posX = farmObjectRB.position.x;
         farmObjectOb.posY = farmObjectRB.position.y;
         farmObjects.Add(farmObjectOb);
-        print(farmObjects[farmObjects.Count-1].posX);
     }
 
     public void Evolution(GameObject animal, Spawner spawner)
