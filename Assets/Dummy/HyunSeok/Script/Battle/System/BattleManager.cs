@@ -23,6 +23,10 @@ namespace Battle
         public event StateEvent battleOverEvent;
         public event StateEvent endEvent;
 
+        // BackGrounds
+        public SpriteRenderer backgroundRenderer;
+        public List<Sprite> backgrounds;
+
         // IsWin?
         public bool isWin;
 
@@ -36,6 +40,7 @@ namespace Battle
 
         private void Start()
         {
+            backgroundRenderer.sprite = backgrounds[DataManager._instance.regionIndex];
             StartCoroutine(ReadyState());
         }
 
