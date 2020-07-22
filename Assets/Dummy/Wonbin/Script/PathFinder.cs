@@ -6,7 +6,8 @@ public class PathFinder
 {
     [SerializeField]
     private Vector2Int bottomLeft =new Vector2Int(-22, -11), topRight=new Vector2Int(22, 8);
-    private List<Node> FinalNodeList;
+    public List<Node> FinalNodeList;
+    public int FinalListNodeNumber;
     Vector2Int targetPos;
     public bool allowDiagonal, dontCrossCorner;
     private int sizeX, sizeY;
@@ -14,7 +15,6 @@ public class PathFinder
     Node StartNode, TargetNode, CurNode;
     List<Node> OpenList, ClosedList;
 
-    private int FinalListNodeNumber;
 
     public int GetBottomLeftX()
     {
@@ -43,12 +43,9 @@ public class PathFinder
 
     public void ReFinding(Rigidbody2D rigidbody2D, int startTargetDistance)
     {
-        if (FinalListNodeNumber == (FinalNodeList.Count - 1))
-        {
-            FinalListNodeNumber = 0;
-            RandomSetting(rigidbody2D, startTargetDistance);
-            PathFinding(rigidbody2D);
-        }
+        FinalListNodeNumber = 0;
+        RandomSetting(rigidbody2D, startTargetDistance);
+        PathFinding(rigidbody2D);
     }
 
     public void DropAnimal(Rigidbody2D rigidbody2D, int startTargetDistance)
@@ -60,14 +57,18 @@ public class PathFinder
 
     public void FollwingPath(Rigidbody2D rigidbody2D, float speed)
     {
-        rigidbody2D.position = Vector2.MoveTowards(rigidbody2D.position, new Vector2(FinalNodeList[FinalListNodeNumber + 1].x, FinalNodeList[FinalListNodeNumber + 1].y), speed * Time.deltaTime);
+        if(FinalNodeList.Count!=0)
+            rigidbody2D.position = Vector2.MoveTowards(rigidbody2D.position, new Vector2(FinalNodeList[FinalListNodeNumber + 1].x, FinalNodeList[FinalListNodeNumber + 1].y), speed * Time.deltaTime);
         //Animalanimation();
 
-        if (rigidbody2D.position.x == FinalNodeList[FinalListNodeNumber + 1].x && rigidbody2D.position.y == FinalNodeList[FinalListNodeNumber + 1].y)
+        if (FinalNodeList.Count != 0&&rigidbody2D.position.x == FinalNodeList[FinalListNodeNumber + 1].x && rigidbody2D.position.y == FinalNodeList[FinalListNodeNumber + 1].y)
         {
 
             FinalListNodeNumber++;
         }
+
+        if (FinalNodeList.Count == 0||FinalListNodeNumber==FinalNodeList.Count-1)
+            ReFinding(rigidbody2D, 6);
     }
 
     //목적지 랜덤 지정
@@ -90,7 +91,7 @@ public class PathFinder
 
     }
 
-    private class Node
+    public class Node
     {
         public Node(bool _isWall, int _x, int _y) { isWall = _isWall; x = _x; y = _y; }
 

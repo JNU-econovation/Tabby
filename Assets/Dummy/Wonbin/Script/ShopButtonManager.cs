@@ -116,14 +116,15 @@ public class ShopButtonManager : MonoBehaviour
         int putable = 0;
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 1 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 1)
+            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 0.5 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 0.5)
                 putable++;
         }
         for (int i = 0; i < farmFarmObject.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 1 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 1)
+            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 0.5 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 0.5)
                 putable++;
         }
+        Debug.Log(putable);
         if (putable == farmAnimal.transform.childCount + farmFarmObject.transform.childCount)
         {
             text.gameObject.SetActive(false);

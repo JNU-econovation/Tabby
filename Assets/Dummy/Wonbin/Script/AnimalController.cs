@@ -3,6 +3,7 @@ using GameData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,8 +23,9 @@ public class AnimalController : MonoBehaviour
 
     float animalPosX;
     float animalPosY;
-   
-    
+
+    int velx;
+
     private float speed = 1.5f;
     private float heartRateMin = 3f; //최소 생성주기
     private float heartRateMax = 15f; //최대 생성주기
@@ -92,10 +94,21 @@ public class AnimalController : MonoBehaviour
         //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
         pathfinder.FollwingPath(animalrigidbody, speed);
 
-
+        if (pathfinder.FinalNodeList.Count!=0) 
+        {
+            velx = (pathfinder.FinalNodeList[pathfinder.FinalListNodeNumber].x - pathfinder.FinalNodeList[pathfinder.FinalListNodeNumber].x);
+            if (velx > 0)
+            {
+                //오른쪽이동 애니메이션
+            }
+            if (velx <= 0)
+            {
+                //왼쪽으로이동 애니메이션
+            }
+        }
         
         //목적지에 도달했다면 다시 길찾기
-        pathfinder.ReFinding(animalrigidbody, 6);
+        //pathfinder.ReFinding(animalrigidbody, 6);
 
         
     }
