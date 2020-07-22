@@ -799,7 +799,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -808,7 +808,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 2059773180}
   putInvenButton: {fileID: 496326392}
   text: {fileID: 1521330547}
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff242aeafd87fca41977c22a2789ffee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1987,7 +1987,7 @@ RectTransform:
   m_Children:
   - {fileID: 1241308315}
   m_Father: {fileID: 1275984682}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2009,7 +2009,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -2018,7 +2018,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -2796,170 +2796,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200191618}
   m_CullTransparentMesh: 0
---- !u!1 &201728251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 201728252}
-  - component: {fileID: 201728255}
-  - component: {fileID: 201728254}
-  - component: {fileID: 201728253}
-  - component: {fileID: 201728256}
-  m_Layer: 5
-  m_Name: FarmObShopButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &201728252
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201728251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 698166208}
-  m_Father: {fileID: 1275984682}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138, y: -109}
-  m_SizeDelta: {x: 160, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &201728253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201728251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 201728254}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 201728256}
-        m_MethodName: openFarmObjectShop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &201728254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201728251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &201728255
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201728251}
-  m_CullTransparentMesh: 0
---- !u!114 &201728256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201728251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmAnimal: {fileID: 907197639}
-  farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 0}
-  productImage: {fileID: 1023418783}
-  shopFarmObjectProducts:
-  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PSN: 
-  shopButton: {fileID: 49066390}
-  shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
-  inventoryButton: {fileID: 0}
-  putInvenButton: {fileID: 0}
-  text: {fileID: 1521330547}
-  mapButton: {fileID: 1576517920}
-  tapZone: {fileID: 2044507196}
-  OKButton: {fileID: 1911899917}
-  cancelButton: {fileID: 154083878}
-  shop: {fileID: 322068635}
-  farmObshop: {fileID: 28993869}
 --- !u!1 &215005110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,7 +3381,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -3554,7 +3390,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 2059773180}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -4097,7 +3933,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 272346676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f938d2ad366ba6a479e290210c4b377c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7eaa78b1e36e04847864056d49b940f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
@@ -4108,7 +3944,7 @@ MonoBehaviour:
   moneyOutput: 0
   farmObjectIndex: 0
   shopCost: 0
-  farmObjectSprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
+  farmObjectSprite: {fileID: 21300000, guid: 378666f1b6d0914438bf2a6a973431c7, type: 3}
 --- !u!114 &272346679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4123,8 +3959,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  productImage: {fileID: 1023418783}
+  product: {fileID: 2057300385949278866, guid: af99b70ff73d32e498dfcb488be7d121, type: 3}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -4133,7 +3969,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -4406,6 +4242,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289220518}
+  m_CullTransparentMesh: 0
+--- !u!1 &299474993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299474994}
+  - component: {fileID: 299474996}
+  - component: {fileID: 299474995}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &299474994
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299474993}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.62871, y: 0.62871, z: 0.62871}
+  m_Children:
+  - {fileID: 1295991727}
+  m_Father: {fileID: 1017499191}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.46, y: 0.46031737}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -90.70876, y: 8}
+  m_SizeDelta: {x: 89.2176, y: 96.74334}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &299474995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299474993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 39b32f6727aee4241abcb70691e4e935, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &299474996
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299474993}
   m_CullTransparentMesh: 0
 --- !u!1 &322068635
 GameObject:
@@ -5153,7 +5063,7 @@ RectTransform:
   m_Children:
   - {fileID: 803217736}
   m_Father: {fileID: 1275984682}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6637,7 +6547,7 @@ RectTransform:
   m_GameObject: {fileID: 544804008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6195316, y: 2.8471212, z: 0.95899016}
+  m_LocalScale: {x: 5.6195316, y: 3.2, z: 0.95899016}
   m_Children:
   - {fileID: 272346677}
   - {fileID: 141956855}
@@ -6664,8 +6574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  productImage: {fileID: 1023418783}
+  product: {fileID: 2057300385949278866, guid: af99b70ff73d32e498dfcb488be7d121, type: 3}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -6674,7 +6584,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -7576,83 +7486,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692067504}
   m_CullTransparentMesh: 0
---- !u!1 &698166207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 698166208}
-  - component: {fileID: 698166210}
-  - component: {fileID: 698166209}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &698166208
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698166207}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 201728252}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &698166209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698166207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Farm Shop
---- !u!222 &698166210
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698166207}
-  m_CullTransparentMesh: 0
 --- !u!1 &771819026
 GameObject:
   m_ObjectHideFlags: 0
@@ -7835,7 +7668,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -7844,7 +7677,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -8281,6 +8114,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815141714}
+  m_CullTransparentMesh: 0
+--- !u!1 &826401436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826401437}
+  - component: {fileID: 826401439}
+  - component: {fileID: 826401438}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &826401437
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826401436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75343, y: 0.75343, z: 0.75343}
+  m_Children:
+  - {fileID: 2106426363}
+  m_Father: {fileID: 1950204631}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -149, y: 48}
+  m_SizeDelta: {x: 270.61, y: 82.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &826401438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826401436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &826401439
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826401436}
   m_CullTransparentMesh: 0
 --- !u!1 &831002131
 GameObject:
@@ -9502,8 +9409,18 @@ MonoBehaviour:
   farmObjectPrefabs:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
+  - {fileID: 3360313470610072451, guid: 961412687ab15b54197db534aa6123ad, type: 3}
+  - {fileID: 2057300385949278866, guid: af99b70ff73d32e498dfcb488be7d121, type: 3}
+  - {fileID: 9133635789172526791, guid: ca0789c2e8c54b5408504a982f3c5f12, type: 3}
+  - {fileID: 6716671561439766700, guid: 674c081faf3153a4a8a6a8c0ca32b95b, type: 3}
+  - {fileID: 3975478481983517925, guid: 51bbeb9fe6105044da04c783a2a2e446, type: 3}
   farmObjectInvenPrefabs:
   - {fileID: 8697626010746096205, guid: 80df358ded7df9c4a8bc5066329ab192, type: 3}
+  - {fileID: 2352871650194427952, guid: f16a217e8b169e547b7bf5132827b439, type: 3}
+  - {fileID: 2352871650194427952, guid: f16a217e8b169e547b7bf5132827b439, type: 3}
+  - {fileID: 2352871650194427952, guid: f16a217e8b169e547b7bf5132827b439, type: 3}
+  - {fileID: 2352871650194427952, guid: f16a217e8b169e547b7bf5132827b439, type: 3}
+  - {fileID: 2352871650194427952, guid: f16a217e8b169e547b7bf5132827b439, type: 3}
   - {fileID: 2352871650194427952, guid: f16a217e8b169e547b7bf5132827b439, type: 3}
   farmObjectDictionary: []
   animals: []
@@ -9959,7 +9876,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 939617937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f938d2ad366ba6a479e290210c4b377c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ba6ad5ba9e8c5a46b677227bce420e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
@@ -9970,7 +9887,7 @@ MonoBehaviour:
   moneyOutput: 0
   farmObjectIndex: 0
   shopCost: 0
-  farmObjectSprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
+  farmObjectSprite: {fileID: 21300000, guid: 8064df054c8449a45991757acbe74b1d, type: 3}
 --- !u!114 &939617940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9985,8 +9902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  productImage: {fileID: 1023418783}
+  product: {fileID: 3360313470610072451, guid: 961412687ab15b54197db534aa6123ad, type: 3}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -9995,7 +9912,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -10723,7 +10640,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007228859}
   m_CullTransparentMesh: 0
---- !u!1 &1023418783
+--- !u!1 &1017499190
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10731,99 +10648,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1023418784}
-  - component: {fileID: 1023418787}
-  - component: {fileID: 1023418786}
-  - component: {fileID: 1023418785}
-  - component: {fileID: 1023418788}
+  - component: {fileID: 1017499191}
+  - component: {fileID: 1017499193}
+  - component: {fileID: 1017499192}
   m_Layer: 5
-  m_Name: animalShopButton
+  m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1023418784
+  m_IsActive: 1
+--- !u!224 &1017499191
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023418783}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1017499190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75343, y: 0.75343, z: 0.75343}
   m_Children:
-  - {fileID: 1306192273}
-  m_Father: {fileID: 1275984682}
-  m_RootOrder: 9
+  - {fileID: 299474994}
+  m_Father: {fileID: 1950204631}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: -109}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchoredPosition: {x: 77.600006, y: 47.996}
+  m_SizeDelta: {x: 269.3, y: 82.508}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1023418785
+--- !u!114 &1017499192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023418783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1023418786}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1023418788}
-        m_MethodName: openAnimalShop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1023418786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023418783}
+  m_GameObject: {fileID: 1017499190}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -10835,8 +10696,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10845,48 +10706,14 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1023418787
+--- !u!222 &1017499193
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023418783}
+  m_GameObject: {fileID: 1017499190}
   m_CullTransparentMesh: 0
---- !u!114 &1023418788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023418783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmAnimal: {fileID: 907197639}
-  farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 0}
-  productImage: {fileID: 1023418783}
-  shopFarmObjectProducts:
-  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PSN: 
-  shopButton: {fileID: 49066390}
-  shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
-  inventoryButton: {fileID: 0}
-  putInvenButton: {fileID: 0}
-  text: {fileID: 1521330547}
-  mapButton: {fileID: 1576517920}
-  tapZone: {fileID: 2044507196}
-  OKButton: {fileID: 1911899917}
-  cancelButton: {fileID: 154083878}
-  shop: {fileID: 322068635}
-  farmObshop: {fileID: 28993869}
 --- !u!1 &1024573171
 GameObject:
   m_ObjectHideFlags: 0
@@ -12561,8 +12388,6 @@ RectTransform:
   - {fileID: 90618446}
   - {fileID: 1040252423}
   - {fileID: 231672136}
-  - {fileID: 1023418784}
-  - {fileID: 201728252}
   - {fileID: 1911899918}
   - {fileID: 154083879}
   - {fileID: 429519514}
@@ -12706,15 +12531,15 @@ RectTransform:
   m_GameObject: {fileID: 1295991726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5905585, y: 1.5905585, z: 1.5905585}
   m_Children: []
-  m_Father: {fileID: 1950204631}
-  m_RootOrder: 1
+  m_Father: {fileID: 299474994}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2518014, y: 0.119}
   m_AnchorMax: {x: 1, y: 0.46031737}
-  m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: -0.1000061, y: 0}
+  m_AnchoredPosition: {x: 466.72162, y: 48.490654}
+  m_SizeDelta: {x: 205.46786, y: 26.220871}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1295991728
 MonoBehaviour:
@@ -12747,7 +12572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD558\uD2B8 : "
+  m_Text: 
 --- !u!222 &1295991729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12755,83 +12580,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295991726}
-  m_CullTransparentMesh: 0
---- !u!1 &1306192272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1306192273}
-  - component: {fileID: 1306192275}
-  - component: {fileID: 1306192274}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1306192273
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306192272}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1023418784}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1306192274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306192272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: animal Shop
---- !u!222 &1306192275
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306192272}
   m_CullTransparentMesh: 0
 --- !u!1 &1327606628
 GameObject:
@@ -12915,7 +12663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 069ca8122e87b0447aad5c16ea7696e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fc04a00c365c8e46bceeaa352c65e0d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13202,15 +12950,15 @@ RectTransform:
   m_GameObject: {fileID: 1373364140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5457623, y: 1.5457623, z: 1.5457623}
   m_Children: []
-  m_Father: {fileID: 1950204631}
+  m_Father: {fileID: 2106426363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2518014, y: 0.5453174}
   m_AnchorMax: {x: 1, y: 0.88668275}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.1000061, y: 0}
+  m_AnchoredPosition: {x: 446.76157, y: 5.202011}
+  m_SizeDelta: {x: 205.46008, y: 26.230518}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1373364142
 MonoBehaviour:
@@ -13243,7 +12991,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC7AC\uD654 :"
+  m_Text: 
 --- !u!222 &1373364143
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18281,7 +18029,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -18290,7 +18038,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -18451,7 +18199,7 @@ RectTransform:
   m_Children:
   - {fileID: 1835473132}
   m_Father: {fileID: 1275984682}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18473,7 +18221,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -18482,7 +18230,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -18622,7 +18370,7 @@ RectTransform:
   m_GameObject: {fileID: 1914671039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6195316, y: 2.8471212, z: 0.95899016}
+  m_LocalScale: {x: 5.6195316, y: 3.2, z: 0.95899016}
   m_Children:
   - {fileID: 939617938}
   - {fileID: 1327606629}
@@ -18649,8 +18397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  productImage: {fileID: 1023418783}
+  product: {fileID: 3360313470610072451, guid: 961412687ab15b54197db534aa6123ad, type: 3}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -18659,7 +18407,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -18786,8 +18534,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1373364141}
-  - {fileID: 1295991727}
+  - {fileID: 826401437}
+  - {fileID: 1017499191}
   m_Father: {fileID: 1275984682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19209,7 +18957,7 @@ RectTransform:
   m_GameObject: {fileID: 2027771941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6195316, y: 2.8471212, z: 0.95899016}
+  m_LocalScale: {x: 5.6195316, y: 3.2, z: 0.95899016}
   m_Children:
   - {fileID: 2085542551}
   - {fileID: 88715896}
@@ -19237,7 +18985,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -19246,7 +18994,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -19849,25 +19597,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c2d9d3ef0106700499a977415a9352eb, type: 3}
   - {fileID: 21300000, guid: 5fc04a00c365c8e46bceeaa352c65e0d, type: 3}
   - {fileID: 21300000, guid: ff242aeafd87fca41977c22a2789ffee, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: bcd1dadf03f59854dbbfd66781f00edd, type: 3}
+  - {fileID: 21300000, guid: 6e94cf01a404b094d8bc6b6b9eb66651, type: 3}
+  - {fileID: 21300000, guid: 23f7aebfade039e47a36168f620537d2, type: 3}
   invenArrangeIcons:
   - {fileID: 21300000, guid: adc2fb03c6268d547a7c17a2e5a0472a, type: 3}
   - {fileID: 21300000, guid: ba51c5b1ab6479244a0b6e84e7c82aeb, type: 3}
   - {fileID: 21300000, guid: 8064df054c8449a45991757acbe74b1d, type: 3}
   - {fileID: 21300000, guid: 378666f1b6d0914438bf2a6a973431c7, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: f88945a6f5ac62942bfb6d19e671d1db, type: 3}
+  - {fileID: 21300000, guid: b486a2a30d0ec2a418693005fbc9d977, type: 3}
+  - {fileID: 21300000, guid: ada8a662995afda4099ab76c2927a41c, type: 3}
   invenItems:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3360313470610072451, guid: 961412687ab15b54197db534aa6123ad, type: 3}
+  - {fileID: 2057300385949278866, guid: af99b70ff73d32e498dfcb488be7d121, type: 3}
+  - {fileID: 9133635789172526791, guid: ca0789c2e8c54b5408504a982f3c5f12, type: 3}
+  - {fileID: 6716671561439766700, guid: 674c081faf3153a4a8a6a8c0ca32b95b, type: 3}
+  - {fileID: 3975478481983517925, guid: 51bbeb9fe6105044da04c783a2a2e446, type: 3}
 --- !u!114 &2059773183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20208,7 +19956,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 0}
@@ -20217,7 +19965,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -20318,7 +20066,7 @@ RectTransform:
   m_GameObject: {fileID: 2086234883}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6195316, y: 2.8471212, z: 0.95899016}
+  m_LocalScale: {x: 5.6195316, y: 3.2, z: 0.95899016}
   m_Children:
   - {fileID: 1883015851}
   - {fileID: 1877506078}
@@ -20346,7 +20094,7 @@ MonoBehaviour:
   farmAnimal: {fileID: 907197639}
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
-  productImage: {fileID: 1023418783}
+  productImage: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   - {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
@@ -20355,7 +20103,7 @@ MonoBehaviour:
   PSN: 
   shopButton: {fileID: 49066390}
   shopCloseButton: {fileID: 231672135}
-  farmObShopButton: {fileID: 201728251}
+  farmObShopButton: {fileID: 0}
   inventoryButton: {fileID: 0}
   putInvenButton: {fileID: 0}
   text: {fileID: 1521330547}
@@ -20454,6 +20202,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086234883}
+  m_CullTransparentMesh: 0
+--- !u!1 &2106426362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106426363}
+  - component: {fileID: 2106426365}
+  - component: {fileID: 2106426364}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2106426363
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106426362}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.64693, y: 0.64693, z: 0.64693}
+  m_Children:
+  - {fileID: 1373364141}
+  m_Father: {fileID: 826401437}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -93.20996, y: 3.2590218}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2106426364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106426362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d85443b2d5f567d4c8f22a02c38b94e6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2106426365
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106426362}
   m_CullTransparentMesh: 0
 --- !u!1 &2109934242
 GameObject:

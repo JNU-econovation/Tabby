@@ -52,7 +52,6 @@ public class ShopButtonManager : MonoBehaviour
         tapZone.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(false);
         shopCloseButton.gameObject.SetActive(true);
-        farmObShopButton.gameObject.SetActive(true);
         inventoryButton.SetActive(false);
         putInvenButton.SetActive(false);
     }
@@ -62,10 +61,9 @@ public class ShopButtonManager : MonoBehaviour
         shop.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(true);
         shopCloseButton.gameObject.SetActive(false);
-        farmObShopButton.gameObject.SetActive(false);
         mapButton.gameObject.SetActive(true);
         inventoryButton.SetActive(true);
-        //tapZone.gameObject.SetActive(true);
+        tapZone.gameObject.SetActive(true);
     }
 
 

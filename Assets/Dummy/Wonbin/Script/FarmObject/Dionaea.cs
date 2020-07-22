@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class index3 : FarmObject
+public class Dionaea : FarmObject
 {
     private void Awake()
     {
-        farmObjectNumber = 3;
+        farmObjectNumber = 5;
         producePeriod = 60f;
         moneyOutput = 20;
 

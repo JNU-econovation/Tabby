@@ -16,8 +16,8 @@ public class MoneyManager : MonoBehaviour
     }
     void Update()
     {
-        heartText.text = "하트 : " + heart;
-        moneyText.text = "재화 : " + money;
+        heartText.text = heart.ToString();
+        moneyText.text = money.ToString();
     }
 
     public static void HeartUP()

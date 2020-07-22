@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class index5 : FarmObject
+public class Whitemushroom : FarmObject
 {
     private void Awake()
     {
-        farmObjectNumber = 5;
-        producePeriod = 60f;
+        farmObjectNumber = 3;
+        producePeriod = 20f;
         moneyOutput = 20;
 
     }
