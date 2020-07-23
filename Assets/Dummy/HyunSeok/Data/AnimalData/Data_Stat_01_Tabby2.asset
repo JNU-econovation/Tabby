@@ -16,8 +16,8 @@ MonoBehaviour:
   code: tabby2
   animalName: 
   exp: 0
-  maxHP: 5000
-  hp: 5000
+  maxHP: 500
+  hp: 500
   atk: 40
   atkSpd: 1.2
   tough: 0.1

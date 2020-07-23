@@ -16,8 +16,8 @@ MonoBehaviour:
   code: seal1
   animalName: 
   exp: 0
-  maxHP: 5000
-  hp: 5000
+  maxHP: 500
+  hp: 500
   atk: 30
   atkSpd: 0.7
   tough: 0.2

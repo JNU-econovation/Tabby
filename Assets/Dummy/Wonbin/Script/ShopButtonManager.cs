@@ -13,6 +13,9 @@ public class ShopButtonManager : MonoBehaviour
     private GameObject producted;
     public GameObject productImage;
 
+    public GameObject shopList;
+    public GameObject arrangeButtons;
+
     private Image image;
     
     public GameObject[] shopFarmObjectProducts;
@@ -90,6 +93,7 @@ public class ShopButtonManager : MonoBehaviour
         PIDrag.PItransformMid();
         OKButton.gameObject.SetActive(true);
         cancelButton.gameObject.SetActive(true);
+        shopList.SetActive(false);
     }
 
 
@@ -102,16 +106,18 @@ public class ShopButtonManager : MonoBehaviour
         PIDrag.PItransformBack();
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
+        shopList.SetActive(true);
     }
 
     public void PressOK()
     { 
         FarmObjectOK();
+        shopList.SetActive(true);
     }
 
     void FarmObjectOK()
     {
-
+        shopList.SetActive(true);
         productImage = GameObject.Find("arrangeImage");
         int putable = 0;
         for (int i = 0; i < farmAnimal.transform.childCount; i++)

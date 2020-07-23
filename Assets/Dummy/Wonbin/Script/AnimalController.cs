@@ -96,16 +96,16 @@ public class AnimalController : MonoBehaviour
         //pathFinding이 끝난 길 Node 리스트를 따라 이동, 한칸 이동 후 i++
         pathfinder.FollwingPath(animalrigidbody, speed);
 
-        if (pathfinder.FinalNodeList.Count!=0) 
+        if (pathfinder.FinalNodeList.Count!=0&&pathfinder.FinalListNodeNumber!=pathfinder.FinalNodeList.Count) 
         {
-            velx = (pathfinder.FinalNodeList[pathfinder.FinalListNodeNumber].x - pathfinder.FinalNodeList[pathfinder.FinalListNodeNumber].x);
+            velx = (pathfinder.FinalNodeList[pathfinder.FinalListNodeNumber].x - pathfinder.FinalNodeList[pathfinder.FinalListNodeNumber+1].x);
             if (velx > 0)
             {
-                //오른쪽이동 애니메이션
+                transform.localScale = new Vector2(-1, 1);
             }
             if (velx <= 0)
             {
-                //왼쪽으로이동 애니메이션
+                transform.localScale = new Vector2(1, 1);
             }
         }
         

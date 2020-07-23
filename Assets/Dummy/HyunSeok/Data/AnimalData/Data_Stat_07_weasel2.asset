@@ -16,8 +16,8 @@ MonoBehaviour:
   code: weasel2
   animalName: 
   exp: 0
-  maxHP: 7000
-  hp: 7000
+  maxHP: 500
+  hp: 500
   atk: 80
   atkSpd: 1
   tough: 0.1

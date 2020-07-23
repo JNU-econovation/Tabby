@@ -16,8 +16,8 @@ MonoBehaviour:
   code: platypus1
   animalName: 
   exp: 0
-  maxHP: 5000
-  hp: 5000
+  maxHP: 500
+  hp: 500
   atk: 50
   atkSpd: 0.5
   tough: 0.2

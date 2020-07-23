@@ -1349,6 +1349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552276722961458950}
   - component: {fileID: 5413899762034510434}
+  - component: {fileID: 8626938396347393616}
   m_Layer: 0
   m_Name: PangolinEV1
   m_TagString: Untagged
@@ -1397,6 +1398,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &8626938396347393616
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288819675553757748}
+  m_Enabled: 1
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 11
 --- !u!1 &8984294844133117273
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public static int farmObjectNumber;
     public static int inventorySlotNumber;
     public GameObject putInvenButton;
+    public GameObject offPutInvenButton;
     public GameObject putInvenButtonCover;
     public static int oneTapMoney;
 
@@ -47,6 +48,7 @@ public class InputManager : MonoBehaviour
                     {
                         tapObject = hit.collider.gameObject;
                         putInvenButton.SetActive(true);
+                        offPutInvenButton.SetActive(true);
                         farmObjectNumber = hit.collider.gameObject.GetComponent<FarmObject>().farmObjectNumber;
                         farmObjectIndex = hit.collider.gameObject.GetComponent<FarmObject>().farmObjectIndex;
                     }
@@ -56,16 +58,20 @@ public class InputManager : MonoBehaviour
             
             else if(hit.collider.gameObject.name!=putInvenButton.name)
             {
-                Debug.Log("흠흠");
                 MoneyManager.MoneyUP(oneTapMoney);
-                //putInvenButton.SetActive(false);
+
             }
         }
     }
 
+    public void OffInventoryPutButton()
+    {
+        putInvenButton.SetActive(false);
+        offPutInvenButton.SetActive(false);
+    }
+
     public void PutInventory()
     {
-        Debug.Log("인벤에넣기");
         Spawner._instance.farmObjects[farmObjectIndex].isField = false;
         Destroy(tapObject);
         putInvenButton.SetActive(false);

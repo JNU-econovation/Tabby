@@ -8,14 +8,21 @@ namespace Battle
 {
     public class UIAnimalHP : MonoBehaviour
     {
-        public AnimalController animalController;
-        public AnimalGameData animalData;
+        public int index;
+
+        private AnimalController animalController;
+        private AnimalGameData animalData;
 
         public Image hpBar;
+        public Text nameText;
 
         private void Start()
         {
+            if (AnimalManager._instance.animals[index] == null)
+                gameObject.SetActive(false);
+            animalController = AnimalManager._instance.animals[index].GetComponentInChildren<AnimalController>();
             animalData = animalController.animalData;
+            nameText.text = animalController.animalData.AnimalName;
             CheckWhereAnimal();
         }
 

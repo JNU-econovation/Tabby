@@ -75,29 +75,6 @@ namespace Battle
         // 
         public void SpawnAnimalUseData()
         {
-            if (false)
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    if (tempRandomAnimalIndexes[i] == -1)
-                    {
-                        animals.Add(null);
-                        continue;
-                    }
-                    DataManager._instance.gogoAnimalIndexes[i] = tempRandomAnimalIndexes[i];
-                    GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + tempRandomAnimalIndexes[i]) as GameObject);
-                    if (animal == null)
-                    {
-                        animals.Add(null);
-                        continue;
-                    }
-                    animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
-                    animals[i].animalData.BattleIndex = i;
-                    animal.transform.position = animalPos[i].transform.position;
-                }
-            }
-            else
-            { 
                 for (int i = 0; i < 3; i++)
                 {
                     int animalIndex = DataManager._instance.gogoAnimalIndexes[i];
@@ -108,10 +85,7 @@ namespace Battle
                         animals.Add(null);
                         continue;
                     }
-                    Debug.Log("Animal index : " + animalIndex);
-                    Debug.Log("What " + DataManager._instance.playerData.animalDatas[animalIndex]);
                     int realAnimalIndex = DataManager._instance.playerData.animalDatas[animalIndex].index;
-                    Debug.Log("Real : " + realAnimalIndex);
                     GameObject animal = Instantiate(Resources.Load("Battle/Animal/Prefab_Animal_" + realAnimalIndex) as GameObject);
                     if (animal == null)
                     {
@@ -120,13 +94,13 @@ namespace Battle
                     }
                     animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
                     animals[i].animalData.BattleIndex = i;
+                    animals[i].animalData.AnimalName = DataManager._instance.playerData.animalDatas[animalIndex].animalName;
                     animal.transform.position = animalPos[i].transform.position;
                     if (realAnimalIndex == 0)
                     {
                         animal.transform.position = animalPos[i].transform.position + new Vector3(0, 1f, 0);
                     }
                 }
-            }
         }
     }
 }

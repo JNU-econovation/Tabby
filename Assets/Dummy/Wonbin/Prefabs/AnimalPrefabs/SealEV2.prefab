@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2638290717801764161}
   - component: {fileID: 2638290717801764191}
   - component: {fileID: 2638290717801764160}
-  - component: {fileID: 2638290717801764189}
   - component: {fileID: 7626531947975053170}
   - component: {fileID: 6261248251181910583}
   m_Layer: 12
@@ -44,7 +43,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2638290717801764163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -124,25 +123,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.2
---- !u!95 &2638290717801764189
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2638290717801764163}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51622ef6ec53ba344a90fbb434affbb7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7626531947975053170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +160,36 @@ MonoBehaviour:
   animalCost: 0
   animalHeartCost: 0
   animalSprite: {fileID: 0}
+--- !u!210 &1635309999641766690
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329383084085009006}
+  m_Enabled: 1
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 11
+--- !u!95 &4710627895780715826
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329383084085009006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f0ccdd781281f1429ed76c6f2230baf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8852328376719177534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,7 +210,7 @@ PrefabInstance:
     - target: {fileID: -6774643364722768963, guid: d1dfe820fedd51341a3456da80dc6c77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: -6774643364722768963, guid: d1dfe820fedd51341a3456da80dc6c77,
         type: 3}
@@ -247,9 +257,130 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6774643364722768963, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6774643364722768963, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4622384238434556774, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: -4622384238434556774, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.000064998865
+      objectReference: {fileID: 0}
+    - target: {fileID: -4622384238434556774, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.43500003
+      objectReference: {fileID: 0}
+    - target: {fileID: -4622384238434556774, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 0.17992495
+      objectReference: {fileID: 0}
+    - target: {fileID: -3853080977631668964, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: -0.0047973692
+      objectReference: {fileID: 0}
+    - target: {fileID: -3853080977631668964, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: -0.00006005168
+      objectReference: {fileID: 0}
+    - target: {fileID: -2529517822387747933, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0.0045342743
+      objectReference: {fileID: 0}
+    - target: {fileID: -2529517822387747933, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: -0.0000050365925
+      objectReference: {fileID: 0}
+    - target: {fileID: -2529517822387747933, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.44047335
+      objectReference: {fileID: 0}
+    - target: {fileID: -2529517822387747933, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 0.24499497
+      objectReference: {fileID: 0}
+    - target: {fileID: -1645185449726923748, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0.0019750297
+      objectReference: {fileID: 0}
+    - target: {fileID: -1645185449726923748, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.000019982457
+      objectReference: {fileID: 0}
+    - target: {fileID: -1645185449726923748, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.32802498
+      objectReference: {fileID: 0}
+    - target: {fileID: -1142831947584934040, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1142831947584934040, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.0024150014
+      objectReference: {fileID: 0}
+    - target: {fileID: -1142831947584934040, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.5150001
+      objectReference: {fileID: 0}
+    - target: {fileID: -1142831947584934040, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 0.60258496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461479312488519780, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0.0025697947
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461479312488519780, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.0016700625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461479312488519780, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.91780007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461479312488519780, guid: d1dfe820fedd51341a3456da80dc6c77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 0.38817003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -4689293863272068764, guid: d1dfe820fedd51341a3456da80dc6c77,
     type: 3}
+--- !u!1 &8329383084085009006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8552863417214685872, guid: d1dfe820fedd51341a3456da80dc6c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 8852328376719177534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6566925560512705667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6774643364722768963, guid: d1dfe820fedd51341a3456da80dc6c77,
