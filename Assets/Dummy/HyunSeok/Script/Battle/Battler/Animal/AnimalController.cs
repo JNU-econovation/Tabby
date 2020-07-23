@@ -279,7 +279,7 @@ namespace Battle
             if (data == null)
                 return new Tuple<float, bool>(0f, false);
             bool isCritical = false;
-            float dmg = (float)data.skillPowerInt + animalData.Atk * (1 + data.skillPowerPercent);
+            float dmg = (float)data.skillPowerInt + animalData.Atk * (data.skillPowerPercent);
             dmg += UnityEngine.Random.Range(-5f, 5f);
             float criticalRandom = UnityEngine.Random.Range(0.0f, 1.0f);
             // 크리 발동

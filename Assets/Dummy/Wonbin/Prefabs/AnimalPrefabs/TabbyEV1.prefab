@@ -32,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.76, y: 0.21, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2202030126286372883}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -154,12 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e5f0d1872621c4c85d24ca0dee8bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartRateMin: 5
-  heartRateMax: 7
   heartPrefabs: {fileID: 2782221430322883522, guid: 96043e2ccdb41ab46a2534d48b03a1d2,
     type: 3}
   distance: 10
   farmObjectShop: {fileID: 0}
+  farmFarmObject: {fileID: 0}
 --- !u!114 &6318196168615712223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +173,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalNumber: 0
-  animalIdx: 0
-  animalCost: 0
-  level: 0
+  animalName: 
   exp: 0
+  evolExp: 0
+  animalIndex: 0
+  animalCost: 0
+  animalHeartCost: 0
   animalSprite: {fileID: 21300000, guid: 3dbc5f474871e8d4eb36e52f633ef476, type: 3}
+--- !u!1001 &498334827843139078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2448804857108897042}
+    m_Modifications:
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4101499283422091593, guid: cdbb526fab5343347a2ae1e18c8885ff,
+        type: 3}
+      propertyPath: m_Name
+      value: TabbySpriteEV1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 5502389178766352930, guid: cdbb526fab5343347a2ae1e18c8885ff,
+    type: 3}
+--- !u!4 &2202030126286372883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7465457070435092971, guid: cdbb526fab5343347a2ae1e18c8885ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 498334827843139078}
+  m_PrefabAsset: {fileID: 0}

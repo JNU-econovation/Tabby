@@ -345,16 +345,17 @@ public class MapButtonManager : MonoBehaviour
     public void TapGogoButton()
     {
 
-        mapGogoAnimalArray[0] = slot1AnimalIndex;
-        mapGogoAnimalArray[1] = slot2AnimalIndex;
-        mapGogoAnimalArray[2] = slot3AnimalIndex;
+        //mapGogoAnimalArray[0] = slot1AnimalIndex;
+        //mapGogoAnimalArray[1] = slot2AnimalIndex;
+        //mapGogoAnimalArray[2] = slot3AnimalIndex;
         Debug.Log("디버그로그");
         Debug.Log(mapGogoAnimalArray[0]);
         Debug.Log(mapGogoAnimalArray[1]);
         Debug.Log(mapGogoAnimalArray[2]);
         DataManager._instance.gogoAnimalIndexes = mapGogoAnimalArray;
         DataManager._instance.regionIndex = AreaNumber;
-        SceneControl._instance.LoadTargetScene("HS_Battle");
+        if((mapGogoAnimalArray[0]!=-1)||(mapGogoAnimalArray[1] != -1 )|| (mapGogoAnimalArray[2] != -1))
+            SceneControl._instance.LoadTargetScene("HS_Battle");
         //SceneManager.LoadScene("HS_Battle");
     }
 

@@ -155,13 +155,6 @@ public class Spawner : MonoBehaviour
 
 
 
-    //하트생성
-    public void MakeChild(GameObject gameObject, GameObject gameObjectPrefabs)
-    {
-        child = (GameObject)Instantiate(gameObjectPrefabs, gameObject.transform.position, gameObject.transform.rotation);
-        child.transform.parent = gameObject.transform;
-    }
-
     public void PullToChild()
     {
 

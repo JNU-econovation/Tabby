@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class AnimalController : MonoBehaviour
 {
 
+    GameObject child;
+
     Animal animal;
 
     PathFinder pathfinder;
@@ -84,9 +86,9 @@ public class AnimalController : MonoBehaviour
             timeAfterHeart += Time.deltaTime;
 
         //랜덤시간 이상이 됐을때 하트 생성
-        else if (timeAfterHeart >= heartRate && transform.childCount == 0)
+        else if (timeAfterHeart >= heartRate && child == null)
         {
-            spawner.MakeChild(this.gameObject, heartPrefabs);
+            MakeChild(this.gameObject, heartPrefabs);
             //하트 보기싫으니까 일단 없애둠
         }
 
@@ -169,16 +171,23 @@ public class AnimalController : MonoBehaviour
 
 
 
+    //하트생성
+    public void MakeChild(GameObject gameObject, GameObject gameObjectPrefabs)
+    {
+        child = (GameObject)Instantiate(gameObjectPrefabs, gameObject.transform.position, gameObject.transform.rotation);
+        child.transform.parent = gameObject.transform;
+    }
+
     //동물에 하트가 있다면 하트획득
     private void OnMouseDown()
     {
         animalPosX = gameObject.transform.position.x;
         animalPosY = gameObject.transform.position.y;
-        if (transform.childCount != 0)
+        if (child != null)
         {
             MoneyManager.heart += 1;
             PlayerPrefs.SetInt("Heart", MoneyManager.heart);
-            Destroy(gameObject.transform.GetChild(0).gameObject);
+            Destroy(child);
             heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
             timeAfterHeart = 0f;
         }
