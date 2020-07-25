@@ -7,8 +7,9 @@ public class IndStrawberry : FarmObject
     private void Awake()
     {
         farmObjectNumber = 1;
-        producePeriod = 60f;
-        moneyOutput = 50;
+        producePeriod = 15f;
+        moneyOutput = 20;
+        shopCost = 100;
 
     }
 }

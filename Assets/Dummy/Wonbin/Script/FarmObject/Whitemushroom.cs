@@ -7,8 +7,9 @@ public class Whitemushroom : FarmObject
     private void Awake()
     {
         farmObjectNumber = 3;
-        producePeriod = 20f;
-        moneyOutput = 20;
+        producePeriod = 3600f;
+        moneyOutput = 200;
+        shopCost = 1200;
 
     }
 }

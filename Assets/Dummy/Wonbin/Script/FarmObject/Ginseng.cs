@@ -8,7 +8,8 @@ public class Ginseng : FarmObject
     {
         farmObjectNumber = 2;
         producePeriod = 60f;
-        moneyOutput = 20;
+        moneyOutput = 50;
+        shopCost = 500;
 
     }
 }

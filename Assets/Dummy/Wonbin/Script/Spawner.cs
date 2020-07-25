@@ -96,6 +96,24 @@ public class Spawner : MonoBehaviour
         
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            MoneyManager.money = 0;
+            MoneyManager.heart = 0;
+        }
+        if (Input.GetKeyDown("m"))
+        {
+            MoneyManager.money = 10000;
+            MoneyManager.heart = 1000;
+        }
+        if (Input.GetKeyDown("h"))
+        {
+            MoneyManager.heart +=1;
+        }
+    }
+
     public void AddNewAnimal(GameObject animal)
     {
         Animal animalObject = animal.GetComponent<Animal>();
@@ -143,6 +161,7 @@ public class Spawner : MonoBehaviour
             
             evolAnimal=Instantiate(spawner.animalPrefabs[animalNumber + 1], animal.transform.position, Quaternion.identity);
             evolAnimal.transform.parent = farmAnimal.transform;
+            evolAnimal.GetComponent<Animal>().animalName = animal.GetComponent<Animal>().animalName;
             AddEvolutionAnimal(evolAnimal, animalscript.animalIndex);
             Destroy(animal);
 

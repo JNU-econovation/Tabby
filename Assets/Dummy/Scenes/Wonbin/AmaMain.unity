@@ -1451,7 +1451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -327.43524, y: -202.74567}
+  m_AnchoredPosition: {x: -327.5, y: -202.75}
   m_SizeDelta: {x: 3825, y: 1504.3999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98839119
@@ -2738,7 +2738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 100
 --- !u!222 &177105110
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3645,7 +3645,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 0}
   productImage: {fileID: 0}
-  shopList: {fileID: 0}
+  shopList: {fileID: 28993869}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -8912,7 +8912,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 1200
 --- !u!222 &890716999
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9943,7 +9943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.899994, y: -9.799999}
+  m_AnchoredPosition: {x: 7.875, y: -9.8125}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964489762
@@ -10417,7 +10417,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 500
 --- !u!222 &1007228862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18258,7 +18258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.707, y: 0.753}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -176.94995, y: -25.080078}
+  m_AnchoredPosition: {x: -177, y: -25}
   m_SizeDelta: {x: 274.2, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2004457237

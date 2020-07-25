@@ -106,6 +106,7 @@ public class ShopButtonManager : MonoBehaviour
         PIDrag.PItransformBack();
         OKButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
+        Debug.Log(gameObject.name);
         shopList.SetActive(true);
     }
 
@@ -131,8 +132,8 @@ public class ShopButtonManager : MonoBehaviour
                 putable++;
         }
         Debug.Log(putable);
-        if (putable == farmAnimal.transform.childCount + farmFarmObject.transform.childCount)
-        {
+        //if (putable == farmAnimal.transform.childCount + farmFarmObject.transform.childCount)
+        //{
             text.gameObject.SetActive(false);
             ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
             product = productSBM.product;
@@ -159,7 +160,7 @@ public class ShopButtonManager : MonoBehaviour
                 AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
                 animalController.pathStart();
             }
-        }
+        //}
         
     }
 

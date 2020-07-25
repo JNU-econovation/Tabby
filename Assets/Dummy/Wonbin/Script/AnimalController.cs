@@ -152,17 +152,17 @@ public class AnimalController : MonoBehaviour
             if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - gameObject.transform.position.x) > 1 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - gameObject.transform.position.y) > 1)
                 putable++;
         }
-        if (putable == farmFarmObject.transform.childCount)
-        {
+        //if (putable == farmFarmObject.transform.childCount)
+        //{
             //다시 랜덤지정으로 길찾기 시작
-            if (timeAfterHeart <= heartRate && timeAfterHeart >= 1.3)
+            if (timeAfterHeart <= heartRate && timeAfterHeart >= 0.5)
             {
                 pathfinder.DropAnimal(animalrigidbody, 6);
                 //pathfinder.ReFinding(animalrigidbody, 6);
                 //애니메이션 돌아옴
                 //animator.SetBool("tapAnimal", false);
             }
-        }
+        //}
         else
         {
             gameObject.transform.position = new Vector2(animalPosX, animalPosY);

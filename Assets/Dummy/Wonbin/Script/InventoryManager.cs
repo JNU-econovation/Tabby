@@ -160,8 +160,8 @@ public class InventoryManager : MonoBehaviour
             if (Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 1 && Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 1)
                 putable++;
         }
-        if (putable==farmAnimal.transform.childCount+farmObjects.transform.childCount)
-        {
+        //if (putable==farmAnimal.transform.childCount+farmObjects.transform.childCount)
+        //{
             inventory.SetActive(true);
             putButton.SetActive(false);
             cancelButton.SetActive(false);
@@ -200,7 +200,7 @@ public class InventoryManager : MonoBehaviour
                 AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
                 animalController.pathStart();
             }
-        }
+        //}
     }
 
     public void ArrangeCencel()
