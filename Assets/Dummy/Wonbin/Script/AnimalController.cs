@@ -155,7 +155,7 @@ public class AnimalController : MonoBehaviour
         //if (putable == farmFarmObject.transform.childCount)
         //{
             //다시 랜덤지정으로 길찾기 시작
-            if (timeAfterHeart <= heartRate && timeAfterHeart >= 0.5)
+            if (timeAfterHeart <= heartRate && timeAfterHeart >=1.3)
             {
                 pathfinder.DropAnimal(animalrigidbody, 6);
                 //pathfinder.ReFinding(animalrigidbody, 6);

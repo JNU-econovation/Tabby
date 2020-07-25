@@ -152,13 +152,19 @@ public class InventoryManager : MonoBehaviour
         int putable=0;
         for(int i=0; i < farmAnimal.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 1 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 1)
+            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 3 || Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 3)
+            {
+
                 putable++;
+            }
         }
         for(int i = 0; i < farmObjects.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 1 && Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 1)
+            if (Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.x - arrangeImage.transform.position.x) > 3 || Mathf.Abs(farmObjects.transform.GetChild(i).transform.position.y - arrangeImage.transform.position.y) > 3)
+            {
+
                 putable++;
+            }
         }
         //if (putable==farmAnimal.transform.childCount+farmObjects.transform.childCount)
         //{

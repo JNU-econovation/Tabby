@@ -123,17 +123,31 @@ public class ShopButtonManager : MonoBehaviour
         int putable = 0;
         for (int i = 0; i < farmAnimal.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 0.5 && Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 0.5)
-                putable++;
+            //Debug.Log("동물" + i + "번 : " + farmAnimal.transform.GetChild(i).transform.position.x);
+            //Debug.Log("productImage : " + productImage.transform.position.x);
+            //Debug.Log(i+"번 차이 : "+Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - productImage.transform.position.x));
+            //Debug.Log(i+"번 차이 : "+ Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - productImage.transform.position.y));
+            if (Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 3 || Mathf.Abs(farmAnimal.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 3) {
+                
+                putable++; }
         }
         for (int i = 0; i < farmFarmObject.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 0.5 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 0.5)
+            //Debug.Log("설치물" + i + "번 : " + farmFarmObject.transform.GetChild(i).transform.position.x);
+            //Debug.Log("productImage : " + productImage.transform.position.x);
+            //Debug.Log(i + "번 차이 : " + Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - productImage.transform.position.x));
+            //Debug.Log(i + "번 차이 : " + Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - productImage.transform.position.y));
+            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - productImage.transform.position.x) > 3 || Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - productImage.transform.position.y) > 3)
+            {
+
                 putable++;
+            }
         }
-        Debug.Log(putable);
-        //if (putable == farmAnimal.transform.childCount + farmFarmObject.transform.childCount)
-        //{
+        //Debug.Log("농장동물"+farmAnimal.transform.childCount+"마리");
+        //Debug.Log("농장설치물"+farmFarmObject.transform.childCount+"개");
+        //Debug.Log(putable);
+        if (putable == farmAnimal.transform.childCount + farmFarmObject.transform.childCount)
+        {
             text.gameObject.SetActive(false);
             ShopButtonManager productSBM = productImage.GetComponent<ShopButtonManager>();
             product = productSBM.product;
@@ -160,7 +174,7 @@ public class ShopButtonManager : MonoBehaviour
                 AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
                 animalController.pathStart();
             }
-        //}
+        }
         
     }
 

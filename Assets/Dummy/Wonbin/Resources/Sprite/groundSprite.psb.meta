@@ -31,7 +31,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 128
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1036
-      y: 1855
+      y: 748
       width: 0
       height: 0
     spriteID: 5d8f85cd3629fe44ca587fa44c63e5d3
@@ -108,7 +108,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 12, y: 831}
+    uvTransform: {x: 12, y: -276}
   - name: "\uB808\uC774\uC5B4 6"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -117,7 +117,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1036
+      y: 748
       width: 1024
       height: 811
     spriteID: 8b5f06641827ef44f8f2c55493cdcb91
@@ -130,7 +130,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 973}
+    uvTransform: {x: 4, y: 605}
   - name: "\uB808\uC774\uC5B4 12"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -139,7 +139,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1855
+      y: 4
       width: 1024
       height: 736
     spriteID: c260591ffefb3624685f81166a7874d6
@@ -152,35 +152,13 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 1718}
-  - name: "\uB808\uC774\uC5B4 23"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 1024
-      height: 1024
-    spriteID: 07440030ce816b94c95c3940bf64d427
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: -133}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 1024
+  importedTextureWidth: 2048
   importedTextureHeight: 2048
   documentSize: {x: 1024, y: 1024}
   paperDollMode: 0
@@ -188,7 +166,7 @@ ScriptedImporter:
   spriteCategoryList:
     categories: []
   textureActualWidth: 2048
-  textureActualHeight: 4096
+  textureActualHeight: 2048
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
@@ -200,27 +178,20 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 5d8f85cd3629fe44ca587fa44c63e5d3
     layerID: 22
-    mosaicPosition: {x: 1036, y: 1855}
+    mosaicPosition: {x: 1036, y: 748}
   - name: "\uB808\uC774\uC5B4 6"
     spriteName: "\uB808\uC774\uC5B4 6"
     isGroup: 0
     parentIndex: -1
     spriteID: 8b5f06641827ef44f8f2c55493cdcb91
     layerID: 8
-    mosaicPosition: {x: 4, y: 1036}
+    mosaicPosition: {x: 4, y: 748}
   - name: "\uB808\uC774\uC5B4 12"
     spriteName: "\uB808\uC774\uC5B4 12"
     isGroup: 0
     parentIndex: -1
     spriteID: c260591ffefb3624685f81166a7874d6
     layerID: 14
-    mosaicPosition: {x: 4, y: 1855}
-  - name: "\uB808\uC774\uC5B4 23"
-    spriteName: "\uB808\uC774\uC5B4 23"
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 07440030ce816b94c95c3940bf64d427
-    layerID: 29
     mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []
