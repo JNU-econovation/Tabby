@@ -119,7 +119,7 @@ public class RecruitManager : MonoBehaviour
     public void Recruit()
     {
 
-        if (namingInput.GetComponent<InputField>().text != null)
+        if ((namingInput.GetComponent<InputField>().text != "")|| (namingInput.GetComponent<InputField>().text != " ") || (namingInput.GetComponent<InputField>().text != "  ")||(namingInput.GetComponent<InputField>().text != "   "))
         {
             if (slotNum == 1)
                 RecruitSlot1();

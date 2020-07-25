@@ -31,7 +31,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 128
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -87,28 +87,6 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: RL
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 200
-      y: 65
-      width: 33
-      height: 35
-    spriteID: dc8109405f0e15f4d831c25848cf3925
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 94, y: 20}
   - name: RA
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +108,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 65, y: -70}
+    uvTransform: {x: 65, y: -69}
   - name: B
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -160,8 +138,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 151
-      y: 65
+      x: 203
+      y: 60
       width: 41
       height: 42
     spriteID: 42fd3f947fe709744b4355982be12f57
@@ -174,7 +152,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 18, y: 18}
+    uvTransform: {x: 73, y: 6}
   - name: LA
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -204,7 +182,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 151
+      x: 153
       y: 4
       width: 53
       height: 53
@@ -241,6 +219,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -18, y: 75}
+  - name: "RL \uBCF5\uC0AC"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 153
+      y: 60
+      width: 42
+      height: 42
+    spriteID: 85dc99e52de40044a8262ecca951ad60
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 55, y: 15}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -260,13 +260,6 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: RL
-    spriteName: RL
-    isGroup: 0
-    parentIndex: -1
-    spriteID: dc8109405f0e15f4d831c25848cf3925
-    layerID: 15
-    mosaicPosition: {x: 200, y: 65}
   - name: RA
     spriteName: RA
     isGroup: 0
@@ -274,6 +267,13 @@ ScriptedImporter:
     spriteID: 796194086b2d0d2438e1253f9c24dc0e
     layerID: 13
     mosaicPosition: {x: 212, y: 4}
+  - name: H
+    spriteName: H
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9f278febb143acc48a1b0c26ccee4bcd
+    layerID: 10
+    mosaicPosition: {x: 153, y: 4}
   - name: B
     spriteName: B
     isGroup: 0
@@ -281,27 +281,6 @@ ScriptedImporter:
     spriteID: f7e6baeb78879c34a862597ae3f02052
     layerID: 17
     mosaicPosition: {x: 4, y: 4}
-  - name: LL
-    spriteName: LL
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 42fd3f947fe709744b4355982be12f57
-    layerID: 14
-    mosaicPosition: {x: 151, y: 65}
-  - name: LA
-    spriteName: LA
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 7cbd8f91710070048866d34a9134a042
-    layerID: 11
-    mosaicPosition: {x: 115, y: 126}
-  - name: H
-    spriteName: H
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 9f278febb143acc48a1b0c26ccee4bcd
-    layerID: 10
-    mosaicPosition: {x: 151, y: 4}
   - name: T
     spriteName: T
     isGroup: 0
@@ -309,6 +288,27 @@ ScriptedImporter:
     spriteID: 2857ca36f26c32447a06bace5750bee7
     layerID: 16
     mosaicPosition: {x: 4, y: 126}
+  - name: "RL \uBCF5\uC0AC"
+    spriteName: "RL \uBCF5\uC0AC"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 85dc99e52de40044a8262ecca951ad60
+    layerID: 21
+    mosaicPosition: {x: 153, y: 60}
+  - name: LL
+    spriteName: LL
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 42fd3f947fe709744b4355982be12f57
+    layerID: 14
+    mosaicPosition: {x: 203, y: 60}
+  - name: LA
+    spriteName: LA
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7cbd8f91710070048866d34a9134a042
+    layerID: 11
+    mosaicPosition: {x: 115, y: 126}
   characterData:
     bones: []
     parts: []

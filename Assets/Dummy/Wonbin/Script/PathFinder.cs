@@ -5,7 +5,7 @@ using UnityEngine;
 public class PathFinder 
 {
     [SerializeField]
-    private Vector2Int bottomLeft =new Vector2Int(-22, -11), topRight=new Vector2Int(22, 8);
+    private Vector2Int bottomLeft =new Vector2Int(-22, -11), topRight=new Vector2Int(22, 5);
     public List<Node> FinalNodeList;
     public int FinalListNodeNumber;
     Vector2Int targetPos;

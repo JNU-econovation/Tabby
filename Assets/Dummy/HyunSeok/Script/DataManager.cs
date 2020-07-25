@@ -55,7 +55,7 @@ namespace GameData
             {
                 playerDataDi.Create ();
                 PlayerData initData = new PlayerData();
-                initData.animalDatas.Add(new AnimalData(0, "한글이름", 0));
+                initData.animalDatas.Add(new AnimalData(0, "태비", 0));
                 SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
 
             }
