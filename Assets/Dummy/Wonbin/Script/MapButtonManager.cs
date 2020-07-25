@@ -352,7 +352,9 @@ public class MapButtonManager : MonoBehaviour
         Debug.Log(mapGogoAnimalArray[0]);
         Debug.Log(mapGogoAnimalArray[1]);
         Debug.Log(mapGogoAnimalArray[2]);
-        DataManager._instance.gogoAnimalIndexes = mapGogoAnimalArray;
+        DataManager._instance.gogoAnimalIndexes[0]=mapGogoAnimalArray[2];
+        DataManager._instance.gogoAnimalIndexes[1]=mapGogoAnimalArray[1];
+        DataManager._instance.gogoAnimalIndexes[2]=mapGogoAnimalArray[0];
         DataManager._instance.regionIndex = AreaNumber;
         if((mapGogoAnimalArray[0]!=-1)||(mapGogoAnimalArray[1] != -1 )|| (mapGogoAnimalArray[2] != -1))
             SceneControl._instance.LoadTargetScene("HS_Battle");
