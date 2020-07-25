@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78a1df3e63f9a384da50a3d13e6aab26, type: 3}
-  m_Name: Data_Stat_LittleKomodo_0
+  m_Name: Data_Stat_ForestKomodo
   m_EditorClassIdentifier: 
-  index: 0
-  code: LittleKomodo
-  animalName: "\uCF54\uBAA8\uB460"
+  index: 1
+  code: ForestKomodo
+  animalName: "\uCF54\uBAA8\uB3C4\uC288\uD0C0\uC778"
   exp: 0
   maxHP: 2000
   hp: 2000
-  atk: 20
-  atkSpd: 0.5
-  tough: 0.4
+  atk: 80
+  atkSpd: 0.8
+  tough: 0.3
   focus: 1
-  critical: 0.05
+  critical: 0.15
   battleIndex: 0
-  enemyExp: 10
-  enemyShake: 0.25
-  farmObjectIndex: 4
-  farmObjectPercent: 0.5
+  enemyExp: 15
+  enemyShake: 0.4
+  farmObjectIndex: 5
+  farmObjectPercent: 0.1

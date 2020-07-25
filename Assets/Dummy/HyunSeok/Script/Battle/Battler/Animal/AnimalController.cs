@@ -70,6 +70,9 @@ namespace Battle
 
         public virtual void Damaged(SkillData skillData, float focus, Tuple<float, bool> damage)
         {
+            if (animalData.HP < 1)
+                return;
+
             if (skillData == null)
                 return;
             // 명중률
@@ -393,11 +396,28 @@ namespace Battle
                     List<int> posAnimalIndex = new List<int>();
                     for (int i = 0; i< 3; i++)
                     {
-                        if (AnimalManager._instance.animals[i] != null)
+                        if (AnimalManager._instance.animals[i] != null && AnimalManager._instance.animals[i].animalData.HP > 1)
                             posAnimalIndex.Add(i);
                     }
                     int rand = UnityEngine.Random.Range(0, posAnimalIndex.Count);
                     atkTargets.Add(AnimalManager._instance.animals[posAnimalIndex[rand]]);
+                    break;
+                case BattleDefine.ESkillTarget.TeamRandomTwo:
+                    for (int i = 0; i < 3; i++)
+                    {
+                        atkTargets.Add(AnimalManager._instance.animals[i]);
+                    }
+                    List<int> posAnimalIndex2 = new List<int>();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (AnimalManager._instance.animals[i] != null && AnimalManager._instance.animals[i].animalData.HP > 1)
+                            posAnimalIndex2.Add(i);
+                    }
+                    if (posAnimalIndex2.Count > 2)
+                    {
+                        int rand2 = UnityEngine.Random.Range(0, posAnimalIndex2.Count);
+                        atkTargets.Remove(AnimalManager._instance.animals[posAnimalIndex2[rand2]]);
+                    }
                     break;
                 default:
                     atkTargets.Add(EnemyManager._instance.enemy);
@@ -434,7 +454,7 @@ namespace Battle
         // 카메라 진동
         public virtual void ShakeCamera()
         {
-            StartCoroutine(CameraShake._instance.ShakeCamera(0.65f, 0.5f, 1f));
+            StartCoroutine(CameraShake._instance.ShakeCamera(0.65f, animalData.enemyShake, 1f));
         }
 
         //---------------------------------------------------------------- State Class

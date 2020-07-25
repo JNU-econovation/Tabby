@@ -66,6 +66,7 @@ namespace GameData
 
         [Header("For enemy")]
         public int enemyExp;
+        public float enemyShake;
         public int farmObjectIndex;
         public float farmObjectPercent;
     }

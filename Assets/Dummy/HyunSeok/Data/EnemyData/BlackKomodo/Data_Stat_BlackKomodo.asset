@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78a1df3e63f9a384da50a3d13e6aab26, type: 3}
-  m_Name: Data_Stat_LittleKomodo_0
+  m_Name: Data_Stat_BlackKomodo
   m_EditorClassIdentifier: 
-  index: 0
-  code: LittleKomodo
-  animalName: "\uCF54\uBAA8\uB460"
+  index: 2
+  code: blackkomodo
+  animalName: "\uD0B9 \uCF54\uBAA8\uB3C4"
   exp: 0
-  maxHP: 2000
-  hp: 2000
-  atk: 20
+  maxHP: 2500
+  hp: 2500
+  atk: 100
   atkSpd: 0.5
-  tough: 0.4
+  tough: 0.35
   focus: 1
-  critical: 0.05
+  critical: 0.2
   battleIndex: 0
-  enemyExp: 10
-  enemyShake: 0.25
-  farmObjectIndex: 4
-  farmObjectPercent: 0.5
+  enemyExp: 25
+  enemyShake: 0.65
+  farmObjectIndex: 6
+  farmObjectPercent: 0.1

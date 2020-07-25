@@ -58,7 +58,7 @@ namespace Battle
             int enemyIndex = DataManager._instance.regionIndex;
             GameObject enemyObj = Instantiate(Resources.Load("Battle/Enemy/Prefab_Enemy_" + enemyIndex) as GameObject);
             enemyObj.transform.position = enemyPos.transform.position;
-            enemy = enemyObj.transform.GetChild(0).GetComponent<AnimalController>();
+            enemy = enemyObj.transform.GetComponentInChildren<AnimalController>();
             enemy.isEnemy = true;
         }
     }

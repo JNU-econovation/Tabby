@@ -22,7 +22,7 @@ public class UIDamage : MonoBehaviour
 
     public void SetDmg(float dmg, bool isCritical, bool isMiss)
     {
-        transform.position += new Vector3(Random.Range(-1f, 0f), 0f, 0f);
+        transform.position += new Vector3(Random.Range(-1f, 0f), 0.75f, 0f);
         this.isCritical = isCritical;
         this.isMiss = isMiss;
         if (!isMiss)
