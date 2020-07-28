@@ -92,14 +92,10 @@ namespace Battle
                         animals.Add(null);
                         continue;
                     }
-                    animals.Add(animal.transform.GetChild(0).GetComponent<AnimalController>());
+                    animals.Add(animal.transform.GetChild(0).gameObject.GetComponentInChildren<AnimalController>());
                     animals[i].animalData.BattleIndex = i;
                     animals[i].animalData.AnimalName = DataManager._instance.playerData.animalDatas[animalIndex].animalName;
                     animal.transform.position = animalPos[i].transform.position;
-                    if (realAnimalIndex == 0)
-                    {
-                        animal.transform.position = animalPos[i].transform.position + new Vector3(0, 1f, 0);
-                    }
                 }
         }
     }

@@ -22,7 +22,7 @@ namespace Battle
                 gameObject.SetActive(false);
             if (DataManager._instance.gogoAnimalIndexes[index] != -1)
             {
-                animalController = AnimalManager._instance.animals[index].GetComponentInChildren<AnimalController>();
+                animalController = AnimalManager._instance.animals[index];
                 animalData = animalController.animalData;
                 nameText.text = animalController.animalData.AnimalName;
                 CheckWhereAnimal();

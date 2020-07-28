@@ -42,6 +42,9 @@ namespace Battle
         // 현재 적 상태
         public bool isEnemy;
 
+        // 데미지 출력 위치
+        public Transform damageTransform;
+
         protected virtual void Awake()
         {
             animalData = Instantiate(animalData) as AnimalGameData;
@@ -81,7 +84,10 @@ namespace Battle
             {
                 GameObject dmgObj = Instantiate(AnimalManager._instance.damagePrefab);
                 dmgObj.SetActive(true);
-                dmgObj.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                if (damageTransform == null)
+                    dmgObj.transform.position = transform.position + new Vector3(0f, 0.65f, 0f);
+                else
+                    dmgObj.transform.position = damageTransform.position;
                 // Miss!!!
                 if (enemyFocusRandom > focus)
                 {
