@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5845756858193715185}
   - component: {fileID: 3286711609227474072}
   m_Layer: 10
-  m_Name: japcho1
+  m_Name: gardenia
   m_TagString: farmObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 1.5
 --- !u!50 &2391375636036303736
 Rigidbody2D:
   serializedVersion: 4

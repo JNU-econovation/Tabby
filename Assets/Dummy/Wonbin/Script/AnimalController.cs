@@ -149,7 +149,7 @@ public class AnimalController : MonoBehaviour
         int putable = 0;
         for (int i = 0; i < farmFarmObject.transform.childCount; i++)
         {
-            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - gameObject.transform.position.x) > 1 && Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - gameObject.transform.position.y) > 1)
+            if (Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.x - gameObject.transform.position.x) > 3 || Mathf.Abs(farmFarmObject.transform.GetChild(i).transform.position.y - gameObject.transform.position.y) > 3)
                 putable++;
         }
         //if (putable == farmFarmObject.transform.childCount)

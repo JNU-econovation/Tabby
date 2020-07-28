@@ -17,6 +17,8 @@ public class InputManager : MonoBehaviour
     public GameObject putInvenButtonCover;
     public static int oneTapMoney;
 
+    public GameObject map;
+    public GameObject arrangeImage;
     public GameObject inventory;
 
     float maxDistance = 20f;
@@ -41,10 +43,11 @@ public class InputManager : MonoBehaviour
             { }
             else if (hit.collider.gameObject != tapzone)
             {
+                
                 if (hit.collider.gameObject.transform.parent.name == farmObjects.name)
                 {
                     FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
-                    if (farmObjectController.state == FarmObjectController.State.producing)
+                    if (farmObjectController.state == FarmObjectController.State.producing&&map.activeSelf==false)
                     {
                         tapObject = hit.collider.gameObject;
                         putInvenButton.SetActive(true);
@@ -59,7 +62,11 @@ public class InputManager : MonoBehaviour
             else if(hit.collider.gameObject.name!=putInvenButton.name)
             {
                 MoneyManager.MoneyUP(oneTapMoney);
-
+                if (arrangeImage.transform.position.x > -22 && arrangeImage.transform.position.x < 22 && arrangeImage.transform.position.y > -7 && arrangeImage.transform.position.y < 10&& mousePosition.x > -22 && mousePosition.x < 22 && mousePosition.y > -7 && mousePosition.y < 10)
+                {
+                    Drag drag = arrangeImage.GetComponent<Drag>();
+                    drag.ChangePos(mousePosition.x, mousePosition.y);
+                }
             }
         }
     }
