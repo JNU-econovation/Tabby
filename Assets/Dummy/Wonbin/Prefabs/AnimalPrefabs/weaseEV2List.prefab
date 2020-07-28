@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 3450572963406897430}
   - component: {fileID: 4018217075962849100}
   - component: {fileID: 732949771896506253}
+  - component: {fileID: 8220848430786931891}
   m_Layer: 5
   m_Name: weaseEV2List
   m_TagString: Untagged
@@ -273,6 +274,26 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 37a060bc5e9a5f54b8d761851f79a611, type: 3}
   - {fileID: 21300000, guid: c6eb1bb9763773c4bbc0d2b4e0d8f08d, type: 3}
   listAnimal: {fileID: 0}
+--- !u!114 &8220848430786931891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450572963406897424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b81e464a1c4cf4f8e379512284a3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalNumber: 0
+  animalName: 
+  exp: 0
+  evolExp: 0
+  animalIndex: 0
+  animalCost: 0
+  animalHeartCost: 0
+  animalSprite: {fileID: 21300000, guid: 02b9cd13e1443184a85c0307fe421b62, type: 3}
 --- !u!1 &3450572963615497010
 GameObject:
   m_ObjectHideFlags: 0
