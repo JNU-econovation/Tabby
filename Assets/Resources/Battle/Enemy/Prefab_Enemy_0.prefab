@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstY: 0
+  minus: 0
 --- !u!1 &4628992245690729122
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ SortingGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5131268557354366653}
-  m_Enabled: 0
+  m_Enabled: 1
   m_SortingLayerID: 1981180029
   m_SortingLayer: 3
   m_SortingOrder: 0
@@ -551,6 +552,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -1623586098781307222, guid: 67491c6249e21b64196497dac437a1c8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: -957050449180711671, guid: 67491c6249e21b64196497dac437a1c8,
         type: 3}
       propertyPath: m_LocalRotation.x

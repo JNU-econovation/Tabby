@@ -989,6 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstY: 0
+  minus: 0
 --- !u!1 &6844550279103363086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1233,7 @@ PrefabInstance:
     - target: {fileID: 1101645985924969092, guid: 0462ca3ea5299724bae26b587bee34c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.133
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 1101645985924969092, guid: 0462ca3ea5299724bae26b587bee34c9,
         type: 3}
