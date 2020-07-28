@@ -10450,7 +10450,7 @@ GameObject:
   - component: {fileID: 1016655987}
   - component: {fileID: 1016655986}
   m_Layer: 5
-  m_Name: Button
+  m_Name: InventoryCloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
