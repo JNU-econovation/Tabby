@@ -43,6 +43,11 @@ public class Drag : MonoBehaviour
         Instantiate(heartImage, animal, Quaternion.identity);
     }
 
+    public void ChangePos(float posX, float posY)
+    {
+        gameObject.transform.position = new Vector2(posX, posY);
+
+    }
     public static void AnimalDrag(Rigidbody2D rigidbody2D)
     {
         //animator.SetBool("tapAnimal", true); //뜬 애니메이션

@@ -88,12 +88,19 @@ public class InventoryManager : MonoBehaviour
 
     public void CloseInventory() 
     {
-        inventoryButton.SetActive(true);
-        shopButton.SetActive(true);
-        mapButton.SetActive(true);
-        inventory.SetActive(false);
-        saleButton.SetActive(false);
-        arrangeButton.SetActive(false);
+        if (putButton.activeSelf == true)
+        {
+
+        }
+        else
+        {
+            inventoryButton.SetActive(true);
+            shopButton.SetActive(true);
+            mapButton.SetActive(true);
+            inventory.SetActive(false);
+            saleButton.SetActive(false);
+            arrangeButton.SetActive(false);
+        }
     }
 
     public void InvenFarmObTap()
