@@ -20,10 +20,17 @@ namespace Battle
         {
             if (AnimalManager._instance.animals[index] == null)
                 gameObject.SetActive(false);
-            animalController = AnimalManager._instance.animals[index].GetComponentInChildren<AnimalController>();
-            animalData = animalController.animalData;
-            nameText.text = animalController.animalData.AnimalName;
-            CheckWhereAnimal();
+            if (DataManager._instance.gogoAnimalIndexes[index] != -1)
+            {
+                animalController = AnimalManager._instance.animals[index].GetComponentInChildren<AnimalController>();
+                animalData = animalController.animalData;
+                nameText.text = animalController.animalData.AnimalName;
+                CheckWhereAnimal();
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private void CheckWhereAnimal()
