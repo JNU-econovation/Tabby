@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstY: 0
+  minus: 0
 --- !u!1 &1401639389568592700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1472,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711998392655072824}
     m_Modifications:
+    - target: {fileID: 5878175192258841801, guid: ba8dc8f72a5d89e4a8dce45539f71d53,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 71
+      objectReference: {fileID: 0}
     - target: {fileID: 7634204335117058227, guid: ba8dc8f72a5d89e4a8dce45539f71d53,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1479,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 7634204335117058227, guid: ba8dc8f72a5d89e4a8dce45539f71d53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7634204335117058227, guid: ba8dc8f72a5d89e4a8dce45539f71d53,
         type: 3}
