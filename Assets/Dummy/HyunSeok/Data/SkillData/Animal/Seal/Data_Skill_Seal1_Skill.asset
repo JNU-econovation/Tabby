@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Data_Skill_Seal1_Skill
   m_EditorClassIdentifier: 
   index: 0
-  skillName: "\uB00D\uB00D"
+  skillName: "\uBB3C\uAC1C\uC18C\uB9AC"
   icon: {fileID: 0}
-  coolTime: 12
+  coolTime: 15
   skillPowerInt: 10
   skillPowerPercent: 0.2
   type: 1
   target: 8
   castingType: 0
-  statType: 0
-  ccType: 1
-  ccTime: 0.75
-  ccPower: 1
+  statType: 5
+  ccType: 3
+  ccTime: 8
+  ccPower: 0.35
   patternPercent: 0

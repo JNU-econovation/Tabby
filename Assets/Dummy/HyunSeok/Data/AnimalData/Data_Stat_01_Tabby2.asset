@@ -18,8 +18,8 @@ MonoBehaviour:
   exp: 0
   maxHP: 1000
   hp: 1000
-  atk: 55
-  atkSpd: 1.1
+  atk: 65
+  atkSpd: 1
   tough: 0.1
   focus: 0.9
   critical: 0.15

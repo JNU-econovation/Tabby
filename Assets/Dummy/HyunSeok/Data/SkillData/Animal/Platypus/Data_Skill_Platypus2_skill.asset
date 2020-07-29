@@ -15,14 +15,14 @@ MonoBehaviour:
   index: 0
   skillName: "\uC5B4\uB978\uB3C4 \uB5BC\uB97C \uC4F4\uB2E4"
   icon: {fileID: 0}
-  coolTime: 8
+  coolTime: 12
   skillPowerInt: 0
   skillPowerPercent: 0
   type: 1
-  target: 0
-  castingType: 0
+  target: 8
+  castingType: 1
   statType: 0
-  ccType: 0
-  ccTime: 0
+  ccType: 1
+  ccTime: 1.25
   ccPower: 0
   patternPercent: 0
