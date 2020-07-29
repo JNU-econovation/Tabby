@@ -11,9 +11,6 @@ public class MoneyManager : MonoBehaviour
     public Text heartText;
     void Start()
     {
-        money = DataManager._instance.playerData.money;
-        heart = DataManager._instance.playerData.heart;
-        //Json불러오기로 수정
     }
     void Update()
     {
@@ -25,6 +22,7 @@ public class MoneyManager : MonoBehaviour
     {
         heart += 1;
         DataManager._instance.playerData.heart=heart;
+        DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
         //Json저장으로 수정필요
     }
 
@@ -32,18 +30,21 @@ public class MoneyManager : MonoBehaviour
     {
         heart -= used;
         DataManager._instance.playerData.heart=heart;
+        DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
     }
 
     public static void MoneyDown(int used)
     {
         money -= used;
         DataManager._instance.playerData.money=money;
+        DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
     }
 
 
     public static void MoneyUP(int sum){
         money += sum;
         DataManager._instance.playerData.money=money;
+        DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
         //Json저장으로 수정필요
 
     }

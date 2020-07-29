@@ -65,6 +65,7 @@ public class ShopButtonManager : MonoBehaviour
 
     public void closeShop()
     {
+        Debug.Log("꺼짐");
         shop.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(true);
         shopCloseButton.gameObject.SetActive(false);
@@ -89,6 +90,7 @@ public class ShopButtonManager : MonoBehaviour
         Debug.Log(DataManager._instance.playerData.money);
         if (shopFarmObject.shopCost < DataManager._instance.playerData.money)
         {
+            Debug.Log("실행됨");
             productImage = GameObject.Find("arrangeImage");
             product = gameObject.GetComponent<ShopButtonManager>().product;
             ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
@@ -103,6 +105,7 @@ public class ShopButtonManager : MonoBehaviour
             OKButton.gameObject.SetActive(true);
             cancelButton.gameObject.SetActive(true);
             shopList.SetActive(false);
+            
         }
 
     }
@@ -112,8 +115,6 @@ public class ShopButtonManager : MonoBehaviour
 
     public void cancel()
     {
-        if (shopTime >= 1)
-        {
             text.gameObject.SetActive(false);
             productImage = GameObject.Find("arrangeImage");
             Drag PIDrag = productImage.GetComponent<Drag>();
@@ -122,7 +123,6 @@ public class ShopButtonManager : MonoBehaviour
             cancelButton.gameObject.SetActive(false);
             Debug.Log(gameObject.name);
             shopList.SetActive(true);
-        }
     }
 
     public void PressOK()

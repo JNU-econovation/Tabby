@@ -3519,14 +3519,13 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1157917349}
+  m_Children: []
   m_Father: {fileID: 1275984682}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.4, y: -79.7}
+  m_AnchoredPosition: {x: -2.3999996, y: -79.69998}
   m_SizeDelta: {x: 1363.5, y: 932.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231672137
@@ -3951,7 +3950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &255954268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4040,7 +4039,7 @@ RectTransform:
   m_GameObject: {fileID: 265532362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.00024414062}
-  m_LocalScale: {x: 0.20914477, y: 0.19026999, z: 0.19026999}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.19026999}
   m_Children:
   - {fileID: 2044948330}
   - {fileID: 1045053750}
@@ -4049,8 +4048,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 12.4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 12.8}
+  m_SizeDelta: {x: 354.05, y: 87.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265532364
 MonoBehaviour:
@@ -4101,7 +4100,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 7
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -4133,7 +4132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9aa6119827f290346b0c54e29cc32918, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4228,7 +4227,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2057300385949278866, guid: af99b70ff73d32e498dfcb488be7d121, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 28993869}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -5109,7 +5108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: 0}
+  m_AnchoredPosition: {x: -2, y: -17}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374235681
@@ -5132,11 +5131,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1a768213e50b5a849b19bd1147120361, type: 3}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5488,7 +5487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &445552103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6814,7 +6813,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2057300385949278866, guid: af99b70ff73d32e498dfcb488be7d121, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 0}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -6879,17 +6878,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 272346679}
         m_MethodName: buy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 231672140}
-        m_MethodName: closeShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9865,7 +9853,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 3360313470610072451, guid: 961412687ab15b54197db534aa6123ad, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 28993869}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -10772,7 +10760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1040252423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10844,14 +10832,14 @@ RectTransform:
   m_GameObject: {fileID: 1045053749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.46843, y: 0.46843, z: 0.46843}
   m_Children: []
   m_Father: {fileID: 265532363}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 96, y: 0}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045053751
@@ -11219,182 +11207,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122565563}
-  m_CullTransparentMesh: 0
---- !u!1 &1157917348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1157917349}
-  - component: {fileID: 1157917353}
-  - component: {fileID: 1157917352}
-  - component: {fileID: 1157917351}
-  - component: {fileID: 1157917350}
-  m_Layer: 5
-  m_Name: shopCloseButton (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1157917349
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157917348}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6209588, y: 0.2972243, z: 0.20158999}
-  m_Children: []
-  m_Father: {fileID: 231672136}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 80.69999}
-  m_SizeDelta: {x: 1363.5, y: 932.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1157917350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157917348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8a5e89a2ac69c4ea47c902933e4c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmAnimal: {fileID: 907197639}
-  farmFarmObject: {fileID: 1252491995}
-  product: {fileID: 0}
-  productImage: {fileID: 0}
-  shopList: {fileID: 28993869}
-  arrangeButtons: {fileID: 0}
-  shopFarmObjectProducts:
-  - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PSN: 
-  shopButton: {fileID: 49066390}
-  shopCloseButton: {fileID: 1157917348}
-  farmObShopButton: {fileID: 0}
-  inventoryButton: {fileID: 2059773180}
-  putInvenButton: {fileID: 0}
-  text: {fileID: 1521330547}
-  mapButton: {fileID: 1576517920}
-  tapZone: {fileID: 2044507196}
-  OKButton: {fileID: 1911899917}
-  cancelButton: {fileID: 154083878}
-  shop: {fileID: 322068635}
-  farmObshop: {fileID: 28993869}
---- !u!114 &1157917351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157917348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1157917352}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1157917350}
-        m_MethodName: closeShop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1157917350}
-        m_MethodName: cancel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1157917352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157917348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9aa6119827f290346b0c54e29cc32918, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1157917353
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157917348}
   m_CullTransparentMesh: 0
 --- !u!1 &1165549654
 GameObject:
@@ -14937,7 +14749,7 @@ RectTransform:
   m_GameObject: {fileID: 1576517920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1595.6}
-  m_LocalScale: {x: 0.7212094, y: 0.7212094, z: 0.7212094}
+  m_LocalScale: {x: 0.780637, y: 0.780637, z: 0.780637}
   m_Children:
   - {fileID: 964489761}
   m_Father: {fileID: 1275984682}
@@ -14945,7 +14757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.89778125, y: 0.032}
   m_AnchorMax: {x: 0.98431253, y: 0.1903889}
-  m_AnchoredPosition: {x: -9, y: 2}
+  m_AnchoredPosition: {x: -9, y: 12}
   m_SizeDelta: {x: 27.8, y: 24.7}
   m_Pivot: {x: 1, y: 0}
 --- !u!61 &1576517926
@@ -15993,7 +15805,7 @@ RectTransform:
   m_GameObject: {fileID: 1621064615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -180.42526}
-  m_LocalScale: {x: 0.14121485, y: 0.24924226, z: 1.5048302}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1.5048302}
   m_Children:
   - {fileID: 374235680}
   m_Father: {fileID: 255954268}
@@ -16001,8 +15813,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.8, y: 12.3}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchoredPosition: {x: 24.8, y: 12.6}
+  m_SizeDelta: {x: 142.3, y: 88.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621064617
 MonoBehaviour:
@@ -16076,7 +15888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9aa6119827f290346b0c54e29cc32918, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17956,7 +17768,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 28993869}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -18318,7 +18130,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 3360313470610072451, guid: 961412687ab15b54197db534aa6123ad, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 0}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -18383,17 +18195,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 939617940}
         m_MethodName: buy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 231672140}
-        m_MethodName: closeShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18841,7 +18642,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 0}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -18906,17 +18707,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2085542553}
         m_MethodName: buy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 231672140}
-        m_MethodName: closeShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19189,7 +18979,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2044507197}
   - component: {fileID: 2044507198}
-  - component: {fileID: 2044507200}
   m_Layer: 0
   m_Name: TapZone
   m_TagString: Untagged
@@ -19237,20 +19026,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2044507200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044507196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7036f7f04794a14da986d9bde35a401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyText: {fileID: 1373364142}
-  heartText: {fileID: 1295991728}
 --- !u!1 &2044948329
 GameObject:
   m_ObjectHideFlags: 0
@@ -19278,14 +19053,14 @@ RectTransform:
   m_GameObject: {fileID: 2044948329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.792, y: 0.792, z: 0.792}
   m_Children: []
   m_Father: {fileID: 265532363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: -7, y: -8}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044948331
@@ -19477,7 +19252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376, y: -298}
+  m_AnchoredPosition: {x: -376, y: -270}
   m_SizeDelta: {x: 316.3, y: 316.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2059773182
@@ -19871,7 +19646,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 28993869}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -20088,7 +19863,7 @@ MonoBehaviour:
   farmFarmObject: {fileID: 1252491995}
   product: {fileID: 4665454209230806721, guid: 81eff0a15ee835e4491b6bd901e50cad, type: 3}
   productImage: {fileID: 0}
-  shopList: {fileID: 0}
+  shopList: {fileID: 2109934242}
   arrangeButtons: {fileID: 0}
   shopFarmObjectProducts:
   - {fileID: 2391375636036303739, guid: 8ada564687092374ca3b488fed7818bc, type: 3}
@@ -20153,17 +19928,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1883015853}
         m_MethodName: buy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 231672140}
-        m_MethodName: closeShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

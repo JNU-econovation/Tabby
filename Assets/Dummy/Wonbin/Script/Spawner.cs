@@ -43,6 +43,8 @@ public class Spawner : MonoBehaviour
         
         InputManager.oneTapMoney = 1;
         PathFinder forInstantiate = new PathFinder();
+        MoneyManager.money = DataManager._instance.playerData.money;
+        MoneyManager.heart = DataManager._instance.playerData.heart;
         
         foreach (FarmObjectData farmObjectData in DataManager._instance.playerData.farmObjectDatas)
         {
