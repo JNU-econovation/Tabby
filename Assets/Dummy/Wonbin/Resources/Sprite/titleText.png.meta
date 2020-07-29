@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD:Assets/Dummy/Wonbin/Resources/Sprite/effect/index7_1.PNG.meta
-guid: 60dc60261f0247c42981e879abe49976
-=======
-guid: 042185d6d78e77244ba77f2c3046cd4a
->>>>>>> 9458eac84a6966876d1748e7f720d105831aafd0:Assets/Dummy/HyunSeok/Sprite/effect/index7_1.PNG.meta
-=======
-guid: 0174bc3d263cb6f458e11a4abeebca37
->>>>>>> 9458eac84a6966876d1748e7f720d105831aafd0
+guid: 2bf3d44615d5db74698c95a5dddc6945
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
