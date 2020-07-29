@@ -16,14 +16,15 @@ MonoBehaviour:
   code: tabby2
   animalName: 
   exp: 0
-  maxHP: 500
-  hp: 500
-  atk: 40
-  atkSpd: 1.2
+  maxHP: 1250
+  hp: 1250
+  atk: 75
+  atkSpd: 1.3
   tough: 0.1
   focus: 0.9
-  critical: 0.3
+  critical: 0.2
   battleIndex: 0
   enemyExp: 0
+  enemyShake: 0
   farmObjectIndex: 0
   farmObjectPercent: 0

@@ -16,8 +16,8 @@ MonoBehaviour:
   code: ForestKomodo
   animalName: "\uCF54\uBAA8\uB3C4\uC288\uD0C0\uC778"
   exp: 0
-  maxHP: 2000
-  hp: 2000
+  maxHP: 1800
+  hp: 1800
   atk: 80
   atkSpd: 0.8
   tough: 0.3

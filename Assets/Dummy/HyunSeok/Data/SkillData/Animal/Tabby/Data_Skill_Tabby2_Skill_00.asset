@@ -15,9 +15,9 @@ MonoBehaviour:
   index: 0
   skillName: "\uB0E5\uD380\uCE58"
   icon: {fileID: 0}
-  coolTime: 2
-  skillPowerInt: 30
-  skillPowerPercent: 0.8
+  coolTime: 2.5
+  skillPowerInt: 80
+  skillPowerPercent: 1.5
   type: 1
   target: 0
   castingType: 0
