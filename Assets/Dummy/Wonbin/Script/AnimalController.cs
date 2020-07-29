@@ -186,6 +186,7 @@ public class AnimalController : MonoBehaviour
         if (child != null)
         {
             MoneyManager.heart += 1;
+            DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
             PlayerPrefs.SetInt("Heart", MoneyManager.heart);
             Destroy(child);
             heartRate = UnityEngine.Random.Range(heartRateMin, heartRateMax);
