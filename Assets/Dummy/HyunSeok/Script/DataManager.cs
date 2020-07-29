@@ -224,9 +224,8 @@ namespace GameData
 
             reputation = 0;
             leaderIndex = 0;
-            money = 0;
-            heart = 0;
-
+            money = int.Parse(data["money"].ToString()); 
+            heart = int.Parse(data["heart"].ToString());
             animalDatas = new List<AnimalData>();
             farmObjectDatas = new List<FarmObjectData>();
             foreach (JsonData animalData in data["animalDatas"])
