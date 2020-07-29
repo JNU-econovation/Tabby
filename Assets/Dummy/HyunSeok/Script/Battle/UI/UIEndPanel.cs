@@ -40,8 +40,8 @@ namespace Battle
                         DataManager._instance.playerData.animalDatas
                         [DataManager._instance.gogoAnimalIndexes[i]].animalName + " : "
                         + DataManager._instance.playerData.animalDatas[DataManager._instance.gogoAnimalIndexes[i]].exp.ToString()
-                        + " + " + EnemyManager._instance.enemy.animalData.enemyExp.ToString()
-                        + " / " + AnimalManager._instance.animals[i].animalData.Exp.ToString();
+                        + " (+" + EnemyManager._instance.enemy.animalData.enemyExp.ToString()
+                        + ") / " + AnimalManager._instance.animals[i].animalData.Exp.ToString();
                     expStr = expStr.Replace(";", "\n");
                     expText.text = expStr;
                 }

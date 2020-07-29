@@ -16,9 +16,9 @@ MonoBehaviour:
   code: LittleKomodo
   animalName: "\uCF54\uBAA8\uB460"
   exp: 0
-  maxHP: 2000
-  hp: 2000
-  atk: 90
+  maxHP: 3000
+  hp: 3000
+  atk: 100
   atkSpd: 0.5
   tough: 0.4
   focus: 0.9

@@ -15,7 +15,7 @@ MonoBehaviour:
   index: 0
   skillName: "\uBB3C\uAC1C\uD310"
   icon: {fileID: 0}
-  coolTime: 8
+  coolTime: 10
   skillPowerInt: 20
   skillPowerPercent: 0.3
   type: 1
@@ -23,6 +23,6 @@ MonoBehaviour:
   castingType: 1
   statType: 0
   ccType: 1
-  ccTime: 1.25
+  ccTime: 1.2
   ccPower: 0
   patternPercent: 0

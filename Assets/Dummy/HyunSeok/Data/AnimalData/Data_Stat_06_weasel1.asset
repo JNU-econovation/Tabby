@@ -15,15 +15,16 @@ MonoBehaviour:
   index: 6
   code: weasel1
   animalName: 
-  exp: 0
+  exp: 70
   maxHP: 500
   hp: 500
-  atk: 60
+  atk: 35
   atkSpd: 0.8
   tough: 0.05
   focus: 1
-  critical: 0.15
+  critical: 0.2
   battleIndex: 0
   enemyExp: 0
+  enemyShake: 0
   farmObjectIndex: 0
   farmObjectPercent: 0

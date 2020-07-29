@@ -16,9 +16,9 @@ MonoBehaviour:
   code: blackkomodo
   animalName: "\uD0B9 \uCF54\uBAA8\uB3C4"
   exp: 0
-  maxHP: 2100
-  hp: 2100
-  atk: 80
+  maxHP: 4500
+  hp: 4500
+  atk: 140
   atkSpd: 0.5
   tough: 0.35
   focus: 1

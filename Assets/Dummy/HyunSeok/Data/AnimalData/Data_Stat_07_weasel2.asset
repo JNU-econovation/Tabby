@@ -18,12 +18,13 @@ MonoBehaviour:
   exp: 0
   maxHP: 500
   hp: 500
-  atk: 80
+  atk: 75
   atkSpd: 1
   tough: 0.1
   focus: 1
-  critical: 0.2
+  critical: 0.3
   battleIndex: 0
   enemyExp: 0
+  enemyShake: 0
   farmObjectIndex: 0
   farmObjectPercent: 0

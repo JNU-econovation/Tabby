@@ -16,14 +16,15 @@ MonoBehaviour:
   code: pangolin2
   animalName: 
   exp: 0
-  maxHP: 500
-  hp: 500
-  atk: 30
-  atkSpd: 0.65
+  maxHP: 1150
+  hp: 1150
+  atk: 70
+  atkSpd: 0.5
   tough: 0.2
   focus: 1
   critical: 0.1
   battleIndex: 0
   enemyExp: 0
+  enemyShake: 0
   farmObjectIndex: 0
   farmObjectPercent: 0

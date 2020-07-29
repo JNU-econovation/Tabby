@@ -15,9 +15,9 @@ MonoBehaviour:
   index: 8
   code: platypus1
   animalName: 
-  exp: 0
-  maxHP: 500
-  hp: 500
+  exp: 90
+  maxHP: 850
+  hp: 850
   atk: 50
   atkSpd: 0.5
   tough: 0.2
@@ -25,5 +25,6 @@ MonoBehaviour:
   critical: 0.05
   battleIndex: 0
   enemyExp: 0
+  enemyShake: 0
   farmObjectIndex: 0
   farmObjectPercent: 0
