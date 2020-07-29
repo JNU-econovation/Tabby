@@ -10,6 +10,7 @@ namespace Battle
     {
         public List<Button> buttons;
         public List<Image> banImages;
+        public List<Sprite> icons;
 
         private void Awake()
         {
@@ -33,6 +34,7 @@ namespace Battle
                 {
                     buttons[i].gameObject.SetActive(true);
                     buttons[i].transform.GetChild(0).GetComponent<Text>().text = AnimalManager._instance.animals[i].skillDatas[0].skillName;
+                    buttons[i].image.sprite = icons[AnimalManager._instance.animals[i].animalData.Index];
                 }
             }
         }
@@ -59,7 +61,8 @@ namespace Battle
                 yield return null;
             }
             banImages[index].gameObject.SetActive(false);
-            buttons[index].enabled = true;
+            if (AnimalManager._instance.animals[index].animalData.HP > 0)
+                buttons[index].enabled = true;
         }
     }
 

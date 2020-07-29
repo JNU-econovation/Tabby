@@ -230,8 +230,8 @@ MonoBehaviour:
   - {fileID: 5228766599558314535}
   - {fileID: 4276860671536554101}
   m_Bounds:
-    m_Center: {x: 0.00000008940697, y: 0.0014961958, z: 0}
-    m_Extent: {x: 0.4023438, y: 0.4711603, z: 0}
+    m_Center: {x: 0.011223644, y: 0.03490901, z: 0}
+    m_Extent: {x: 0.4057783, y: 0.48297453, z: 0}
   m_UseBatching: 1
 --- !u!1 &2940204153840440854
 GameObject:
@@ -365,8 +365,8 @@ MonoBehaviour:
   - {fileID: 5927842593639963049}
   - {fileID: 4312939181042928859}
   m_Bounds:
-    m_Center: {x: 0.000000059604645, y: 0.000023394823, z: 0}
-    m_Extent: {x: 0.33984378, y: 0.1405938, z: 0}
+    m_Center: {x: -0.005932033, y: 0.044087224, z: 0}
+    m_Extent: {x: 0.34581858, y: 0.1561655, z: 0}
   m_UseBatching: 1
 --- !u!1 &3901385401955936735
 GameObject:
@@ -755,8 +755,8 @@ MonoBehaviour:
   - {fileID: 1071660647514394939}
   - {fileID: 2905920516037310099}
   m_Bounds:
-    m_Center: {x: 0.0018982887, y: 0.0007070005, z: 0}
-    m_Extent: {x: 0.7182265, y: 0.3038867, z: 0}
+    m_Center: {x: 0.0060459375, y: 0.014432132, z: 0}
+    m_Extent: {x: 0.7256031, y: 0.31458294, z: 0}
   m_UseBatching: 1
 --- !u!1 &5289639071271899596
 GameObject:
@@ -861,8 +861,8 @@ MonoBehaviour:
   - {fileID: 2905920516037310099}
   - {fileID: 5228766599558314535}
   m_Bounds:
-    m_Center: {x: -0.003980577, y: 0.00028896332, z: 0}
-    m_Extent: {x: 0.3319571, y: 0.36299232, z: 0}
+    m_Center: {x: 0.00087183714, y: 0.023726076, z: 0}
+    m_Extent: {x: 0.34387183, y: 0.36451137, z: 0}
   m_UseBatching: 1
 --- !u!1 &5908969613585520508
 GameObject:
@@ -994,8 +994,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 6565598841294775790}
   m_Bounds:
-    m_Center: {x: 0.0005039871, y: -0.00049997866, z: 0}
-    m_Extent: {x: 0.3510586, y: 0.22215635, z: 0}
+    m_Center: {x: 0.23575017, y: -0.08498111, z: 0}
+    m_Extent: {x: 0.32971293, y: 0.29761726, z: 0}
   m_UseBatching: 1
 --- !u!1 &6662287509826174243
 GameObject:
@@ -1129,8 +1129,8 @@ MonoBehaviour:
   - {fileID: 8828841852184738592}
   - {fileID: 5239048285780438038}
   m_Bounds:
-    m_Center: {x: -0.002058655, y: 0.000007852912, z: 0}
-    m_Extent: {x: 0.25244135, y: 0.19530453, z: 0}
+    m_Center: {x: 0.062465787, y: 0.03655094, z: 0}
+    m_Extent: {x: 0.25911233, y: 0.20441806, z: 0}
   m_UseBatching: 1
 --- !u!1 &7105145258281340742
 GameObject:
@@ -1275,9 +1275,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1981180029
+  m_SortingLayer: 3
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: b2d3f5874a2f98f47a83d473fde9ffba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

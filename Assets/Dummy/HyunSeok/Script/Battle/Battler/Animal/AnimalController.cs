@@ -268,7 +268,7 @@ namespace Battle
         // 스킬 발동 시
         public virtual bool OnClickSkill()
         {
-            if (stunTime < 0.08f)
+            if (stunTime < 0.08f && animalData.HP > 0)
             {
                 activeSkillQueue.Clear();
                 foreach (SkillData data in skillDatas)
@@ -289,7 +289,8 @@ namespace Battle
                 return new Tuple<float, bool>(0f, false);
             bool isCritical = false;
             float dmg = (float)data.skillPowerInt + animalData.Atk * (data.skillPowerPercent);
-            dmg += UnityEngine.Random.Range(-5f, 5f);
+            if (dmg > 6f)
+                dmg += UnityEngine.Random.Range(-5f, 5f);
             float criticalRandom = UnityEngine.Random.Range(0.0f, 1.0f);
             // 크리 발동
             if (criticalRandom < animalData.Critical)
