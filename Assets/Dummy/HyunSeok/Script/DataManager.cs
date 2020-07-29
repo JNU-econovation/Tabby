@@ -55,7 +55,7 @@ namespace GameData
             {
                 playerDataDi.Create ();
                 PlayerData initData = new PlayerData();
-                initData.animalDatas.Add(new AnimalData(0, "태비", 0));
+                initData.animalDatas.Add(new AnimalData(0, "얼룩이", 0));
                 SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
 
             }
@@ -154,7 +154,7 @@ namespace GameData
             {
                 Debug.Log ("File " + path + " does not exist");
                 PlayerData initData = new PlayerData();
-                initData.animalDatas.Add(new AnimalData(0, "한글이름", 0));
+                initData.animalDatas.Add(new AnimalData(0, "얼룩이", 0));
                 SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
                 string jsonStr = File.ReadAllText(filePath);
                 loadData = JsonMapper.ToObject(jsonStr);
@@ -174,7 +174,7 @@ namespace GameData
             {
                 File.Delete (filePath);
                 PlayerData initData = new PlayerData();
-                initData.animalDatas.Add(new AnimalData(0, "한글이름", 0));
+                initData.animalDatas.Add(new AnimalData(0, "얼룩이", 0));
                 SaveData<PlayerData>(initData, "/PlayerData/" + 0 + ".json");
                 return (true);
             }
@@ -182,6 +182,11 @@ namespace GameData
             {
                 return (false);
             }
+        }
+
+        public void DeletePlayerData()
+        {
+            Debug.Log(DeleteData("/PlayerData/" + 0 + ".json"));
         }
         #endregion
     }
