@@ -186,7 +186,6 @@ public class InventoryManager : MonoBehaviour
             farmObjectController.state = FarmObjectController.State.producing;
             SpriteRenderer spriteRenderer = farmObjectController.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = farmObjectController.producingSprite;
-            Debug.Log("되고있나");
             arranged.transform.parent = farmObjects.transform;
             Spawner._instance.farmObjects[InputManager.farmObjectIndex].posX = arrangeImage.transform.position.x;
             Spawner._instance.farmObjects[InputManager.farmObjectIndex].posY = arrangeImage.transform.position.y;
@@ -221,6 +220,8 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(true);
         putButton.SetActive(false);
         cancelButton.SetActive(false);
+        Drag arrangeImageDrag = arrangeImage.GetComponent<Drag>();
+        arrangeImageDrag.PItransformBack();
     }
 }
 

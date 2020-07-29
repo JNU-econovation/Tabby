@@ -105,6 +105,7 @@ public class ShopButtonManager : MonoBehaviour
             OKButton.gameObject.SetActive(true);
             cancelButton.gameObject.SetActive(true);
             shopList.SetActive(false);
+            shopCloseButton.SetActive(false);
             
         }
 
