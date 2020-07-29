@@ -205,9 +205,8 @@ GameObject:
   m_Component:
   - component: {fileID: 301023586}
   - component: {fileID: 301023588}
-  - component: {fileID: 301023587}
   - component: {fileID: 301023589}
-  - component: {fileID: 301023590}
+  - component: {fileID: 301023587}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -229,10 +228,10 @@ RectTransform:
   m_Father: {fileID: 1196047549}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.039, y: 0.6375556}
-  m_AnchorMax: {x: 0.541375, y: 0.9277779}
-  m_AnchoredPosition: {x: -3, y: -0.4000244}
-  m_SizeDelta: {x: 1.1000061, y: -0.79999924}
+  m_AnchorMin: {x: 0.09365625, y: 0.6598334}
+  m_AnchorMax: {x: 0.47700003, y: 0.8486111}
+  m_AnchoredPosition: {x: 10.5, y: -9}
+  m_SizeDelta: {x: 261, y: 616}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301023587
 MonoBehaviour:
@@ -243,7 +242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 301023585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -252,20 +251,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 60537a6e34b02f84e93d31153a0746e0, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: TABBY
+  m_Sprite: {fileID: 21300000, guid: 2bf3d44615d5db74698c95a5dddc6945, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &301023588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -293,21 +288,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &301023590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301023585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.9245283, g: 0.78844, b: 0.13519046, a: 1}
-  m_EffectDistance: {x: 8, y: 8}
-  m_UseGraphicAlpha: 1
 --- !u!1 &491156864
 GameObject:
   m_ObjectHideFlags: 0
