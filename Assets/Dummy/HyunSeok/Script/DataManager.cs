@@ -93,6 +93,13 @@ namespace GameData
             SaveData<PlayerData>(playerData, "/PlayerData/"+playerData.index+".json");
         }
 
+        public void SaveMoney(int argMoney, int argHeart)
+        {
+            playerData.money = argMoney;
+            playerData.heart = argHeart;
+            SaveData<PlayerData>(playerData, "/PlayerData/" + playerData.index + ".json");
+        }
+
         public void ParseFarmObjectData(List<FarmObject> farmObjects)
         {
             List<FarmObjectData> parseFarmObjectData = new List<FarmObjectData>();

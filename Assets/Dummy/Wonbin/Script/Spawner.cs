@@ -102,15 +102,20 @@ public class Spawner : MonoBehaviour
         {
             MoneyManager.money = 0;
             MoneyManager.heart = 0;
+            DataManager._instance.playerData.money = 0;
+            DataManager._instance.playerData.heart = 0;
+            DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
         }
         if (Input.GetKeyDown("m"))
         {
             MoneyManager.money = 10000;
             MoneyManager.heart = 1000;
+            DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
         }
         if (Input.GetKeyDown("h"))
         {
             MoneyManager.heart +=1;
+            DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
         }
     }
 
