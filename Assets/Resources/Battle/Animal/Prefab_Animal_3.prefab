@@ -1221,7 +1221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7395993872473086683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21280912, y: 0.91928023, z: -1.3240037}
+  m_LocalPosition: {x: 0.05, y: 0.98, z: -1.3240037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7105145258281340741}
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a10827352457ce4d83db18281a32305, type: 2}
   skillDatas:
   - {fileID: 11400000, guid: 41f23d23dffb6754496f7e2875052526, type: 2}
-  effectObj: {fileID: 0}
+  effectObj: {fileID: 7395993872473086683}
   state: 0
   stunTime: 0
   isEnemy: 0
