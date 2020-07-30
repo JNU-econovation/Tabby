@@ -8,7 +8,7 @@ public class KomodoScale : FarmObject
     {
         farmObjectNumber = 6;
         producePeriod = 60f;
-        moneyOutput = 20;
+        moneyOutput = 200;
 
     }
 }

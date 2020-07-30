@@ -8,7 +8,7 @@ public class Whitemushroom : FarmObject
     {
         farmObjectNumber = 3;
         producePeriod = 3600f;
-        moneyOutput = 200;
+        moneyOutput = 100;
         shopCost = 1200;
 
     }

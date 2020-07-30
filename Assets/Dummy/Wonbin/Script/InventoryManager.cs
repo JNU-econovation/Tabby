@@ -134,7 +134,7 @@ public class InventoryManager : MonoBehaviour
         }
         inventorySlotNum--;
         DataManager._instance.ParseFarmObjectData(Spawner._instance.farmObjects);
-        MoneyManager.MoneyUP(10);
+        MoneyManager.MoneyUP((InputManager.farmObjectNumber+1)*5);
         saleButton.SetActive(false);
         arrangeButton.SetActive(false);
     }
@@ -173,8 +173,8 @@ public class InventoryManager : MonoBehaviour
                 putable++;
             }
         }
-        //if (putable==farmAnimal.transform.childCount+farmObjects.transform.childCount)
-        //{
+        if (putable==farmAnimal.transform.childCount+farmObjects.transform.childCount)
+        {
             inventory.SetActive(true);
             putButton.SetActive(false);
             cancelButton.SetActive(false);
@@ -212,7 +212,7 @@ public class InventoryManager : MonoBehaviour
                 AnimalController animalController = farmAnimal.transform.GetChild(i).GetComponent<AnimalController>();
                 animalController.pathStart();
             }
-        //}
+        }
     }
 
     public void ArrangeCencel()

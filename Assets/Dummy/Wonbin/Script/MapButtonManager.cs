@@ -66,6 +66,9 @@ public class MapButtonManager : MonoBehaviour
         slot3AnimalIndex = -1;
         slotImage = new GameObject[3];
         mapGogoAnimalArray = new int[3];
+        mapGogoAnimalArray[0] = -1;
+        mapGogoAnimalArray[1] = -1;
+        mapGogoAnimalArray[2] = -1;
     }
     public void openMap()
     {

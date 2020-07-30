@@ -8,7 +8,7 @@ public class Dionaea : FarmObject
     {
         farmObjectNumber = 5;
         producePeriod = 60f;
-        moneyOutput = 20;
+        moneyOutput = 50;
 
     }
 }

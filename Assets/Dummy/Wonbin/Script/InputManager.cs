@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
     public GameObject map;
     public GameObject arrangeImage;
     public GameObject inventory;
+    public GameObject shopArrangeButton;
 
     float maxDistance = 20f;
     Vector2 mousePosition;
@@ -38,13 +39,14 @@ public class InputManager : MonoBehaviour
             mousePosition = Camera.ScreenToWorldPoint(mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, transform.forward, maxDistance);
 
+            Debug.Log(hit.collider.gameObject.name);
 
             if (hit.collider == null)
             { }
             else if (hit.collider.gameObject != tapzone)
             {
                 
-                if (hit.collider.gameObject.transform.parent.name == farmObjects.name)
+                if (hit.collider.gameObject.transform.parent.name == farmObjects.name&&arrangeImage.transform.position.x<-23)
                 {
                     FarmObjectController farmObjectController = hit.collider.gameObject.GetComponent<FarmObjectController>();
                     if (farmObjectController.state == FarmObjectController.State.producing&&map.activeSelf==false)
@@ -64,6 +66,7 @@ public class InputManager : MonoBehaviour
                 MoneyManager.MoneyUP(oneTapMoney);
                 if (arrangeImage.transform.position.x > -22 && arrangeImage.transform.position.x < 22 && arrangeImage.transform.position.y > -7 && arrangeImage.transform.position.y < 10&& mousePosition.x > -22 && mousePosition.x < 22 && mousePosition.y > -7 && mousePosition.y < 10)
                 {
+                    Debug.Log("왜죠");
                     Drag drag = arrangeImage.GetComponent<Drag>();
                     drag.ChangePos(mousePosition.x, mousePosition.y);
                 }

@@ -8,7 +8,7 @@ public class IndStrawberry : FarmObject
     {
         farmObjectNumber = 1;
         producePeriod = 15f;
-        moneyOutput = 20;
+        moneyOutput = 15;
         shopCost = 100;
 
     }

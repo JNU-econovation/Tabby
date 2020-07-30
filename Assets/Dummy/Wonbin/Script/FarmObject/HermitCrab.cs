@@ -8,7 +8,7 @@ public class HermitCrab : FarmObject
     {
         farmObjectNumber = 4;
         producePeriod = 60f;
-        moneyOutput = 20;
+        moneyOutput = 30;
 
     }
 }

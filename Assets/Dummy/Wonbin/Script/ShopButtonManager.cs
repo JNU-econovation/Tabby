@@ -56,7 +56,7 @@ public class ShopButtonManager : MonoBehaviour
         
         shop.gameObject.SetActive(true);
         mapButton.gameObject.SetActive(false);
-        tapZone.gameObject.SetActive(false);
+        //tapZone.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(false);
         shopCloseButton.gameObject.SetActive(true);
         inventoryButton.SetActive(false);
@@ -71,7 +71,7 @@ public class ShopButtonManager : MonoBehaviour
         shopCloseButton.gameObject.SetActive(false);
         mapButton.gameObject.SetActive(true);
         inventoryButton.SetActive(true);
-        tapZone.gameObject.SetActive(true);
+        //tapZone.gameObject.SetActive(true);
     }
 
 
@@ -90,7 +90,7 @@ public class ShopButtonManager : MonoBehaviour
         Debug.Log(DataManager._instance.playerData.money);
         if (shopFarmObject.shopCost < DataManager._instance.playerData.money)
         {
-            Debug.Log("실행됨");
+            Debug.Log(gameObject.name);
             productImage = GameObject.Find("arrangeImage");
             product = gameObject.GetComponent<ShopButtonManager>().product;
             ShopButtonManager productImgSBM = productImage.GetComponent<ShopButtonManager>();
@@ -116,6 +116,7 @@ public class ShopButtonManager : MonoBehaviour
 
     public void cancel()
     {
+        Debug.Log("취소됨");
             text.gameObject.SetActive(false);
             productImage = GameObject.Find("arrangeImage");
             Drag PIDrag = productImage.GetComponent<Drag>();
@@ -124,6 +125,7 @@ public class ShopButtonManager : MonoBehaviour
             cancelButton.gameObject.SetActive(false);
             Debug.Log(gameObject.name);
             shopList.SetActive(true);
+        shopCloseButton.SetActive(true);
     }
 
     public void PressOK()
@@ -177,6 +179,7 @@ public class ShopButtonManager : MonoBehaviour
             productedObject.isField = true;
             OKButton.gameObject.SetActive(false);
             cancelButton.gameObject.SetActive(false);
+            shopCloseButton.SetActive(true);
             MoneyManager.money -= productedObject.shopCost;
             DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
 

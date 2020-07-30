@@ -98,7 +98,6 @@ namespace GameData
             playerData.money = argMoney;
             playerData.heart = argHeart;
             SaveData<PlayerData>(playerData, "/PlayerData/" + playerData.index + ".json");
-            Debug.Log("저장됨" + playerData.money);
         }
 
         public void ParseFarmObjectData(List<FarmObject> farmObjects)

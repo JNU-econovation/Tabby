@@ -100,16 +100,19 @@ public class RecruitManager : MonoBehaviour
 
     public void NamingWindowOpen()
     {
-        if (int.Parse(moneyText.text) >= int.Parse(moneyCostText.text) && int.Parse(heartText.text) >= int.Parse(heartCostText.text))
+        if (moneyCostText.text != "")
         {
-            namingWindow.SetActive(true);
+            if (int.Parse(moneyText.text) >= int.Parse(moneyCostText.text) && int.Parse(heartText.text) >= int.Parse(heartCostText.text))
+            {
+                namingWindow.SetActive(true);
 
-            //namingText.i;
-            Image image = namingImage.GetComponent<Image>();
-            if (slotNum == 1)
-                image.sprite = animalSprite[animalSlot1.GetComponent<Animal>().animalNumber];
-            if (slotNum == 2)
-                image.sprite = animalSprite[animalSlot2.GetComponent<Animal>().animalNumber];
+                //namingText.i;
+                Image image = namingImage.GetComponent<Image>();
+                if (slotNum == 1)
+                    image.sprite = animalSprite[animalSlot1.GetComponent<Animal>().animalNumber];
+                if (slotNum == 2)
+                    image.sprite = animalSprite[animalSlot2.GetComponent<Animal>().animalNumber];
+            }
         }
     }
 

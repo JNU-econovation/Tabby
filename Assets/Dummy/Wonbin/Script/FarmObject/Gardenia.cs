@@ -8,7 +8,7 @@ public class Gardenia : FarmObject
     {
         farmObjectNumber = 0;
         producePeriod=10f;
-        moneyOutput = 10;
+        moneyOutput = 5;
         shopCost = 10;
     }
 
