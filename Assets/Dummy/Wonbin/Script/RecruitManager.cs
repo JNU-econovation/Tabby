@@ -42,7 +42,7 @@ public class RecruitManager : MonoBehaviour
                 Animal animal1= animalSlot1.GetComponent<Animal>();
                 animal1.animalNumber = 0;
                 animal1.animalCost = 10;
-                animal1.animalHeartCost = 4;
+                animal1.animalHeartCost = 3;
                 Image image2 = animalSlot2.transform.GetChild(1).gameObject.GetComponent<Image>();
                 image2.sprite = animalSprite[2];
                 Animal animal2 = animalSlot2.GetComponent<Animal>();
@@ -56,13 +56,13 @@ public class RecruitManager : MonoBehaviour
                 Animal animal3 = animalSlot1.GetComponent<Animal>();
                 animal3.animalNumber = 4;
                 animal3.animalCost = 150;
-                animal3.animalHeartCost = 12;
+                animal3.animalHeartCost = 20;
                 Image image4 = animalSlot2.transform.GetChild(1).gameObject.GetComponent<Image>();
                 image4.sprite = animalSprite[6];
                 Animal animal4 = animalSlot2.GetComponent<Animal>();
                 animal4.animalNumber = 6;
                 animal4.animalCost = 300;
-                animal4.animalHeartCost = 16;
+                animal4.animalHeartCost = 30;
                 break;
             case 3:
                 Image image5 = animalSlot1.transform.GetChild(1).gameObject.GetComponent<Image>();
@@ -70,7 +70,7 @@ public class RecruitManager : MonoBehaviour
                 Animal animal5 = animalSlot1.GetComponent<Animal>();
                 animal5.animalNumber = 8;
                 animal5.animalCost = 500;
-                animal5.animalHeartCost = 20;
+                animal5.animalHeartCost = 70;
                 Image image6 = animalSlot2.transform.GetChild(1).gameObject.GetComponent<Image>();
                 image6.sprite = animalSprite[9];
                 Animal animal6 = animalSlot2.GetComponent<Animal>();

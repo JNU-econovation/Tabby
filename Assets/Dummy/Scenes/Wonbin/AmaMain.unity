@@ -4188,7 +4188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 272346676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eaa78b1e36e04847864056d49b940f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ba6ad5ba9e8c5a46b677227bce420e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
@@ -4199,7 +4199,7 @@ MonoBehaviour:
   moneyOutput: 0
   farmObjectIndex: 0
   shopCost: 0
-  farmObjectSprite: {fileID: 21300000, guid: 378666f1b6d0914438bf2a6a973431c7, type: 3}
+  farmObjectSprite: {fileID: 21300000, guid: ff242aeafd87fca41977c22a2789ffee, type: 3}
 --- !u!114 &272346679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9813,7 +9813,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 939617937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba6ad5ba9e8c5a46b677227bce420e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 7eaa78b1e36e04847864056d49b940f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   farmObjectNumber: 0
@@ -9824,7 +9824,7 @@ MonoBehaviour:
   moneyOutput: 0
   farmObjectIndex: 0
   shopCost: 0
-  farmObjectSprite: {fileID: 21300000, guid: 8064df054c8449a45991757acbe74b1d, type: 3}
+  farmObjectSprite: {fileID: 21300000, guid: 5fc04a00c365c8e46bceeaa352c65e0d, type: 3}
 --- !u!114 &939617940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14050,7 +14050,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d43df98264671f447af145b79478bccb, type: 3}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 21300000, guid: 47283ab0540c5cd45acf653d9664fdf1, type: 3}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
 --- !u!1 &1554196207
 GameObject:
   m_ObjectHideFlags: 0

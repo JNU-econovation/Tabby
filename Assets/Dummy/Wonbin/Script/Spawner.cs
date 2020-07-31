@@ -110,8 +110,7 @@ public class Spawner : MonoBehaviour
         }
         if (Input.GetKeyDown("m"))
         {
-            MoneyManager.money = 10000;
-            MoneyManager.heart = 1000;
+            MoneyManager.money += 10;
             DataManager._instance.SaveMoney(MoneyManager.money, MoneyManager.heart);
         }
         if (Input.GetKeyDown("h"))

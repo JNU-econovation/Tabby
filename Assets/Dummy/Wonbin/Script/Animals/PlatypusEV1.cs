@@ -9,6 +9,6 @@ public class PlatypusEV1 : Animal {
         animalHP = 100;
         animalCost = 100;
         animalHeartCost = 40;
-        evolExp = 90;
+        evolExp = 45;
     }
 }

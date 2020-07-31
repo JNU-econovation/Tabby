@@ -30,7 +30,7 @@ public class AnimalController : MonoBehaviour
 
     private float speed = 1.5f;
     private float heartRateMin = 3f; //최소 생성주기
-    private float heartRateMax = 15f; //최대 생성주기
+    private float heartRateMax = 20f; //최대 생성주기
     private float heartRate;
 
     [SerializeField]
